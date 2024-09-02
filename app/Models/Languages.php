@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Languages extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'country_of_origin',
+        'created_at',
+        'updated_at'
+    ];
+
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
+}
