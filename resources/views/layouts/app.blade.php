@@ -30,7 +30,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <form action="{{ route('locale.change') }}" method="POST">
+                            @csrf
+                            <select name="locale" onchange="this.form.sumbit()" class="form-select form-select-sm">
+                                <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : ''}}>English</option>
+                            </select>
+                        </form>
+                    </ul>
 
+                    <ul class="navbar-nav mx-auto">
+                        <li>
+                            {{ \Carbon\Carbon::now()->setTimezone(config('app.timezone'))->format('d/m/Y H:i') }}
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -43,11 +54,11 @@
                                 </li>
                             @endif
 
-                            @if (Route::has('register'))
+                            <!-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif -->
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -73,12 +84,6 @@
         </nav>
 
         <main class="py-4">
-            <form action="{{ route('locale.change' }}" method="POST">
-                @csrf
-                <select name="locale" onchange="this.form.sumbit()">
-                    <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : ''}}>English</option>
-                </select>
-            </form>
             @yield('content')
         </main>
     </div>
