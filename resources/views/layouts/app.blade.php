@@ -73,6 +73,12 @@
         </nav>
 
         <main class="py-4">
+            <form action="{{ route('locale.change' }}" method="POST">
+                @csrf
+                <select name="locale" onchange="this.form.sumbit()">
+                    <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : ''}}>English</option>
+                </select>
+            </form>
             @yield('content')
         </main>
     </div>
