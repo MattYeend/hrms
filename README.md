@@ -45,3 +45,4 @@
 - Commit message should start with a hash (#) and the issue number then message of issue
 - Push branch
 - Create a pull request to fully describe the fix
+- Any new text on screen, add to relevant file(s) within the lang/ folder

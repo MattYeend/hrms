@@ -32,7 +32,7 @@
                     <ul class="navbar-nav me-auto">
                         <form action="{{ route('locale.change') }}" method="POST">
                             @csrf
-                            <select name="locale" onchange="this.form.sumbit()" class="form-select form-select-sm">
+                            <select name="locale" onchange="this.form.submit()" class="form-select form-select-sm">
                                 <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : ''}}>English</option>
                                 <option value="cy"{{ app()->getLocale() == 'cy' ? ' selected' : ''}}>Welsh</option>
                             </select>
@@ -51,7 +51,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('main.login') }}</a>
                                 </li>
                             @endif
 
@@ -70,7 +70,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('main.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
