@@ -14,7 +14,7 @@ return [
     */
 
     'failed' => "Nid yw'r credyn hwn yn cyd-fynd â'n cofnodion.",
-    'password' => "Mae'r cyfrinair a ddarparwyd yn anghywir.",
+    'password_text' => "Mae'r cyfrinair a ddarparwyd yn anghywir.",
     'throttle' => "Gormod o ymgais i fewngofnodi. Ceisiwch eto mewn :seconds eiliadau.",
     'login' => 'Mewngofnodi',
     'remember_me' => 'Cofiwch Fi',
