@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -27,11 +28,15 @@ class LoginController extends Controller
      */
     // protected $redirectTo = '/home';
     protected function redirectTo(){
-        if (auth()->user()->isSuperAdmin()) {
-            return '/super-admin-home';
-        }
-        if (auth()->user()->isAdmin()) {
-            return '/admin-home';
+        if (Auth::check()) {
+            $user = Auth::user();
+
+            if ($user->isSuperAdmin()) {
+                return '/super-admin-home';
+            }
+            if ($user->isAdmin()) {
+                return '/admin-home';
+            }
         }
         return '/home';
     }

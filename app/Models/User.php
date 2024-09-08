@@ -71,13 +71,6 @@ class User extends Authenticatable
         ];
     }
 
-    public function isSuperAdmin(){
-        return $this->role && $this->role->name === 'Super Admin';
-    }
-    public function isAdmin(){
-        return $this->role && $this->role->name === 'Admin';
-    }
-
     public function achievements(){
         return $this->belongsToMany(Achievements::class);
     }
@@ -86,8 +79,19 @@ class User extends Authenticatable
         return $this->belongsTo(Department::class, 'department_id');
     }
 
-    public function role(){
-        return $this->hasOne(Role::class, 'role_id');
+    public function role()
+    {
+        return $this->belongsTo(Roles::class, 'roles_id', 'id');
+    }
+
+    public function isSuperAdmin()
+    {
+        return $this->role && $this->role->name === 'Super Admin';
+    }
+
+    public function isAdmin()
+    {
+        return $this->role && $this->role->name === 'Admin';
     }
 
     public function seniority(){
