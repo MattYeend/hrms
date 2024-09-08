@@ -71,6 +71,13 @@ class User extends Authenticatable
         ];
     }
 
+    public function isSuperAdmin(){
+        return $this->role && $this->role->name === 'Super Admin';
+    }
+    public function isAdmin(){
+        return $this->role && $this->role->name === 'Admin';
+    }
+
     public function achievements(){
         return $this->belongsToMany(Achievements::class);
     }
