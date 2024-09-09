@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\company_contact;
+use App\Models\CompanyContact;
 use Illuminate\Auth\Access\Response;
 
 class CompanyContactPolicy
@@ -19,7 +19,7 @@ class CompanyContactPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, company_contact $companyContact): bool
+    public function view(User $user, CompanyContact $companyContact): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class CompanyContactPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, company_contact $companyContact): bool
+    public function update(User $user, CompanyContact $companyContact): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class CompanyContactPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, company_contact $companyContact): bool
+    public function delete(User $user, CompanyContact $companyContact): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class CompanyContactPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, company_contact $companyContact): bool
+    public function restore(User $user, CompanyContact $companyContact): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class CompanyContactPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, company_contact $companyContact): bool
+    public function forceDelete(User $user, CompanyContact $companyContact): bool
     {
         //
     }

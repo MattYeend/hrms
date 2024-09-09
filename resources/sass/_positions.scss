@@ -1,0 +1,56 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    padding: 0 15px;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: left;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.year {
+    display: flex;
+    align-items: center;
+}
+
+.languages {
+    display: flex;
+    align-items: center;
+}
+
+.languages span {
+    margin-right: 10px;
+}
+
+.horizontal-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.horizontal-list li {
+    display: inline;
+}
