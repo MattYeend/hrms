@@ -1,4 +1,4 @@
-## Setuo 
+## Setup
 
 - Run `git clone https://github.com/MattYeend/hrms.git`
 - Run `composer install`
@@ -15,19 +15,14 @@
 ## Misc
 - Clear Application Cache
 - `php artisan cache:clear`
-
 - Clear View Cache
 - `php artisan view:clear`
-
 - Clear Route Cache 
 - `php artisan route:clear`
-
 - Clear Configuration Cache
 - `php artisan config:clear`
-
 - Setup Storage Directory
 - `php artisan storage:link`
-
 - Create new everything (model, migration, controller, policy, requests, seeder)
 - `php artisan make:<modelName> -a`
 - Add relevant views (if needed)
