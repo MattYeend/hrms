@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="footer-content">
-            <div class="year">&copy; {{ date('Y') }} HRMS.</div>
+            <div class="year">&copy; {{ date('Y') }} HRMS. {{ $gitTag }}</div>
             <div class="languages">
                 <span>Available languages:</span>
                 <ul class="horizontal-list">
