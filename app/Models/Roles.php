@@ -24,16 +24,20 @@ class Roles extends Model
 
     protected static function boot(){
         parent::boot();
-        static::saving(function($role){
-            if(empty($role->slug)){
-                $role->slug = Str::slug($role->name);
-                $originalSlug = $role->slug;
-                $counter = 1;
-                while(static::whereSlug($role->slug)->exists()){
-                    $role->slug = $originalSlug . '-' . $counter++;
-                }
+        static::creating(function($role){
+            $role->slug = self::createUniqueSlug($role->name);
+        });
+        static::updating(function($role){
+            if($role->isDirty('name')){
+                $role->slug = self::createUniqueSlug($role->name);
             }
         });
+    }
+
+    private static function createUniqueSlug($name){
+        $slug = Str::slug($name);
+        $count = static::where('slug', 'LIKE', "%$slug%")->count();
+        return $count ? "{$slug}-{$count}" : $slug;
     }
 
     public function users(){

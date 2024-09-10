@@ -28,16 +28,20 @@ class Job extends Model
 
     protected static function boot(){
         parent::boot();
-        static::saving(function($job){
-            if(empty($job->slug)){
-                $job->slug = Str::slug($job->name);
-                $originalSlug = $job->slug;
-                $counter = 1;
-                while(static::whereSlug($job->slug)->exists()){
-                    $job->slug = $originalSlug . '-' . $counter++;
-                }
+        static::creating(function($job){
+            $job->slug = self::createUniqueSlug($job->name);
+        });
+        static::updating(function($job){
+            if($job->isDirty('name')){
+                $job->slug = self::createUniqueSlug($job->name);
             }
         });
+    }
+
+    private static function createUniqueSlug($name){
+        $slug = Str::slug($name);
+        $count = static::where('slug', 'LIKE', "%$slug%")->count();
+        return $count ? "{$slug}-{$count}" : $slug;
     }
 
     public function salaryRange(){

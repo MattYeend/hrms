@@ -19,15 +19,19 @@ class LeaveType extends Model
 
     protected static function boot(){
         parent::boot();
-        static::saving(function($leaveType){
-            if(empty($leaveType->slug)){
-                $leaveType->slug = Str::slug($leaveType->name);
-                $originalSlug = $leaveType->slug;
-                $counter = 1;
-                while(static::whereSlug($leaveType->slug)->exists()){
-                    $leaveType->slug = $originalSlug . '-' . $counter++;
-                }
+        static::creating(function($leaveType){
+            $leaveType->slug = self::createUniqueSlug($leaveType->name);
+        });
+        static::updating(function($leaveType){
+            if($leaveType->isDirty('name')){
+                $leaveType->slug = self::createUniqueSlug($leaveType->name);
             }
         });
+    }
+
+    private static function createUniqueSlug($name){
+        $slug = Str::slug($name);
+        $count = static::where('slug', 'LIKE', "%$slug%")->count();
+        return $count ? "{$slug}-{$count}" : $slug;
     }
 }

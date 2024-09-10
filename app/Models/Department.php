@@ -26,16 +26,20 @@ class Department extends Model
 
     protected static function boot(){
         parent::boot();
-        static::saving(function($department){
-            if(empty($department->slug)){
-                $department->slug = Str::slug($department->name);
-                $originalSlug = $department->slug;
-                $counter = 1;
-                while(static::whereSlug($department->slug)->exists()){
-                    $department->slug = $originalSlug . '-' . $counter++;
-                }
+        static::creating(function($department){
+            $department->slug = self::createUniqueSlug($department->name);
+        });
+        static::updating(function($department){
+            if($department->isDirty('name')){
+                $department->slug = self::createUniqueSlug($department->name);
             }
         });
+    }
+
+    private static function createUniqueSlug($name){
+        $slug = Str::slug($name);
+        $count = static::where('slug', 'LIKE', "%$slug%")->count();
+        return $count ? "{$slug}-{$count}" : $slug;
     }
 
     public function company(){
