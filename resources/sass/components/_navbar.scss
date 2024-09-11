@@ -4,8 +4,8 @@
     @include clearfix;
 
     .navbar-brand {
-        font-size: 1.5rem;
-        color: $primary-colour;
+        font-size: 1rem;
+        color: $navbar-bg-colour;
     }
 
     .navbar-nav {
@@ -13,13 +13,13 @@
         display: flex;
 
         .nav-item {
-            margin-right: 1.5rem;
+            margin-right: 1rem;
 
             a {
                 color: $text-colour;
                 font-size: 1rem;
                 &:hover {
-                    color: $primary-colour;
+                    color: $text-colour;
                 }
             }
         }

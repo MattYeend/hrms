@@ -1,0 +1,24 @@
+.form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $white !important;
+    padding-right: 40px;
+    position: relative;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: $navbar-bg-colour !important;
+    transition: border 0.3s ease-in-out;
+    border: 1px solid $white !important;
+}
+
+.form-select:focus {
+    outline: none;
+}
+
+.form-select-sm {
+    font-size: 14px;
+    height: auto;
+    min-width: 50px;
+    max-width: 100%;
+}
