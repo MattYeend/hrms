@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <form action="{{ route('locale.change') }}" method="POST">
@@ -22,9 +22,6 @@
             </ul>
 
             <ul class="navbar-nav mx-auto">
-                <li>
-                    {{ \Carbon\Carbon::now()->setTimezone(config('app.timezone'))->format('d/m/Y H:i') }}
-                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
