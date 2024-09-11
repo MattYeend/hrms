@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin-bottom: 1rem;
-    color: $text-secondary-color;
+    color: $text-secondary-colour;
 }
 
 strong {
@@ -29,8 +29,8 @@ strong {
 }
 
 a {
-    color: $primary-color;
+    color: $primary-colour;
     &:hover {
-        color: darken($primary-color, 10%);
+        color: darken($primary-colour, 10%);
     }
 }

@@ -1,5 +1,5 @@
 .card {
-    border: 1px solid $border-color;
+    border: 1px solid $border-colour;
     border-radius: 0.25rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -14,7 +14,7 @@
 
     &__body {
         font-size: 1rem;
-        color: $text-secondary-color;
+        color: $text-secondary-colour;
     }
 
     &__footer {

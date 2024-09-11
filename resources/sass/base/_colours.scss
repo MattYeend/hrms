@@ -1,4 +1,4 @@
-// Primary Colors
+// Primary Colours
 $primary-colour: #3490dc;
 $primary-light: lighten($primary-colour, 10%);
 $primary-lighter: lighten($primary-colour, 20%);
@@ -7,7 +7,7 @@ $primary-dark: darken($primary-colour, 10%);
 $primary-darker: darken($primary-colour, 20%);
 $primary-darkesrt: darken($primary-colour, 30%);
 
-// Secondary Colors
+// Secondary Colours
 $secondary-colour: #ffed4a;
 $secondary-light: lighten($secondary-colour, 10%);
 $secondary-lighter: lighten($secondary-colour, 20%);
@@ -16,22 +16,25 @@ $secondary-dark: darken($secondary-colour, 10%);
 $secondary-darker: darken($secondary-colour, 20%);
 $secondary-darkest: darken($secondary-colour, 30%);
 
-// Alert Colors
-$danger-color: #e3342f;
-$success-color: #38c172;
-$warning-color: #ffed4a;
-$info-color: #6cb2eb;
+// Alert Colours
+$danger-colour: #e3342f;
+$success-colour: #38c172;
+$warning-colour: #ffed4a;
+$info-colour: #6cb2eb;
 
-// Neutral Colors
+// Neutral Colours
 $white: #ffffff;
 $black: #000000;
 $gray-light: #f8f9fa;
 $gray-dark: #343a40;
-$text-color: #333333;
-$text-secondary-color: #6c757d;
+$text-colour: #333333;
+$text-secondary-colour: #6c757d;
 
-// Background Colors
-$body-bg-color: $white;
-$header-bg-color: $primary-dark;
-$footer-bg-color: $gray-dark;
-$sidebar-bg-color: $gray-light;
+// Background Colours
+$body-bg-colour: $white;
+$header-bg-colour: $primary-dark;
+$footer-bg-colour: $gray-dark;
+$sidebar-bg-colour: $gray-light;
+
+$border-colour: $gray-light;
+$navbar-bg-colour: $gray-light;

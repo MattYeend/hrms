@@ -8,20 +8,20 @@
     @include transition(all);
 
     &--primary {
-        background-color: $primary-color;
+        background-color: $primary-colour;
         color: white;
 
         &:hover {
-            background-color: darken($primary-color, 10%);
+            background-color: darken($primary-colour, 10%);
         }
     }
 
     &--secondary {
-        background-color: $secondary-color;
+        background-color: $secondary-colour;
         color: black;
 
         &:hover {
-            background-color: darken($secondary-color, 10%);
+            background-color: darken($secondary-colour, 10%);
         }
     }
 }

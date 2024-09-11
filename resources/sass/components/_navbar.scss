@@ -1,11 +1,11 @@
 .navbar {
-    background-color: $navbar-bg-color;
+    background-color: $navbar-bg-colour;
     padding: 1rem;
     @include clearfix;
 
     .navbar-brand {
         font-size: 1.5rem;
-        color: $primary-color;
+        color: $primary-colour;
     }
 
     .navbar-nav {
@@ -16,10 +16,10 @@
             margin-right: 1.5rem;
 
             a {
-                color: $text-color;
+                color: $text-colour;
                 font-size: 1rem;
                 &:hover {
-                    color: $primary-color;
+                    color: $primary-colour;
                 }
             }
         }

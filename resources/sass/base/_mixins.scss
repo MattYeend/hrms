@@ -1,0 +1,11 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin transition($property, $duration: 0.3s, $timing-function: ease-in-out) {
+    transition: $property $duration $timing-function;
+}

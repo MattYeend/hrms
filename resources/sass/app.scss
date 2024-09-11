@@ -4,12 +4,13 @@
 // Variables
 @import 'variables';
 
+@import 'base/mixins';
 @import 'base/colours';
 @import 'base/utilities';
 @import 'base/typography';
 
 @import 'components/buttons';
-@import 'components/card';
+// @import 'components/card';
 @import 'components/navbar';
 
 @import 'layout/footer';
