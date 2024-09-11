@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: $text-secondary-color;
+}
+
+strong {
+    font-weight: bold;
+}
+
+a {
+    color: $primary-color;
+    &:hover {
+        color: darken($primary-color, 10%);
+    }
+}

@@ -3,8 +3,16 @@
 
 // Variables
 @import 'variables';
-@import 'positions';
-@import 'sizes';
+
+@import 'base/colours';
+@import 'base/utilities';
+@import 'base/typography';
+
+@import 'components/buttons';
+@import 'components/card';
+@import 'components/navbar';
+
+@import 'layout/footer';
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';

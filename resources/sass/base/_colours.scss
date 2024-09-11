@@ -1,0 +1,37 @@
+// Primary Colors
+$primary-colour: #3490dc;
+$primary-light: lighten($primary-colour, 10%);
+$primary-lighter: lighten($primary-colour, 20%);
+$primary-lightest: lighten($primary-colour, 30%);
+$primary-dark: darken($primary-colour, 10%);
+$primary-darker: darken($primary-colour, 20%);
+$primary-darkesrt: darken($primary-colour, 30%);
+
+// Secondary Colors
+$secondary-colour: #ffed4a;
+$secondary-light: lighten($secondary-colour, 10%);
+$secondary-lighter: lighten($secondary-colour, 20%);
+$secondary-lightest: lighten($secondary-colour, 30%);
+$secondary-dark: darken($secondary-colour, 10%);
+$secondary-darker: darken($secondary-colour, 20%);
+$secondary-darkest: darken($secondary-colour, 30%);
+
+// Alert Colors
+$danger-color: #e3342f;
+$success-color: #38c172;
+$warning-color: #ffed4a;
+$info-color: #6cb2eb;
+
+// Neutral Colors
+$white: #ffffff;
+$black: #000000;
+$gray-light: #f8f9fa;
+$gray-dark: #343a40;
+$text-color: #333333;
+$text-secondary-color: #6c757d;
+
+// Background Colors
+$body-bg-color: $white;
+$header-bg-color: $primary-dark;
+$footer-bg-color: $gray-dark;
+$sidebar-bg-color: $gray-light;

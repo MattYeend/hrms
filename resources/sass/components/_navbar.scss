@@ -1,0 +1,27 @@
+.navbar {
+    background-color: $navbar-bg-color;
+    padding: 1rem;
+    @include clearfix;
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        color: $primary-color;
+    }
+
+    .navbar-nav {
+        list-style: none;
+        display: flex;
+
+        .nav-item {
+            margin-right: 1.5rem;
+
+            a {
+                color: $text-color;
+                font-size: 1rem;
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
