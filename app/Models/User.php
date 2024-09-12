@@ -99,7 +99,7 @@ class User extends Authenticatable
     }
 
     public function job(){
-        return $this->hasOne(Job::class, 'job_id');
+        return $this->belongsTo(Job::class, 'job_id');
     }
 
     public function holidayEntitlement(){

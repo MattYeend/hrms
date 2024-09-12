@@ -11,6 +11,8 @@ class Job extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'job';
+
     protected $fillable = [
         'name',
         'slug',

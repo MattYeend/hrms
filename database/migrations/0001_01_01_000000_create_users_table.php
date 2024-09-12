@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string('country');
             $table->string('post_code');
             $table->string('full_or_part');
+            $table->string('region');
+            $table->string('timezone');
             $table->rememberToken();
             $table->unsignedBigInteger('department_id')->nullable();
             $table->unsignedBigInteger('roles_id')->nullable();

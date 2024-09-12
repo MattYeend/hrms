@@ -42,7 +42,17 @@ class UserController extends Controller
             return response()->json(['message' => 'User not found'], 404);
         }
 
-        return view('users.profile', compact('user'));
+        $currencySymbols = [
+            'US' => '$',
+            'EU' => '€',
+            'UK' => '£',
+            'IN' => '₹',
+        ];
+    
+        $userRegion = $user->region;
+        $currencySymbol = $currencySymbols[$userRegion] ?? '£';
+
+        return view('users.profile', compact('user', 'currencySymbol'));
     }
 
     /**
