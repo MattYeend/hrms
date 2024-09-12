@@ -11,11 +11,9 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Auth::routes();
+
+Route::get('/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('profile');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/super-admin-home', [App\Http\Controllers\HomeController::class, 'superAdminHome'])->name('super-admin-home');
