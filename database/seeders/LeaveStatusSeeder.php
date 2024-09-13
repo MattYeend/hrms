@@ -14,15 +14,9 @@ class LeaveStatusSeeder extends Seeder
     public function run(): void
     {
         DB::table('leave_statuses')->insert([
-            [
-                'name' => 'Approved'
-            ],
-            [
-                'name' => 'Pending'
-            ],
-            [
-                'name' => 'Denied'
-            ]
+            ['name' => 'Approved'],
+            ['name' => 'Pending'],
+            ['name' => 'Denied']
         ]);
     }
 }

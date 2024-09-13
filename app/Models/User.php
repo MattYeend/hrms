@@ -149,4 +149,16 @@ class User extends Authenticatable
     public function tiles(){
         return $this->belongsToMany(Tiles::class);
     }
+
+    public function blogs(){
+        return $this->hasMany(Blogs::class);
+    }
+
+    public function blogComments(){
+        return $this->hasMany(BlogComments::class);
+    }
+
+    public function blogLikes(){
+        return $this->hasMany(BlogLikes::class);
+    }
 }

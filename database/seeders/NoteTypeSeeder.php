@@ -14,27 +14,13 @@ class NoteTypeSeeder extends Seeder
     public function run(): void
     {
         DB::table('note_types')->insert([
-            [
-                'name' => 'General'
-            ],
-            [
-                'name' => 'Concern'
-            ],
-            [
-                'name' => 'First Warning'
-            ],
-            [
-                'name' => 'Second Warning'
-            ],
-            [
-                'name' => 'Final Warning'
-            ],
-            [
-                'name' => 'Probation'
-            ],
-            [
-                'name' => 'Promotion'
-            ]
+            ['name' => 'General'],
+            ['name' => 'Concern'],
+            ['name' => 'First Warning'],
+            ['name' => 'Second Warning'],
+            ['name' => 'Final Warning'],
+            ['name' => 'Probation'],
+            ['name' => 'Promotion']
         ]);
     }
 }

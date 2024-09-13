@@ -38,5 +38,7 @@ class DatabaseSeeder extends Seeder
         $this->call(NoteTypeSeeder::class);
         $this->call(LeaveTypeSeeder::class);
         $this->call(LeaveStatusSeeder::class);
+        $this->call(BlogTypesSeeder::class);
+        $this->call(BlogCategoriesSeeder::class);
     }
 }

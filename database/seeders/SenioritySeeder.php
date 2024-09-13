@@ -14,18 +14,10 @@ class SenioritySeeder extends Seeder
     public function run(): void
     {
         DB::table('seniorities')->insert([
-            [
-                'name' => 'Senior'
-            ],
-            [
-                'name' => 'Mid'
-            ],
-            [
-                'name' => 'Junior'
-            ],
-            [
-                'name' => 'Intern'
-            ]
+            ['name' => 'Senior'],
+            ['name' => 'Mid'],
+            ['name' => 'Junior'],
+            ['name' => 'Intern']
         ]);
     }
 }
