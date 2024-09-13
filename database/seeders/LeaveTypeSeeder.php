@@ -15,73 +15,77 @@ class LeaveTypeSeeder extends Seeder
     {
         DB::table('leave_types')->insert([
             [
-                'name' => 'PTO',
-                'slug' => 'pto'
-            ],
-            [
-                'name' => 'Sick Leave',
-                'slug' => 'sick-leave'
-            ],
-            [
-                'name' => 'Maternity Leave',
-                'slug' => 'maternity-leave'
-            ],
-            [
-                'name' => 'Paternity Leave',
-                'slug' => 'paternity-leave'
-            ],
-            [
-                'name' => 'Parental Leave',
-                'slug' => 'parental-leave'
+                'name' => 'Adoption Leave',
+                'slug' => 'adoption-leave'
             ],
             [
                 'name' => 'Bereavement Leave',
                 'slug' => 'bereavement-leave'
             ],
             [
-                'name' => 'Jury Duty',
-                'slug' => 'jury-duty'
-            ],
-            [
-                'name' => 'Military Leave',
-                'slug' => 'military-leave'
+                'name' => 'Community Service Leave',
+                'slug' => 'community-service-leave'
             ],
             [
                 'name' => 'Educational Leave',
                 'slug' => 'educational-leave'
             ],
             [
-                'name' => 'Unpaid Leave',
-                'slug' => 'unpaid-leave'
-            ],
-            [
-                'name' => 'Sabbatical',
-                'slug' => 'sabbatical'
-            ],
-            [
-                'name' => 'Adoption Leave',
-                'slug' => 'adoption-leave'
+                'name' => 'Family Care Leave',
+                'slug' => 'family-care-leave'
             ],
             [
                 'name' => 'Foster Care Leave',
                 'slug' => 'foster-care-leave'
             ],
             [
-                'name' => 'Community Service Leave',
-                'slug' => 'community-service-leave'
+                'name' => 'Jury Duty',
+                'slug' => 'jury-duty'
+            ],
+            [
+                'name' => 'Maternity Leave',
+                'slug' => 'maternity-leave'
+            ],
+            [
+                'name' => 'Military Leave',
+                'slug' => 'military-leave'
+            ],
+            [
+                'name' => 'Parental Leave',
+                'slug' => 'parental-leave'
+            ],
+            [
+                'name' => 'Paternity Leave',
+                'slug' => 'paternity-leave'
+            ],
+            [
+                'name' => 'PTO',
+                'slug' => 'pto'
             ],
             [
                 'name' => 'Religious Leave',
                 'slug' => 'religious-leave'
             ],
             [
-                'name' => 'Wellness Leave',
-                'slug' => 'wellness-leave'
+                'name' => 'Sabbatical',
+                'slug' => 'sabbatical'
             ],
             [
-                'name' => 'Family Care Leave',
-                'slug' => 'family-care-leave'
+                'name' => 'Sick Leave',
+                'slug' => 'sick-leave'
             ],
+            [
+                'name' => 'Time Off In Lieu',
+                'slug' => 'time-off-in-lieu'
+            ],
+            [
+                'name' => 'Unpaid Leave',
+                'slug' => 'unpaid-leave'
+            ],
+            [
+                'name' => 'Wellness Leave',
+                'slug' => 'wellness-leave'
+            ]
         ]);
     }
 }
