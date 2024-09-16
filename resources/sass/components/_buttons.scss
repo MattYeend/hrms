@@ -12,7 +12,7 @@
         color: white;
 
         &:hover {
-            background-color: darken($primary-colour, 10%);
+            background-color: $primary-dark;
         }
     }
 
@@ -21,7 +21,7 @@
         color: black;
 
         &:hover {
-            background-color: darken($secondary-colour, 10%);
+            background-color: $secondary-dark;
         }
     }
 }

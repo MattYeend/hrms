@@ -31,6 +31,6 @@ strong {
 a {
     color: $primary-colour;
     &:hover {
-        color: darken($primary-colour, 10%);
+        color: $primary-dark;
     }
 }

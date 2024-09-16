@@ -16,6 +16,14 @@ $secondary-dark: darken($secondary-colour, 10%);
 $secondary-darker: darken($secondary-colour, 20%);
 $secondary-darkest: darken($secondary-colour, 30%);
 
+$footer-colour: #f1f1f1;
+$footer-light: lighten($footer-colour, 10%);
+$footer-lighter: lighten($footer-colour, 20%);
+$footer-lightest: lighten($footer-colour, 30%);
+$footer-dark: darken($footer-colour, 10%);
+$footer-darker: darken($footer-colour, 20%);
+$footer-darkest: darken($footer-colour, 30%);
+
 // Alert Colours
 $danger-colour: #e3342f;
 $success-colour: #38c172;
