@@ -38,7 +38,13 @@ $gray-dark: #343a40;
 $text-colour: #333333;
 $text-secondary-colour: #6c757d;
 $basic: #ccc;
-$dark-mode: #121;
+$dark-mode: #1f1b24;
+$light-dark-mode: lighten($dark-mode, 10%);
+$lighter-dark-mode: lighten($dark-mode, 20%);
+$lightest-dark-mode: lighten($dark-mode, 30%);
+$dark-dark-mode: darken($dark-mode, 10%);
+$darker-dark-mode: darken($dark-mode, 20%);
+$darkest-dark-mode: darken($dark-mode, 30%);
 
 // Background Colours
 $body-bg-colour: $white;

@@ -14,6 +14,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('profile');
+Route::get('/get-dark-mode-preference', [App\Http\Controllers\UserController::class, 'getDarkModePreference'])->name('get-dark-mode-preference');
 Route::post('/toggle-dark-mode', [App\Http\Controllers\UserController::class, 'toggleDarkMode'])->name('toggle-dark-mode');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

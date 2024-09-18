@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -79,6 +81,11 @@ class UserController extends Controller
         //
     }
 
+    public function getDarkModePreference()
+    {
+        $user = Auth::user();
+        return response()->json(['dark_mode' => $user->dark_mode == 1]);
+    }
     public function toggleDarkMode(Request $request)
     {
         $user = Auth::user();

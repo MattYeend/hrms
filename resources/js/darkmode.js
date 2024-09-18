@@ -1,11 +1,17 @@
 import $ from 'jquery';
 $(document).ready(function() {
-    // Apply the dark mode on page load if the user has dark mode enabled
-    if (window.darkModeEnabled) {
-        $('body').addClass('dark-mode');
-    }
+    window.csrfToken = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+        url: '/get-dark-mode-preference',
+        method: 'GET',
+        success: function(response) {
+            if (response.dark_mode) {
+                $('body').addClass('dark-mode');
+                $('#dark-mode-toggle').prop('checked', true);
+            }
+        }
+    });
 
-    // Toggle dark mode when the switch is clicked
     $('#dark-mode-toggle').on('change', function() {
         var darkModeEnabled = $(this).is(':checked');
         if (darkModeEnabled) {
@@ -14,9 +20,8 @@ $(document).ready(function() {
             $('body').removeClass('dark-mode');
         }
 
-        // Send the preference to the server via AJAX
         $.ajax({
-            url: '/toggle-dark-mode', // Adjusted for absolute path
+            url: '/toggle-dark-mode',
             method: 'POST',
             data: {
                 dark_mode: darkModeEnabled,
