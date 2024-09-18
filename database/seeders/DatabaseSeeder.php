@@ -19,26 +19,26 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(RolesSeeder::class);
-        $this->call(DepartmentSeeder::class);
-        $this->call(SenioritySeeder::class);
-        $this->call(UserSeeder::class);
-        $this->call(UserContactSeeder::class);
-        $this->call(ContactRelationSeeder::class);
-        $this->call(CompanySeeder::class);
-        $this->call(ContractSeeder::class);
-        $this->call(LicenceSeeder::class);
-        $this->call(CompanyContactSeeder::class);
         $this->call(AddressBookSeeder::class);
         $this->call(AddressContactSeeder::class);
-        $this->call(JobSeeder::class);
-        $this->call(HolidayEntitlementSeeder::class);
-        $this->call(SalaryRangeSeeder::class);
-        $this->call(LanguagesSeeder::class);
-        $this->call(NoteTypeSeeder::class);
-        $this->call(LeaveTypeSeeder::class);
-        $this->call(LeaveStatusSeeder::class);
-        $this->call(BlogTypesSeeder::class);
         $this->call(BlogCategoriesSeeder::class);
+        $this->call(BlogTypesSeeder::class);
+        $this->call(CompanyContactSeeder::class);
+        $this->call(CompanySeeder::class);
+        $this->call(ContactRelationSeeder::class);
+        $this->call(ContractSeeder::class);
+        $this->call(DepartmentSeeder::class);
+        $this->call(HolidayEntitlementSeeder::class);
+        $this->call(JobSeeder::class);
+        $this->call(LanguagesSeeder::class);
+        $this->call(LeaveStatusSeeder::class);
+        $this->call(LeaveTypeSeeder::class);
+        $this->call(LicenceSeeder::class);
+        $this->call(NoteTypeSeeder::class);
+        $this->call(RolesSeeder::class);
+        $this->call(SalaryRangeSeeder::class);
+        $this->call(SenioritySeeder::class);
+        $this->call(UserContactSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

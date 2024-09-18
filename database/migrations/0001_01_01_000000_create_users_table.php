@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('full_or_part');
             $table->string('region');
             $table->string('timezone');
+            $table->boolean('dark_mode')->default(false);
             $table->rememberToken();
             $table->unsignedBigInteger('department_id')->nullable();
             $table->unsignedBigInteger('roles_id')->nullable();
