@@ -29,6 +29,12 @@
                 <!-- Authentication Links -->
                 @guest
                 @else
+                    <div id="theme-switch" class="flex justify-end p-4">
+                        <label class="switch">
+                            <input type="checkbox" id="dark-mode-toggle" {{ Auth::user()->dark_mode ? 'checked' : '' }}>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
