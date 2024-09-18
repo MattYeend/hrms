@@ -34,7 +34,7 @@
 }
 
 input:checked + .slider{
-    background-color: $info-colour;
+    background-color: $primary-colour;
 }
 
 input:checked + .slider:before{
