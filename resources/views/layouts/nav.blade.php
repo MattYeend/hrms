@@ -29,7 +29,7 @@
                 <!-- Authentication Links -->
                 @guest
                 @else
-                    <div id="theme-switch" class="flex justify-end p-4">
+                    <div id="theme-switch" class="m-t-10-px flex justify-end">
                         <label class="switch">
                             <input type="checkbox" id="dark-mode-toggle" {{ Auth::user()->dark_mode ? 'checked' : '' }}>
                             <span class="slider round"></span>

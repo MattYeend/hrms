@@ -78,4 +78,13 @@ class UserController extends Controller
     {
         //
     }
+
+    public function toggleDarkMode(Request $request)
+    {
+        $user = Auth::user();
+        $user->dark_mode = $request->input('dark_mode') ? 1 : 0;
+        $user->save();
+
+        return response()->json(['message' => 'Dark mode preference saved!']);
+    }
 }
