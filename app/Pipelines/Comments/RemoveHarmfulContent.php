@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Pipelines\Comments;
 
-use Closure; 
+use Closure;
 
-final readonly class RemoveSpam
+final readonly class RemoveHarmfulContent
 {
     /**
      * Create a new class instance.
@@ -16,19 +16,18 @@ final readonly class RemoveSpam
         //
     }
 
-    private const SPAM_KEYWORDS = [
-        'buy now', 
-        'free money', 
-        'pyramid scheme', 
-        'buy', 
-        'no deposit', 
-        'spin now', 
-        'winner'
+    private const HARMFUL_CONTENT = [
+        'hate speech',
+        'violence',
+        'threats',
+        'targeting',
+        'islamophobic',
+        'homophobic'
     ];
 
     public function __invoke(string $comment, Closure $next): string{
         $comment = str_replace(
-            search: self::SPAM_KEYWORDS,
+            search: self::HARMFUL_CONTENT,
             replace: '****',
             subject: $comment
         );
