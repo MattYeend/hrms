@@ -1,4 +1,4 @@
-// Primary Colours
+// Primary colours
 $primary-colour: #3490DC;
 $primary-light: lighten($primary-colour, 10%);
 $primary-lighter: lighten($primary-colour, 20%);
@@ -9,7 +9,7 @@ $primary-darker: darken($primary-colour, 20%);
 $primary-darkest: darken($primary-colour, 30%);
 $primary-dark-extreme: darken($primary-colour, 40%);
 
-// Secondary Colours
+// Secondary colours
 $secondary-colour: #ffED4A;
 $secondary-light: lighten($secondary-colour, 10%);
 $secondary-lighter: lighten($secondary-colour, 20%);
@@ -20,6 +20,7 @@ $secondary-darker: darken($secondary-colour, 20%);
 $secondary-darkest: darken($secondary-colour, 30%);
 $secondary-dark-extreme: darken($secondary-colour, 40%);
 
+// Footer colours
 $footer-colour: #F1F1F1;
 $footer-light: lighten($footer-colour, 10%);
 $footer-lighter: lighten($footer-colour, 20%);
@@ -30,22 +31,72 @@ $footer-darker: darken($footer-colour, 20%);
 $footer-darkest: darken($footer-colour, 30%);
 $footer-dark-extreme: darken($footer-colour, 40%);
 
-// Alert Colours
+// Alert colours
 $danger-colour: #E3342F;
 $success-colour: #38C172;
 $warning-colour: #FFED4A;
 $info-colour: #6CB2EB;
 
-// Neutral Colours
+// Neutral colours
 $white: #FFF;
+$white-dark: darken($white, 10%);
+$white-darker: darken($white, 20%);
+$white-darkest: darken($white, 30%);
+$white-dark-extreme: darken($white, 40%);
 $black: #000;
+$black-light: lighten($black, 10%);
+$black-lighter: lighten($black, 20%);
+$black-lightest: lighten($black, 30%);
+$black-light-extreme: lighten($black, 40%);
 $gray-light: #F8F8FA;
+$gray-light-light: lighten($gray-light, 10%);
+$gray-light-lighter: lighten($gray-light, 20%);
+$gray-light-lightest: lighten($gray-light, 30%);
+$gray-light-light-extreme: lighten($gray-light, 40%);
+$gray-light-dark: darken($gray-light, 10%);
+$gray-light-darker: darken($gray-light, 20%);
+$gray-light-darkest: darken($gray-light, 30%);
+$gray-light-dark-extreme: darken($gray-light, 40%);
 $gray-dark: #343A40;
+$gray-dark-light: lighten($gray-dark, 10%);
+$gray-dark-lighter: lighten($gray-dark, 20%);
+$gray-dark-lightest: lighten($gray-dark, 30%);
+$gray-dark-light-extreme: lighten($gray-dark, 40%);
+$gray-dark-dark: darken($gray-dark, 10%);
+$gray-dark-darker: darken($gray-dark, 20%);
+$gray-dark-darkest: darken($gray-dark, 30%);
+$gray-dark-dark-extreme: darken($gray-dark, 40%);
 $text-colour: #333;
+$text-colour-light: lighten($text-colour, 10%);
+$text-colour-lighter: lighten($text-colour, 20%);
+$text-colour-lightest: lighten($text-colour, 30%);
+$text-colour-light-extreme: lighten($text-colour, 40%);
+$text-colour-dark: darken($text-colour, 10%);
+$text-colour-darker: darken($text-colour, 20%);
+$text-colour-darkest: darken($text-colour, 30%);
+$text-colour-dark-extreme: darken($text-colour, 40%);
 $text-secondary-colour: #6C757D;
+$text-secondary-colour-light: lighten($text-secondary-colour, 10%);
+$text-secondary-colour-lighter: lighten($text-secondary-colour, 20%);
+$text-secondary-colour-lightest: lighten($text-secondary-colour, 30%);
+$text-secondary-colour-light-extreme: lighten($text-secondary-colour, 40%);
+$text-secondary-colour-dark: darken($text-secondary-colour, 10%);
+$text-secondary-colour-darker: darken($text-secondary-colour, 20%);
+$text-secondary-colour-darkest: darken($text-secondary-colour, 30%);
+$text-secondary-colour-dark-extreme: darken($text-secondary-colour, 40%);
 
-$basic: #CCC;
+// Basic colours
+$basic-colour: #CCC;
+$basic-light: lighten($basic-colour, 10%);
+$basic-lighter: lighten($basic-colour, 20%);
+$basic-lightest: lighten($basic-colour, 30%);
+$basic-light-extreme: lighten($basic-colour, 40%);
+$basic-dark: darken($basic-colour, 10%);
+$basic-darker: darken($basic-colour, 20%);
+$basic-darkest: darken($basic-colour, 30%);
+$basic-dark-extreme: darken($basic-colour, 40%);
 
+// Dark mode colours
 $dark-mode: #1F1B24;
 $light-dark-mode: lighten($dark-mode, 10%);
 $lighter-dark-mode: lighten($dark-mode, 20%);
