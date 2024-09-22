@@ -18,6 +18,7 @@
         "vue": "^3.2.37"
     },
     "dependencies": {
+        "fullcalendar": "^6.1.15",
         "jquery": "^3.7.1"
     }
 }
