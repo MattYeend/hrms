@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('pay_day');
             $table->integer('active')->default('1');
+            $table->integer('work_weekends')->default('0');
             $table->unsignedBigInteger('contract_id')->nullable();
             $table->unsignedBigInteger('company_contact_id')->nullable();
             $table->unsignedBigInteger('address_book_id')->nullable();

@@ -14,6 +14,7 @@ class Company extends Model
         'name',
         'pay_day',
         'active',
+        'work_weekends',
         'contract_id',
         'company_contact_id',
         'created_by',
