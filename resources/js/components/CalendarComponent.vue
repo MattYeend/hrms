@@ -11,12 +11,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="start_date">Start Date</label>
-                <input
-                  type="date"
-                  id="start_date"
-                  class="form-control"
-                  v-model="newEvent.start_date"
-                >
+                <input type="date" id="start_date" class="form-control" v-model="newEvent.start_date">
               </div>
             </div>
             <div class="col-md-6">
@@ -54,9 +49,9 @@ import axios from "axios";
 export default {
   data() {
     return {
-      calendar: null, // For FullCalendar instance
+      calendar: null,
       calendarPlugins: [dayGridPlugin, interactionPlugin],
-      events: [], // Initialize as array
+      events: [],
       newEvent: {
         event_name: "",
         start_date: "",
@@ -75,8 +70,8 @@ export default {
       const calendarEl = this.$refs.calendar;
       this.calendar = new Calendar(calendarEl, {
         plugins: this.calendarPlugins,
-        events: this.events, // Reference events
-        eventClick: this.showEvent, // Event click handler
+        events: this.events,
+        eventClick: this.showEvent,
       });
       this.calendar.render();
     },
@@ -86,8 +81,8 @@ export default {
           ...this.newEvent
         })
         .then(() => {
-          this.getEvents(); // Fetch the updated events
-          this.resetForm(); // Clear the form
+          this.getEvents();
+          this.resetForm();
         })
         .catch(err => console.log("Unable to add new event!", err.response.data));
     },
@@ -129,9 +124,9 @@ export default {
       axios
         .get("/api/calendar")
         .then(resp => {
-          this.events = resp.data.data; // Update the events array
-          this.calendar.removeAllEvents(); // Clear existing events
-          this.calendar.addEventSource(this.events); // Re-populate the calendar
+          this.events = resp.data.data;
+          this.calendar.removeAllEvents();
+          this.calendar.addEventSource(this.events);
         })
         .catch(err => console.log(err.response.data));
     },
@@ -148,9 +143,6 @@ export default {
 </script>
 
 <style lang="css">
-@import "~@fullcalendar/core/main.css";
-@import "~@fullcalendar/daygrid/main.css";
-
 .fc-title {
   color: #fff;
 }

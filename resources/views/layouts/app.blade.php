@@ -16,6 +16,10 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @vite('resources/js/darkmode.js')
+
+    <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/core@latest/main.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/daygrid@latest/main.min.css">
+
 </head>
 <body>
     <div id="app">
