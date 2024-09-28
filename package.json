@@ -16,9 +16,13 @@
         "rollup": "^4.22.4",
         "sass": "^1.56.1",
         "vite": "^5.4.6",
-        "vue": "^3.2.37"
+        "vue": "^3.5.10"
     },
     "dependencies": {
+        "@fullcalendar/core": "^6.1.15",
+        "@fullcalendar/daygrid": "^6.1.15",
+        "@fullcalendar/interaction": "^6.1.15",
+        "@fullcalendar/vue": "^6.1.15",
         "fullcalendar": "^6.1.15",
         "jquery": "^3.7.1"
     }

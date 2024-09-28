@@ -39,26 +39,24 @@
         </form>
       </div>
       <div class="col-md-8">
-        <Fullcalendar @eventClick="showEvent" :plugins="calendarPlugins" :events="events"/>
+        <div ref="calendar" id="calendar"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Fullcalendar from "@fullcalendar/vue";
+import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import axios from "axios";
 
 export default {
-  components: {
-    Fullcalendar
-  },
   data() {
     return {
+      calendar: null, // For FullCalendar instance
       calendarPlugins: [dayGridPlugin, interactionPlugin],
-      events: "",
+      events: [], // Initialize as array
       newEvent: {
         event_name: "",
         start_date: "",
@@ -68,76 +66,82 @@ export default {
       indexToUpdate: ""
     };
   },
-  created() {
+  mounted() {
+    this.initCalendar();
     this.getEvents();
   },
   methods: {
+    initCalendar() {
+      const calendarEl = this.$refs.calendar;
+      this.calendar = new Calendar(calendarEl, {
+        plugins: this.calendarPlugins,
+        events: this.events, // Reference events
+        eventClick: this.showEvent, // Event click handler
+      });
+      this.calendar.render();
+    },
     addNewEvent() {
       axios
         .post("/api/calendar", {
           ...this.newEvent
         })
-        .then(data => {
-          this.getEvents(); // update our list of events
-          this.resetForm(); // clear newEvent properties (e.g. title, start_date and end_date)
+        .then(() => {
+          this.getEvents(); // Fetch the updated events
+          this.resetForm(); // Clear the form
         })
-        .catch(err =>
-          console.log("Unable to add new event!", err.response.data)
-        );
+        .catch(err => console.log("Unable to add new event!", err.response.data));
     },
     showEvent(arg) {
       this.addingMode = false;
-      const { id, title, start, end } = this.events.find(
-        event => event.id === +arg.event.id
-      );
-      this.indexToUpdate = id;
-      this.newEvent = {
-        event_name: title,
-        start_date: start,
-        end_date: end
-      };
+      const event = this.events.find(event => event.id === +arg.event.id);
+      if (event) {
+        this.indexToUpdate = event.id;
+        this.newEvent = {
+          event_name: event.title,
+          start_date: event.start,
+          end_date: event.end
+        };
+      }
     },
     updateEvent() {
       axios
         .put("/api/calendar/" + this.indexToUpdate, {
           ...this.newEvent
         })
-        .then(resp => {
+        .then(() => {
           this.resetForm();
           this.getEvents();
-          this.addingMode = !this.addingMode;
+          this.addingMode = true;
         })
-        .catch(err =>
-          console.log("Unable to update event!", err.response.data)
-        );
+        .catch(err => console.log("Unable to update event!", err.response.data));
     },
     deleteEvent() {
       axios
         .delete("/api/calendar/" + this.indexToUpdate)
-        .then(resp => {
+        .then(() => {
           this.resetForm();
           this.getEvents();
-          this.addingMode = !this.addingMode;
+          this.addingMode = true;
         })
-        .catch(err =>
-          console.log("Unable to delete event!", err.response.data)
-        );
+        .catch(err => console.log("Unable to delete event!", err.response.data));
     },
     getEvents() {
       axios
         .get("/api/calendar")
-        .then(resp => (this.events = resp.data.data))
+        .then(resp => {
+          this.events = resp.data.data; // Update the events array
+          this.calendar.removeAllEvents(); // Clear existing events
+          this.calendar.addEventSource(this.events); // Re-populate the calendar
+        })
         .catch(err => console.log(err.response.data));
     },
     resetForm() {
-      Object.keys(this.newEvent).forEach(key => {
-        return (this.newEvent[key] = "");
-      });
-    }
-  },
-  watch: {
-    indexToUpdate() {
-      return this.indexToUpdate;
+      this.newEvent = {
+        event_name: "",
+        start_date: "",
+        end_date: ""
+      };
+      this.indexToUpdate = "";
     }
   }
 };
