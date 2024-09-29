@@ -55,7 +55,7 @@
 								api_key: this.apiKey,
 								country: country.code,
 								year: year,
-								type: 'national', // Optional: to get national holidays
+								type: 'national',
 							},
 						});
 
@@ -63,10 +63,10 @@
 
 						holidays.forEach(holiday => {
 							holidayEvents.push({
-								title: `${holiday.name} (${country.code})`, // Adds country code next to the holiday name
+								title: `${holiday.name} (${country.code})`,
 								start: holiday.date.iso,
 								allDay: true,
-								backgroundColor: 'blue', // Optional: style for holidays
+								backgroundColor: 'blue',
 								borderColor: 'blue',
 							});
 						});
