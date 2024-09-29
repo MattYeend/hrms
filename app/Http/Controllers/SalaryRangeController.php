@@ -8,6 +8,12 @@ use App\Http\Requests\UpdateSalaryRangeRequest;
 
 class SalaryRangeController extends Controller
 {
+    public function __construct()
+    {
+        // Add Middleware to protect routes
+        // E.G $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      */
