@@ -8,6 +8,12 @@ use App\Http\Requests\UpdateContactRelationRequest;
 
 class ContactRelationController extends Controller
 {
+    public function __construct()
+    {
+        // Add Middleware to protect routes
+        // E.G $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      */

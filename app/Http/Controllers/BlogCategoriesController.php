@@ -8,6 +8,12 @@ use App\Http\Requests\UpdateBlogCategoriesRequest;
 
 class BlogCategoriesController extends Controller
 {
+    public function __construct()
+    {
+        // Add Middleware to protect routes
+        // E.G $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      */
