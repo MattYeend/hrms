@@ -1,7 +1,7 @@
 <template>
 	<div class="container mb-3em">
 		<div class="row justify-content-center">
-	  		<div class="col-md-8">
+	  		<div class="col-md-12">
 				<div ref="calendar" id="calendar"></div>
 	  		</div>
 		</div>
@@ -16,97 +16,72 @@
 
 	export default {
 		data() {
-			return {
+	        return {
 				calendar: null,
 				calendarPlugins: [dayGridPlugin, interactionPlugin],
 				events: [],
-				newEvent: {
-					event_name: "",
-					start_date: "",
-					end_date: ""
-				},
-				addingMode: true,
-				indexToUpdate: ""
-			};
-		},
-		mounted() {
-			this.initCalendar();
-			this.getEvents();
-		},
-		methods: {
-			initCalendar() {
-				const calendarEl = this.$refs.calendar;
-				this.calendar = new Calendar(calendarEl, {
-					plugins: this.calendarPlugins,
-					events: this.events,
-					eventClick: this.showEvent,
-				});
-				this.calendar.render();
-			},
-			addNewEvent() {
-				axios
-					.post("/api/calendar", {
-						...this.newEvent
-					})
-					.then(() => {
-						this.getEvents();
-						this.resetForm();
-					})
-					.catch(err => console.log("Unable to add new event!", err.response.data));
-			},
-			showEvent(arg) {
-				this.addingMode = false;
-				const event = this.events.find(event => event.id === +arg.event.id);
-				if (event) {
-					this.indexToUpdate = event.id;
-					this.newEvent = {
-						event_name: event.title,
-						start_date: event.start,
-						end_date: event.end
-					};
+				countries: [
+					{ code: 'GB', name: 'United Kingdom' },
+					{ code: 'FR', name: 'France' },
+					{ code: 'US', name: 'United States' },
+					{ code: 'IT', name: 'Italy' },
+					{ code: 'ES', name: 'Spain' }
+				],
+    	        apiKey: 'kSpqSnqUAXttO6Ohz3UdzEbWXDLgmfL9',
+        	};
+	    },
+    	mounted() {
+        	this.initCalendar();
+	        this.getPublicHolidays();
+    	},
+	    methods: {
+    	    initCalendar() {
+        	    const calendarEl = this.$refs.calendar;
+            	this.calendar = new Calendar(calendarEl, {
+                	plugins: this.calendarPlugins,
+	                events: this.events,
+    	            eventClick: this.showEvent,
+        	    });
+            	this.calendar.render();
+	        },
+    	    async getPublicHolidays() {
+				try {
+					const year = new Date().getFullYear();
+					let holidayEvents = [];
+
+					for (const country of this.countries) {
+						const response = await axios.get(`https://calendarific.com/api/v2/holidays`, {
+							params: {
+								api_key: this.apiKey,
+								country: country.code,
+								year: year,
+								type: 'national', // Optional: to get national holidays
+							},
+						});
+
+						const holidays = response.data.response.holidays;
+
+						holidays.forEach(holiday => {
+							holidayEvents.push({
+								title: `${holiday.name} (${country.code})`, // Adds country code next to the holiday name
+								start: holiday.date.iso,
+								allDay: true,
+								backgroundColor: 'blue', // Optional: style for holidays
+								borderColor: 'blue',
+							});
+						});
+					}
+
+					this.events = holidayEvents;
+					this.calendar.addEventSource(holidayEvents);
+				} catch (error) {
+					console.error('Error fetching holidays:', error);
 				}
 			},
-			updateEvent() {
-				axios
-					.put("/api/calendar/" + this.indexToUpdate, {
-						...this.newEvent
-					})
-					.then(() => {
-						this.resetForm();
-						this.getEvents();
-						this.addingMode = true;
-					})
-					.catch(err => console.log("Unable to update event!", err.response.data));
-			},
-			deleteEvent() {
-				axios
-					.delete("/api/calendar/" + this.indexToUpdate)
-					.then(() => {
-						this.resetForm();
-						this.getEvents();
-						this.addingMode = true;
-					})
-					.catch(err => console.log("Unable to delete event!", err.response.data));
-			},
-			getEvents() {
-				axios
-					.get("/api/calendar")
-					.then(resp => {
-					this.events = resp.data.data;
-					this.calendar.removeAllEvents();
-					this.calendar.addEventSource(this.events);
-					})
-					.catch(err => console.log(err.response.data));
-			},
-			resetForm() {
-				this.newEvent = {
-					event_name: "",
-					start_date: "",
-					end_date: ""
-				};
-				this.indexToUpdate = "";
-			}
-		}
+	        showEvent(arg) {
+    	        // Event click handler
+        	},
+	    },
 	};
 </script>
 
