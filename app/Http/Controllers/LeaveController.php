@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Leave;
 use App\Http\Requests\StoreLeaveRequest;
 use App\Http\Requests\UpdateLeaveRequest;
+use Illuminate\Support\Facades\Auth;
 
 class LeaveController extends Controller
 {
@@ -19,7 +20,14 @@ class LeaveController extends Controller
      */
     public function index()
     {
-        return view('leave.index');
+        $user = Auth::user();
+        $leaves = Leave::where('created_by', $user->id)->get();
+        $totalLeavesTaken = $leaves->sum('days');
+        return view('leave.index', [
+            'holiday_entitlement' => $user->holidayEntitlement->total,
+            'total_leaves_taken' => $totalLeavesTaken,
+            'leaves' => $leaves
+        ]);
     }
 
     /**
