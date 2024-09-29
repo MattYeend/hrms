@@ -22,3 +22,5 @@ Route::get('/super-admin-home', [App\Http\Controllers\HomeController::class, 'su
 Route::get('/admin-home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin-home');
 
 Route::post('/locale', LocaleController::class)->name('locale.change');
+
+Route::get('/calendar', [App\Http\Controllers\LeaveController::class, 'index'])->name('calendar');
