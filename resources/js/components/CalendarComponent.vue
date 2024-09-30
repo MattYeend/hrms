@@ -21,9 +21,9 @@
 				calendarPlugins: [dayGridPlugin, interactionPlugin],
 				events: [],
 				countries: [
-					{ code: 'GB', name: 'United Kingdom' },
+					{ code: 'GB', name: 'UK' },
 					{ code: 'FR', name: 'France' },
-					{ code: 'US', name: 'United States' },
+					{ code: 'US', name: 'USA' },
 					{ code: 'IT', name: 'Italy' },
 					{ code: 'ES', name: 'Spain' }
 				],
@@ -45,13 +45,11 @@
 	        },
     	    async getPublicHolidays() {
 				try {
-					// Make a request to your Laravel backend to get the holidays
 					const response = await axios.get('/api/holidays');
 					const holidaysData = response.data;
 
 					let holidayEvents = [];
 
-					// Loop through the countries and map holidays from the response
 					for (const country of this.countries) {
 						const holidays = holidaysData[country.name];
 
@@ -70,6 +68,7 @@
 						}
 					}
 
+					// Add the events to FullCalendar
 					this.events = holidayEvents;
 					this.calendar.addEventSource(holidayEvents);
 				} catch (error) {
@@ -77,25 +76,25 @@
 				}
 			},
 	        showEvent(arg) {
-    	        // Event click handler logic here
+    	        // Event click handler logic
+				alert(`Holiday: ${arg.event.title}`);
         	},
 	    },
 	};
 </script>
 
 <style lang="css">
-.fc-col-header-cell-cushion{
+.fc-col-header-cell-cushion {
 	text-decoration: none;
   	color: inherit;
 }
-.fc-daygrid-day-number{
+.fc-daygrid-day-number {
   	text-decoration: none;
   	color: inherit;
 }
 .fc-title {
   	color: #fff;
 }
-
 .fc-title:hover {
   	cursor: pointer;
 }

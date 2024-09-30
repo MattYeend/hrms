@@ -6,6 +6,7 @@ use App\Models\Leave;
 use App\Http\Requests\StoreLeaveRequest;
 use App\Http\Requests\UpdateLeaveRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage; 
 
 class LeaveController extends Controller
 {
@@ -81,7 +82,7 @@ class LeaveController extends Controller
     public function getHolidays()
     {
         $publicHolidaysJson = Storage::get('holidays.json');
-        $publicHolidays = json_decode($json, true);
-        return response()->json($publicHolidays);
+        $publicHolidays = json_decode($publicHolidaysJson, true);
+        return response()->json($publicHolidays['countries']);
     }
 }
