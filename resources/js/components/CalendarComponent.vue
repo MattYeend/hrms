@@ -27,8 +27,7 @@
 					{ code: 'IT', name: 'Italy' },
 					{ code: 'ES', name: 'Spain' }
 				],
-    	        apiKey: 'kSpqSnqUAXttO6Ohz3UdzEbWXDLgmfL9',
-        	};
+	        };
 	    },
     	mounted() {
         	this.initCalendar();
@@ -46,30 +45,29 @@
 	        },
     	    async getPublicHolidays() {
 				try {
-					const year = new Date().getFullYear();
+					// Make a request to your Laravel backend to get the holidays
+					const response = await axios.get('/api/holidays');
+					const holidaysData = response.data;
+
 					let holidayEvents = [];
 
+					// Loop through the countries and map holidays from the response
 					for (const country of this.countries) {
-						const response = await axios.get(`https://calendarific.com/api/v2/holidays`, {
-							params: {
-								api_key: this.apiKey,
-								country: country.code,
-								year: year,
-								type: 'national',
-							},
-						});
+						const holidays = holidaysData[country.name];
 
-						const holidays = response.data.response.holidays;
-
-						holidays.forEach(holiday => {
-							holidayEvents.push({
-								title: `${holiday.name} (${country.code})`,
-								start: holiday.date.iso,
-								allDay: true,
-								backgroundColor: 'blue',
-								borderColor: 'blue',
+						if (holidays) {
+							holidays.forEach(holiday => {
+								holiday.dates.forEach(date => {
+									holidayEvents.push({
+										title: `${holiday.name} (${country.code})`,
+										start: date,
+										allDay: true,
+										backgroundColor: 'blue',
+										borderColor: 'blue',
+									});
+								});
 							});
-						});
+						}
 					}
 
 					this.events = holidayEvents;
@@ -79,7 +77,7 @@
 				}
 			},
 	        showEvent(arg) {
-    	        // Event click handler
+    	        // Event click handler logic here
         	},
 	    },
 	};

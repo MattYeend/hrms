@@ -27,3 +27,4 @@ Route::get('/admin-home', [HomeController::class, 'adminHome'])->name('admin-hom
 Route::post('/locale', LocaleController::class)->name('locale.change');
 
 Route::get('/calendar', [LeaveController::class, 'index'])->name('calendar');
+Route::get('/api/holidays', [LeaveController::class, 'getHolidays']);

@@ -77,4 +77,11 @@ class LeaveController extends Controller
     {
         //
     }
+
+    public function getHolidays()
+    {
+        $publicHolidaysJson = Storage::get('holidays.json');
+        $publicHolidays = json_decode($json, true);
+        return response()->json($publicHolidays);
+    }
 }
