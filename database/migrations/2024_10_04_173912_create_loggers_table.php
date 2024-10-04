@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('loggers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('logged_in_user');
-            $table->unsignedBigInteger('related_to_user')->nullable();
+            $table->unsignedBigInteger('logged_in_user_id');
+            $table->unsignedBigInteger('related_to_user_id')->nullable();
             $table->integer('action');
             $table->text('data');
             $table->timestamps();
+
+            $table->foreign('logged_in_user_id')->references('id')->on('users')->onDelete('Cascade');
+            $table->foreign('related_to_user_id')->references('id')->on('users')->onDelete('Cascade');
         });
     }
 
