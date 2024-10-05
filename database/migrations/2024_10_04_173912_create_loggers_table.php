@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('logged_in_user_id');
             $table->unsignedBigInteger('related_to_user_id')->nullable();
             $table->integer('action');
-            $table->text('data');
+            $table->text('data')->nullable();
             $table->timestamps();
 
             $table->foreign('logged_in_user_id')->references('id')->on('users')->onDelete('Cascade');
