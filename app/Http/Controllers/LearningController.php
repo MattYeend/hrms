@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Learning;
+use App\Models\Logger;
 use App\Http\Requests\StoreLearningRequest;
 use App\Http\Requests\UpdateLearningRequest;
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Marks;
+use App\Models\Logger;
 use App\Http\Requests\StoreMarksRequest;
 use App\Http\Requests\UpdateMarksRequest;
 

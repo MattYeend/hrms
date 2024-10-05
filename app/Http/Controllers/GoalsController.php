@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Goals;
+use App\Models\Logger;
 use App\Http\Requests\StoreGoalsRequest;
 use App\Http\Requests\UpdateGoalsRequest;
 

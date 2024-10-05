@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Difficulty;
+use App\Models\Logger;
 use App\Http\Requests\StoreDifficultyRequest;
 use App\Http\Requests\UpdateDifficultyRequest;
 

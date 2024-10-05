@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Languages;
+use App\Models\Logger;
 use App\Http\Requests\StoreLanguagesRequest;
 use App\Http\Requests\UpdateLanguagesRequest;
 

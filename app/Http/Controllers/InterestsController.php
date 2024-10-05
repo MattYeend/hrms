@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Interests;
+use App\Models\Logger;
 use App\Http\Requests\StoreInterestsRequest;
 use App\Http\Requests\UpdateInterestsRequest;
 

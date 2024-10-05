@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LeaveStatus;
+use App\Models\Logger;
 use App\Http\Requests\StoreLeaveStatusRequest;
 use App\Http\Requests\UpdateLeaveStatusRequest;
 

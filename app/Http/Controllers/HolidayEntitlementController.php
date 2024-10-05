@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HolidayEntitlement;
+use App\Models\Logger;
 use App\Http\Requests\StoreHolidayEntitlementRequest;
 use App\Http\Requests\UpdateHolidayEntitlementRequest;
 

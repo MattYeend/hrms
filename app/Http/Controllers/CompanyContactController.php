@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyContact;
+use App\Models\Logger;
 use App\Http\Requests\StoreCompanyContactRequest;
 use App\Http\Requests\UpdateCompanyContactRequest;
 

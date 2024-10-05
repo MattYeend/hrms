@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LeaveType;
+use App\Models\Logger;
 use App\Http\Requests\StoreLeaveTypeRequest;
 use App\Http\Requests\UpdateLeaveTypeRequest;
 

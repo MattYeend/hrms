@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Licence;
+use App\Models\Logger;
 use App\Http\Requests\StoreLicenceRequest;
 use App\Http\Requests\UpdateLicenceRequest;
 
