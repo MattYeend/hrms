@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogTypes;
+use App\Models\Logger;
 use App\Http\Requests\StoreBlogTypesRequest;
 use App\Http\Requests\UpdateBlogTypesRequest;
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogLikes;
+use App\Models\Logger;
 use App\Http\Requests\StoreBlogLikesRequest;
 use App\Http\Requests\UpdateBlogLikesRequest;
 

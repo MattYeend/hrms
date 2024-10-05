@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogCategories;
+use App\Models\Logger;
 use App\Http\Requests\StoreBlogCategoriesRequest;
 use App\Http\Requests\UpdateBlogCategoriesRequest;
 
