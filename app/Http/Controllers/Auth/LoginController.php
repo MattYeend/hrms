@@ -43,11 +43,24 @@ class LoginController extends Controller
         return '/home';
     }
 
-    protected function authenticated(\Illuminate\Http\Request $request, $user){
+    /**
+     * Log the login action after successful authentication
+     * 
+     * @param \Illumniate\Http\Request $request
+     * @param mixed $user
+     * @return mixed
+     */
+    protected function authenticated(Request $request, $user){
         Logger::log(Logger::ACTION_LOGIN);
         return redirect()->intended($this->redirectTo());
     }
 
+    /**
+     * Override the logout method to log the logout action
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function logout(Request $request){
         Logger::log(Logger::ACTION_LOGOUT);
         $this->guard()->logout();
