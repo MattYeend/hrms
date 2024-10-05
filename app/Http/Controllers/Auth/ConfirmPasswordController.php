@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\Logger;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
+use Illuminate\Http\Request;
 
 class ConfirmPasswordController extends Controller
 {
@@ -36,5 +37,16 @@ class ConfirmPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    /**
+     * Override the confirm method to log the password confirmation
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function confirm(Request $request){
+        Logger::log(Logger::ACTION_CONFIRM_PASSWORD);
+        return $this->confirmPassword($request);
     }
 }
