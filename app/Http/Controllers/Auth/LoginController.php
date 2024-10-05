@@ -6,6 +6,7 @@ use App\Models\Logger;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -40,6 +41,19 @@ class LoginController extends Controller
             }
         }
         return '/home';
+    }
+
+    protected function authenticated(\Illuminate\Http\Request $request, $user){
+        Logger::log(Logger::ACTION_LOGIN);
+        return redirect()->intended($this->redirectTo());
+    }
+
+    public function logout(Request $request){
+        Logger::log(Logger::ACTION_LOGOUT);
+        $this->guard()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 
     /**
