@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AddressBook;
+use App\Models\Logger;
 use App\Http\Requests\StoreAddressBookRequest;
 use App\Http\Requests\UpdateAddressBookRequest;
 
