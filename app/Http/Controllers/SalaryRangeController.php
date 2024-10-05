@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SalaryRange;
+use App\Models\Logger;
 use App\Http\Requests\StoreSalaryRangeRequest;
 use App\Http\Requests\UpdateSalaryRangeRequest;
 

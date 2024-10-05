@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserContact;
+use App\Models\Logger;
 use App\Http\Requests\StoreUserContactRequest;
 use App\Http\Requests\UpdateUserContactRequest;
 

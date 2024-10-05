@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Time;
+use App\Models\Logger;
 use App\Http\Requests\StoreTimeRequest;
 use App\Http\Requests\UpdateTimeRequest;
 

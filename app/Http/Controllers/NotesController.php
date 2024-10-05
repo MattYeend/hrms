@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notes;
+use App\Models\Logger;
 use App\Http\Requests\StoreNotesRequest;
 use App\Http\Requests\UpdateNotesRequest;
 

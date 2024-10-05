@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Seniority;
+use App\Models\Logger;
 use App\Http\Requests\StoreSeniorityRequest;
 use App\Http\Requests\UpdateSeniorityRequest;
 

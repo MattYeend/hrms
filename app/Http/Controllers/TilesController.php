@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tiles;
+use App\Models\Logger;
 use App\Http\Requests\StoreTilesRequest;
 use App\Http\Requests\UpdateTilesRequest;
 
