@@ -2,6 +2,9 @@
 
 - Run `git clone https://github.com/MattYeend/hrms.git`
 - Run `composer install`
+- Copy `.env.example` and rename as `.env`
+- Add database configuration, e.g. `DB_DATABASE` and `DB_USERNAME`
+- Add mail configuration, e.g. `MAIL_MAILER` and `MAIL_HOST`
 - Run `php artisan key:generate`
 - Run `npm install && npm run dev`
 - Run `php artisan migrate` and then `php artisan db:seed`
