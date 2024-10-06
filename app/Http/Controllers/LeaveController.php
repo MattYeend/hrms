@@ -98,6 +98,16 @@ class LeaveController extends Controller
         return response()->json($publicHolidays['countries']);
     }
 
+    public function approve()
+    {
+        // TODO: Write approve function
+    }
+
+    public function deny()
+    {
+        // TODO: Write deny function
+    }
+
     private function notifyDeptLead(Leave $leave)
     {
         $deptLead = $leave->createdBy->department->dept_lead_id;

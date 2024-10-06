@@ -8,10 +8,13 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Leave;
 
 class LeaveDeniedMail extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $leave;
 
     /**
      * Create a new message instance.
