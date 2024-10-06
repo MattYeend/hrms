@@ -22,7 +22,11 @@ class UpdateLeaveRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'date_from' => 'required|date',
+            'date_to' => 'required|date|after_or_equal:date_from',
+            'half_day_am' => 'nullable|boolean',
+            'half_day_pm' => 'nullable|boolean',
+            'leave_type_id' => 'required|exists:leave_types, id'
         ];
     }
 }
