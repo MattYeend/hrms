@@ -49,7 +49,10 @@ class LeaveController extends Controller
      */
     public function store(StoreLeaveRequest $request)
     {
-        $leave = Leave::create($request->validated() + ['created_by' => Auth::user()->id]);
+        $leave = Leave::create($request->validated() + [
+            'created_by' => Auth::user()->id,
+            'leave_status_id' => 2
+        ]);
         $this->notifyDeptLead($leave);
         return redirect()->route('calendar')->with('success', 'Leave created successfully');
     }
@@ -78,7 +81,10 @@ class LeaveController extends Controller
     public function update(UpdateLeaveRequest $request, Leave $leave)
     {
         $this->authorize('update', $leave);
-        $leave->update($request->validated() + ['updated_by' => Auth::user()->id]);
+        $leave->update($request->validated() + [
+            'updated_by' => Auth::user()->id,
+            'leave_status_id' => 2
+        ]);
         $this->notifyDeptLead($leave);
         return redirect()->route('calendar')->with('success', 'Leave updated successfully');
     }
@@ -106,6 +112,13 @@ class LeaveController extends Controller
     public function deny()
     {
         // TODO: Write deny function
+    }
+
+    public function getLeaves()
+    {
+        $user = Auth::user();
+        $leaves = Leave::with('leaveType')->where('created_by', $user->id)->get();
+        return response()->json($leaves);
     }
 
     private function notifyDeptLead(Leave $leave)

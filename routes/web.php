@@ -29,6 +29,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/calendar', [LeaveController::class, 'index'])->name('calendar');
     Route::get('/api/holidays', [LeaveController::class, 'getHolidays']);
+    Route::get('/api/leaves', [LeaveController::class, 'getLeaves']);
     Route::get('/leaves/create', [LeaveController::class, 'create'])->name('leave.create');
     Route::post('/leaves', [LeaveController::class, 'store'])->name('leave.store');
     Route::get('/leave/{leave}', [LeaveController::class, 'show'])->name('leave.show');

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('date_to');
             $table->integer('half_day_am')->nullable();
             $table->integer('half_day_pm')->nullable();
-            $table->unsignedBigInteger('status_id')->nullable();
+            $table->unsignedBigInteger('status_id')->default(2);
             $table->date('status_change_at')->nullable();
             $table->unsignedBigInteger('status_change_by')->nullable();
             $table->text('negative_status_reason')->nullable();
