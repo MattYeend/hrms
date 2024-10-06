@@ -75,7 +75,7 @@ class UserSeeder extends Seeder
         $countriesFrance = ['France'];
         $postCodesFrance = ['75001','69001','13001','31000'];
 
-        for($i = 0; $i < 5; $i++){
+        for($i = 0; $i < 50; $i++){
             User::create([
                 'name' => $fakerUS->name,
                 'email' => $fakerUS->unique()->safeEmail,
@@ -94,13 +94,13 @@ class UserSeeder extends Seeder
                 'department_id' => $fakerUS->numberBetween(2, 18),
                 'roles_id' => $fakerUS->numberBetween(2,3),
                 'seniority_id' => $fakerUS->numberBetween(1,4),
-                'job_id' => $fakerUS->numberBetween(2, 44),
+                'job_id' => $fakerUS->numberBetween(2, 45),
                 'holiday_entitlement_id' => 1,
                 'contact_id' => $fakerUS->numberBetween(1, 100)
             ]);
         }
         
-        for($i = 0; $i < 5; $i++){
+        for($i = 0; $i < 50; $i++){
             User::create([
                 'name' => $fakerSpain->name,
                 'email' => $fakerSpain->unique()->safeEmail,
@@ -119,13 +119,13 @@ class UserSeeder extends Seeder
                 'department_id' => $fakerSpain->numberBetween(2, 18),
                 'roles_id' => $fakerSpain->numberBetween(2,3),
                 'seniority_id' => $fakerSpain->numberBetween(1,4),
-                'job_id' => $fakerSpain->numberBetween(2, 44),
+                'job_id' => $fakerSpain->numberBetween(2, 45),
                 'holiday_entitlement_id' => 1,
                 'contact_id' => $fakerSpain->numberBetween(1, 100)
             ]);
         }
         
-        for($i = 0; $i < 5; $i++){
+        for($i = 0; $i < 50; $i++){
             User::create([
                 'name' => $fakerItaly->name,
                 'email' => $fakerItaly->unique()->safeEmail,
@@ -144,13 +144,13 @@ class UserSeeder extends Seeder
                 'department_id' => $fakerItaly->numberBetween(2, 18),
                 'roles_id' => $fakerItaly->numberBetween(2,3),
                 'seniority_id' => $fakerItaly->numberBetween(1,4),
-                'job_id' => $fakerItaly->numberBetween(2, 44),
+                'job_id' => $fakerItaly->numberBetween(2, 45),
                 'holiday_entitlement_id' => 1,
                 'contact_id' => $fakerItaly->numberBetween(1, 100)
             ]);
         }
         
-        for($i = 0; $i < 4; $i++){
+        for($i = 0; $i < 50; $i++){
             User::create([
                 'name' => $fakerFrance->name,
                 'email' => $fakerFrance->unique()->safeEmail,
@@ -169,7 +169,7 @@ class UserSeeder extends Seeder
                 'department_id' => $fakerFrance->numberBetween(2, 18),
                 'roles_id' => $fakerFrance->numberBetween(2,3),
                 'seniority_id' => $fakerFrance->numberBetween(1,4),
-                'job_id' => $fakerFrance->numberBetween(2, 44),
+                'job_id' => $fakerFrance->numberBetween(2, 45),
                 'holiday_entitlement_id' => 1,
                 'contact_id' => $fakerFrance->numberBetween(1, 100)
             ]);

@@ -16,7 +16,7 @@ class UserContactSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        for($i = 0; $i < 20; $i++){
+        for($i = 0; $i < 201; $i++){
             UserContact::create([
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,

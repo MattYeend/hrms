@@ -75,6 +75,6 @@ class LeavePolicy
     public function deny(User $user, Leave $leave)
     {
         // Only the department leave or c-suite can deny the leave
-        return $user->id === $leave->createdBy->department->dept_lead_id || $user->isSuperAdmin();
+        return $user->id === $leave->createdBy->department->dept_lead_id || $user->cSuite() || $user->isSuperAdmin();
     }
 }

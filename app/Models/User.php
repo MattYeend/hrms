@@ -164,4 +164,23 @@ class User extends Authenticatable
     public function blogLikes(){
         return $this->hasMany(BlogLikes::class);
     }
+
+    public function cSuite(){
+        $cSuiteCodes = [
+            'OWN', // OWNER
+            'CEO', // Chief Executive Officer
+            'COO', // Chief Operations Officer
+            'CFO', // Chief Financial Officer
+            'CTO', // Chief Technology Officer
+            'CMO', // Chief Marketing Officer
+            'CIO', // Chief Information Officer
+            'CCO', // Chief Compliance Officer
+            'CRO', // Chief Risk Officer
+            'CDO', // Chief Data Officer
+            'CCO', // Chief Customer Officer
+            'CSO', // Chief Strategy Officer
+            'CEO' // Chief Engineering Officer
+        ];
+        return $this->job && in_array($this->job->code, $cSuiteCodes);
+    }
 }
