@@ -34,8 +34,9 @@ class LeaveController extends Controller
             ->get();
 
         $totalLeavesTaken = $leaves->sum(function ($leave) use ($workWeekends) {
-            return (new Leave)->calculateLeaveDays($leave->date_from, $leave->date_to, $workWeekends);
+            return $leave->calculateLeaveDays($leave->date_from, $leave->date_to, $workWeekends);
         });
+        
         return view('leave.index', [
             'holiday_entitlement' => $user->holidayEntitlement->total,
             'total_leaves_taken' => $totalLeavesTaken,

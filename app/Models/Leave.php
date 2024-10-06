@@ -52,16 +52,22 @@ class Leave extends Model
     {
         $start = Carbon::parse($dateFrom);
         $end = Carbon::parse($dateTo);
-
         $dayCount = 0;
 
         for ($date = $start; $date->lte($end); $date->addDay()) {
-            if ($workWeekends == 0 && ($date->isWeekend())) {
-                continue; // Skip weekends
+            if ($workWeekends == 0 && $date->isWeekend()) {
+                continue;
             }
             $dayCount++;
         }
 
-        return $dayCount;
+        if ($this->half_day_am) {
+            $dayCount -= 0.5;
+        }
+        if ($this->half_day_pm) {
+            $dayCount -= 0.5;
+        }
+
+        return max(0, $dayCount);
     }
 }
