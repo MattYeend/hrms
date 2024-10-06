@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class Leave extends Model
 {
@@ -45,5 +46,22 @@ class Leave extends Model
 
     public function leaveType(){
         return $this->belongsTo(LeaveType::class, 'leave_type_id');
+    }
+
+    public function calculateLeaveDays($dateFrom, $dateTo, $workWeekends)
+    {
+        $start = Carbon::parse($dateFrom);
+        $end = Carbon::parse($dateTo);
+
+        $dayCount = 0;
+
+        for ($date = $start; $date->lte($end); $date->addDay()) {
+            if ($workWeekends == 0 && ($date->isWeekend())) {
+                continue; // Skip weekends
+            }
+            $dayCount++;
+        }
+
+        return $dayCount;
     }
 }

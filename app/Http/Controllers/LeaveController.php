@@ -26,8 +26,16 @@ class LeaveController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $leaves = Leave::where('created_by', $user->id)->get();
-        $totalLeavesTaken = $leaves->sum('days');
+        $company = $user->department->company;
+        $workWeekends = $company->work_weekends;
+
+        $leaves = Leave::where('created_by', $user->id)
+            ->whereIn('status_id', [1, 2])
+            ->get();
+
+        $totalLeavesTaken = $leaves->sum(function ($leave) use ($workWeekends) {
+            return (new Leave)->calculateLeaveDays($leave->date_from, $leave->date_to, $workWeekends);
+        });
         return view('leave.index', [
             'holiday_entitlement' => $user->holidayEntitlement->total,
             'total_leaves_taken' => $totalLeavesTaken,
@@ -106,12 +114,27 @@ class LeaveController extends Controller
 
     public function approve()
     {
-        // TODO: Write approve function
+        $leave = Leave::findOrFail($leaveId);
+
+        $leave->leave_status_id = 1; 
+        $leave->save();
+
+        // Send approval email
+        Mail::to($leave->createdBy->email)->send(new \App\Mail\LeaveApprovedMail($leave));
+
+        return redirect()->route('calendar')->with('success', 'Leave approved successfully.');
     }
 
     public function deny()
     {
-        // TODO: Write deny function
+        $leave = Leave::findOrFail($leaveId);
+
+        $leave->leave_status_id = 3;
+        $leave->save();
+
+        Mail::to($leave->createdBy->email)->send(new \App\Mail\LeaveDeniedMail($leave));
+
+        return redirect()->route('calendar')->with('success', 'Leave denied successfully.');
     }
 
     public function getLeaves()
