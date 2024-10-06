@@ -10,12 +10,12 @@
 
                 <div class="col-md-2 d-flex justify-content-center">
                     <div class="table-responsive">
-                        <a href="{{ route('leave.create') }}" class="btn btn-primary">Create Holiday</a>
+                        <a href="{{ route('leave.create') }}" class="btn btn-primary">{{ __('leave.create_holiday') }}</a>
                         <table class="table text-center">
                             <thead>
                                 <tr>
-                                    <th>Total</th>
-                                    <th>Taken</th>
+                                    <th>{{ __('leave.total') }}</th>
+                                    <th>{{ __('leave.taken') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
