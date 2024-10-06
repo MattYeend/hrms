@@ -29,7 +29,7 @@ class LeavePolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true; // All users can create leave
     }
 
     /**
@@ -37,7 +37,8 @@ class LeavePolicy
      */
     public function update(User $user, Leave $leave): bool
     {
-        //
+        // Only the user who created the leave, or an admin/super admin can update it
+        return $user->id === $leave->created_by || $user->isAdmin() || $user->isSuperAdmin();
     }
 
     /**
@@ -45,7 +46,8 @@ class LeavePolicy
      */
     public function delete(User $user, Leave $leave): bool
     {
-        //
+        // Only the user who created the leave, or an admin/super admin can delete it
+        return $user->id === $leave->created_by || $user->isAdmin() || $user->isSuperAdmin();
     }
 
     /**
@@ -62,5 +64,17 @@ class LeavePolicy
     public function forceDelete(User $user, Leave $leave): bool
     {
         //
+    }
+
+    public function approve(User $user, Leave $leave)
+    {
+        // Only the department leave or c-suite can approve the leave
+        return $user->id === $leave->createdBy->department->dept_lead_id || $user->isSuperAdmin();
+    }
+
+    public function deny(User $user, Leave $leave)
+    {
+        // Only the department leave or c-suite can deny the leave
+        return $user->id === $leave->createdBy->department->dept_lead_id || $user->isSuperAdmin();
     }
 }
