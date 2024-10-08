@@ -140,7 +140,11 @@ class Logger extends Model
     const ACTION_BLOG_COMMENT = 108;
     const ACTION_LANGUAGE_CHANGE_SWITCH = 109;
     const ACTION_DARK_MODE_TOGGLE = 110;
-
+    // Temp constants to go below
+    
+    // Temp constants to go above
+    // Not to be used!!
+    const NOT_AN_ACTION = 000;
 
     public static function log($action = 0, $data = null, $logged_in_user_id = null, $related_to_user_id = null){
         if(isset($action)){
