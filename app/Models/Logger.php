@@ -140,6 +140,11 @@ class Logger extends Model
     const ACTION_BLOG_COMMENT = 112;
     const ACTION_LANGUAGE_CHANGE_SWITCH = 113;
     const ACTION_DARK_MODE_TOGGLE = 114;
+    const ACTION_CREATE_LICENCE = 115;
+    const ACTION_UPDATE_LICENCE = 116;
+    const ACTION_DELETE_LICENCE = 117;
+    const ACTION_SHOW_LICENCE = 118;
+    const ACTION_COMPANY_LICENCE_CHANGE = 119;
     // Temp constants to go below
     
     // Temp constants to go above
