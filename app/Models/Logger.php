@@ -135,11 +135,11 @@ class Logger extends Model
     const ACTION_CREATE_BLOG_CATEGORIES = 107;
     const ACTION_UPDATE_BLOG_CATEGORIES = 108;
     const ACTION_DELETE_BLOG_CATEGORIES = 109;
-    const ACTION_SH0W_BLOG_CATEGORIES = 106;
-    const ACTION_BLOG_LIKE = 107;
-    const ACTION_BLOG_COMMENT = 108;
-    const ACTION_LANGUAGE_CHANGE_SWITCH = 109;
-    const ACTION_DARK_MODE_TOGGLE = 110;
+    const ACTION_SH0W_BLOG_CATEGORIES = 110;
+    const ACTION_BLOG_LIKE = 111;
+    const ACTION_BLOG_COMMENT = 112;
+    const ACTION_LANGUAGE_CHANGE_SWITCH = 113;
+    const ACTION_DARK_MODE_TOGGLE = 114;
     // Temp constants to go below
     
     // Temp constants to go above
