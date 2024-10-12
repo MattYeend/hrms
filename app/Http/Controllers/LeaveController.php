@@ -145,6 +145,13 @@ class LeaveController extends Controller
         return response()->json($leaves);
     }
 
+    public function outstandingRequests()
+    {
+        $user = Auth::user();
+        $outstandingLeaves = Leave::with('leaveType', 'createdBy')->where('status_id', 2)-get();
+        return view('leave.outstanding', compact('outstanding'));
+    }
+
     private function notifyDeptLead(Leave $leave)
     {
         $deptLead = $leave->createdBy->department->dept_lead_id;
