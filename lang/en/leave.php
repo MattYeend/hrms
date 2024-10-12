@@ -14,5 +14,7 @@ return [
     'employee_name' => 'Employee Name',
     'status' => 'Status', 
     'actions' => 'Action',
-    'no_outstanding_requests' => 'No Outstanding Requests'
+    'no_outstanding_requests' => 'No Outstanding Requests',
+    'approve' => 'Approve',
+    'deny' => 'Deny'
 ];

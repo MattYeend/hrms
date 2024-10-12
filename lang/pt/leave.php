@@ -14,5 +14,7 @@ return [
     'employee_name' => 'Nome do funcionario',
     'status' => 'Estatuto', 
     'actions' => 'Acoes',
-    'no_outstanding_requests' => 'Nenhuma solicitacao pendente'
+    'no_outstanding_requests' => 'Nenhuma solicitacao pendente',
+    'approve' => 'Aprovar',
+    'deny' => 'Negar'
 ];

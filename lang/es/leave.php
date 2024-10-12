@@ -14,5 +14,7 @@ return [
     'employee_name' => 'Nombre del empleado',
     'status' => 'Estado', 
     'actions' => 'Comportamiento',
-    'no_outstanding_requests' => 'No hay solicitudes pendientes'
+    'no_outstanding_requests' => 'No hay solicitudes pendientes',
+    'approve' => 'Aprobar',
+    'deny' => 'Dengar'
 ];

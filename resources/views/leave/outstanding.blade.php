@@ -47,7 +47,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="4">{{ __('leave.no_outstanding_requests') }}</td>
+                        <td colspan="6">{{ __('leave.no_outstanding_requests') }}</td>
                     </tr>
                 @endforelse
             </tbody>

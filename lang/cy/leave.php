@@ -14,5 +14,7 @@ return [
     'employee_name' => 'Enw Gweithiwr',
     'status' => 'Statws', 
     'actions' => 'Gweithredoedd',
-    'no_outstanding_requests' => 'Dim Ceisiadau heb eu penderfynu'
+    'no_outstanding_requests' => 'Dim Ceisiadau heb eu penderfynu',
+    'approve' => 'Cymeradwyo',
+    'deny' => 'Gwadu'
 ];
