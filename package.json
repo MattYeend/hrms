@@ -24,6 +24,7 @@
         "@fullcalendar/interaction": "^6.1.15",
         "@fullcalendar/vue": "^6.1.15",
         "fullcalendar": "^6.1.15",
-        "jquery": "^3.7.1"
+        "jquery": "^3.7.1",
+        "tinymce": "^6.8.3"
     }
 }
