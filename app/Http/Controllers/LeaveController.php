@@ -148,7 +148,20 @@ class LeaveController extends Controller
     public function outstandingRequests()
     {
         $user = Auth::user();
-        $outstandingLeaves = Leave::with('leaveType', 'createdBy')->where('status_id', 2)-get();
+
+        if($user->isSuperAdmin() || $user->isAdmin() || $user->cSuite){
+            $outstandingLeaves = Leave::with('leaveType', 'createdBy')->where('status_id', 2)->get();
+        }elseif($user->department && $user->department->dept_lead_id === $user->id){
+            $outstandingLeaves = Leave::with('leaveType', 'createdBy')
+                ->whereHas('createdBy', function($query) use($user){
+                    $query->where('department_id', $user->department->id);
+                })
+                ->where('status_id', 2)
+                ->get();
+        }else{
+            $outstandingLeaves = collect();
+        }
+
         return view('leave.outstanding', compact('outstanding'));
     }
 
