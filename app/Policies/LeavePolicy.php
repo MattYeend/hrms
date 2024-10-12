@@ -13,7 +13,13 @@ class LeavePolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        if($user->isSuperAdmin() || $user->isAdmin() || $user->cSuite()){
+            return true;
+        }
+        if($user->department && $user->department->dept_lead_id === $user->id){
+            return true;
+        }
+        return false;
     }
 
     /**
