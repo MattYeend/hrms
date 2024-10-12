@@ -145,6 +145,10 @@ class Logger extends Model
     const ACTION_DELETE_LICENCE = 117;
     const ACTION_SHOW_LICENCE = 118;
     const ACTION_COMPANY_LICENCE_CHANGE = 119;
+    const ACTION_CREATE_MEETING = 120;
+    const ACTION_UPDATE_MEETING = 121;
+    const ACTION_DELETE_MEETING = 122;
+    const ACTION_SHOW_MEETING = 123;
     // Temp constants to go below
     
     // Temp constants to go above
