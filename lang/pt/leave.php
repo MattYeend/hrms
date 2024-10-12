@@ -10,5 +10,9 @@ return [
     'half_day_pm' => 'Meio dia a tarde', 
     'total' => 'Total',
     'taken' => 'Levado', 
-    'outstanding_requests' => 'Solicitacoes pendentes'
+    'outstanding_requests' => 'Solicitacoes pendentes',
+    'employee_name' => 'Nome do funcionario',
+    'status' => 'Estatuto', 
+    'actions' => 'Acoes',
+    'no_outstanding_requests' => 'Nenhuma solicitacao pendente'
 ];

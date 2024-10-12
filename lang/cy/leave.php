@@ -10,5 +10,9 @@ return [
     'half_day_pm' => 'Hanner dydd PM', 
     'total' => 'Cyfanswm',
     'taken' => 'Cymerwyd', 
-    'outstanding_requests' => 'Ceisiadau heb au penderfynu'
+    'outstanding_requests' => 'Ceisiadau heb au penderfynu',
+    'employee_name' => 'Enw Gweithiwr',
+    'status' => 'Statws', 
+    'actions' => 'Gweithredoedd',
+    'no_outstanding_requests' => 'Dim Ceisiadau heb eu penderfynu'
 ];
