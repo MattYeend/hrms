@@ -11,6 +11,7 @@ use App\Http\Requests\UpdateLeaveRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage; 
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
 
 class LeaveController extends Controller
 {
@@ -113,11 +114,11 @@ class LeaveController extends Controller
         return response()->json($publicHolidays['countries']);
     }
 
-    public function approve()
+    public function approve($leaveId)
     {
         $leave = Leave::findOrFail($leaveId);
-
-        $leave->leave_status_id = 1; 
+        $this->authorize('approve', $leave);
+        $leave->status_id = 1; 
         $leave->save();
 
         // Send approval email
@@ -126,11 +127,12 @@ class LeaveController extends Controller
         return redirect()->route('calendar')->with('success', 'Leave approved successfully.');
     }
 
-    public function deny()
+    public function deny(Request $request, $leaveId)
     {
         $leave = Leave::findOrFail($leaveId);
-
-        $leave->leave_status_id = 3;
+        $this->authorize('deny', $leave);
+        $leave->status_id = 3;
+        $leave->negative_status_reason = $request->input('reason'); 
         $leave->save();
 
         Mail::to($leave->createdBy->email)->send(new \App\Mail\LeaveDeniedMail($leave));
