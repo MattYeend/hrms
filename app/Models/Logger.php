@@ -149,6 +149,10 @@ class Logger extends Model
     const ACTION_UPDATE_MEETING = 121;
     const ACTION_DELETE_MEETING = 122;
     const ACTION_SHOW_MEETING = 123;
+    const ACTION_CREATE_LOCATION = 124;
+    const ACTION_UPDATE_LOCATION = 125;
+    const ACTION_DELETE_LOCATION = 126;
+    const ACTION_SHOW_LOCATION = 127;
     // Temp constants to go below
     
     // Temp constants to go above
