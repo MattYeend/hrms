@@ -38,5 +38,5 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('/leave/{leave}', [LeaveController::class, 'delete'])->name('leave.delete');
     Route::post('/leave/{leave}/approve', [LeaveController::class, 'approve'])->name('leave.approve')->middleware('can:approve, leave');
     Route::post('/leave/{leave}/deny', [LeaveController::class, 'deny'])->name('leave.deny')->middleware('can:deny, leave');
-    Route::get('/leave/outstanding', [LeaveController::class, 'outstandingRequest'])->name('leave.outstanding');
+    Route::get('/leaves/outstanding', [LeaveController::class, 'outstandingRequests'])->name('leave.outstanding');
 });

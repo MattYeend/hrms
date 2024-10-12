@@ -12,7 +12,7 @@
                     <div class="table-responsive">
                         <a href="{{ route('leave.create') }}" class="btn btn-primary">{{ __('leave.create_holiday') }}</a>
                         @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite() || (auth()->user()->department && auth()->user()->department->dept_lead_id === auth()->user()->id))
-                            <a href="{{ route('leave.outstanding') }}" class="btn btn-warning mb-3">{{ __('leave.outstanding_requests') }}</a>
+                            <a href="{{ route('leave.outstanding') }}" class="btn btn-warning">{{ __('leave.outstanding_requests') }}</a>
                         @endif
                         <table class="table text-center">
                             <thead>
