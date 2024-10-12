@@ -10,4 +10,5 @@ return [
     'half_day_pm' => 'Half day PM', 
     'total' => 'Total',
     'taken' => 'Taken', 
+    'outstanding_requests' => 'Outstanding Requests'
 ];

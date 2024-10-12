@@ -10,4 +10,5 @@ return [
     'half_day_pm' => 'Meio dia a tarde', 
     'total' => 'Total',
     'taken' => 'Levado', 
+    'outstanding_requests' => 'Solicitacoes pendentes'
 ];

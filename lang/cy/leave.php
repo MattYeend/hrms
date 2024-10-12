@@ -10,4 +10,5 @@ return [
     'half_day_pm' => 'Hanner dydd PM', 
     'total' => 'Cyfanswm',
     'taken' => 'Cymerwyd', 
+    'outstanding_requests' => 'Ceisiadau heb au penderfynu'
 ];
