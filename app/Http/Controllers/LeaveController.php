@@ -147,6 +147,8 @@ class LeaveController extends Controller
 
     public function outstandingRequests()
     {
+        $this->authorise('viewAny', Leave::class);
+        
         $user = Auth::user();
 
         if($user->isSuperAdmin() || $user->isAdmin() || $user->cSuite){
