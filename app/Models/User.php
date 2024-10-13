@@ -24,6 +24,8 @@ class User extends Authenticatable
         'email',
         'password',
         'profile_picture',
+        'cv_path',
+        'cover_letter_path',
         'phone',
         'salary',
         'first_line',
