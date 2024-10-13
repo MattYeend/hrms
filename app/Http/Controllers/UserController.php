@@ -86,11 +86,9 @@ class UserController extends Controller
         $userRegion = $user->region;
         $currencySymbol = $currencySymbols[$userRegion] ?? '£';
 
-        if(Auth::user()->cannot('viewSensitiveDocs', $user)){
-            abort(403, 'Unauthorized Action.');
-        }
+        $canViewSensitiveDocs = Auth::user()->can('viewSensitiveDocs', $user);
 
-        return view('users.profile', compact('user', 'currencySymbol'));
+        return view('users.profile', compact('user', 'currencySymbol', 'canViewSensitiveDocs'));
     }
 
     /**
