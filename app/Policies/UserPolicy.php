@@ -62,4 +62,11 @@ class UserPolicy
     {
         //
     }
+
+    public function viewSensitiveDocs(User $authUser, User $user)
+    {
+        $isAdminOrLead = $authUser->id === $user->department->dept_lead_id;
+        $allowed = $authUser->isSuperAdmin() || $authUser->isAdmin() || $authUser->cSuite();
+        return $isAdminOrLead || $allowed;
+    }
 }
