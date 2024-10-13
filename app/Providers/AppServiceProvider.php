@@ -26,4 +26,8 @@ class AppServiceProvider extends ServiceProvider
         $gitTag = trim(shell_exec('git describe --tags --abbrev=0'));
         View::share('gitTag', $gitTag);
     }
+
+    protected $policies = [
+        User::class => UserPolicy::class,
+    ];
 }

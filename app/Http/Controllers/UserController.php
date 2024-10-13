@@ -8,13 +8,13 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illumniate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
     public function __construct()
     {
-        // Add Middleware to protect routes
-        // E.G $this->middleware('auth');
+        $this->middleware('auth');
     }
     
     /**
@@ -38,7 +38,32 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'cv' => 'nullable|mimes:pdf,doc,docx|max:2048',
+            'cover_letter' => 'nullable|mimes:pdf,doc,docx|max:2048',
+        ]);
+
+        // Profile Picture
+        if($request->hasFile('profile_picture')){
+            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures');
+            $user->profile_picture = $profilePicturePath;
+        }
+
+        // CV
+        if($request->hasFile('cv')){
+            $cvPath = $request->file('cv')->store('cvs');
+            $user->cv_path = $cvPath;
+        }
+
+        // Cover Letter
+        if($request->hasFile('cover_letter')){
+            $coverLetterPath = $request->file('cover_letter')->store('cover_letters');
+            $user->cover_letter = $coverLetterPath;
+        }
+
+        $user->save();
+        return redirect()->back()->with('success', 'User created successfully!');
     }
 
     /**
@@ -61,6 +86,10 @@ class UserController extends Controller
         $userRegion = $user->region;
         $currencySymbol = $currencySymbols[$userRegion] ?? '£';
 
+        if(Auth::user()->cannot('viewSensitiveDocs', $user)){
+            abort(403, 'Unauthorized Action.');
+        }
+
         return view('users.profile', compact('user', 'currencySymbol'));
     }
 
@@ -77,7 +106,32 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        $validatedData = $request->validate([
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'cv' => 'nullable|mimes:pdf,doc,docx|max:2048',
+            'cover_letter' => 'nullable|mimes:pdf,doc,docx|max:2048',
+        ]);
+
+        // Profile Picture
+        if($request->hasFile('profile_picture')){
+            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures');
+            $user->profile_picture = $profilePicturePath;
+        }
+
+        // CV
+        if($request->hasFile('cv')){
+            $cvPath = $request->file('cv')->store('cvs');
+            $user->cv_path = $cvPath;
+        }
+
+        // Cover Letter
+        if($request->hasFile('cover_letter')){
+            $coverLetterPath = $request->file('cover_letter')->store('cover_letters');
+            $user->cover_letter = $coverLetterPath;
+        }
+
+        $user->save();
+        return redirect()->back()->with('success', 'User updated successfully!');
     }
 
     /**
