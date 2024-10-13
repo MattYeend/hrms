@@ -147,6 +147,7 @@ class UserController extends Controller
         $user = Auth::user();
         return response()->json(['dark_mode' => $user->dark_mode == 1]);
     }
+
     public function toggleDarkMode(Request $request)
     {
         $user = Auth::user();
@@ -154,5 +155,50 @@ class UserController extends Controller
         $user->save();
 
         return response()->json(['message' => 'Dark mode preference saved!']);
+    }
+
+    public function uploadProfilePicture(Request $request, User $user)
+    {
+        $validatedData = $request->validate([
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if($request->hasFile('profile_picture')){
+            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures');
+            $user->profile_picture = $profilePicturePath;
+            $user->save();
+        }
+
+        return redirect()->back()->with('success', 'Profile Picture uploaded successfully');
+    }
+
+    public function uploadCv(Request $request, User $user)
+    {
+        $validatedData = $request->validate([
+            'cv' => 'nullable|mimes:pdf,doc,docx|max:2048',
+        ]);
+
+        if($request->hasFile('cv')){
+            $cvPath = $request->file('cv')->store('cvs');
+            $user->cv = $cvPath;
+            $user->save();
+        }
+
+        return redirect()->back()->with('success', 'CV uploaded successfully');
+    }
+
+    public function uploadCoverLetter(Request $request, User $user)
+    {
+        $validatedData = $request->validate([
+            'cover_letter' => 'nullable|mimes:pdf,doc,docx|max:2048',
+        ]);
+
+        if($request->hasFile('cover_letter')){
+            $coverLetterPath = $request->file('cover_letter')->store('cover_letters');
+            $user->cover_letter = $coverLetterPath;
+            $user->save();
+        }
+
+        return redirect()->back()->with('success', 'Cover Letter uploaded successfully');
     }
 }
