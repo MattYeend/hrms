@@ -22,6 +22,11 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/show/{id}', [UserController::class, 'show'])->name('profile');
     Route::get('/get-dark-mode-preference', [UserController::class, 'getDarkModePreference'])->name('get-dark-mode-preference');
     Route::post('/toggle-dark-mode', [UserController::class, 'toggleDarkMode'])->name('toggle-dark-mode');
+    Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('/user/{user}/profile-picture', [UserController::class, 'uploadProfilePicture'])->name('user.uploadProfilePicture');
+    Route::post('/user/{user}/cv', [UserController::class, 'uploadCv'])->name('user.uploadCv');
+    Route::post('/user/{user}/cover-letter', [UserController::class, 'uploadCoverLetter'])->name('user.uploadCoverLetter');
+    Route::put('/user/{user}', [UserController::class, 'update'])->name('user.update');
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/super-admin-home', [HomeController::class, 'superAdminHome'])->name('super-admin-home');
