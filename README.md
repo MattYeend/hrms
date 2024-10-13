@@ -44,3 +44,6 @@
 - Push branch
 - Create a pull request to fully describe the fix
 - Any new text on screen, add to relevant file(s) within the lang/ folder
+
+## Work Arounds
+- A work around for TinyMCE 6.8.1 is to set `convert_unsafe_embeds` to true which can be found in `hrms\node_modules\tinymce\tinymce.js` on around line 7430
