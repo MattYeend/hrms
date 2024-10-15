@@ -39,6 +39,8 @@ class User extends Authenticatable
         'region',
         'timezone',
         'dark_mode',
+        'start_date',
+        'end_date',
         'department_id',
         'roles_id',
         'seniority_id',
