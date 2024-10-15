@@ -33,6 +33,8 @@ return new class extends Migration
             $table->string('region');
             $table->string('timezone');
             $table->boolean('dark_mode')->default(false);
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
             $table->rememberToken();
             $table->unsignedBigInteger('department_id')->nullable();
             $table->unsignedBigInteger('roles_id')->nullable();
