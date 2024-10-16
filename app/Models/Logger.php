@@ -185,6 +185,13 @@ class Logger extends Model
     const ACTION_CHANGE_MEETING_LOCATION = 128;
     const ACTION_CHANGE_MEETING_VIRTUAL_TO_PERSON = 129;
     const ACTION_CHANGE_MEETING_PERSON_TO_VIRTUAL = 130;
+
+    const ACTION_PROFILE_PICTURE_UPLOAD = 131;
+    const ACTION_PROFILE_PICTURE_CHANGE = 132;
+    const ACTION_CV_UPLOAD = 133;
+    const ACTION_CV_CHANGE = 134;
+    const ACTION_COVER_LETTER_UPLOAD = 135;
+    const ACTION_COVER_LETTER_CHANGE = 136;
     // Temp constants to go below
     
     // Temp constants to go above
