@@ -192,6 +192,11 @@ class Logger extends Model
     const ACTION_CV_CHANGE = 134;
     const ACTION_COVER_LETTER_UPLOAD = 135;
     const ACTION_COVER_LETTER_CHANGE = 136;
+
+    const ACTION_USER_JOB_CHANGE = 137;
+    const ACTION_USER_ROLE_CHANGE = 138;
+    const ACTION_USER_PROMOTION = 139;
+    const ACTION_USER_DEMOTION = 140;
     // Temp constants to go below
     
     // Temp constants to go above
