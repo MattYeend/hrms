@@ -35,6 +35,9 @@ return new class extends Migration
             $table->boolean('dark_mode')->default(false);
             $table->date('start_date');
             $table->date('end_date')->nullable();
+            $table->integer('office_based')->nullable();
+            $table->integer('remote_based')->nullable();
+            $table->integer('hybrid_based')->nullable();
             $table->rememberToken();
             $table->unsignedBigInteger('department_id')->nullable();
             $table->unsignedBigInteger('roles_id')->nullable();

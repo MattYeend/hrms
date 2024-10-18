@@ -31,6 +31,7 @@ class UserSeeder extends Seeder
             'timezone' => 'Europe/London',
             'dark_mode' => false,
             'start_date' => NOW(),
+            'remote_based' => 1,
             'department_id' => 1,
             'roles_id' => 1,
             'seniority_id' => 1,
@@ -93,12 +94,13 @@ class UserSeeder extends Seeder
                 'timezone' => $fakerUS->randomElement($timezonesUSA),
                 'dark_mode' => false,
                 'start_date' => NOW(),
-                'department_id' => $fakerUS->numberBetween(2, 18),
+                'office_based' => 1,
+                'department_id' => $fakerUS->numberBetween(2,18),
                 'roles_id' => $fakerUS->numberBetween(2,3),
                 'seniority_id' => $fakerUS->numberBetween(1,4),
-                'job_id' => $fakerUS->numberBetween(2, 45),
+                'job_id' => $fakerUS->numberBetween(2,45),
                 'holiday_entitlement_id' => 1,
-                'contact_id' => $fakerUS->numberBetween(1, 100)
+                'contact_id' => $fakerUS->numberBetween(1,100)
             ]);
         }
         
@@ -119,12 +121,13 @@ class UserSeeder extends Seeder
                 'timezone' => $fakerSpain->randomElement($timezonesSpain),
                 'dark_mode' => false,
                 'start_date' => NOW(),
-                'department_id' => $fakerSpain->numberBetween(2, 18),
+                'remote_based' => 1,
+                'department_id' => $fakerSpain->numberBetween(2,18),
                 'roles_id' => $fakerSpain->numberBetween(2,3),
                 'seniority_id' => $fakerSpain->numberBetween(1,4),
-                'job_id' => $fakerSpain->numberBetween(2, 45),
+                'job_id' => $fakerSpain->numberBetween(2,45),
                 'holiday_entitlement_id' => 1,
-                'contact_id' => $fakerSpain->numberBetween(1, 100)
+                'contact_id' => $fakerSpain->numberBetween(1,100)
             ]);
         }
         
@@ -145,6 +148,7 @@ class UserSeeder extends Seeder
                 'timezone' => $fakerItaly->randomElement($timezonesItaly),
                 'dark_mode' => false,
                 'start_date' => NOW(),
+                'hybrid_based' => 1,
                 'department_id' => $fakerItaly->numberBetween(2, 18),
                 'roles_id' => $fakerItaly->numberBetween(2,3),
                 'seniority_id' => $fakerItaly->numberBetween(1,4),
