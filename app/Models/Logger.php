@@ -198,6 +198,12 @@ class Logger extends Model
     const ACTION_USER_PROMOTION = 139;
     const ACTION_USER_DEMOTION = 140;
     const ACTION_USER_CHANGE_OF_ADDRESS = 141;
+    const ACTION_USER_REMOTE_TO_OFFICE = 142;
+    const ACTION_USER_OFFICE_TO_REMOTE = 143;
+    const ACTION_USER_REMOTE_TO_HYBRID = 144;
+    const ACTION_USER_HYBRID_TO_REMOTE = 145;
+    const ACTION_USER_OFFICE_TO_HYBRID = 146;
+    const ACTION_USER_HYBRID_TO_OFFICE = 147;
     // Temp constants to go below
     
     // Temp constants to go above
