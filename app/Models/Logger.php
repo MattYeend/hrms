@@ -197,6 +197,7 @@ class Logger extends Model
     const ACTION_USER_ROLE_CHANGE = 138;
     const ACTION_USER_PROMOTION = 139;
     const ACTION_USER_DEMOTION = 140;
+    const ACTION_USER_CHANGE_OF_ADDRESS = 141;
     // Temp constants to go below
     
     // Temp constants to go above
