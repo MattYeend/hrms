@@ -24,9 +24,12 @@ class Meeting extends Model
         'deleted_by'
     ];
 
-    public function location()
-    {
-        return $this->belongsTo(Location::class); // Belongs to one location
+    public function location(){
+        return $this->belongsTo(Location::class);
+    }
+
+    public function meetingType(){
+        return $this->belongsTo(MeetingType::class);
     }
 
     public function users(){
