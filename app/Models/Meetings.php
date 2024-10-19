@@ -20,6 +20,7 @@ class Meetings extends Model
         'name',
         'in_person',
         'is_virtual',
+        'scheduled_at',
         'created_at',
         'created_by',
         'updated_at',
