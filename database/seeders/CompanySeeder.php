@@ -20,7 +20,8 @@ class CompanySeeder extends Seeder
                 'active' => 1,
                 'contract_id' => 1,
                 'company_contact_id' => 1,
-                'address_book_id' => 1
+                'address_book_id' => 1,
+                'company_relationship_manager' => 1
             ]
         ]);
     }
