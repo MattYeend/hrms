@@ -66,6 +66,7 @@ return new class extends Migration
             $table->foreign('contract_id')->references('id')->on('contracts')->onDelete('cascade');
             $table->foreign('company_contact_id')->references('id')->on('company_contacts')->onDelete('cascade');
             $table->foreign('address_book_id')->references('id')->on('address_books')->onDelete('cascade');
+            $table->foreign('company_relationship_manager')->references('id')->on('users')->onDelete('cascade');            
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('deleted_by')->references('id')->on('users')->onDelete('cascade');
@@ -205,6 +206,7 @@ return new class extends Migration
             $table->dropForeign('contract_id');
             $table->dropForeign('company_contact_id');
             $table->dropForeign('address_book_id');
+            $table->dropForeign('company_relationship_manager');
             $table->dropForeign('created_by');
             $table->dropForeign('updated_by');
             $table->dropForeign('deleted_by');

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('contract_id')->nullable();
             $table->unsignedBigInteger('company_contact_id')->nullable();
             $table->unsignedBigInteger('address_book_id')->nullable();
+            $table->unsignedBigInteger('company_relationship_manager')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();

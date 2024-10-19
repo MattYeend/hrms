@@ -17,6 +17,7 @@ class Company extends Model
         'work_weekends',
         'contract_id',
         'company_contact_id',
+        'company_relationship_manager',
         'created_by',
         'created_at',
         'updated_by',
@@ -31,6 +32,10 @@ class Company extends Model
 
     public function companyContact(){
         return $this->hasOne(companyContact::class, 'company_contact_id');
+    }
+
+    public function companyRelationshipManager(){
+        return $this->belongsTo(User::class, 'company_relationship_manager');
     }
 
     public function createdBy(){
