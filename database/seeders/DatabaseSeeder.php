@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LeaveStatusSeeder::class);
         $this->call(LeaveTypeSeeder::class);
         $this->call(LicenceSeeder::class);
+        $this->call(MeetingTypesSeeder::class);
         $this->call(NoteTypeSeeder::class);
         $this->call(RolesSeeder::class);
         $this->call(SalaryRangeSeeder::class);
