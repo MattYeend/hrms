@@ -17,11 +17,13 @@ return new class extends Migration
             $table->integer('in_person')->nullable();
             $table->integer('is_virtual')->nullable();
             $table->date('scheduled_at');
+            $table->unsignedBigInteger('location_id')->nullable(); 
             $table->timestamps();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
 
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('deleted_by')->references('id')->on('users')->onDelete('cascade');

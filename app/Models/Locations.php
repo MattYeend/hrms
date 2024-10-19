@@ -5,17 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Locations extends Model
+class Location extends Model
 {
     use HasFactory, SoftDeletes;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'office_location_line_one',
@@ -25,7 +19,6 @@ class Locations extends Model
         'office_location_county',
         'office_location_country',
         'office_location_post_code',
-        'meeting_id',
         'created_at',
         'created_by',
         'updated_at',
@@ -34,8 +27,8 @@ class Locations extends Model
         'deleted_by'
     ];
 
-    public function meeting(){
-        return $this->belongsTo(Meetings::class, 'meeting_id');
+    public function meetings(){
+        return $this->hasMany(Meeting::class);
     }
 
     public function createdBy(){

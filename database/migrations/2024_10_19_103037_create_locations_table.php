@@ -21,13 +21,11 @@ return new class extends Migration
             $table->string('office_location_county')->nullable();
             $table->string('office_location_country')->nullable();
             $table->string('office_location_post_code')->nullable();
-            $table->unsignedBigInteger('meeting_id')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
 
-            $table->foreign('meeting_id')->references('id')->on('meetings')->onDelete('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('deleted_by')->references('id')->on('users')->onDelete('cascade');

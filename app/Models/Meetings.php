@@ -5,22 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Meetings extends Model
+class Meeting extends Model
 {
     use HasFactory, SoftDeletes;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'in_person',
         'is_virtual',
         'scheduled_at',
+        'location_id',
         'created_at',
         'created_by',
         'updated_at',
@@ -28,6 +23,11 @@ class Meetings extends Model
         'deleted_at',
         'deleted_by'
     ];
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class); // Belongs to one location
+    }
 
     public function users(){
         return $this->belongsToMany(User::class);
