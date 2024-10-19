@@ -190,4 +190,8 @@ class User extends Authenticatable
         ];
         return $this->job && in_array($this->job->code, $cSuiteCodes);
     }
+
+    public function meetings(){
+        return $this->belongsToMany(Meeting::class);
+    }
 }

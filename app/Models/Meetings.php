@@ -29,6 +29,10 @@ class Meetings extends Model
         'deleted_by'
     ];
 
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
+
     public function createdBy(){
         return $this->belongsTo(User::class, 'created_by');
     }
