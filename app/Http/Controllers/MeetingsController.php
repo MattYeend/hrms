@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Meetings;
 use App\Http\Requests\StoreMeetingsRequest;
 use App\Http\Requests\UpdateMeetingsRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class MeetingsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -62,5 +69,12 @@ class MeetingsController extends Controller
     public function destroy(Meetings $meetings)
     {
         //
+    }
+
+    public function getMeetings()
+    {
+        $meetings = Meeting::with('meetingType')->get();
+
+        return response()->json($meetings);
     }
 }

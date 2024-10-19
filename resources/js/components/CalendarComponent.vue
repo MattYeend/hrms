@@ -109,6 +109,33 @@ export default {
                 console.error('Error fetching leaves:', error);
             }
         },
+        async getMeetings() {
+            try {
+                const response = await axios.get('/api/meetings');
+                const meetings = response.data;
+
+                let meetingEvents = [];
+
+                meetings.forEach(meeting => {
+                    // Ensure that the meetingType and dates are correctly mapped
+                    const meetingTypeName = meeting.meetingType;
+                    const startDate = meeting.scheduled_at;
+                    
+                    meetingEvents.push({
+                        title: `Meeting (${meetingTypeName})`,
+                        start: startDate, 
+                        end: startDate,
+                        allDay: true,
+                        backgroundColor: '#FFA07A',
+                        borderColor: '#FFA07A',
+                    });
+                });
+
+                this.calendar.addEventSource(meetingEvents);
+            } catch (error) {
+                console.error('Error fetching meetings:', error);
+            }
+        },
         showEvent(arg) {
             // Event click handler logic
             alert(`Event: ${arg.event.title}`);
