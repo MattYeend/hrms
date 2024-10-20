@@ -224,6 +224,8 @@ class Logger extends Model
     const ACTION_INVITE_ATTEND_TO_DECLINE = 161;
     const ACTION_INVITE_MAYBE_TO_ATTEND = 162;
     const ACTION_INVITE_MAYBE_TO_DECLINE = 163;
+    const ACTION_INVITE_DECLINE_TO_ATTEND = 164;
+    const ACTION_INVITE_DECLINE_TO_MAYBE = 165;
     // Temp constants to go below
     
     // Temp constants to go above
