@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Enums\RsvpStatus;
 
-class MeetingUser extends Model
+class UserMeetings extends Model
 {
     use HasFactory;
 
-    protected $table = 'meeting_user';
+    protected $table = 'user_meetings';
 
     protected $fillable = [
         'user_id',
