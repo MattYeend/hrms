@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('meeting_id')->nullable();
+            $table->enum('rsvp_status', ['attend', 'maybe', 'decline', 'outstanding'])->default('outstanding');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
