@@ -220,6 +220,10 @@ class Logger extends Model
     const ACTION_INVITE_ATTEND = 157;
     const ACTION_INVITE_MAYBE = 158;
     const ACTION_INVITE_DECLINE = 159;
+    const ACTION_INVITE_ATTEND_TO_MAYBE = 160;
+    const ACTION_INVITE_ATTEND_TO_DECLINE = 161;
+    const ACTION_INVITE_MAYBE_TO_ATTEND = 162;
+    const ACTION_INVITE_MAYBE_TO_DECLINE = 163;
     // Temp constants to go below
     
     // Temp constants to go above
