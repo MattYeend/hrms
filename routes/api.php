@@ -9,3 +9,10 @@ use App\Http\Controllers\MeetingsController;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
+Route::post('/locale', LocaleController::class)->name('locale.change');
+
+Route::get('/api/holidays', [LeaveController::class, 'getHolidays']);
+Route::get('/api/leaves', [LeaveController::class, 'getLeaves']);
+
+Route::get('/api/meetings', [MeetingsController::class, 'getMeetings'])->name('meetings.get');

@@ -34,8 +34,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/admin-home', [HomeController::class, 'adminHome'])->name('admin-home');
 
     Route::get('/calendar', [LeaveController::class, 'index'])->name('calendar');
-    Route::get('/api/holidays', [LeaveController::class, 'getHolidays']);
-    Route::get('/api/leaves', [LeaveController::class, 'getLeaves']);
     Route::get('/leaves/create', [LeaveController::class, 'create'])->name('leave.create');
     Route::post('/leaves', [LeaveController::class, 'store'])->name('leave.store');
     Route::get('/leave/{leave}', [LeaveController::class, 'show'])->name('leave.show');
@@ -45,6 +43,4 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/leave/{leave}/approve', [LeaveController::class, 'approve'])->name('leave.approve');
     Route::post('/leave/{leave}/deny', [LeaveController::class, 'deny'])->name('leave.deny');
     Route::get('/leaves/outstanding', [LeaveController::class, 'outstandingRequests'])->name('leave.outstanding');
-
-    Route::get('/api/meetings', [MeetingsController::class, 'getMeetings'])->name('meetings.get');
 });
