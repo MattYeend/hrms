@@ -2,7 +2,7 @@
 
 return [
     'hello' => 'Hola',
-    'dashboard' => 'Panel',
-    'super_admin_dashboard' => 'Panel de superadministrador',
+    'panel' => 'panel',
+    'super_admin_dashboard' => 'Panel de súper administrador',
     'admin_dashboard' => 'Panel de administración',
 ];

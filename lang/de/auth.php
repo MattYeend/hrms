@@ -18,7 +18,6 @@ return [
     'throttle' => 'Zu viele Anmeldeversuche. Bitte versuchen Sie es in :Sekunden Sekunden erneut.',
     'login' => 'Anmelden',
     'remember_me' => 'Erinnere dich an mich',
-    'forgot_password' => 'Passwort vergessen?',
     'logout' => 'Abmelden',
     'youre_logged_in' => 'Du bist angemeldet!',
     'email' => 'E-Mail',

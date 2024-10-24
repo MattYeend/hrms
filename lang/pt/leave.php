@@ -1,20 +1,20 @@
 <?php
 
 return [
-    'create_holiday' => 'Crie um feriado',
+    'create_holiday' => 'Criar um feriado',
     'update_holiday' => 'Atualizar um feriado',
-    'date_from' => 'Data de',
-    'date_to' => 'Data para',
-    'leave_type' => 'Tipo de licenca', 
-    'half_day_am' => 'Meio dia da manha', 
-    'half_day_pm' => 'Meio dia a tarde', 
+    'date_from' => 'Data de início',
+    'date_to' => 'Até à data',
+    'leave_type' => 'Tipo de saída', 
+    'half_day_am' => 'Meio dia AM', 
+    'half_day_pm' => 'Meio dia PM', 
     'total' => 'Total',
-    'taken' => 'Levado', 
-    'outstanding_requests' => 'Solicitacoes pendentes',
-    'employee_name' => 'Nome do funcionario',
-    'status' => 'Estatuto', 
-    'actions' => 'Acoes',
-    'no_outstanding_requests' => 'Nenhuma solicitacao pendente',
+    'taken' => 'levado', 
+    'outstanding_requests' => 'Pedidos pendentes',
+    'employee_name' => 'Nome do funcionário',
+    'status' => 'estado', 
+    'actions' => 'Ação',
+    'no_outstanding_requests' => 'Nenhum pedido pendente',
     'approve' => 'Aprovar',
-    'deny' => 'Negar'
+    'deny' => 'negar'
 ];
