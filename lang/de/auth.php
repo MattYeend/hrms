@@ -21,7 +21,7 @@ return [
     'logout' => 'Abmelden',
     'youre_logged_in' => 'Du bist angemeldet!',
     'email' => 'E-Mail',
-    'password' => 'Passwort',
+    'text_for_password' => 'Passwort',
     'confirm_password' => 'Passwort bestätigen',
     'confirm_password_text' => 'Bitte bestätigen Sie Ihr Passwort, bevor Sie fortfahren.',
     'forgot_password' => 'Passwort vergessen?',

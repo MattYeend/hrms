@@ -21,7 +21,7 @@ return [
     'logout' => 'Allgonodi',
     'youre_logged_in' => 'Rydych chi wedi gofalu!',
     'email' => 'Ebost',
-    'password' => 'Cyfrinair',
+    'text_for_password' => 'Cyfrinair',
     'confirm_password' => 'Cadarnhau Cyfrinair',
     'confirm_password_text' => 'Cadarnhewch eich cyfrinair cyn.',
     'forgot_password' => 'Wedi anghofio Eich Cyfrinair?',

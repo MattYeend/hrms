@@ -21,7 +21,7 @@ return [
     'logout' => 'sair',
     'youre_logged_in' => 'Está ligado!',
     'e-mail' => 'E-mail',
-    'password' => 'password',
+    'text_for_password' => 'password',
     'confirm_password' => 'Confirmar password',
     'confirm_password_text' => 'Por favor, confirme a sua palavra-passe antes de continuar.',
     'forgot_password' => 'Esqueceu-se da palavra-passe?',

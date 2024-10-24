@@ -21,7 +21,7 @@ return [
     'logout' => 'Logout',
     'youre_logged_in' => 'You are logged in!',
     'email' => 'Email',
-    'password' => 'Password',
+    'text_for_password' => 'Password',
     'confirm_password' => 'Confirm Password',
     'confirm_password_text' => 'Please confirm your password before continuing.',
     'forgot_password' => 'Forgot Your Password?',

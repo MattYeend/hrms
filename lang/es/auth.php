@@ -21,7 +21,7 @@ return [
     'logout' => 'cerrar sesión',
     'youre_logged_in' => '¡Has iniciado sesión!',
     'email' => 'correo electrónico',
-    'password' => 'Contraseña',
+    'text_for_password' => 'Contraseña',
     'confirm_password' => 'Confirmar contraseña',
     'confirm_password_text' => 'Confirma tu contraseña antes de continuar.',
     'forgot_password' => '¿Olvidaste tu contraseña?',
