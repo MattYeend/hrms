@@ -190,6 +190,7 @@
                                     <span>Available languages:</span>
                                     <ul class="horizontal-list">
                                         <li><x-flag-country-gb width="24" height="24"/></li>
+                                        <li><x-flag-country-de width="24" height="24"/></li>
                                         <li><x-flag-country-pt width="24" height="24"/></li>
                                         <li><x-flag-country-es width="24" height="24"/></li>
                                         <li><x-flag-language-cy width="24" height="24"/></li>
