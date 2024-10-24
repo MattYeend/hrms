@@ -1,20 +1,20 @@
 <?php
 
 return [
-    'create_holiday' => 'Create a holiday',
-    'update_holiday' => 'Update a holiday',
-    'date_from' => 'From date',
-    'date_to' => 'To date',
-    'leave_type' => 'Leave type', 
-    'half_day_am' => 'Half day AM', 
-    'half_day_pm' => 'Half day PM', 
+    'create_holiday' => 'Einen Feiertag erstellen',
+    'update_holiday' => 'Einen Feiertag aktualisieren',
+    'date_from' => 'Von Datum',
+    'date_to' => 'Bis heute',
+    'leave_type' => 'Typ verlassen', 
+    'half_day_am' => 'Halbtagsvormittag', 
+    'half_day_pm' => 'Halbtags PM', 
     'total' => 'Total',
-    'taken' => 'Taken', 
-    'outstanding_requests' => 'Outstanding Requests',
-    'employee_name' => 'Employee Name',
+    'taken' => 'taken', 
+    'outstanding_requests' => 'Ausstehende Anfragen',
+    'employee_name' => 'Mitarbeitername',
     'status' => 'Status', 
-    'actions' => 'Action',
-    'no_outstanding_requests' => 'No Outstanding Requests',
-    'approve' => 'Approve',
-    'deny' => 'Deny'
+    'actions' => 'Aktion',
+    'no_outstanding_requests' => 'Keine ausstehenden Anfragen',
+    'approve' => 'Genehmigen',
+    'deny' => 'ablehnen'
 ];
