@@ -64,6 +64,8 @@ class LeaveController extends Controller
             'leave_status_id' => 2
         ]);
         $this->notifyDeptLead($leave);
+        Logger::log(Logger::ACTION_CREATE_HOLIDAY, ['leave' => $leave]);
+        Logger::log(Logger::ACTION_HOLIDAY_CREATE_EMAIL_SENT, ['leave' => $leave]);
         return redirect()->route('calendar')->with('success', 'Leave created successfully');
     }
 
@@ -96,6 +98,7 @@ class LeaveController extends Controller
             'leave_status_id' => 2
         ]);
         $this->notifyDeptLead($leave);
+        Logger::log(Logger::ACTION_UPDATE_HOLIDAY, ['leave' => $leave]);
         return redirect()->route('calendar')->with('success', 'Leave updated successfully');
     }
 
@@ -123,6 +126,8 @@ class LeaveController extends Controller
 
         // Send approval email
         Mail::to($leave->createdBy->email)->send(new \App\Mail\LeaveApprovedMail($leave));
+        Logger::log(Logger::ACTION_HOLIDAY_APPROVE, ['leave' => $leave]);
+        Logger::log(Logger::ACTION_HOLIDAY_APPROVE_EMAIL_SENT, ['leave' => $leave]);
 
         return redirect()->route('calendar')->with('success', 'Leave approved successfully.');
     }
@@ -136,6 +141,8 @@ class LeaveController extends Controller
         $leave->save();
 
         Mail::to($leave->createdBy->email)->send(new \App\Mail\LeaveDeniedMail($leave));
+        Logger::log(Logger::ACTION_HOLIDAY_DENY, ['leave' => $leave]);
+        Logger::log(Logger::ACTION_HOLIDAY_DENY_EMAIL_SENT, ['leave' => $leave]);
 
         return redirect()->route('calendar')->with('success', 'Leave denied successfully.');
     }
