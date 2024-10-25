@@ -25,6 +25,7 @@ class LocaleController extends Controller
             Session::put('locale', $locale);
             App::setLocale($locale);
         }
+        Logger::log(Logger::ACTION_LANGUAGE_CHANGE_SWITCH, ['language_change' => $locale]);
         return redirect()->back();
     }
 }

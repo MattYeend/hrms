@@ -148,10 +148,17 @@ class UserController extends Controller
 
     public function toggleDarkMode(Request $request)
     {
+        $request->validate([
+            'dark_mode' => 'required|boolean',
+        ]);
+    
         $user = Auth::user();
-        $user->dark_mode = $request->input('dark_mode') ? 1 : 0;
+        $dark_mode = $request->input('dark_mode') ? 1 : 0;
+        $user->dark_mode = $dark_mode;
         $user->save();
-
+        
+        Logger::log(Logger::ACTION_DARK_MODE_TOGGLE, ['dark_mode' => $dark_mode]);
+    
         return response()->json(['message' => 'Dark mode preference saved!']);
     }
 
