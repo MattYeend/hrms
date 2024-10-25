@@ -89,7 +89,7 @@ class UserController extends Controller
 
         $canViewSensitiveDocs = Auth::user()->can('viewSensitiveDocs', $user);
 
-        Logger::log(Logger::ACTION_SHOW_USER, ['user' => $user], $related_to_user = $user);
+        Logger::log(Logger::ACTION_SHOW_USER, ['user' => $user], null, $id);
         return view('users.profile', compact('user', 'currencySymbol', 'canViewSensitiveDocs'));
     }
 
