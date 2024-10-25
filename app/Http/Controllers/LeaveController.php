@@ -74,7 +74,7 @@ class LeaveController extends Controller
      */
     public function show(Leave $leave)
     {
-        //
+        Logger::log(Logger::ACTION_SHOW_HOLIDAY, ['leave' => $leave]);
     }
 
     /**
@@ -107,7 +107,7 @@ class LeaveController extends Controller
      */
     public function destroy(Leave $leave)
     {
-        //
+        Logger::log(Logger::ACTION_DELETE_HOLIDAY, ['leave' => $leave]);
     }
 
     public function getHolidays()

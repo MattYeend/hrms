@@ -62,6 +62,7 @@ class UserController extends Controller
             $user->cover_letter = $coverLetterPath;
         }
 
+        Logger::log(Logger::ACTION_CREATE_USER, ['user' => $user], $related_to_user = $user);
         $user->save();
         return redirect()->back()->with('success', 'User created successfully!');
     }
@@ -88,6 +89,7 @@ class UserController extends Controller
 
         $canViewSensitiveDocs = Auth::user()->can('viewSensitiveDocs', $user);
 
+        Logger::log(Logger::ACTION_SHOW_USER, ['user' => $user], $related_to_user = $user);
         return view('users.profile', compact('user', 'currencySymbol', 'canViewSensitiveDocs'));
     }
 
@@ -129,6 +131,7 @@ class UserController extends Controller
         }
 
         $user->save();
+        Logger::log(Logger::ACTION_UPDATE_USER, ['user' => $user], $related_to_user = $user);
         return redirect()->back()->with('success', 'User updated successfully!');
     }
 
@@ -137,7 +140,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        Logger::log(Logger::ACTION_DELETE_USER, ['user' => $user], $related_to_user = $user);
     }
 
     public function getDarkModePreference()
@@ -174,6 +177,7 @@ class UserController extends Controller
             $user->save();
         }
 
+        Logger::log(Logger::ACTION_PROFILE_PICTURE_UPLOAD, ['user' => $user], $related_to_user = $user);
         return redirect()->back()->with('success', 'Profile Picture uploaded successfully');
     }
 
@@ -189,6 +193,7 @@ class UserController extends Controller
             $user->save();
         }
 
+        Logger::log(Logger::ACTION_CV_UPLOAD, ['user' => $user], $related_to_user = $user);
         return redirect()->back()->with('success', 'CV uploaded successfully');
     }
 
@@ -204,6 +209,7 @@ class UserController extends Controller
             $user->save();
         }
 
+        Logger::log(Logger::ACTION_COVER_LETTER_UPLOAD, ['user' => $user], $related_to_user = $user);
         return redirect()->back()->with('success', 'Cover Letter uploaded successfully');
     }
 }
