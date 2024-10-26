@@ -8,7 +8,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illumniate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -62,7 +62,9 @@ class UserController extends Controller
             $user->cover_letter = $coverLetterPath;
         }
 
-        Logger::log(Logger::ACTION_CREATE_USER, ['user' => $user], $related_to_user = $user);
+        $id = $user->id;
+
+        Logger::log(Logger::ACTION_CREATE_USER, ['user' => $user], null, $id);
         $user->save();
         return redirect()->back()->with('success', 'User created successfully!');
     }
@@ -106,6 +108,7 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
+        $id = $user->id;
         $validatedData = $request->validate([
             'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'cv' => 'nullable|mimes:pdf,doc,docx|max:2048',
@@ -131,7 +134,7 @@ class UserController extends Controller
         }
 
         $user->save();
-        Logger::log(Logger::ACTION_UPDATE_USER, ['user' => $user], $related_to_user = $user);
+        Logger::log(Logger::ACTION_UPDATE_USER, ['user' => $user], null, $id);
         return redirect()->back()->with('success', 'User updated successfully!');
     }
 
@@ -140,7 +143,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        Logger::log(Logger::ACTION_DELETE_USER, ['user' => $user], $related_to_user = $user);
+        $id = $user->id;
+        Logger::log(Logger::ACTION_DELETE_USER, ['user' => $user], null, $id);
     }
 
     public function getDarkModePreference()
@@ -172,12 +176,20 @@ class UserController extends Controller
         ]);
 
         if($request->hasFile('profile_picture')){
+            $id = $user->id;
+            $isNewPictureUpload = !$user->profile_picture;
+
             $profilePicturePath = $request->file('profile_picture')->store('profile_pictures');
             $user->profile_picture = $profilePicturePath;
             $user->save();
+
+            if($isNewPictureUpload){
+                Logger::log(Logger::ACTION_PROFILE_PICTURE_UPLOAD, ['user' => $user], null, $id);
+            }else{
+                Logger::log(Logger::ACTION_PROFILE_PICTURE_CHANGE, ['user' => $user], null, $id);
+            }
         }
 
-        Logger::log(Logger::ACTION_PROFILE_PICTURE_UPLOAD, ['user' => $user], $related_to_user = $user);
         return redirect()->back()->with('success', 'Profile Picture uploaded successfully');
     }
 
@@ -188,12 +200,20 @@ class UserController extends Controller
         ]);
 
         if($request->hasFile('cv')){
+            $id = $user->id;
+            $isNewCVUpload = !$user->cv;
+
             $cvPath = $request->file('cv')->store('cvs');
             $user->cv = $cvPath;
             $user->save();
+
+            if($isNewCVUpload){
+                Logger::log(Logger::ACTION_CV_UPLOAD, ['user' => $user], null, $id);
+            }else{
+                Logger::log(Logger::ACTION_CV_CHANGE, ['user' => $user], null, $id);
+            }
         }
 
-        Logger::log(Logger::ACTION_CV_UPLOAD, ['user' => $user], $related_to_user = $user);
         return redirect()->back()->with('success', 'CV uploaded successfully');
     }
 
@@ -204,12 +224,20 @@ class UserController extends Controller
         ]);
 
         if($request->hasFile('cover_letter')){
+            $id = $user->id;
+            $isNewCoverLetterUpload = !$user->cover_letter;
+
             $coverLetterPath = $request->file('cover_letter')->store('cover_letters');
             $user->cover_letter = $coverLetterPath;
             $user->save();
+
+            if($isNewCVUpload){
+                Logger::log(Logger::ACTION_COVER_LETTER_UPLOAD, ['user' => $user], null, $id);
+            }else{
+                Logger::log(Logger::ACTION_COVER_LETTER_CHANGE, ['user' => $user], null, $id);
+            }
         }
 
-        Logger::log(Logger::ACTION_COVER_LETTER_UPLOAD, ['user' => $user], $related_to_user = $user);
         return redirect()->back()->with('success', 'Cover Letter uploaded successfully');
     }
 }
