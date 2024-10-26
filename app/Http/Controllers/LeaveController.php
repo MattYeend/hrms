@@ -99,6 +99,7 @@ class LeaveController extends Controller
         ]);
         $this->notifyDeptLead($leave);
         Logger::log(Logger::ACTION_UPDATE_HOLIDAY, ['leave' => $leave]);
+        Logger::log(Logger::ACTION_HOLIDAY_UPDATE_EMAIL_SENT, ['leave' => $leave]);
         return redirect()->route('calendar')->with('success', 'Leave updated successfully');
     }
 
