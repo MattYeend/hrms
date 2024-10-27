@@ -43,6 +43,13 @@ class Logger extends Model
     const ACTION_DARK_MODE_TOGGLE = 14;
     const ACTION_USER_END_DATE_CHANGE = 15;
 
+    const ACTION_PROFILE_PICTURE_UPLOAD = 142;
+    const ACTION_PROFILE_PICTURE_CHANGE = 143;
+    const ACTION_CV_UPLOAD = 144;
+    const ACTION_CV_CHANGE = 145;
+    const ACTION_COVER_LETTER_UPLOAD = 146;
+    const ACTION_COVER_LETTER_CHANGE = 147;
+
     const ACTION_CREATE_USER_CONTACTS = 16;
     const ACTION_UPDATE_USER_CONTACTS = 17;
     const ACTION_DELETE_USER_CONTACTS = 18;
@@ -78,6 +85,18 @@ class Logger extends Model
     const ACTION_UPDATE_JOB = 43;
     const ACTION_DELETE_JOB = 44;
     const ACTION_SHOW_JOB = 45;
+
+    const ACTION_USER_JOB_CHANGE = 148;
+    const ACTION_USER_ROLE_CHANGE = 149;
+    const ACTION_USER_PROMOTION = 150;
+    const ACTION_USER_DEMOTION = 151;
+    const ACTION_USER_CHANGE_OF_ADDRESS = 152;
+    const ACTION_USER_REMOTE_TO_OFFICE = 153;
+    const ACTION_USER_OFFICE_TO_REMOTE = 154;
+    const ACTION_USER_REMOTE_TO_HYBRID = 155;
+    const ACTION_USER_HYBRID_TO_REMOTE = 156;
+    const ACTION_USER_OFFICE_TO_HYBRID = 157;
+    const ACTION_USER_HYBRID_TO_OFFICE = 158;
 
     const ACTION_CREATE_SALARY_RANGE = 46;
     const ACTION_UPDATE_SALARY_RANGE = 47;
@@ -200,48 +219,29 @@ class Logger extends Model
     const ACTION_CHANGE_MEETING_VIRTUAL_TO_PERSON = 140;
     const ACTION_CHANGE_MEETING_PERSON_TO_VIRTUAL = 141;
 
-    const ACTION_PROFILE_PICTURE_UPLOAD = 142;
-    const ACTION_PROFILE_PICTURE_CHANGE = 143;
-    const ACTION_CV_UPLOAD = 144;
-    const ACTION_CV_CHANGE = 145;
-    const ACTION_COVER_LETTER_UPLOAD = 146;
-    const ACTION_COVER_LETTER_CHANGE = 147;
-
-    const ACTION_USER_JOB_CHANGE = 148;
-    const ACTION_USER_ROLE_CHANGE = 149;
-    const ACTION_USER_PROMOTION = 150;
-    const ACTION_USER_DEMOTION = 151;
-    const ACTION_USER_CHANGE_OF_ADDRESS = 152;
-    const ACTION_USER_REMOTE_TO_OFFICE = 153;
-    const ACTION_USER_OFFICE_TO_REMOTE = 154;
-    const ACTION_USER_REMOTE_TO_HYBRID = 155;
-    const ACTION_USER_HYBRID_TO_REMOTE = 156;
-    const ACTION_USER_OFFICE_TO_HYBRID = 157;
-    const ACTION_USER_HYBRID_TO_OFFICE = 158;
+        // Meeting invite sent to user
+        const ACTION_MEETING_INVITE_EMAIL_SENT = 162;
+        // Meeting is accepted on frontend
+        const ACTION_MEETING_RESPONSE_ATTEND = 163;
+        // Meeting is maybe on frontend
+        const ACTION_MEETING_RESPONSE_MAYBE = 164;
+        // Meeting is declined on frontend
+        const ACTION_MEETING_RESPONSE_DECLINE = 165;
+        // Meeting invite email responses
+        const ACTION_MEETING_INVITE_EMAIL_ACCEPT_RESPONSE = 166;
+        const ACTION_MEETING_INVITE_EMAIL_MAYBE_RESPONSE = 167;
+        const ACTION_MEETING_INVITE_EMAIL_DECLINE_RESPONSE = 168;
+        // Meeting response changes
+        const ACTION_INVITE_ATTEND_TO_MAYBE = 169;
+        const ACTION_INVITE_ATTEND_TO_DECLINE = 170;
+        const ACTION_INVITE_MAYBE_TO_ATTEND = 171;
+        const ACTION_INVITE_MAYBE_TO_DECLINE = 172;
+        const ACTION_INVITE_DECLINE_TO_ATTEND = 173;
+        const ACTION_INVITE_DECLINE_TO_MAYBE = 174;
 
     const ACTION_COMPANY_RELATIONSHIP_MANAGER_ASSIGNED_TO_COMPANY = 159;
     const ACTION_COMPANY_RELATIONSHIP_MANAGER_CHANGE_COMPANY_TO_COMPANY = 160;
     const ACTION_COMPANY_RELATIONSHIP_MANAGER_REMOVE_FROM_COMPANY = 161;
-
-    // Meeting invite sent to user
-    const ACTION_MEETING_INVITE_EMAIL_SENT = 162;
-    // Meeting is accepted on frontend
-    const ACTION_MEETING_RESPONSE_ATTEND = 163;
-    // Meeting is maybe on frontend
-    const ACTION_MEETING_RESPONSE_MAYBE = 164;
-    // Meeting is declined on frontend
-    const ACTION_MEETING_RESPONSE_DECLINE = 165;
-    // Meeting invite email responses
-    const ACTION_MEETING_INVITE_EMAIL_ACCEPT_RESPONSE = 166;
-    const ACTION_MEETING_INVITE_EMAIL_MAYBE_RESPONSE = 167;
-    const ACTION_MEETING_INVITE_EMAIL_DECLINE_RESPONSE = 168;
-    // Meeting response changes
-    const ACTION_INVITE_ATTEND_TO_MAYBE = 169;
-    const ACTION_INVITE_ATTEND_TO_DECLINE = 170;
-    const ACTION_INVITE_MAYBE_TO_ATTEND = 171;
-    const ACTION_INVITE_MAYBE_TO_DECLINE = 172;
-    const ACTION_INVITE_DECLINE_TO_ATTEND = 173;
-    const ACTION_INVITE_DECLINE_TO_MAYBE = 174;
     // Temp constants to go below
     
     // Temp constants to go above
