@@ -15,6 +15,7 @@
                     <select name="locale" onchange="this.form.submit()" class="form-select form-select-sm">
                         <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : ''}}>English</option>
                         <option value="de"{{ app()->getLocale() == 'de' ? ' selected' : ''}}>German</option>
+                        <option value="fr"{{ app()->getLocale() == 'fr' ? ' selected' : ''}}>French</option>
                         <option value="pt"{{ app()->getLocale() == 'pt' ? ' selected' : ''}}>Portuguese</option>
                         <option value="es"{{ app()->getLocale() == 'es' ? ' selected' : ''}}>Spanish</option>
                         <option value="cy"{{ app()->getLocale() == 'cy' ? ' selected' : ''}}>Welsh</option>
