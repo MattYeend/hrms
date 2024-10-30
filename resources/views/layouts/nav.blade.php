@@ -46,6 +46,12 @@
                             <a class="dropdown-item" href="{{ route('calendar') }}">
                                 Calendar
                             </a>
+                            <a class="dropdown-item" href="{{ route('knowledge') }}">
+                                Knowledge Base
+                            </a>
+                            <a class="dropdown-item" href="{{ route('reports') }}">
+                                Reports
+                            </a>
                             <a class="dropdown-item" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
                                 Profile
                             </a>

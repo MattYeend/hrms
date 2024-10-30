@@ -44,6 +44,6 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/leave/{leave}/deny', [LeaveController::class, 'deny'])->name('leave.deny');
     Route::get('/leaves/outstanding', [LeaveController::class, 'outstandingRequests'])->name('leave.outstanding');
 
-    Route::view('/knowledge/index', 'knowledge/index')->name('training');
+    Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');
     Route::view('/reports/index', 'reports/index')->name('reports');
 });
