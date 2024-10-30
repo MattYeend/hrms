@@ -44,16 +44,16 @@
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('calendar') }}">
-                                Calendar
+                                {{ __('dropdown.calendar') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('knowledge') }}">
-                                Knowledge Base
+                                {{ __('dropdown.knowledge_base') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('reports') }}">
-                                Reports
+                                {{ __('dropdown.reports') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
-                                Profile
+                                {{ __('dropdown.profile') }}
                             </a>
                             <hr />
                             <a class="dropdown-item" href="{{ route('logout') }}"
