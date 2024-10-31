@@ -36,6 +36,6 @@ class MeetingTypes extends Model
     }
 
     public function meeting(){
-        return $this->belongsTo(Meeting::class);
+        return $this->belongsTo(Meetings::class);
     }
 }

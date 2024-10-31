@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Location extends Model
+class Locations extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -28,7 +28,7 @@ class Location extends Model
     ];
 
     public function meetings(){
-        return $this->hasMany(Meeting::class);
+        return $this->hasMany(Meetings::class);
     }
 
     public function createdBy(){

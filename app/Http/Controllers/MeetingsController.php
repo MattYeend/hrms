@@ -73,7 +73,7 @@ class MeetingsController extends Controller
 
     public function getMeetings()
     {
-        $meetings = Meeting::with('meetingType')->get();
+        $meetings = Meetings::with('meetingType')->get();
 
         return response()->json($meetings);
     }
