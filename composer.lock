@@ -1574,16 +1574,16 @@
         },
         {
             "name": "laravel/reverb",
-            "version": "v1.1.0",
+            "version": "v1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/reverb.git",
-                "reference": "f24dda9de689395e83f3eab9aafa134d08222c2b"
+                "reference": "6c83f674f13b3a7709b9534aacaca08c481273be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/reverb/zipball/f24dda9de689395e83f3eab9aafa134d08222c2b",
-                "reference": "f24dda9de689395e83f3eab9aafa134d08222c2b",
+                "url": "https://api.github.com/repos/laravel/reverb/zipball/6c83f674f13b3a7709b9534aacaca08c481273be",
+                "reference": "6c83f674f13b3a7709b9534aacaca08c481273be",
                 "shasum": ""
             },
             "require": {
@@ -1593,7 +1593,7 @@
                 "illuminate/contracts": "^10.47|^11.0",
                 "illuminate/http": "^10.47|^11.0",
                 "illuminate/support": "^10.47|^11.0",
-                "laravel/prompts": "^0.1.15",
+                "laravel/prompts": "^0.1.15|^0.2.0|^0.3.0",
                 "php": "^8.2",
                 "pusher/pusher-php-server": "^7.2",
                 "ratchet/rfc6455": "^0.3.1",
@@ -1650,9 +1650,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/reverb/issues",
-                "source": "https://github.com/laravel/reverb/tree/v1.1.0"
+                "source": "https://github.com/laravel/reverb/tree/v1.4.2"
             },
-            "time": "2024-08-06T13:45:39+00:00"
+            "time": "2024-10-24T15:01:06+00:00"
         },
         {
             "name": "laravel/sanctum",
