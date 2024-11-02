@@ -9,7 +9,7 @@ use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use App\Mail\WelcomeNewUser;
+use App\Mail\WelcomeNewUserMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
@@ -72,7 +72,7 @@ class UserController extends Controller
         Logger::log(Logger::ACTION_CREATE_USER, ['user' => $user], null, $id);
         $user->save();
 
-        Mail::to($user->email)->send(new WelcomeNewUser($user, $password));
+        Mail::to($user->email)->send(new WelcomeNewUserMail($user, $password));
         Logger::log(Logger::ACTION_WELCOME_EMAIL_SENT, ['user' => $user], null, $id);
 
         return redirect()->back()->with('success', 'User created successfully!');

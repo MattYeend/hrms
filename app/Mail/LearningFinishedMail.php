@@ -8,22 +8,17 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
 
-class WelcomeNewUser extends Mailable
+class LearningFinishedMail extends Mailable
 {
     use Queueable, SerializesModels;
-
-    public $user;
-    public $password;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(User $user, $password)
+    public function __construct()
     {
-        $this->user = $user;
-        $this->password = $password;
+        //
     }
 
     /**
@@ -32,7 +27,7 @@ class WelcomeNewUser extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Welcome New User',
+            subject: 'Learning Finished Mail',
         );
     }
 
@@ -42,7 +37,7 @@ class WelcomeNewUser extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.user.welcome_user',
+            view: 'view.name',
         );
     }
 
