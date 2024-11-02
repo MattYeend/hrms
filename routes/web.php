@@ -7,6 +7,7 @@ use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MeetingsController;
+use App\Http\Controllers\LearningController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -46,4 +47,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');
     Route::view('/reports/index', 'reports/index')->name('reports');
+
+    Route::get('/assign-learning/{id}', [LearningController::class, 'assignLearning'])->name('assignLearning');
+    Route::get('/finish-learning/{id}', [LearningController::class, 'finishLearning'])->name('finishLearning');
 });
