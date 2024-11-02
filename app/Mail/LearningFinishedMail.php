@@ -9,6 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Learning;
+use App\Models\User;
 
 class LearningFinishedMail extends Mailable
 {
@@ -21,11 +22,12 @@ class LearningFinishedMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(Learning $learning, $finishedBy, $totalMarks)
+    public function __construct(Learning $learning, $finishedBy, $totalMarks, User $assignee)
     {
         $this->learning = $learning;
         $this->finishedBy = $finishedBy;
         $this->totalMarks = $totalMarks;
+        $this->assignee = $assignee;
     }
 
     /**
@@ -64,7 +66,8 @@ class LearningFinishedMail extends Mailable
             ->with([
                 'learning' => $this->learning,
                 'finishedBy' => $this->finishedBy,
-                'totalMarks' => $this->totalMarks
+                'totalMarks' => $this->totalMarks,
+                'assignee' => $this->assignee,
             ]);
     }
 }
