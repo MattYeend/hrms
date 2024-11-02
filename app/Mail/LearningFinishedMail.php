@@ -8,17 +8,24 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Learning;
 
 class LearningFinishedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $learning;
+    public $finishedBy;
+    public $totalMarks;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(Learning $learning, $finishedBy, $totalMarks)
     {
-        //
+        $this->learning = $learning;
+        $this->finishedBy = $finishedBy;
+        $this->totalMarks = $totalMarks;
     }
 
     /**
@@ -27,7 +34,7 @@ class LearningFinishedMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Learning Finished Mail',
+            subject: 'Learning Finished',
         );
     }
 
@@ -37,7 +44,7 @@ class LearningFinishedMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.learning.learning_finished',
         );
     }
 
@@ -49,5 +56,15 @@ class LearningFinishedMail extends Mailable
     public function attachments(): array
     {
         return [];
+    }
+
+    public function build(){
+        return $this->view('emails.learning.learning_finished')
+            ->subject('L&D Finished')
+            ->with([
+                'learning' => $this->learning,
+                'finishedBy' => $this->finishedBy,
+                'totalMarks' => $this->totalMarks
+            ]);
     }
 }

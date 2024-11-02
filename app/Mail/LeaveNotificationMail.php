@@ -56,8 +56,8 @@ class LeaveNotificationMail extends Mailable
 
     public function build()
     {
-        return $this->view('emails.leave_notification')
-            ->subject('New Leave Request')
-            ->with(['leave'=>$this->leave]);
+        return $this->view('emails.leave.leave_notification')
+                    ->subject('New Leave Request')
+                    ->with(['leave'=>$this->leave]);
     }
 }

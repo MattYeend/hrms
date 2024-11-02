@@ -55,4 +55,9 @@ class WelcomeNewUserMail extends Mailable
     {
         return [];
     }
+
+    public function build(){
+        return $this->view('emails.user.welcome_user')
+                    ->subject('Welcome to our platform');
+    }
 }

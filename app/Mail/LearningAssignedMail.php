@@ -8,17 +8,22 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Learning;
 
 class LearningAssignedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $learning;
+    public $assignedBy;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(Learning $learning, $assignedBy)
     {
-        //
+        $this->learning = $learning;
+        $this->assignedBy = $assignedBy;
     }
 
     /**
@@ -27,7 +32,7 @@ class LearningAssignedMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Learning Assigned Mail',
+            subject: 'Learning Assigned',
         );
     }
 
@@ -37,7 +42,7 @@ class LearningAssignedMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.learning.learning_assigned',
         );
     }
 
@@ -49,5 +54,14 @@ class LearningAssignedMail extends Mailable
     public function attachments(): array
     {
         return [];
+    }
+
+    public function build(){
+        return $this->view('emails.learning.learning_assigned')
+            ->subject('New L&D Assigned')
+            ->with([
+                'learning' => $this->learning,
+                'assignedBy' => $this->assignedBy,
+            ]);
     }
 }

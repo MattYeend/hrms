@@ -56,8 +56,8 @@ class LeaveApprovedMail extends Mailable
 
     public function build()
     {
-        return $this->view('emails.leave_approved')
-            ->subject('Leave Approved')
-            ->with(['leave'=>$this->leave]);
+        return $this->view('emails.leave.leave_approved')
+                    ->subject('Leave Approved')
+                    ->with(['leave'=>$this->leave]);
     }
 }

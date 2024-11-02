@@ -56,8 +56,8 @@ class LeaveDeniedMail extends Mailable
 
     public function build()
     {
-        return $this->view('emails.leave_denied')
-            ->subject('Leave Denied')
-            ->with(['leave'=>$this->leave]);
+        return $this->view('emails.leave.leave_denied')
+                    ->subject('Leave Denied')
+                    ->with(['leave'=>$this->leave]);
     }
 }
