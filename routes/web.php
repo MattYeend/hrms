@@ -27,6 +27,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
     Route::put('/user/{user}', [UserController::class, 'update'])->name('user.update');
     Route::delete('/user/{user}', [UserController::class, 'delete'])->name('user.delete');
+    Route::get('/user/{id}/profile', [UserController::class, 'show'])->name('user.show');
     Route::get('/show/{id}', [UserController::class, 'show'])->name('profile');
     Route::get('/get-dark-mode-preference', [UserController::class, 'getDarkModePreference'])->name('get-dark-mode-preference');
     Route::post('/toggle-dark-mode', [UserController::class, 'toggleDarkMode'])->name('toggle-dark-mode');
