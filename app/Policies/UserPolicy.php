@@ -12,15 +12,16 @@ class UserPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->isAdmin() || $user->isSuperAdmin();
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, User $model): bool
+    public function view(User $authUser, User $user): bool
     {
-        //
+        return $authUser->isSuperAdmin() || $authUser->isAdmin() || $authUser->cSuite() ||
+                ($authUser->department && $authUser->department->dept_lead_id === $user->id);
     }
 
     /**
@@ -28,23 +29,24 @@ class UserPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->isAdmin() || $user->isSuperAdmin();
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, User $model): bool
+    public function update(User $authUser, User $user): bool
     {
-        //
+        return $authUser->isAdmin() || $authUser->isSuperAdmin() ||
+                ($authUser->department && $authUser->department->dept_lead_id === $user->id);
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, User $model): bool
+    public function delete(User $authUser, User $user): bool
     {
-        //
+        return $authUser->isSuperAdmin();
     }
 
     /**
