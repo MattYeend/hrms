@@ -9,6 +9,13 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
+    <!-- Create User Button -->
+    @can('create', App\Models\User::class) <!-- Optional: Use authorization to check if the user can create -->
+        <div class="mb-3">
+            <a href="{{ route('user.create') }}" class="btn btn-success">Create User</a>
+        </div>
+    @endcan
+
     <!-- User Table -->
     <div class="card">
         <div class="card-header">Users</div>
@@ -41,11 +48,13 @@
 
                                 <!-- Delete User -->
                                 @can('delete', $user)
-                                    <form action="{{ route('user.delete', $user->id) }}" method="POST" style="display: inline-block;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
-                                    </form>
+                                    @if (auth()->user()->id !== $user->id) <!-- Prevent self-deletion -->
+                                        <form action="{{ route('user.delete', $user->id) }}" method="POST" style="display: inline-block;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                        </form>
+                                    @endif
                                 @endcan
                             </td>
                         </tr>
