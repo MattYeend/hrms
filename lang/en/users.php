@@ -22,5 +22,7 @@ return [
     'seniority' => 'Seniority',
     'job' => 'Job',
     'holiday_entitlement' => 'Holiday Entitlement',
-    'contact' => 'Contact'
+    'contact' => 'Contact',
+    'actions' => 'Actions',
+    'delete' => 'Delete'
 ];

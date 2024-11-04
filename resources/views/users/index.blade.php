@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mb-4">User Management</h1>
+    <h1 class="mb-4">{{ __('users.user_management') }}</h1>
 
     <!-- Display success message -->
     @if(session('success'))
@@ -12,7 +12,7 @@
     <!-- Create User Button -->
     @can('create', App\Models\User::class) <!-- Optional: Use authorization to check if the user can create -->
         <div class="mb-3">
-            <a href="{{ route('user.create') }}" class="btn btn-success">Create User</a>
+            <a href="{{ route('user.create') }}" class="btn btn-success">{{ __('users.create') }}</a>
         </div>
     @endcan
 
@@ -23,11 +23,11 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Department</th>
-                        <th>Actions</th>
+                        <th>{{ __('users.name') }}</th>
+                        <th>{{ __('users.email') }}</th>
+                        <th>{{ __('users.role') }}</th>
+                        <th>{{ __('users.department') }}</th>
+                        <th>{{ __('users.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,11 +39,11 @@
                             <td>{{ $user->department->name ?? 'N/A' }}</td>
                             <td>
                                 <!-- View Profile -->
-                                <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary btn-sm">View</a>
+                                <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary btn-sm">{{ __('users.view') }}</a>
 
                                 <!-- Edit User -->
                                 @can('update', $user)
-                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm">{{ __('users.edit') }}</a>
                                 @endcan
 
                                 <!-- Delete User -->
@@ -52,7 +52,7 @@
                                         <form action="{{ route('user.delete', $user->id) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">{{ __('users.delete') }}</button>
                                         </form>
                                     @endif
                                 @endcan

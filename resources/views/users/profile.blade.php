@@ -14,24 +14,24 @@
                         </div>
                     @endif
                     <div class="float-left">
-                        <p>First Line: {{ $user->first_line }}</p>
-                        <p>Second Line: {{ $user->second_line?:'Not Provided' }}</p>
-                        <p>Town: {{ $user->town?:'Not Provided' }}</p>
-                        <p>City: {{ $user->city?:'Not Provided' }}</p>
-                        <p>County: {{ $user->county?:'Not Provided' }}</p>
-                        <p>Country: {{ $user->country?:'Not Provided' }}</p>
-                        <p>Postcode: {{ $user->post_code }}</p>
-                        <p>Full/Part Time: {{ $user->full_or_part }}</p>
+                        <p>{{ __('users.first_line') }}: {{ $user->first_line }}</p>
+                        <p>{{ __('users.second_line') }}: {{ $user->second_line?:'Not Provided' }}</p>
+                        <p>{{ __('users.town') }}: {{ $user->town?:'Not Provided' }}</p>
+                        <p>{{ __('users.city') }}: {{ $user->city?:'Not Provided' }}</p>
+                        <p>{{ __('users.county') }}: {{ $user->county?:'Not Provided' }}</p>
+                        <p>{{ __('users.country') }}: {{ $user->country?:'Not Provided' }}</p>
+                        <p>{{ __('users.post_code') }}: {{ $user->post_code }}</p>
+                        <p>{{ __('users.full_or_part') }}: {{ $user->full_or_part }}</p>
                     </div>
                     <div class="float-right">
-                        <p>Phone: {{ $user->phone }}</p>
-                        <p>Salary: {{$currencySymbol}}{{ number_format($user->salary,2) }}</p>
-                        <p>Department: {{ $user->department->name }}</p>
-                        <p>Role: {{ $user->role->name }}</p>
-                        <p>Seniority: {{ $user->seniority->name }}</p>
-                        <p>Job: {{ $user->job->name }}</p>
-                        <p>Holiday Entitlement: {{ $user->holidayEntitlement->total }}</p>
-                        <p>Contact: {{ $user->contact->name }}</p>
+                        <p>{{ __('users.phone') }}: {{ $user->phone }}</p>
+                        <p>{{ __('users.salary') }}: {{$currencySymbol}}{{ number_format($user->salary,2) }}</p>
+                        <p>{{ __('users.department') }}: {{ $user->department->name }}</p>
+                        <p>{{ __('users.role') }}: {{ $user->role->name }}</p>
+                        <p>{{ __('users.seniority') }}: {{ $user->seniority->name }}</p>
+                        <p>{{ __('users.job') }}: {{ $user->job->name }}</p>
+                        <p>{{ __('users.holiday_entitlement') }}: {{ $user->holidayEntitlement->total }}</p>
+                        <p>{{ __('users.contact') }}: {{ $user->contact->name }}</p>
                     </div>
                 </div>
             </div>

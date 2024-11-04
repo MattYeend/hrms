@@ -22,5 +22,7 @@ return [
     'seniority' => 'Antigüedad',
     'job' => 'Trabajo',
     'holiday_entitlement' => 'Derecho a Vacaciones',
-    'contact' => 'Contacto'
+    'contact' => 'Contacto',
+    'actions' => 'Acciones',
+    'delete' => 'Eliminar'
 ];

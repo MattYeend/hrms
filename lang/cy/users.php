@@ -22,5 +22,7 @@ return [
     'seniority' => 'Hŷn',
     'job' => 'Swydd',
     'holiday_entitlement' => 'Hawl i Wyliau',
-    'contact' => 'Cyswllt'
+    'contact' => 'Cyswllt',
+    'actions' => 'Gweithredoedd',
+    'delete' => 'Dileu'
 ];
