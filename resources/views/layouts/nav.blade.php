@@ -47,7 +47,7 @@
                                 {{ __('dropdown.calendar') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('user.index') }}">
-                                Users
+                                {{ __('dropdown.user') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('knowledge') }}">
                                 {{ __('dropdown.knowledge_base') }}

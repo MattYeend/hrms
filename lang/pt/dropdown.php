@@ -4,5 +4,6 @@ return [
     'calendar' => 'Calendário',
     'profile' => 'Perfil',
     'knowledge_base' => 'Base de Conhecimento',
-    'reports' => 'Relatórios'
+    'reports' => 'Relatórios',
+    'user' => 'Usuárias'
 ];
