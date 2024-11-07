@@ -278,6 +278,7 @@ class Logger extends Model
     // Notifications
     const ACTION_NOTIFICATION_NEW = 178;
     const ACTION_NOTIFICATION_READ = 179;
+    const ACTION_NOTIFICATION_IGNORE = 180;
 
     // Temp constants to go below
     
