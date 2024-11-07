@@ -270,6 +270,11 @@ class Logger extends Model
     const ACTION_INVITE_DECLINE_TO_ATTEND = 173;
     const ACTION_INVITE_DECLINE_TO_MAYBE = 174;
 
+    // Throttling
+    const ACTION_THROTTLING_LOGIN_ATTEMPTS = 175;
+    const ACTION_THROTTLING_PASSWORD_RESET = 176;
+    const ACTION_THROTTLING_REGISTER = 177;
+
     // Temp constants to go below
     
     // Temp constants to go above
