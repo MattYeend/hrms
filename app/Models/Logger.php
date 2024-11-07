@@ -275,6 +275,9 @@ class Logger extends Model
     const ACTION_THROTTLING_PASSWORD_RESET = 176;
     const ACTION_THROTTLING_REGISTER = 177;
 
+    // Notifications
+    const ACTION_NOTIFICATION_NEW = 178;
+
     // Temp constants to go below
     
     // Temp constants to go above
