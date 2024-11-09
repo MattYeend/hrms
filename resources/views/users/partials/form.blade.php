@@ -14,7 +14,8 @@
         <input 
             type="text" 
             name="name" 
-            id="name" 
+            id="name"
+            class="form-control" 
             value="{{ old('name', $user->name ?? '') }}" 
             required
         >
@@ -27,6 +28,7 @@
             type="text" 
             name="email" 
             id="email" 
+            class="form-control"
             value="{{ old('email', $user->email ?? '') }}" 
             required
         >
@@ -39,6 +41,7 @@
             type="password" 
             name="password" 
             id="password" 
+            class="form-control"
             {{ isset($user) ? '' : 'required' }}
         >
     </div>
@@ -50,6 +53,7 @@
             type="password_confirmation" 
             name="password_confirmation" 
             id="password_confirmation" 
+            class="form-control"
             {{ isset($user) ? '' : 'required' }}
         >
     </div>
@@ -61,6 +65,7 @@
             type="text"
             name="phone"
             id="phone"
+            class="form-control"
             value="{{ old('phone', $user->phone ?? '') }}"
         >
     </div>
@@ -72,6 +77,7 @@
             type="number"
             name="salary"
             id="salary"
+            class="form-control"
             value="{{ old('salary', $user->salary ?? '') }}" 
             required
         >
@@ -84,6 +90,7 @@
             type="text"
             name="first_line"
             id="first_line"
+            class="form-control"
             value="{{ old('first_line', $user->first_line ?? '') }}"
             required
         >
@@ -96,6 +103,7 @@
             type="text"
             name="second_line"
             id="second_line"
+            class="form-control"
             value="{{ old('second_line', $user->second_line ?? '') }}"
         >
     </div>
@@ -107,6 +115,7 @@
             type="text"
             name="town"
             id="town"
+            class="form-control"
             value="{{ old('town', $user->town ?? '') }}"
         >
     </div>
@@ -118,6 +127,7 @@
             type="text"
             name="city"
             id="city"
+            class="form-control"
             value="{{ old('city', $user->city ?? '') }}"
         >
     </div>
@@ -129,6 +139,7 @@
             type="text"
             name="county"
             id="county"
+            class="form-control"
             value="{{ old('county', $user->county ?? '') }}"
         >
     </div>
@@ -140,6 +151,7 @@
             type="text"
             name="country"
             id="country"
+            class="form-control"
             value="{{ old('country', $user->country ?? '') }}"
             required
         >
@@ -152,6 +164,7 @@
             type="text"
             name="post_code"
             id="post_code"
+            class="form-control"
             value="{{ old('post_code', $user->post_code ?? '') }}"
             required
         >
@@ -164,6 +177,7 @@
             type="text"
             name="full_or_part"
             id="full_or_part"
+            class="form-control"
             value="{{ old('full_or_part', $user->full_or_part ?? '') }}"
             required
         >
@@ -176,6 +190,7 @@
             type="text"
             name="region"
             id="region"
+            class="form-control"
             value="{{ old('region', $user->region ?? '') }}"
             required
         >
@@ -188,6 +203,7 @@
             type="text"
             name="timezone"
             id="timezone"
+            class="form-control"
             value="{{ old('timezone', $user->timezone ?? '') }}"
             required
         >
@@ -200,6 +216,7 @@
             type="date"
             name="start_date"
             id="start_date"
+            class="form-control"
             value="{{ old('start_date', $user->start_date ?? '') }}"
             required
         >
@@ -212,6 +229,7 @@
             type="date"
             name="end_date"
             id="end_date"
+            class="form-control"
             value="{{ old('end_date', $user->end_date ?? '') }}"
         >
     </div>
@@ -224,6 +242,7 @@
             type="checkbox" 
             name="office_based" 
             id="office_based" 
+            class="form-control"
             value="1" 
                 {{ old('office_based', $user->office_based ?? false) ? 'checked' : '' }}>
     </div>
@@ -235,6 +254,7 @@
             type="checkbox" 
             name="remote_based" 
             id="remote_based" 
+            class="form-control"
             value="1" 
                 {{ old('remote_based', $user->remote_based ?? false) ? 'checked' : '' }}>
     </div>
@@ -246,6 +266,7 @@
             type="checkbox" 
             name="hybrid_based" 
             id="hybrid_based" 
+            class="form-control"
             value="1" 
                 {{ old('hybrid_based', $user->hybrid_based ?? false) ? 'checked' : '' }}>
     </div>
@@ -257,6 +278,7 @@
             type="file" 
             name="profile_picture"
             id="profile_picture"
+            class="form-control"
         >
         @if(isset($user) && $user->profile_picture)
             <img src="{{ asset('storage/' . $user->profile_picture) }}">
@@ -270,6 +292,7 @@
             type="file" 
             name="cv"
             id="cv"
+            class="form-control"
         >
         @if(isset($user) && $user->cv_path)
             <a href="{{ asset('storage/' . $user->cv_path) }}" target="_blank">Download CV</a>
@@ -283,6 +306,7 @@
             type="file" 
             name="cover_letter"
             id="cover_letter"
+            class="form-control"
         >
         @if(isset($user) && $user->cover_letter)
             <a href="{{ asset('storage/' . $user->cover_letter) }}" target="_blank">Download Cover Letter</a>
@@ -335,6 +359,7 @@
         <select
             name="seniority_id"
             id="seniority_id"
+            class="form-control"
         >
             <option value="">Select a Seniority</option>
             @foreach($seniorities as $seniority)
@@ -351,6 +376,7 @@
         <select
             name="job_id"
             id="job_id"
+            class="form-control"
         >
             <option value="">Select a Job</option>
                 @foreach($jobs as $job)
@@ -367,6 +393,7 @@
         <select
             name="holiday_entitlement_id"
             id="holiday_entitlement_id"
+            class="form-control"
         >
             <option value="">Select a Holiday Entitlement</option>
             @foreach($holidayEntitlements as $entitlement)
@@ -383,6 +410,7 @@
         <select
             name="contact_id"
             id="contact_id"
+            class="form-control"
         >
             <option value="">Select a Contact</option>
             @foreach($userContacts as $contact)
