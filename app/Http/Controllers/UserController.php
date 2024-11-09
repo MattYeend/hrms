@@ -75,13 +75,15 @@ class UserController extends Controller
 
         // CV
         if($request->hasFile('cv')){
-            $cvPath = $request->file('cv')->store('cvs', 'public');
+            $cvFilename = $request->file('cv')->getClientOriginalName();
+            $cvPath = $request->file('cv')->storeAs('cvs', $cvFilename, 'public');
             $user->cv_path = $cvPath;
         }
 
         // Cover Letter
         if($request->hasFile('cover_letter')){
-            $coverLetterPath = $request->file('cover_letter')->store('cover_letters', 'public');
+            $coverLetterFilename = $request->file('cover_letter')->getClientOriginalName();
+            $coverLetterPath = $request->file('cover_letter')->storeAs('cover_letters', $coverLetterFilename, 'public');
             $user->cover_letter = $coverLetterPath;
         }
 
@@ -167,13 +169,15 @@ class UserController extends Controller
 
         // CV
         if($request->hasFile('cv')){
-            $cvPath = $request->file('cv')->store('cvs', 'public');
+            $cvFilename = $request->file('cv')->getClientOriginalName();
+            $cvPath = $request->file('cv')->storeAs('cvs', $cvFilename, 'public');
             $user->cv_path = $cvPath;
         }
 
         // Cover Letter
         if($request->hasFile('cover_letter')){
-            $coverLetterPath = $request->file('cover_letter')->store('cover_letters', 'public');
+            $coverLetterFilename = $request->file('cover_letter')->getClientOriginalName();
+            $coverLetterPath = $request->file('cover_letter')->storeAs('cover_letters', $coverLetterFilename, 'public');
             $user->cover_letter = $coverLetterPath;
         }
 
