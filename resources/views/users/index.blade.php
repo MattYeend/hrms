@@ -38,21 +38,16 @@
                             <td>{{ $user->role->name ?? 'N/A' }}</td>
                             <td>{{ $user->department->name ?? 'N/A' }}</td>
                             <td>
-                                <!-- View Profile -->
-                                <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary btn-sm">{{ __('users.view') }}</a>
-
-                                <!-- Edit User -->
+                                <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('users.view') }}</a>
                                 @can('update', $user)
-                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm">{{ __('users.edit') }}</a>
+                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('users.edit') }}</a>
                                 @endcan
-
-                                <!-- Delete User -->
                                 @can('delete', $user)
-                                    @if (auth()->user()->id !== $user->id) <!-- Prevent self-deletion -->
+                                    @if (auth()->user()->id !== $user->id)
                                         <form action="{{ route('user.delete', $user->id) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">{{ __('users.delete') }}</button>
+                                            <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('users.delete') }}</button>
                                         </form>
                                     @endif
                                 @endcan
