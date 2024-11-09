@@ -242,5 +242,5 @@
     </div>
 
     <!-- Submit Button -->
-    <button type="submit">{{ isset($user) ? 'Update ' . $user->name : 'Create' }}</button>
+    <button class="btn btn-primary" type="submit">{{ isset($user) ? 'Update ' . $user->name : 'Create' }}</button>
 </form>
