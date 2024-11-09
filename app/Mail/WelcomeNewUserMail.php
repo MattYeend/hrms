@@ -32,7 +32,7 @@ class WelcomeNewUserMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Welcome New User',
+            subject: 'Welcome',
         );
     }
 

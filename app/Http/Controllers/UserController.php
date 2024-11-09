@@ -69,19 +69,19 @@ class UserController extends Controller
 
         // Profile Picture
         if($request->hasFile('profile_picture')){
-            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures');
+            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
             $user->profile_picture = $profilePicturePath;
         }
 
         // CV
         if($request->hasFile('cv')){
-            $cvPath = $request->file('cv')->store('cvs');
+            $cvPath = $request->file('cv')->store('cvs', 'public');
             $user->cv_path = $cvPath;
         }
 
         // Cover Letter
         if($request->hasFile('cover_letter')){
-            $coverLetterPath = $request->file('cover_letter')->store('cover_letters');
+            $coverLetterPath = $request->file('cover_letter')->store('cover_letters', 'public');
             $user->cover_letter = $coverLetterPath;
         }
 
@@ -92,7 +92,7 @@ class UserController extends Controller
         Mail::to($user->email)->send(new WelcomeNewUserMail($user, $request->password));
         Logger::log(Logger::ACTION_WELCOME_EMAIL_SENT, ['user' => $user], null, $id);
 
-        return redirect()->back()->with('success', 'User created successfully!');
+        return redirect()->route('user.index')->with('success', 'User created successfully!');
     }
 
     /**
@@ -149,36 +149,38 @@ class UserController extends Controller
             'updated_by' => Auth::user()->id
         ];
 
+        // If password is provided, hash and update
+        if ($request->filled('password')) {
+            $validatedData['password'] = bcrypt($request->input('password'));
+        } else {
+            unset($validatedData['password']);
+        }
+
         // Update user with validated data
         $user->fill($validatedData);
 
-        // If password is provided, hash and update
-        if ($request->password) {
-            $user->password = bcrypt($request->password);
-        }
-
         // Profile Picture
         if($request->hasFile('profile_picture')){
-            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures');
+            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
             $user->profile_picture = $profilePicturePath;
         }
 
         // CV
         if($request->hasFile('cv')){
-            $cvPath = $request->file('cv')->store('cvs');
+            $cvPath = $request->file('cv')->store('cvs', 'public');
             $user->cv_path = $cvPath;
         }
 
         // Cover Letter
         if($request->hasFile('cover_letter')){
-            $coverLetterPath = $request->file('cover_letter')->store('cover_letters');
+            $coverLetterPath = $request->file('cover_letter')->store('cover_letters', 'public');
             $user->cover_letter = $coverLetterPath;
         }
 
         $user->save();
         $id = $user->id;
         Logger::log(Logger::ACTION_UPDATE_USER, ['user' => $user], null, $id);
-        return redirect()->back()->with('success', 'User updated successfully!');
+        return redirect()->route('user.index')->with('success', $user->name . ' updated successfully!');
     }
 
     /**
