@@ -295,8 +295,17 @@
         <select
             name="department_id"
             id="department_id"
+            class="form-control"
         >
             <option value="">Select a Department</option>
+            @foreach($departments as $department)
+                <option
+                    value="{{ $department->id }}"
+                        {{ old('department_id', $user->department_id ?? '') == $department->id ? 'selected' : '' }}
+                >
+                    {{ $department->name}}
+                </option>
+            @endforeach
         </select>
     </div>
 

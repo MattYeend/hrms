@@ -13,7 +13,7 @@ use App\Mail\WelcomeNewUserMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use App\Models\Department;
-use App\Models\Role;
+use App\Models\Roles;
 use App\Models\UserContact;
 use App\Models\Seniority;
 use App\Models\Job;
@@ -46,7 +46,7 @@ class UserController extends Controller
         $this->authorize('create', User::class);
 
         $departments = Department::all();
-        $roles = Role::all();
+        $roles = Roles::all();
         $userContacts = UserContact::all();
         $seniorities = Seniority::all();
         $jobs = Job::all();
@@ -129,7 +129,7 @@ class UserController extends Controller
         $this->authorize('update', $user);
 
         $departments = Department::all();
-        $roles = Role::all();
+        $roles = Roles::all();
         $userContacts = UserContact::all();
         $seniorities = Seniority::all();
         $jobs = Job::all();
