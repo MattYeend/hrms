@@ -315,8 +315,17 @@
         <select
             name="role_id"
             id="role_id"
+            class="form-control"
         >
             <option value="">Select a Role</option>
+            @foreach($roles as $role)
+                <option 
+                    value="{{ $role->id }}" 
+                        {{ old('roles_id', $user->roles_id ?? '') == $role->id ? 'selected' : '' }}
+                >
+                    {{ $role->name}}
+                </option>
+            @endforeach
         </select>
     </div>
 
@@ -328,6 +337,11 @@
             id="seniority_id"
         >
             <option value="">Select a Seniority</option>
+            @foreach($seniorities as $seniority)
+                <option value="{{ $seniority->id }}" {{ old('seniority_id', $user->seniority_id ?? '') == $seniority->id ? 'selected' : '' }}>
+                    {{ $seniority->name }}
+                </option>
+            @endforeach
         </select>
     </div>
 
@@ -339,6 +353,11 @@
             id="job_id"
         >
             <option value="">Select a Job</option>
+                @foreach($jobs as $job)
+                <option value="{{ $job->id }}" {{ old('job_id', $user->job_id ?? '') == $job->id ? 'selected' : '' }}>
+                    {{ $job->name }}
+                </option>
+            @endforeach
         </select>
     </div>
 
@@ -350,6 +369,11 @@
             id="holiday_entitlement_id"
         >
             <option value="">Select a Holiday Entitlement</option>
+            @foreach($holidayEntitlements as $entitlement)
+                <option value="{{ $entitlement->id }}" {{ old('holiday_entitlement_id', $user->holiday_entitlement_id ?? '') == $entitlement->id ? 'selected' : '' }}>
+                    {{ $entitlement->total }}
+                </option>
+            @endforeach
         </select>
     </div>
 
@@ -361,6 +385,11 @@
             id="contact_id"
         >
             <option value="">Select a Contact</option>
+            @foreach($userContacts as $contact)
+                <option value="{{ $contact->id }}" {{ old('contact_id', $user->contact_id ?? '') == $contact->id ? 'selected' : '' }}>
+                    {{ $contact->name }}
+                </option>
+            @endforeach
         </select>
     </div>
 
