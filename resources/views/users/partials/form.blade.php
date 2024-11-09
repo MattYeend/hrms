@@ -289,6 +289,72 @@
         @endif
     </div>
 
+    <!-- Department Select -->
+    <div>
+        <label for="department_id">Department</label>
+        <select
+            name="department_id"
+            id="department_id"
+        >
+            <option value="">Select a Department</option>
+        </select>
+    </div>
+
+    <!-- Role Select -->
+    <div>
+        <label for="role_id">Role</label>
+        <select
+            name="role_id"
+            id="role_id"
+        >
+            <option value="">Select a Role</option>
+        </select>
+    </div>
+
+    <!-- Seniority Select -->
+    <div>
+        <label for="seniority_id">Seniority</label>
+        <select
+            name="seniority_id"
+            id="seniority_id"
+        >
+            <option value="">Select a Seniority</option>
+        </select>
+    </div>
+
+    <!-- Job Select -->
+    <div>
+        <label for="job_id">Job</label>
+        <select
+            name="job_id"
+            id="job_id"
+        >
+            <option value="">Select a Job</option>
+        </select>
+    </div>
+
+    <!-- Holiday Entitlement Select -->
+    <div>
+        <label for="holiday_entitlement_id">Holiday Entitlement</label>
+        <select
+            name="holiday_entitlement_id"
+            id="holiday_entitlement_id"
+        >
+            <option value="">Select a Holiday Entitlement</option>
+        </select>
+    </div>
+
+    <!-- Contact Select -->
+    <div>
+        <label for="contact_id">Contact</label>
+        <select
+            name="contact_id"
+            id="contact_id"
+        >
+            <option value="">Select a Contact</option>
+        </select>
+    </div>
+
     <!-- Submit Button -->
     <button type="submit">{{ isset($user) ? 'Update ' . $user->name : 'Create' }}</button>
 </form>
