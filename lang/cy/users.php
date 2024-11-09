@@ -3,7 +3,7 @@
 return [
     'user_management' => 'Rheoli Defnyddwyr',
     'create' => 'Creu Defnyddiwr',
-    'edit' => 'Diweddaru Defnyddiwr',
+    'edit' => 'Diweddariad',
     'view' => 'Gweld Defnyddiwr',
     'role' => 'Rôl',
     'department' => 'Adran',

@@ -3,7 +3,7 @@
 return [
     'user_management' => 'Gestion des Utilisateurs',
     'create' => 'Créer un Utilisateur',
-    'edit' => 'Mettre à Jour Utilisateur',
+    'edit' => 'Mise à Jour Utilisateur',
     'view' => 'Voir Utilisateur',
     'role' => 'Rôle',
     'department' => 'Département',

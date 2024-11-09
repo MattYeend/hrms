@@ -3,8 +3,8 @@
 return [
     'user_management' => 'User Management',
     'create' => 'Create User',
-    'edit' => 'Update User',
-    'view' => 'View User',
+    'edit' => 'Update',
+    'view' => 'View',
     'role' => 'Role',
     'department' => 'Department',
     'name' => 'Name',
@@ -24,5 +24,21 @@ return [
     'holiday_entitlement' => 'Holiday Entitlement',
     'contact' => 'Contact',
     'actions' => 'Actions',
-    'delete' => 'Delete'
+    'delete' => 'Delete',
+    'password' => 'Password',
+    'confirm_password' => 'Confirm Password',
+    'region' => 'Region',
+    'timezone' => 'Timezone',
+    'start_date' => 'Start Date',
+    'end_date' => 'End Date', 
+    'office' => 'Office Based',
+    'remote' => 'Remote Based',
+    'hybrid' => 'Hybrid Based',
+    'profile_picture' => 'Profile Picture',
+    'cv' => 'CV',
+    'download_cv' => 'Download CV',
+    'cover_letter' => 'Cover Letter',
+    'download_cover_letter' => 'Download Cover Letter',
+    'sensitive_documents' => 'Sensitive Documents',
+    'contains_sensitive_docs' => 'This section contains sensitive documents related to the user'
 ];

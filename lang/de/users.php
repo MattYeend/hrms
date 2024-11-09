@@ -3,7 +3,7 @@
 return [
     'user_management' => 'Benutzerverwaltung',
     'create' => 'Benutzer Erstellen',
-    'edit' => 'Benutzer Aktualisieren',
+    'edit' => 'Aktualisierung',
     'view' => 'Benutzer Anzeigen',
     'role' => 'Rolle',
     'department' => 'Abteilung',

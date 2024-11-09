@@ -39,14 +39,14 @@
                         </div>
                         @if($canViewSensitiveDocs)
                             <div class="mt-4">
-                                <h5>{{ __('Sensitive Documents') }}</h5>
-                                <p>{{ __('This section contains sensitive documents related to the user.') }}</p>
+                                <h5>{{ __('users.sensitive_documents') }}</h5>
+                                <p>{{ __('users.contains_sensitive_docs') }}</p>
                                 @if(isset($user) && $user->cv_path)
-                                    <a href="{{ asset('storage/' . $user->cv_path) }}" target="_blank">Download CV</a>
+                                    <a href="{{ asset('storage/' . $user->cv_path) }}" target="_blank">{{ __('users.download_cv') }}</a>
                                 @endif
 
                                 @if(isset($user) && $user->cover_letter)
-                                    <a href="{{ asset('storage/' . $user->cover_letter) }}" target="_blank">Download Cover Letter</a>
+                                    <a href="{{ asset('storage/' . $user->cover_letter) }}" target="_blank">{{ __('users.download_cover_letter') }}</a>
                                 @endif
                             </div>
                         @endif

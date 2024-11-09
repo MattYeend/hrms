@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Update {{ $user->name }}</div>
+                <div class="card-header">{{ __('users.edit') }} {{ $user->name }}</div>
                 <div class="card-body">
                     @include('users.partials.form')
                 </div>
