@@ -6,7 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Create a User</div>
-                @include('users.partials.form')
+                <div class="card-body">
+                    @include('users.partials.form')
+                </div>
             </div>
         </div>
     </div>
