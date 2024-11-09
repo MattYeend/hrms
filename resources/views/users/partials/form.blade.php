@@ -157,6 +157,99 @@
         >
     </div>
 
+    <!-- Full or part time staff -->
+    <div>
+        <label for="full_or_part">Full or Part Time</label>
+        <input 
+            type="text"
+            name="full_or_part"
+            id="full_or_part"
+            value="{{ old('full_or_part', $user->full_or_part ?? '') }}"
+            required
+        >
+    </div>
+
+    <!-- Region -->
+    <div>
+        <label for="region">Region</label>
+        <input 
+            type="text"
+            name="region"
+            id="region"
+            value="{{ old('region', $user->region ?? '') }}"
+            required
+        >
+    </div>
+
+    <!-- Time Zone -->
+    <div>
+        <label for="timezone">Timezone</label>
+        <input 
+            type="text"
+            name="timezone"
+            id="timezone"
+            value="{{ old('timezone', $user->timezone ?? '') }}"
+            required
+        >
+    </div>
+
+    <!-- Start date -->
+    <div>
+        <label for="start_date">Start Date</label>
+        <input 
+            type="date"
+            name="start_date"
+            id="start_date"
+            value="{{ old('start_date', $user->start_date ?? '') }}"
+            required
+        >
+    </div>
+
+    <!-- End Date -->
+    <div>
+        <label for="end_date">End Date Code</label>
+        <input 
+            type="date"
+            name="end_date"
+            id="end_date"
+            value="{{ old('end_date', $user->end_date ?? '') }}"
+        >
+    </div>
+
+    <!-- Work Arrangement -->
+    <!-- Office Based -->
+    <div>
+        <label for="office_based">Office-Based</label>
+        <input 
+            type="checkbox" 
+            name="office_based" 
+            id="office_based" 
+            value="1" 
+                {{ old('office_based', $user->office_based ?? false) ? 'checked' : '' }}>
+    </div>
+
+    <!-- Remote Based -->
+    <div>
+        <label for="remote_based">Remote-Based</label>
+        <input 
+            type="checkbox" 
+            name="remote_based" 
+            id="remote_based" 
+            value="1" 
+                {{ old('remote_based', $user->remote_based ?? false) ? 'checked' : '' }}>
+    </div>
+
+    <!-- Hybrid Based -->
+    <div>
+        <label for="hybrid_based">Hybrid-Based</label>
+        <input 
+            type="checkbox" 
+            name="hybrid_based" 
+            id="hybrid_based" 
+            value="1" 
+                {{ old('hybrid_based', $user->hybrid_based ?? false) ? 'checked' : '' }}>
+    </div>
+
     <!-- Profile Picture -->
     <div>
         <label for="profile_picture">Profile Picture</label>
