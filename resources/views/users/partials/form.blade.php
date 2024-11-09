@@ -32,6 +32,7 @@
         >
     </div>
 
+    <!-- Password -->
     <div>
         <label for="password">Password</label>
         <input 
@@ -42,6 +43,121 @@
         >
     </div>
 
+    <!-- Password Confirmation -->
+    <div>
+        <label for="password_confirmation">Confirm Password</label>
+        <input 
+            type="password_confirmation" 
+            name="password_confirmation" 
+            id="password_confirmation" 
+            {{ isset($user) ? '' : 'required' }}
+        >
+    </div>
+
+    <!-- Phone Number -->
+    <div>
+        <label for="phone">Phone Number</label>
+        <input 
+            type="text"
+            name="phone"
+            id="phone"
+            value="{{ old('phone', $user->phone ?? '') }}"
+        >
+    </div>
+
+    <!-- Salary -->
+    <div>
+        <label for="salary">Salary</label>
+        <input 
+            type="number"
+            name="salary"
+            id="salary"
+            value="{{ old('salary', $user->salary ?? '') }}" 
+            required
+        >
+    </div>
+
+    <!-- Address Line 1 -->
+    <div>
+        <label for="first_line">First Line of Address</label>
+        <input 
+            type="text"
+            name="first_line"
+            id="first_line"
+            value="{{ old('first_line', $user->first_line ?? '') }}"
+            required
+        >
+    </div>
+
+    <!-- Address Line 2 -->
+    <div>
+        <label for="second_line">Second Line of Address</label>
+        <input 
+            type="text"
+            name="second_line"
+            id="second_line"
+            value="{{ old('second_line', $user->second_line ?? '') }}"
+        >
+    </div>
+
+    <!-- Town -->
+    <div>
+        <label for="town">Town</label>
+        <input 
+            type="text"
+            name="town"
+            id="town"
+            value="{{ old('town', $user->town ?? '') }}"
+        >
+    </div>
+
+    <!-- City -->
+    <div>
+        <label for="city">City</label>
+        <input 
+            type="text"
+            name="city"
+            id="city"
+            value="{{ old('city', $user->city ?? '') }}"
+        >
+    </div>
+
+    <!-- County -->
+    <div>
+        <label for="county">County</label>
+        <input 
+            type="text"
+            name="county"
+            id="county"
+            value="{{ old('county', $user->county ?? '') }}"
+        >
+    </div>
+
+    <!-- Country -->
+    <div>
+        <label for="country">Country</label>
+        <input 
+            type="text"
+            name="country"
+            id="country"
+            value="{{ old('country', $user->country ?? '') }}"
+            required
+        >
+    </div>
+
+    <!-- Post Code -->
+    <div>
+        <label for="post_code">Post Code</label>
+        <input 
+            type="text"
+            name="post_code"
+            id="post_code"
+            value="{{ old('post_code', $user->post_code ?? '') }}"
+            required
+        >
+    </div>
+
+    <!-- Profile Picture -->
     <div>
         <label for="profile_picture">Profile Picture</label>
         <input 
@@ -54,6 +170,7 @@
         @endif
     </div>
 
+    <!-- CV -->
     <div>
         <label for="cv">CV</label>
         <input 
@@ -66,6 +183,7 @@
         @endif
     </div>
 
+    <!-- Cover Letter -->
     <div>
         <label for="cover_letter">Cover Letter</label>
         <input 
@@ -77,4 +195,7 @@
             <a href="{{ asset('storage/' . $user->cover_letter) }}" target="_blank">Download Cover Letter</a>
         @endif
     </div>
+
+    <!-- Submit Button -->
+    <button type="submit">{{ isset($user) ? 'Update ' . $user->name : 'Create' }}</button>
 </form>
