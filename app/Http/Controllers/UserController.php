@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Storage;
 use App\Mail\WelcomeNewUserMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use App\Models\Department;
+use App\Models\Role;
+use App\Models\UserContact;
+use App\Models\Seniority;
+use App\Models\Job;
+use App\Models\HolidayEntitlement;
 
 class UserController extends Controller
 {
@@ -38,7 +44,15 @@ class UserController extends Controller
     public function create()
     {
         $this->authorize('create', User::class);
-        return view('users.create');
+
+        $departments = Department::all();
+        $roles = Role::all();
+        $userContacts = UserContact::all();
+        $seniorities = Seniority::all();
+        $jobs = Job::all();
+        $holidayEntitlements = HolidayEntitlement::all();
+
+        return view('users.create', compact('departments', 'roles', 'userContacts', 'seniorities', 'jobs', 'holidayEntitlements'));
     }
 
     /**
@@ -113,7 +127,15 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $this->authorize('update', $user);
-        return view('users.update', compact('user'));
+
+        $departments = Department::all();
+        $roles = Role::all();
+        $userContacts = UserContact::all();
+        $seniorities = Seniority::all();
+        $jobs = Job::all();
+        $holidayEntitlements = HolidayEntitlement::all();
+
+        return view('users.update', compact('user', 'departments', 'roles', 'userContacts', 'seniorities', 'jobs', 'holidayEntitlements'));
     }
 
     /**
