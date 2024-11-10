@@ -37,7 +37,7 @@ class ResetPasswordController extends Controller
      * @return void
      */
     protected function resetPassword($user, $password){
-        Logger::log(Logger::ACTION_RESET_PASSWORD);
+        Logger::log(Logger::ACTION_RESET_PASSWORD, ['user_id' => $user->id]);
 
         $user->password = Hash::make($password);
         $user->setRememberToken(Str::random(60));
