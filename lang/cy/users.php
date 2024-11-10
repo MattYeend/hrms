@@ -40,5 +40,11 @@ return [
     'cover_letter' => 'Llythyr Cwmpas',
     'download_cover_letter' => 'Lawrlwytho Llythyr Cwmpas',
     'sensitive_documents' => 'Dogfennau Sensitif',
-    'contains_sensitive_docs' => 'Mae\'r adran hon yn cynnwys dogfennau sensitif sy\'n gysylltiedig â\'r defnyddiwr'
+    'contains_sensitive_docs' => 'Mae\'r adran hon yn cynnwys dogfennau sensitif sy\'n gysylltiedig â\'r defnyddiwr',
+    'select_department' => 'Dewiswch Adran',
+    'select_role' => 'Dewiswch Rôl',
+    'select_seniority' => 'Dewiswch Lefel Senioriaeth',
+    'select_job' => 'Dewiswch Swydd',
+    'select_holiday_entitlement' => 'Dewiswch Hawl Gwyliau',
+    'select_contact' => 'Dewiswch Gyswllt Defnyddiwr',
 ];

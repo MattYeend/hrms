@@ -40,5 +40,11 @@ return [
     'cover_letter' => 'Cover Letter',
     'download_cover_letter' => 'Download Cover Letter',
     'sensitive_documents' => 'Sensitive Documents',
-    'contains_sensitive_docs' => 'This section contains sensitive documents related to the user'
+    'contains_sensitive_docs' => 'This section contains sensitive documents related to the user',
+    'select_department' => 'Select a Department',
+    'select_role' => 'Select a Role',
+    'select_seniority' => 'Select Seniority',
+    'select_job' => 'Select a Job',
+    'select_holiday_entitlement' => 'Select Holiday Entitlement',
+    'select_contact' => 'Select User Contact'
 ];
