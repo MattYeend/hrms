@@ -49,5 +49,5 @@ return [
     'select_contact' => 'Dewiswch Gyswllt Defnyddiwr',
     'full_time' => 'Amser Llawn',
     'part_time' => 'Rhan Amser',
-    'select_option' => 'Dewiswch Opsiwn',
+    'select_option' => 'Dewiswch opsiwn',
 ];
