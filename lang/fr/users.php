@@ -47,4 +47,6 @@ return [
     'select_job' => 'Sélectionner un Emploi',
     'select_holiday_entitlement' => 'Sélectionner les Droits aux Congés',
     'select_contact' => 'Sélectionner le Contact Utilisateur',
+    'full_time' => 'Temps Plein',
+    'part_time' => 'Temps Partiel',
 ];

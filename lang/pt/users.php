@@ -47,4 +47,6 @@ return [
     'select_job' => 'Selecionar Emprego',
     'select_holiday_entitlement' => 'Selecionar Direito a Férias',
     'select_contact' => 'Selecionar Contato do Usuário',
+    'full_time' => 'Tempo Integral',
+    'part_time' => 'Meio Período',
 ];

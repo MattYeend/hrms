@@ -86,8 +86,18 @@
 
             <!-- Full or part time staff -->
             <div class="mb-3">
-                <label for="full_or_part">{{ __('users.full_or_part') }} @if(!isset($user))<span class="text-danger">*</span>@endif</label>
-                <input type="text" name="full_or_part" id="full_or_part" class="form-control" value="{{ old('full_or_part', $user->full_or_part ?? '') }}" required>
+                <label for="full_or_part">{{ __('users.full_or_part') }} 
+                    @if(!isset($user))<span class="text-danger">*</span>@endif
+                </label>
+                <select name="full_or_part" id="full_or_part" class="form-control" required>
+                    <option value="" disabled selected>{{ __('Select an option') }}</option>
+                    <option value="full_time" {{ old('full_or_part', $user->full_or_part ?? '') == 'full_time' ? 'selected' : '' }}>
+                        {{ __('users.full_time') }}
+                    </option>
+                    <option value="part_time" {{ old('full_or_part', $user->full_or_part ?? '') == 'part_time' ? 'selected' : '' }}>
+                        {{ __('users.part_time') }}
+                    </option>
+                </select>
             </div>
         </div>
 

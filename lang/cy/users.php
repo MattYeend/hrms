@@ -47,4 +47,6 @@ return [
     'select_job' => 'Dewiswch Swydd',
     'select_holiday_entitlement' => 'Dewiswch Hawl Gwyliau',
     'select_contact' => 'Dewiswch Gyswllt Defnyddiwr',
+    'full_time' => 'Amser Llawn',
+    'part_time' => 'Rhan Amser',
 ];

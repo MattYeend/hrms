@@ -46,5 +46,7 @@ return [
     'select_seniority' => 'Select Seniority',
     'select_job' => 'Select a Job',
     'select_holiday_entitlement' => 'Select Holiday Entitlement',
-    'select_contact' => 'Select User Contact'
+    'select_contact' => 'Select User Contact',
+    'full_time' => 'Full Time',
+    'part_time' => 'Part Time',
 ];
