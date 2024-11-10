@@ -49,4 +49,5 @@ return [
     'select_contact' => 'Benutzerkontakt auswählen',
     'full_time' => 'Vollzeit',
     'part_time' => 'Teilzeit',
+    'select_option' => 'Wählen Sie eine Option',
 ];

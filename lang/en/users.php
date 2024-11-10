@@ -49,4 +49,5 @@ return [
     'select_contact' => 'Select User Contact',
     'full_time' => 'Full Time',
     'part_time' => 'Part Time',
+    'select_option' => 'Select an Option',
 ];
