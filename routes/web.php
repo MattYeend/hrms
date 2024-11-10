@@ -22,6 +22,12 @@ Auth::routes();
 Route::post('/locale', LocaleController::class)->name('locale.change');
 
 Route::middleware(['auth'])->group(function(){
+
+    Route::get('/api/holidays', [LeaveController::class, 'getHolidays']);
+    Route::get('/api/leaves', [LeaveController::class, 'getLeaves']);
+
+    Route::get('/api/meetings', [MeetingsController::class, 'getMeetings'])->name('meetings.get');
+
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
     Route::post('/user', [UserController::class, 'store'])->name('user.store');
