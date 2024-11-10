@@ -18,6 +18,7 @@ use App\Models\UserContact;
 use App\Models\Seniority;
 use App\Models\Job;
 use App\Models\HolidayEntitlement;
+use DateTimeZone;
 
 class UserController extends Controller
 {
@@ -51,8 +52,9 @@ class UserController extends Controller
         $seniorities = Seniority::all();
         $jobs = Job::all();
         $holidayEntitlements = HolidayEntitlement::all();
+        $timezones = DateTimeZone::listIdentifiers();
 
-        return view('users.create', compact('departments', 'roles', 'userContacts', 'seniorities', 'jobs', 'holidayEntitlements'));
+        return view('users.create', compact('departments', 'roles', 'userContacts', 'seniorities', 'jobs', 'holidayEntitlements', 'timezones'));
     }
 
     /**
@@ -136,8 +138,9 @@ class UserController extends Controller
         $seniorities = Seniority::all();
         $jobs = Job::all();
         $holidayEntitlements = HolidayEntitlement::all();
+        $timezones = DateTimeZone::listIdentifiers();
 
-        return view('users.update', compact('user', 'departments', 'roles', 'userContacts', 'seniorities', 'jobs', 'holidayEntitlements'));
+        return view('users.update', compact('user', 'departments', 'roles', 'userContacts', 'seniorities', 'jobs', 'holidayEntitlements', 'timezones'));
     }
 
     /**

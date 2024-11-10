@@ -111,7 +111,14 @@
             <!-- Time Zone -->
             <div class="mb-3">
                 <label for="timezone">{{ __('users.timezone') }} @if(!isset($user))<span class="text-danger">*</span>@endif</label>
-                <input type="text" name="timezone" id="timezone" class="form-control" value="{{ old('timezone', $user->timezone ?? '') }}" required>
+                <select name="timezone" id="timezone" class="form-control" required>
+                    <option value="" disabled selected>{{ __('users.select_option') }}</option>
+                    @foreach($timezones as $timezone)
+                        <option value="{{ $timezone }}" {{ old('timezone', $user->timezone ?? '') == $timezone ? 'selected' : '' }}>
+                            {{ $timezone }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
             <!-- Start date -->
