@@ -9,6 +9,8 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use App\Models\User;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\URL;
 
 class WelcomeNewUserMail extends Mailable
 {
@@ -24,6 +26,9 @@ class WelcomeNewUserMail extends Mailable
     {
         $this->user = $user;
         $this->password = $password;
+
+        $token = Password::createToken($user);
+        $this->resetPasswordLink = URL::route('password.reset', ['token' => $token, 'email' =>$user->email]);
     }
 
     /**
@@ -58,6 +63,9 @@ class WelcomeNewUserMail extends Mailable
 
     public function build(){
         return $this->view('emails.user.welcome_user')
+                    ->with([
+                        'resetPasswordLink' => $this->resetPasswordLink,
+                    ])
                     ->subject('Welcome to our platform');
     }
 }
