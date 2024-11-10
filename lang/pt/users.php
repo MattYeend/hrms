@@ -40,5 +40,11 @@ return [
     'cover_letter' => 'Carta de Apresentação',
     'download_cover_letter' => 'Baixar Carta de Apresentação',
     'sensitive_documents' => 'Documentos Sensíveis',
-    'contains_sensitive_docs' => 'Esta seção contém documentos sensíveis relacionados ao usuário'
+    'contains_sensitive_docs' => 'Esta seção contém documentos sensíveis relacionados ao usuário',
+    'select_department' => 'Selecionar Departamento',
+    'select_role' => 'Selecionar Função',
+    'select_seniority' => 'Selecionar Senioridade',
+    'select_job' => 'Selecionar Emprego',
+    'select_holiday_entitlement' => 'Selecionar Direito a Férias',
+    'select_contact' => 'Selecionar Contato do Usuário',
 ];

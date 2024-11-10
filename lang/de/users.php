@@ -40,5 +40,11 @@ return [
     'cover_letter' => 'Anschreiben',
     'download_cover_letter' => 'Anschreiben herunterladen',
     'sensitive_documents' => 'Vertrauliche Dokumente',
-    'contains_sensitive_docs' => 'Dieser Abschnitt enthält vertrauliche Dokumente zum Benutzer'
+    'contains_sensitive_docs' => 'Dieser Abschnitt enthält vertrauliche Dokumente zum Benutzer',
+    'select_department' => 'Abteilung auswählen',
+    'select_role' => 'Rolle auswählen',
+    'select_seniority' => 'Rangstufe auswählen',
+    'select_job' => 'Beruf auswählen',
+    'select_holiday_entitlement' => 'Urlaubsanspruch auswählen',
+    'select_contact' => 'Benutzerkontakt auswählen',
 ];

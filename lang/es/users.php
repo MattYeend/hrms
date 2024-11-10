@@ -40,5 +40,11 @@ return [
     'cover_letter' => 'Carta de Presentación',
     'download_cover_letter' => 'Descargar Carta de Presentación',
     'sensitive_documents' => 'Documentos Sensibles',
-    'contains_sensitive_docs' => 'Esta sección contiene documentos sensibles relacionados con el usuario'
+    'contains_sensitive_docs' => 'Esta sección contiene documentos sensibles relacionados con el usuario',
+    'select_department' => 'Seleccionar Departamento',
+    'select_role' => 'Seleccionar Rol',
+    'select_seniority' => 'Seleccionar Antigüedad',
+    'select_job' => 'Seleccionar Trabajo',
+    'select_holiday_entitlement' => 'Seleccionar Derecho a Vacaciones',
+    'select_contact' => 'Seleccionar Contacto de Usuario',
 ];

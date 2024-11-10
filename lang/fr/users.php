@@ -40,5 +40,11 @@ return [
     'cover_letter' => 'Lettre de motivation',
     'download_cover_letter' => 'Télécharger la lettre de motivation',
     'sensitive_documents' => 'Documents sensibles',
-    'contains_sensitive_docs' => 'Cette section contient des documents sensibles liés à l\'utilisateur'
+    'contains_sensitive_docs' => 'Cette section contient des documents sensibles liés à l\'utilisateur',
+    'select_department' => 'Sélectionner un Département',
+    'select_role' => 'Sélectionner un Rôle',
+    'select_seniority' => 'Sélectionner le Niveau de Séniorité',
+    'select_job' => 'Sélectionner un Emploi',
+    'select_holiday_entitlement' => 'Sélectionner les Droits aux Congés',
+    'select_contact' => 'Sélectionner le Contact Utilisateur',
 ];
