@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MeetingsController;
 use App\Http\Controllers\LearningController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -34,6 +35,8 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/user/{user}/profile-picture', [UserController::class, 'uploadProfilePicture'])->name('user.uploadProfilePicture');
     Route::post('/user/{user}/cv', [UserController::class, 'uploadCv'])->name('user.uploadCv');
     Route::post('/user/{user}/cover-letter', [UserController::class, 'uploadCoverLetter'])->name('user.uploadCoverLetter');
+    Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+    Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/super-admin-home', [HomeController::class, 'superAdminHome'])->name('super-admin-home');
