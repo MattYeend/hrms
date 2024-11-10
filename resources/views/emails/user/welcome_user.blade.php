@@ -7,6 +7,7 @@
 
 <p>You can log in at <a href="{{ config('app.url') }}">{{ config('app.url') }}</a></p>
 
-<p>We recommend that you change your password after your first login.</p>
+<p>To update your password, click the following link:</p>
+<p><a href="{{ $resetPasswordLink }}">Update Your Password</a></p>
 
 <p>Best regards,<br>Our Team</p>
