@@ -90,7 +90,7 @@
                     @if(!isset($user))<span class="text-danger">*</span>@endif
                 </label>
                 <select name="full_or_part" id="full_or_part" class="form-control" required>
-                    <option value="" disabled selected>{{ __('Select an option') }}</option>
+                    <option value="" disabled selected>{{ __('users.select_option') }}</option>
                     <option value="full_time" {{ old('full_or_part', $user->full_or_part ?? '') == 'full_time' ? 'selected' : '' }}>
                         {{ __('users.full_time') }}
                     </option>
@@ -176,7 +176,7 @@
             <div class="mb-3">
                 <label for="department_id">{{ __('users.department') }}</label>
                 <select name="department_id" id="department_id" class="form-control">
-                    <option value="">{{ __('user.select_department') }}</option>
+                    <option value="" disabled selected>{{ __('users.select_option') }}</option>
                     @foreach($departments as $department)
                         <option
                             value="{{ $department->id }}" {{ old('department_id', $user->department_id ?? '') == $department->id ? 'selected' : '' }}>
@@ -190,7 +190,7 @@
             <div class="mb-3">
                 <label for="role_id">{{ __('users.role') }}</label>
                 <select name="role_id" id="role_id" class="form-control">
-                    <option value="">{{ __('users.select_role') }}</option>
+                    <option value="" disabled selected>{{ __('users.select_option') }}</option>
                     @foreach($roles as $role)
                         <option value="{{ $role->id }}" {{ old('roles_id', $user->roles_id ?? '') == $role->id ? 'selected' : '' }}>
                             {{ $role->name}}
@@ -203,7 +203,7 @@
             <div class="mb-3">
                 <label for="seniority_id">{{ __('users.seniority') }}</label>
                 <select name="seniority_id" id="seniority_id" class="form-control">
-                    <option value="">{{ __('users.select_seniority') }}</option>
+                    <option value="" disabled selected>{{ __('users.select_option') }}</option>
                     @foreach($seniorities as $seniority)
                         <option value="{{ $seniority->id }}" {{ old('seniority_id', $user->seniority_id ?? '') == $seniority->id ? 'selected' : '' }}>
                             {{ $seniority->name }}
@@ -216,7 +216,7 @@
             <div class="mb-3">
                 <label for="job_id">{{ __('users.job') }}</label>
                 <select name="job_id" id="job_id" class="form-control">
-                    <option value="">{{ __('users.select_job') }}</option>
+                    <option value="" disabled selected>{{ __('users.select_option') }}</option>
                         @foreach($jobs as $job)
                         <option value="{{ $job->id }}" {{ old('job_id', $user->job_id ?? '') == $job->id ? 'selected' : '' }}>
                             {{ $job->name }}
@@ -229,7 +229,7 @@
             <div class="mb-3">
                 <label for="holiday_entitlement_id">{{ __('users.holiday_entitlement') }}</label>
                 <select name="holiday_entitlement_id" id="holiday_entitlement_id" class="form-control">
-                    <option value="">{{ __('users.select_holiday_entitlement') }}</option>
+                    <option value="" disabled selected>{{ __('users.select_option') }}</option>
                     @foreach($holidayEntitlements as $entitlement)
                         <option value="{{ $entitlement->id }}" {{ old('holiday_entitlement_id', $user->holiday_entitlement_id ?? '') == $entitlement->id ? 'selected' : '' }}>
                             {{ $entitlement->total }}
@@ -242,7 +242,7 @@
             <div class="mb-3">
                 <label for="contact_id">{{ __('users.contact') }}</label>
                 <select name="contact_id" id="contact_id" class="form-control">
-                    <option value="">{{ __('users.select_contact') }}</option>
+                    <option value="" disabled selected>{{ __('users.select_option') }}</option>
                     @foreach($userContacts as $contact)
                         <option value="{{ $contact->id }}" {{ old('contact_id', $user->contact_id ?? '') == $contact->id ? 'selected' : '' }}>
                             {{ $contact->name }}
