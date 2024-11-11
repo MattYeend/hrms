@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ $user->name }}</div>
+                <div class="card-header">{{ $user->first_name }} {{ $user->last_name }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
