@@ -17,7 +17,7 @@
             <tbody>
                 @forelse($outstandingLeaves as $leave)
                     <tr>
-                        <td>{{ $leave->createdBy->name }}</td>
+                        <td>{{ $leave->createdBy->getName() }}</td>
                         <td>{{ $leave->leaveType->name }}</td>
                         <td>{{ $leave->date_from }}</td>
                         <td>{{ $leave->date_to }}</td>
