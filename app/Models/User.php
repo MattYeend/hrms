@@ -196,4 +196,20 @@ class User extends Authenticatable
     public function meetings(){
         return $this->belongsToMany(Meetings::class);
     }
+
+    public function getShortName(): string{
+        return $this->first_name;
+    }
+
+    public function getName(): string{
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function getFullNameLong(): string {
+        return $this->first_name . ($this->middle_name ? ' ' . $this->middle_name : '') . ' ' . $this->last_name;
+    }
+
+    public function getFullNameShort(): string{
+        return $this->first_name[0] . ' ' . $this->last_name;
+    }
 }
