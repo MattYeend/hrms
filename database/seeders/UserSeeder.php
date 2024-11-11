@@ -18,7 +18,8 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name'=>'Matt Yeend',
+            'first_name'=>'Matt',
+            'last_name' => 'Yeend',
             'email' => 'matt@test.com',
             'password' => Hash::make('password123'),
             'phone' => '01234567891',
@@ -79,7 +80,9 @@ class UserSeeder extends Seeder
 
         for($i = 0; $i < 50; $i++){
             User::create([
-                'name' => $fakerUS->name,
+                'first_name' => $fakerUS->firstName,
+                'middle_name' => $fakerUS->firstName,
+                'last_name' => $fakerUS->lastName,
                 'email' => $fakerUS->unique()->safeEmail,
                 'password' => Hash::make('password'),
                 'phone' => $fakerUS->phoneNumber,
@@ -106,7 +109,9 @@ class UserSeeder extends Seeder
         
         for($i = 0; $i < 50; $i++){
             User::create([
-                'name' => $fakerSpain->name,
+                'first_name' => $fakerSpain->firstName,
+                'middle_name' => $fakerSpain->firstName,
+                'last_name' => $fakerSpain->lastName,
                 'email' => $fakerSpain->unique()->safeEmail,
                 'password' => Hash::make('password'),
                 'phone' => $fakerSpain->phoneNumber,
@@ -133,7 +138,9 @@ class UserSeeder extends Seeder
         
         for($i = 0; $i < 50; $i++){
             User::create([
-                'name' => $fakerItaly->name,
+                'first_name' => $fakerItaly->firstName,
+                'middle_name' => $fakerItaly->firstName,
+                'last_name' => $fakerItaly->lastName,
                 'email' => $fakerItaly->unique()->safeEmail,
                 'password' => Hash::make('password'),
                 'phone' => $fakerItaly->phoneNumber,
@@ -160,7 +167,9 @@ class UserSeeder extends Seeder
         
         for($i = 0; $i < 50; $i++){
             User::create([
-                'name' => $fakerFrance->name,
+                'first_name' => $fakerFrance->firstName,
+                'middle_name' => $fakerFrance->firstName,
+                'last_name' => $fakerFrance->lastName,
                 'email' => $fakerFrance->unique()->safeEmail,
                 'password' => Hash::make('password'),
                 'phone' => $fakerFrance->phoneNumber,
