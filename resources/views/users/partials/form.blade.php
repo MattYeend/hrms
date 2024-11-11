@@ -8,8 +8,18 @@
         <div class="col-md-6">
             <!-- Name -->
             <div class="mb-3">
-                <label for="name">{{ __('users.name') }} @if(!isset($user))<span class="text-danger">*</span>@endif</label>
-                <input type="text" name="name" id="name"class="form-control" value="{{ old('name', $user->name ?? '') }}" required>
+                <label for="first_name">{{ __('users.first_name') }} @if(!isset($user))<span class="text-danger">*</span>@endif</label>
+                <input type="text" name="first_name" id="first_name"class="form-control" value="{{ old('first_name', $user->first_name ?? '') }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="middle_name">{{ __('users.middle_name') }}</label>
+                <input type="text" name="middle_name" id="middle_name"class="form-control" value="{{ old('middle_name', $user->middle_name ?? '') }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="last_name">{{ __('users.last_name') }} @if(!isset($user))<span class="text-danger">*</span>@endif</label>
+                <input type="text" name="last_name" id="last_name"class="form-control" value="{{ old('last_name', $user->last_name ?? '') }}" required>
             </div>
 
             <!-- Email -->
