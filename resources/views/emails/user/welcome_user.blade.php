@@ -1,4 +1,4 @@
-<h1>Welcome to Our Platform, {{ $user->first_name }}!</h1>
+<h1>Welcome to Our Platform, {{ $user->getShortName() }}!</h1>
 
 <p>Thank you for joining us. Here are your login details:</p>
 
