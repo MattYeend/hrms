@@ -85,7 +85,14 @@
             <!-- Country -->
             <div class="mb-3">
                 <label for="country">{{ __('users.country') }} @if(!isset($user))<span class="text-danger">*</span>@endif</label>
-                <input type="text" name="country" id="country" class="form-control" value="{{ old('country', $user->country ?? '') }}" required>
+                <select id="country" name="country" onchange="showRegions()" class="form-control" required>
+                    <option value="" disabled {{ old('country', $user->country ?? '') === '' ? 'selected' : '' }}>{{ __('users.select_option') }}</option>
+                    @if(is_array($regions))
+                        @foreach ($regions as $country => $regionsList)
+                            <option value="{{ $country }}" {{ old('country', $user->country ?? '') === $country ? 'selected' : '' }}>{{ $country }}</option>
+                        @endforeach
+                    @endif
+                </select>
             </div>
 
             <!-- Post Code -->
@@ -115,7 +122,18 @@
             <!-- Region -->
             <div class="mb-3">
                 <label for="region">{{ __('users.region') }} @if(!isset($user))<span class="text-danger">*</span>@endif</label>
-                <input type="text" name="region" id="region" class="form-control" value="{{ old('region', $user->region ?? '') }}" required>
+                <select id="region" name="region" class="form-control" required>
+                    <option value="" disabled {{ old('region', $user->region ?? '') === '' ? 'selected' : '' }}>{{ __('users.select_option') }}</option>
+                    @if(is_array($regions))
+                        @foreach ($regions as $country => $regionsList)
+                            <optgroup label="{{ $country }}" class="region-group" data-country="{{ $country }}" style="display: none;">
+                                @foreach ($regionsList as $region)
+                                    <option value="{{ $region }}" {{ old('region', $user->region ?? '') === $region ? 'selected' : '' }}>{{ $region }}</option>
+                                @endforeach
+                            </optgroup>
+                        @endforeach
+                    @endif
+                </select>
             </div>
 
             <!-- Time Zone -->
@@ -275,3 +293,17 @@
         <button class="btn btn-primary" type="submit">{{ isset($user) ? 'Update ' . $user->getShortName() : 'Create' }}</button>
     </div>
 </form>
+
+<script>
+    function showRegions() {
+        const selectedCountry = document.getElementById('country').value;
+
+        document.querySelectorAll('.region-group').forEach(optgroup => {
+            optgroup.style.display = optgroup.getAttribute('data-country') === selectedCountry ? 'block' : 'none';
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        showRegions();
+    });
+</script>
