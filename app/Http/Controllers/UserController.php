@@ -53,7 +53,7 @@ class UserController extends Controller
         $jobs = Job::all();
         $holidayEntitlements = HolidayEntitlement::all();
         $timezones = DateTimeZone::listIdentifiers();
-        $regions = json_decode(Storage::get('public/regions.json'), true);
+        $regions = json_decode(Storage::get('regions.json'), true);
 
         return view('users.create', compact('departments', 'roles', 'userContacts', 'seniorities', 'jobs', 'holidayEntitlements', 'timezones', 'regions'));
     }
@@ -140,7 +140,7 @@ class UserController extends Controller
         $jobs = Job::all();
         $holidayEntitlements = HolidayEntitlement::all();
         $timezones = DateTimeZone::listIdentifiers();
-        $regions = json_decode(Storage::get('public/regions.json'), true);
+        $regions = json_decode(Storage::get('regions.json'), true);
 
         return view('users.update', compact('user', 'departments', 'roles', 'userContacts', 'seniorities', 'jobs', 'holidayEntitlements', 'timezones', 'regions'));
     }
