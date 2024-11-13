@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('office_location_country')->nullable();
             $table->string('office_location_post_code')->nullable();
             $table->timestamps();
+            $table->softDeletes();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();

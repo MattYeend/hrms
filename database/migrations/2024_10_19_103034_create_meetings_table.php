@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('location_id')->nullable(); 
             $table->unsignedBigInteger('meeting_type_id')->nullable();             
             $table->timestamps();
+            $table->softDeletes();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();

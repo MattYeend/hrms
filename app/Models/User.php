@@ -212,4 +212,8 @@ class User extends Authenticatable
     public function getFullNameShort(): string{
         return $this->first_name[0] . ' ' . $this->last_name;
     }
+
+    public function rotas(){
+        return $this->hasMany(Rotas::class);
+    }
 }

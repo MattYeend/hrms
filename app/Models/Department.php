@@ -61,4 +61,8 @@ class Department extends Model
     public function deletedBy(){
         return $this->belongsTo(User::class, 'deleted_by');
     }
+
+    public function rotas(){
+        return $this->hasMany(Rotas::class);
+    }
 }

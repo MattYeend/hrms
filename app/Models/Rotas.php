@@ -6,14 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class BlogComments extends Model
+class Rotas extends Model
 {
-    use HasFactory,SoftDeletes;
+    /** @use HasFactory<\Database\Factories\RotasFactory> */
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'comment',
         'user_id',
-        'blog_id',
+        'department_id',
+        'start_time',
+        'end_time',
         'created_at',
         'created_by',
         'updated_at',
@@ -22,12 +24,14 @@ class BlogComments extends Model
         'deleted_by'
     ];
 
-    public function blog(){
-        return $this->belongsTo(Blogs::class);
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
     }
 
     public function createdBy(){
