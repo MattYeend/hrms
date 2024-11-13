@@ -6,5 +6,6 @@ return [
     'start_time' => 'Start time',
     'end_time' => 'End time',
     'view_rota' => 'View',
-    'delete_rota' => 'Delete'
+    'delete_rota' => 'Delete',
+    'rotas' => 'Rotas'
 ];

@@ -6,5 +6,6 @@ return [
     'start_time' => 'Startzeit',
     'end_time' => 'Endzeit',
     'view_rota' => 'Anzeigen',
-    'delete_rota' => 'Löschen'
+    'delete_rota' => 'Löschen',
+    'rotas' => 'Dienstpläne'
 ];

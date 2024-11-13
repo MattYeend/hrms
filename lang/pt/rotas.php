@@ -6,5 +6,6 @@ return [
     'start_time' => 'Hora de início',
     'end_time' => 'Hora de término',
     'view_rota' => 'Visualizar',
-    'delete_rota' => 'Excluir'
+    'delete_rota' => 'Excluir',
+    'rotas' => 'Turnos'
 ];
