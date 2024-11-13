@@ -7,5 +7,7 @@ return [
     'end_time' => 'Hora de fin',
     'view_rota' => 'Ver',
     'delete_rota' => 'Eliminar',
-    'rotas' => 'Turnos'
+    'rotas' => 'Turnos',
+    'user' => 'Usuario',
+    'department' => 'Departamento',
 ];

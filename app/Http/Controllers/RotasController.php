@@ -3,17 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rotas;
+use App\Models\Logger;
+use App\Modes\User;
+use App\Models\Department;
 use App\Http\Requests\StoreRotasRequest;
 use App\Http\Requests\UpdateRotasRequest;
+use Illuminate\Http\Request;
 
 class RotasController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $rotas = Rota::with('user', 'department')->get();
+        return view('rotas.index', compact('rotas'));
     }
 
     /**
@@ -21,7 +31,9 @@ class RotasController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+        $departments = Department::all();
+        return view('rotas.create', compact('users', 'departments'));
     }
 
     /**
@@ -29,7 +41,8 @@ class RotasController extends Controller
      */
     public function store(StoreRotasRequest $request)
     {
-        //
+        Rota::create($request->validated());
+        return redirect()->route('rotas.index')->with('success', 'Rota created successfully.');
     }
 
     /**
@@ -45,7 +58,9 @@ class RotasController extends Controller
      */
     public function edit(Rotas $rotas)
     {
-        //
+        $users = User::all();
+        $departments = Department::all();
+        return view('rotas.edit', compact('rotas', 'users', 'departments'));
     }
 
     /**
@@ -53,7 +68,8 @@ class RotasController extends Controller
      */
     public function update(UpdateRotasRequest $request, Rotas $rotas)
     {
-        //
+        $rotas->update($request->validated());
+        return redirect()->route('rotas.index')->with('success', 'Rota updated successfully.');
     }
 
     /**
@@ -61,6 +77,7 @@ class RotasController extends Controller
      */
     public function destroy(Rotas $rotas)
     {
-        //
+        $rotas->delete();
+        return redirect()->route('rotas.index')->with('success', 'Rota deleted successfully.');
     }
 }

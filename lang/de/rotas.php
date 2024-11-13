@@ -7,5 +7,7 @@ return [
     'end_time' => 'Endzeit',
     'view_rota' => 'Anzeigen',
     'delete_rota' => 'Löschen',
-    'rotas' => 'Dienstpläne'
+    'rotas' => 'Dienstpläne',
+    'user' => 'Benutzer',
+    'department' => 'Abteilung',
 ];
