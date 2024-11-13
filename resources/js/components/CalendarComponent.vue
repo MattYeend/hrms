@@ -32,7 +32,9 @@ export default {
     mounted() {
         this.initCalendar();
         this.getPublicHolidays();
-        this.getLeaves();  // Call getLeaves to fetch leave data
+        this.getLeaves();
+        this.getMeetings();
+        this.getRotas();
     },
     methods: {
         initCalendar() {
@@ -134,6 +136,31 @@ export default {
                 this.calendar.addEventSource(meetingEvents);
             } catch (error) {
                 console.error('Error fetching meetings:', error);
+            }
+        },
+        async getRotas() {
+            try {
+                const response = await axios.get('/api/rotas');
+                const rotas = response.data;
+
+                let rotaEvents = [];
+
+                rotas.forEach(rota => {
+                    const userName = rota.user ? `${rota.user.first_name} ${rota.user.last_name}` : 'Unknown User';
+
+                    rotaEvents.push({
+                        title: `Rota (${userName})`,
+                        start: rota.start_time,
+                        end: rota.end_time,
+                        allDay: false,
+                        backgroundColor: '#6a5acd',
+                        borderColor: '#6a5acd',
+                    });
+                });
+
+                this.calendar.addEventSource(rotaEvents);
+            } catch (error) {
+                console.error('Error fetching rotas:', error);
             }
         },
         showEvent(arg) {
