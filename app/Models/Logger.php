@@ -280,6 +280,12 @@ class Logger extends Model
     const ACTION_NOTIFICATION_READ = 179;
     const ACTION_NOTIFICATION_IGNORE = 180;
 
+    // Rotas
+    const ACTION_CREATE_ROTA = 181;
+    const ACTION_UPDATE_ROTA = 182;
+    const ACTION_DELETE_ROTA = 183;
+    const ACTION_SHOW_ROTA = 184;
+
     // Temp constants to go below
     
     // Temp constants to go above
