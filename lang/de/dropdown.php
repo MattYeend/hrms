@@ -5,5 +5,6 @@ return [
     'profile' => 'Profil',
     'knowledge_base' => 'Wissensdatenbank',
     'reports' => 'Berichte',
-    'user' => 'Benutzer'
+    'user' => 'Benutzer',
+    'rotas' => 'Dienstpläne',
 ];

@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MeetingsController;
 use App\Http\Controllers\LearningController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\RotasController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -58,6 +59,14 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/leave/{leave}/approve', [LeaveController::class, 'approve'])->name('leave.approve');
     Route::post('/leave/{leave}/deny', [LeaveController::class, 'deny'])->name('leave.deny');
     Route::get('/leaves/outstanding', [LeaveController::class, 'outstandingRequests'])->name('leave.outstanding');
+
+    Route::get('/rotas', [RotasController::class, 'index'])->name('rotas.index');
+    Route::get('/rotas/create', [RotasController::class, 'create'])->name('rotas.create');
+    Route::post('/rotas', [RotasController::class, 'store'])->name('rotas.store');
+    Route::get('/rota/{rotas}', [RotasController::class, 'show'])->name('rotas.show');
+    Route::get('/rota/{rotas}/edit', [RotasController::class, 'edit'])->name('rotas.edit');
+    Route::put('/rota/{rotas}', [RotasController::class, 'update'])->name('rotas.update');
+    Route::delete('/rota/{rotas}', [RotasController::class, 'delete'])->name('rotas.delete');
 
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');
     Route::view('/reports/index', 'reports/index')->name('reports');

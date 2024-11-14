@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class StoreRotasRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class StoreRotasRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::user() && (Auth::user()->isAdmin() || Auth::user()->isSuperAdmin());
     }
 
     /**

@@ -31,6 +31,8 @@ class RotasController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Rotas::class);
+
         $users = User::all();
         $departments = Department::all();
         return view('rotas.create', compact('users', 'departments'));
@@ -48,9 +50,16 @@ class RotasController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Rotas $rotas)
+    public function show($id)
     {
-        //
+        $rota = Rotas::find($id);
+
+        if(!$rota){
+            return response()->json(['message' => 'Rota not found'], 404);
+        }
+
+        // Logger::log(Logger::ACTION_SHOW_USER, ['user' => $user], null, $id);
+        return view('rotas.show', compact('rota'));
     }
 
     /**
@@ -58,6 +67,8 @@ class RotasController extends Controller
      */
     public function edit(Rotas $rotas)
     {
+        $this->authorize('update', $rotas);
+
         $users = User::all();
         $departments = Department::all();
         return view('rotas.edit', compact('rotas', 'users', 'departments'));

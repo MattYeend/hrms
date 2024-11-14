@@ -49,12 +49,16 @@
                             <a class="dropdown-item" href="{{ route('user.index') }}">
                                 {{ __('dropdown.user') }}
                             </a>
+                            <a class="dropdown-item" href="{{ route('rotas.index') }}">
+                                {{ __('dropdown.rota') }}
+                            </a>
                             <a class="dropdown-item" href="{{ route('knowledge') }}">
                                 {{ __('dropdown.knowledge_base') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('reports') }}">
                                 {{ __('dropdown.reports') }}
                             </a>
+                            <hr />
                             <a class="dropdown-item" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
                                 {{ __('dropdown.profile') }}
                             </a>

@@ -5,5 +5,6 @@ return [
     'profile' => 'Proffil',
     'knowledge_base' => 'Sylfaen Gwybodaeth',
     'reports' => 'Adroddiadau',
-    'user' => 'Defnyddwyr'
+    'user' => 'Defnyddwyr',
+    'rotas' => 'Rotas',
 ];
