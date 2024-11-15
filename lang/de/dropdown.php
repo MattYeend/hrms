@@ -7,4 +7,5 @@ return [
     'reports' => 'Berichte',
     'user' => 'Benutzer',
     'rotas' => 'Dienstpläne',
+    'department' => 'Abteilungen',
 ];

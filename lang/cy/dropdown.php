@@ -7,4 +7,5 @@ return [
     'reports' => 'Adroddiadau',
     'user' => 'Defnyddwyr',
     'rotas' => 'Rotas',
+    'department' => 'Adrannau',
 ];

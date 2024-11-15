@@ -6,5 +6,6 @@ return [
     'knowledge_base' => 'Knowledge Base',
     'reports' => 'Reports',
     'user' => 'Users',
-    'rotas' => 'Rotas'
+    'rotas' => 'Rotas',
+    'department' => 'Departments'
 ];
