@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'department' => 'Adran',
     'create' => 'Creu Adran',
     'edit' => 'Diweddaru',
     'view' => 'Gweld Adran',

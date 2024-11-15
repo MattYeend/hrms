@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'department' => 'Abteilung',
     'create' => 'Abteilung erstellen',
     'edit' => 'Aktualisieren',
     'view' => 'Abteilung ansehen',
