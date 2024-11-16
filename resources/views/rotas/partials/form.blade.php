@@ -1,6 +1,6 @@
-<form action="{{ isset($rota) ? route('rotas.update', $rota->id) : route('rotas.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ isset($rotas) ? route('rotas.update', $rotas->id) : route('rotas.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
-    @if (isset($rota))
+    @if (isset($rotas))
         @method('PUT')
     @endif
 
@@ -41,6 +41,6 @@
     </div>
 
     <div class="text-center mt-4">
-        <button class="btn btn-primary" type="submit">{{ isset($rota) ? __('Update') : __('Create') }}</button>
+        <button class="btn btn-primary" type="submit">{{ isset($rotas) ? __('Update') : __('Create') }}</button>
     </div>
 </form>
