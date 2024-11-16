@@ -22,7 +22,7 @@ class RotasController extends Controller
      */
     public function index()
     {
-        $rotas = Rota::with('user', 'department')->get();
+        $rotas = Rotas::with('user', 'department')->get();
         return view('rotas.index', compact('rotas'));
     }
 
@@ -43,7 +43,7 @@ class RotasController extends Controller
      */
     public function store(StoreRotasRequest $request)
     {
-        $rota = Rota::create($request->validated());
+        $rota = Rotas::create($request->validated());
         Logger::log(Logger::ACTION_CREATE_ROTA, ['rota' => $rota]);
         return redirect()->route('rotas.index')->with('success', 'Rota created successfully.');
     }

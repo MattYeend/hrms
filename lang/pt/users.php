@@ -2,6 +2,7 @@
 
 return [
     'user_management' => 'Gestão de Usuários',
+    'users' => 'Usuários',
     'create' => 'Criar Usuário',
     'edit' => 'Atualizar',
     'view' => 'Visualizar',

@@ -27,7 +27,7 @@ class RotasPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $authUser, User $user): bool
+    public function create(User $authUser, ?User $user = null): bool
     {
         return $authUser->isAdmin() || $authUser->isSuperAdmin() ||
                 ($authUser->department && $authUser->department->dept_lead_id === $user->id);

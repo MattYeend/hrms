@@ -50,7 +50,7 @@
                                 {{ __('dropdown.user') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('rotas.index') }}">
-                                {{ __('dropdown.rota') }}
+                                {{ __('dropdown.rotas') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('knowledge') }}">
                                 {{ __('dropdown.knowledge_base') }}

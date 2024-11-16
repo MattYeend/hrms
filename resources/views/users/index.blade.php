@@ -9,16 +9,14 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <!-- Create User Button -->
-    @can('create', App\Models\User::class) <!-- Optional: Use authorization to check if the user can create -->
-        <div class="mb-3">
-            <a href="{{ route('user.create') }}" class="btn btn-success">{{ __('users.create') }}</a>
-        </div>
-    @endcan
-
     <!-- User Table -->
     <div class="card">
-        <div class="card-header">Users</div>
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>Users</span>
+            @can('create', App\Models\User::class)
+                <a href="{{ route('user.create') }}" class="btn btn-success">{{ __('users.create') }}</a>
+            @endcan
+        </div>
         <div class="card-body">
             <table class="table table-striped">
                 <thead>

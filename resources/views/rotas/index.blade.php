@@ -5,7 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('rotas.rotas') }}</div>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>{{ __('rotas.rotas') }}</span>
+                    @can('create', App\Models\Rotas::class)
+                        <a href="{{ route('rotas.create') }}" class="btn btn-success">{{ __('rotas.create') }}</a>
+                    @endcan
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))

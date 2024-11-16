@@ -2,6 +2,7 @@
 
 return [
     'user_management' => 'Rheoli Defnyddwyr',
+    'users' => 'Defnyddwyr',
     'create' => 'Creu Defnyddiwr',
     'edit' => 'Diweddaru',
     'view' => 'Gweld',
