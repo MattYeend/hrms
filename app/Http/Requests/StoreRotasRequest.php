@@ -26,7 +26,6 @@ class StoreRotasRequest extends FormRequest
     {
         return [
             'user_id' => 'required|exists:users,id',
-            'department_id' => 'required|exists:departments,id',
             'start_time' => [
                 'required',
                 'date',

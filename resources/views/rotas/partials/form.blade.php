@@ -11,22 +11,8 @@
                 <option value="" disabled {{ old('user_id', $rotas->user_id ?? '') === '' ? 'selected' : '' }}>{{ __('rotas.select_option') }}</option>
                 @foreach ($users as $user)
                     <option value="{{ $user->id }}" 
-                        {{ isset($rotas) && $rotas->user_id == $user->id ? 'selected' : '' }} 
-                        data-department="{{ $user->department_id }}">
+                        {{ isset($rotas) && $rotas->user_id == $user->id ? 'selected' : '' }}>
                         {{ $user->getName() }}
-                    </option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="col-md-6">
-            <label for="department_id">{{ __('rotas.department') }}:</label>
-            <select name="department_id" class="form-control" id="department_id" required>
-                <option value="" disabled {{ old('department_id', $rotas->department_id ?? '') === '' ? 'selected' : '' }}>{{ __('rotas.select_option') }}</option>  
-                @foreach ($departments as $department)
-                    <option value="{{ $department->id }}" 
-                        {{ isset($rotas) && $rotas->department_id == $department->id ? 'selected' : '' }}>
-                        {{ $department->name }}
                     </option>
                 @endforeach
             </select>
@@ -53,48 +39,3 @@
         <button class="btn btn-primary" type="submit">{{ isset($rotas) ? __('Update') : __('Create') }}</button>
     </div>
 </form>
-
-@push('scripts')
-<script>
-    $(document).ready(function() {
-        function updateUserList() {
-            var selectedDepartmentId = $('#department_id').val();
-            console.log('Department Selected:', selectedDepartmentId);
-
-            $('#user_id option').each(function() {
-                var userDepartmentId = $(this).data('department');
-                if (selectedDepartmentId == '' || userDepartmentId == selectedDepartmentId) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
-            });
-
-            var selectedUser = $('#user_id').val();
-            if (selectedUser) {
-                $('#user_id option[value="' + selectedUser + '"]').show();
-            }
-        }
-
-        function updateDepartmentList() {
-            var selectedUserId = $('#user_id').val();
-            console.log('User Selected:', selectedUserId);
-
-            if (selectedUserId) {
-                var userDepartmentId = $('#user_id option:selected').data('department');
-                $('#department_id').val(userDepartmentId);
-            }
-        }
-
-        $('#department_id').change(function() {
-            updateUserList();
-        });
-
-        $('#user_id').change(function() {
-            updateDepartmentList();
-        });
-
-        updateUserList();
-    });
-</script>
-@endpush

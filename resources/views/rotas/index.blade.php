@@ -38,7 +38,7 @@
                                     @foreach($rotas as $rota)
                                         <tr>
                                             <td>{{ $rota->user->getFullNameLong() }}</td>
-                                            <td>{{ $rota->department->name }}</td>
+                                            <td>{{ $rota->user->department->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($rota->start_time)->format('d/m/y H:i') }}</td>
                                             <td>{{ \Carbon\Carbon::parse($rota->end_time)->format('d/m/y H:i') }}</td>
                                             <td>
