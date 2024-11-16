@@ -10,4 +10,5 @@ return [
     'rotas' => 'Rotas',
     'user' => 'Defnyddiwr',
     'department' => 'Adran',
+    'actions' => 'Gweithredoedd',
 ];

@@ -10,4 +10,5 @@ return [
     'rotas' => 'Rotations',
     'user' => 'Utilisateur',
     'department' => 'Département',
+    'actions' => 'Actions',
 ];

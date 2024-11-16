@@ -9,5 +9,6 @@ return [
     'delete_rota' => 'Delete',
     'rotas' => 'Rotas',
     'user' => 'User',
-    'department' => 'Department'
+    'department' => 'Department',
+    'actions' => 'Actions',
 ];

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rotas;
 use App\Models\Logger;
-use App\Modes\User;
+use App\Models\User;;
 use App\Models\Department;
 use App\Http\Requests\StoreRotasRequest;
 use App\Http\Requests\UpdateRotasRequest;
@@ -22,7 +22,7 @@ class RotasController extends Controller
      */
     public function index()
     {
-        $rotas = Rotas::with('user', 'department')->get();
+        $rotas = Rotas::with('user', 'department')->paginate(10);;
         return view('rotas.index', compact('rotas'));
     }
 

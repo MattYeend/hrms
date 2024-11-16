@@ -10,4 +10,5 @@ return [
     'rotas' => 'Dienstpläne',
     'user' => 'Benutzer',
     'department' => 'Abteilung',
+    'actions' => 'Aktionen',
 ];

@@ -36,10 +36,10 @@ class RotasPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $authUser, User $user): bool
+    public function update(User $authUser, Rotas $rotas): bool
     {
         return $authUser->isAdmin() || $authUser->isSuperAdmin() ||
-                ($authUser->department && $authUser->department->dept_lead_id === $user->id);
+                ($authUser->department && $authUser->department->dept_lead_id === $rotas->user_id);
     }
 
     /**
