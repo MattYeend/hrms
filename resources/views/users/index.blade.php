@@ -2,8 +2,6 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mb-4">{{ __('users.user_management') }}</h1>
-
     <!-- Display success message -->
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
