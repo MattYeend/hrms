@@ -39,8 +39,8 @@
                                         <tr>
                                             <td>{{ $rota->user->getFullNameLong() }}</td>
                                             <td>{{ $rota->department->name }}</td>
-                                            <td>{{ $rota->start_time }}</td>
-                                            <td>{{ $rota->end_time }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($rota->start_time)->format('d/m/y H:i') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($rota->end_time)->format('d/m/y H:i') }}</td>
                                             <td>
                                                 <a href="{{ route('rotas.show', $rota->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('users.view') }}</a>
                                                 @can('update', $rotas)
