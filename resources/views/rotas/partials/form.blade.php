@@ -9,7 +9,7 @@
             <label for="user_id">{{ __('rotas.user') }}:</label>
             <select name="user_id" class="form-control" required>
                 @foreach ($users as $user)
-                    <option value="{{ $user->id }}" {{ isset($rota) && $rota->user_id == $user->id ? 'selected' : '' }}>
+                    <option value="{{ $user->id }}" {{ isset($rotas) && $rotas->user_id == $user->id ? 'selected' : '' }}>
                         {{ $user->getName() }}
                     </option>
                 @endforeach
@@ -20,7 +20,7 @@
             <label for="department_id">{{ __('rotas.department') }}:</label>
             <select name="department_id" class="form-control" required>
                 @foreach ($departments as $department)
-                    <option value="{{ $department->id }}" {{ isset($rota) && $rota->department_id == $department->id ? 'selected' : '' }}>
+                    <option value="{{ $department->id }}" {{ isset($rotas) && $rotas->department_id == $department->id ? 'selected' : '' }}>
                         {{ $department->name }}
                     </option>
                 @endforeach
@@ -31,12 +31,12 @@
     <div class="row mt-3">
         <div class="col-md-6">
             <label for="start_time">{{ __('rotas.start_time') }}:</label>
-            <input type="datetime-local" name="start_time" class="form-control" value="{{ isset($rota) ? $rota->start_time->format('Y-m-d\TH:i') : old('start_time') }}" required>
+            <input type="datetime-local" name="start_time" class="form-control" value="{{ isset($rotas) ? \Carbon\Carbon::parse($rotas->start_time)->format('Y-m-d\TH:i') : old('start_time') }}" required>
         </div>
 
         <div class="col-md-6">
             <label for="end_time">{{ __('rotas.end_time') }}:</label>
-            <input type="datetime-local" name="end_time" class="form-control" value="{{ isset($rota) ? $rota->end_time->format('Y-m-d\TH:i') : old('end_time') }}" required>
+            <input type="datetime-local" name="end_time" class="form-control" value="{{ isset($rotas) ? \Carbon\Carbon::parse($rotas->end_time)->format('Y-m-d\TH:i') : old('end_time') }}" required>
         </div>
     </div>
 

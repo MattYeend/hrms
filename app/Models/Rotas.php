@@ -23,6 +23,8 @@ class Rotas extends Model
         'deleted_at',
         'deleted_by'
     ];
+    
+    protected $dates = ['start_time', 'end_time'];
 
     public function user()
     {
