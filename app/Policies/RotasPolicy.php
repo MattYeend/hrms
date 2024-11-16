@@ -39,13 +39,13 @@ class RotasPolicy
     public function update(User $authUser, Rotas $rotas): bool
     {
         return $authUser->isAdmin() || $authUser->isSuperAdmin() ||
-                ($authUser->department && $authUser->department->dept_lead_id === $rotas->user_id);
+            ($authUser->department && $authUser->department->dept_lead_id === $rotas->user_id);
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $authUser, User $user): bool
+    public function delete(User $authUser, Rotas $rotas): bool
     {
         return $authUser->isSuperAdmin();
     }

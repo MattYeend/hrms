@@ -72,7 +72,7 @@ class RotasController extends Controller
 
         $users = User::all();
         $departments = Department::all();
-        return view('rotas.edit', compact('rotas', 'users', 'departments'));
+        return view('rotas.update', compact('rotas', 'users', 'departments'));
     }
 
     /**

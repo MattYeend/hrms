@@ -43,12 +43,12 @@
                                             <td>{{ \Carbon\Carbon::parse($rota->end_time)->format('d/m/y H:i') }}</td>
                                             <td>
                                                 <a href="{{ route('rotas.show', $rota->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('users.view') }}</a>
-                                                @can('update', $rotas)
+                                                @can('update', $rota)
                                                     <a href="{{ route('rotas.edit', $rota->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('users.edit') }}</a>
                                                 @endcan
-                                                @can('delete', $rotas)
-                                                    @if (auth()->rota()->id !== $user->id)
-                                                        <form action="{{ route('rotas.delete', $user->id) }}" method="POST" style="display: inline-block;">
+                                                @can('delete', $rota)
+                                                    @if (auth()->user()->id !== $rota->user_id)
+                                                        <form action="{{ route('rotas.delete', $rota->id) }}" method="POST" style="display: inline-block;">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('users.delete') }}</button>
