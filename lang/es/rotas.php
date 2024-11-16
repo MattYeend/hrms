@@ -11,4 +11,5 @@ return [
     'user' => 'Usuario',
     'department' => 'Departamento',
     'actions' => 'Acciones',
+    'select_option' => 'Seleccionar una opción',
 ];

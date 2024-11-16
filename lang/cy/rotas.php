@@ -11,4 +11,5 @@ return [
     'user' => 'Defnyddiwr',
     'department' => 'Adran',
     'actions' => 'Gweithredoedd',
+    'select_option' => 'Dewiswch opsiwn',
 ];
