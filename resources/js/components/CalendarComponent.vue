@@ -148,16 +148,21 @@ export default {
                 rotas.forEach(rota => {
                     const userName = rota.user ? `${rota.user.first_name} ${rota.user.last_name}` : 'Unknown User';
 
+                    const startTime = new Date(rota.start_time);
+                    const endTime = new Date(rota.end_time);
+                    const eventTitle = `Rota (${userName}) - Start: ${startTime} - End: ${endTime}`;
+
                     rotaEvents.push({
-                        title: `Rota (${userName})`,
-                        start: rota.start_time,
-                        end: rota.end_time,
-                        allDay: false,
+                        title: eventTitle,
+                        start: startTime,
+                        end: endTime,
+                        allDay: true,
                         backgroundColor: '#6a5acd',
                         borderColor: '#6a5acd',
                     });
                 });
 
+                // Add the events to FullCalendar
                 this.calendar.addEventSource(rotaEvents);
             } catch (error) {
                 console.error('Error fetching rotas:', error);

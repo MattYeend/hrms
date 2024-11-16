@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/api/leaves', [LeaveController::class, 'getLeaves']);
 
     Route::get('/api/meetings', [MeetingsController::class, 'getMeetings'])->name('meetings.get');
+    Route::get('/api/rotas', [RotasController::class, 'getRotas'])->name('rotas.get');
 
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/create', [UserController::class, 'create'])->name('user.create');

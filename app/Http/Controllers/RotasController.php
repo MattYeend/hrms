@@ -94,4 +94,11 @@ class RotasController extends Controller
         $rotas->delete();
         return redirect()->route('rotas.index')->with('success', 'Rota deleted successfully.');
     }
+
+    public function getRotas()
+    {
+        $rotas = Rotas::with('user', 'department')->get();
+
+        return response()->json($rotas);
+    }
 }
