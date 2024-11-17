@@ -44,7 +44,7 @@ class RotasController extends Controller
     public function store(StoreRotasRequest $request)
     {
         $rota = Rotas::create($request->validated());
-        Logger::log(Logger::ACTION_CREATE_ROTA, ['rota' => $rota]);
+        Logger::log(Logger::ACTION_CREATE_ROTA, ['rota' => $rota], null, $rotas->user_id);
         return redirect()->route('rotas.index')->with('success', 'Rota created successfully.');
     }
 
