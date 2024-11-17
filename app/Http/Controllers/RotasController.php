@@ -81,7 +81,7 @@ class RotasController extends Controller
     public function update(UpdateRotasRequest $request, Rotas $rotas)
     {
         $rotas->update($request->validated());
-        Logger::log(Logger::ACTION_UPDATE_ROTA, ['rota' => $rotas]);
+        Logger::log(Logger::ACTION_UPDATE_ROTA, ['rota' => $rotas], null, $rotas->user_id);
         return redirect()->route('rotas.index')->with('success', 'Rota updated successfully.');
     }
 
