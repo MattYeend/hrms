@@ -90,7 +90,7 @@ class RotasController extends Controller
      */
     public function destroy(Rotas $rotas)
     {
-        Logger::log(Logger::ACTION_DELETE_ROTA, ['rota' => $rotas]);
+        Logger::log(Logger::ACTION_DELETE_ROTA, ['rota' => $rotas], null, $rotas->user_id);
         $rotas->delete();
         return redirect()->route('rotas.index')->with('success', 'Rota deleted successfully.');
     }
