@@ -59,7 +59,7 @@ class RotasController extends Controller
             return response()->json(['message' => 'Rota not found'], 404);
         }
 
-        Logger::log(Logger::ACTION_SHOW_ROTA, ['rota' => $rota]);
+        Logger::log(Logger::ACTION_SHOW_ROTA, ['rota' => $rota], null, $rotas->user_id);
         return view('rotas.show', compact('rota'));
     }
 
