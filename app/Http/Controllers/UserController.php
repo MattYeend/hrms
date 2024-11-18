@@ -4,20 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Logger;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use App\Mail\WelcomeNewUserMail;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
 use App\Models\Department;
 use App\Models\Roles;
 use App\Models\UserContact;
 use App\Models\Seniority;
 use App\Models\Job;
 use App\Models\HolidayEntitlement;
+use App\Mail\WelcomeNewUserMail;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use DateTimeZone;
 
 class UserController extends Controller
