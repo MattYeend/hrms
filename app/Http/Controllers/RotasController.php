@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rotas;
 use App\Models\Logger;
-use App\Models\User;;
+use App\Models\User;
 use App\Models\Department;
 use App\Http\Requests\StoreRotasRequest;
 use App\Http\Requests\UpdateRotasRequest;
