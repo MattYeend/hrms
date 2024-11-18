@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Logger;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
-use App\Models\Logger;
 
 class LocaleController extends Controller
 {
