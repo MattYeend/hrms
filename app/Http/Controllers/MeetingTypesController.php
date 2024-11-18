@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MeetingTypes;
+use App\Models\Logger;
 use App\Http\Requests\StoreMeetingTypesRequest;
 use App\Http\Requests\UpdateMeetingTypesRequest;
 

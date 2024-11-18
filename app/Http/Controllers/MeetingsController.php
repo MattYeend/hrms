@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Meetings;
+use App\Models\Logger;
 use App\Http\Requests\StoreMeetingsRequest;
 use App\Http\Requests\UpdateMeetingsRequest;
 use Illuminate\Support\Facades\Auth;

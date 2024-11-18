@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Locations;
+use App\Models\Logger;
 use App\Http\Requests\StoreLocationsRequest;
 use App\Http\Requests\UpdateLocationsRequest;
 
