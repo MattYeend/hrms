@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Learning;
 use App\Models\Logger;
-use App\Http\Requests\StoreLearningRequest;
-use App\Http\Requests\UpdateLearningRequest;
+use App\Models\User;
 use App\Mail\LearningAssignedMail;
 use App\Mail\LearningFinishedMail;
+use App\Http\Requests\StoreLearningRequest;
+use App\Http\Requests\UpdateLearningRequest;
 use Illuminate\Support\Facades\Mail;
-use App\Models\User;
 
 class LearningController extends Controller
 {
