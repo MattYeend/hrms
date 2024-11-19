@@ -1,0 +1,13 @@
+<?php 
+
+return [
+    'company_contact' => 'Unternehmenskontakt',
+    'company' => 'Unternehmen',
+    'create' => 'Unternehmenskontakt erstellen',
+    'edit' => 'Aktualisieren',
+    'view' => 'Unternehmenskontakt ansehen',
+    'delete' => 'Löschen',
+    'name' => 'Name',
+    'email' => 'E-Mail',
+    'phone' => 'Telefon',
+];
