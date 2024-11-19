@@ -9,4 +9,5 @@ return [
     'rotas' => 'Turnos',
     'department' => 'Departamentos',
     'companies' => 'Empresas',
+    'company_contact' => 'Contacto de la Empresa',
 ];

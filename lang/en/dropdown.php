@@ -9,4 +9,5 @@ return [
     'rotas' => 'Rotas',
     'department' => 'Departments',
     'companies' => 'Companies',
+    'company_contact' => 'Company Contact',
 ];

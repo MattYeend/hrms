@@ -9,4 +9,5 @@ return [
     'rotas' => 'Rotas',
     'department' => 'Adrannau',
     'companies' => 'Cwmnïau',
+    'company_contact' => 'Cyswllt y Cwmni',
 ];
