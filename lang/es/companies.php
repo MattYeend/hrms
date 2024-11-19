@@ -8,4 +8,11 @@ return [
     'view' => 'Ver Empresa',
     'delete' => 'Eliminar',
     'company_contact' => 'Contacto de la Empresa',
+    'name' => 'Nombre',
+    'pay_day' => 'Día de Pago',
+    'active' => 'Activo',
+    'work_weekdays' => '¿Días Laborales?',
+    'contract' => 'Contrato',
+    'address' => 'Dirección',
+    'company_relationship_manager' => 'Gerente de Relaciones con la Empresa',
 ];
