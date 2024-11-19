@@ -8,4 +8,5 @@ return [
     'user' => 'Usuárias',
     'rotas' => 'Turnos',
     'department' => 'Departamentos',
+    'companies' => 'Empresas',
 ];

@@ -8,4 +8,5 @@ return [
     'user' => 'Benutzer',
     'rotas' => 'Dienstpläne',
     'department' => 'Abteilungen',
+    'companies' => 'Unternehmen',
 ];

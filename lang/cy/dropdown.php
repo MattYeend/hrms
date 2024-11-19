@@ -8,4 +8,5 @@ return [
     'user' => 'Defnyddwyr',
     'rotas' => 'Rotas',
     'department' => 'Adrannau',
+    'companies' => 'Cwmnïau',
 ];
