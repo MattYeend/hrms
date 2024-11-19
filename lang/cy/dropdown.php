@@ -10,4 +10,5 @@ return [
     'department' => 'Adrannau',
     'companies' => 'Cwmnïau',
     'company_contact' => 'Cyswllt y Cwmni',
+    'licence' => 'Trwydded',
 ];

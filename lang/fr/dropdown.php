@@ -10,4 +10,5 @@ return [
     'department' => 'Départements',
     'companies' => 'Entreprises',
     'company_contact' => 'Contact de l\'Entreprise',
+    'licence' => 'Licence',
 ];
