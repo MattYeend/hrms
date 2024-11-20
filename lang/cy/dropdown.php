@@ -12,4 +12,5 @@ return [
     'company_contact' => 'Cyswllt y Cwmni',
     'licence' => 'Trwydded',
     'address_book' => 'Llyfr Cyfeiriadau\'r Cwmni',
+    'address_contact' => 'Cyswllt Cyfeiriadau\'r Cwmni',
 ];
