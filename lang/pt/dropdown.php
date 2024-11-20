@@ -11,4 +11,5 @@ return [
     'companies' => 'Empresas',
     'company_contact' => 'Contato da Empresa',
     'licence' => 'Licença',
+    'address_book' => 'Livro de Endereços da Empresa',
 ];
