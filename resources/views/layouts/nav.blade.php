@@ -52,6 +52,18 @@
                             <a class="dropdown-item" href="{{ route('rotas.index') }}">
                                 {{ __('dropdown.rotas') }}
                             </a>
+                            <a class="dropdown-item" href="{{ route('licence.index') }}">
+                                {{ __('dropdown.licence') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('addressBook.index') }}">
+                                {{ __('dropdown.address_book') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('addressContact.index') }}">
+                                {{ __('dropdown.address_contact') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('contract.index') }}">
+                                {{ __('dropdown.contract') }}
+                            </a>
                             <a class="dropdown-item" href="{{ route('knowledge') }}">
                                 {{ __('dropdown.knowledge_base') }}
                             </a>
