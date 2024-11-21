@@ -10,6 +10,10 @@ use App\Http\Controllers\MeetingsController;
 use App\Http\Controllers\LearningController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\RotasController;
+use App\Http\Controllers\LicenceController;
+use App\Http\Controllers\AddressBookController;
+use App\Http\Controllers\AddressContactController;
+use App\Http\Controllers\ContractController;
 
 Route::get('/', function () {
     if (Auth::check()) {
