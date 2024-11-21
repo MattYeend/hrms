@@ -42,7 +42,7 @@ class LicenceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Licence $Licence)
+    public function show(Licence $licence)
     {
         //
     }
@@ -50,7 +50,7 @@ class LicenceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Licence $Licence)
+    public function edit(Licence $licence)
     {
         //
     }
@@ -58,7 +58,7 @@ class LicenceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLicenceRequest $request, Licence $Licence)
+    public function update(UpdateLicenceRequest $request, Licence $licence)
     {
         //
     }
@@ -66,7 +66,7 @@ class LicenceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Licence $Licence)
+    public function destroy(Licence $licence)
     {
         //
     }

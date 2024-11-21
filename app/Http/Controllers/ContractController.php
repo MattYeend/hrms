@@ -42,7 +42,7 @@ class ContractController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Contract $Contract)
+    public function show(Contract $contract)
     {
         //
     }
@@ -50,7 +50,7 @@ class ContractController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Contract $Contract)
+    public function edit(Contract $contract)
     {
         //
     }
@@ -58,7 +58,7 @@ class ContractController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateContractRequest $request, Contract $Contract)
+    public function update(UpdateContractRequest $request, Contract $contract)
     {
         //
     }
@@ -66,7 +66,7 @@ class ContractController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Contract $Contract)
+    public function destroy(Contract $contract)
     {
         //
     }

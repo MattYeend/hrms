@@ -42,7 +42,7 @@ class AddressBookController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AddressBook $AddressBook)
+    public function show(AddressBook $addressBook)
     {
         //
     }
@@ -50,7 +50,7 @@ class AddressBookController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AddressBook $AddressBook)
+    public function edit(AddressBook $addressBook)
     {
         //
     }
@@ -58,7 +58,7 @@ class AddressBookController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAddressBookRequest $request, AddressBook $AddressBook)
+    public function update(UpdateAddressBookRequest $request, AddressBook $addressBook)
     {
         //
     }
@@ -66,7 +66,7 @@ class AddressBookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AddressBook $AddressBook)
+    public function destroy(AddressBook $addressBook)
     {
         //
     }

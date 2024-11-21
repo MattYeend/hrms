@@ -42,7 +42,7 @@ class AddressContactController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AddressContact $AddressContact)
+    public function show(AddressContact $addressContact)
     {
         //
     }
@@ -50,7 +50,7 @@ class AddressContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AddressContact $AddressContact)
+    public function edit(AddressContact $addressContact)
     {
         //
     }
@@ -58,7 +58,7 @@ class AddressContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAddressContactRequest $request, AddressContact $AddressContact)
+    public function update(UpdateAddressContactRequest $request, AddressContact $addressContact)
     {
         //
     }
@@ -66,7 +66,7 @@ class AddressContactController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AddressContact $AddressContact)
+    public function destroy(AddressContact $addressContact)
     {
         //
     }

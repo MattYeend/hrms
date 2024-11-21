@@ -28,12 +28,14 @@ Route::post('/locale', LocaleController::class)->name('locale.change');
 
 Route::middleware(['auth'])->group(function(){
 
+    // API routes
     Route::get('/api/holidays', [LeaveController::class, 'getHolidays']);
     Route::get('/api/leaves', [LeaveController::class, 'getLeaves']);
 
     Route::get('/api/meetings', [MeetingsController::class, 'getMeetings'])->name('meetings.get');
     Route::get('/api/rotas', [RotasController::class, 'getRotas'])->name('rotas.get');
 
+    // User routes
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
     Route::post('/user', [UserController::class, 'store'])->name('user.store');
@@ -50,10 +52,12 @@ Route::middleware(['auth'])->group(function(){
     Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
     Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
+    // Home redirect routes
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/super-admin-home', [HomeController::class, 'superAdminHome'])->name('super-admin-home');
     Route::get('/admin-home', [HomeController::class, 'adminHome'])->name('admin-home');
 
+    // Leave routes
     Route::get('/calendar', [LeaveController::class, 'index'])->name('calendar');
     Route::get('/leaves/create', [LeaveController::class, 'create'])->name('leave.create');
     Route::post('/leaves', [LeaveController::class, 'store'])->name('leave.store');
@@ -65,6 +69,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/leave/{leave}/deny', [LeaveController::class, 'deny'])->name('leave.deny');
     Route::get('/leaves/outstanding', [LeaveController::class, 'outstandingRequests'])->name('leave.outstanding');
 
+    // Rotas routes
     Route::get('/rotas', [RotasController::class, 'index'])->name('rotas.index');
     Route::get('/rotas/create', [RotasController::class, 'create'])->name('rotas.create');
     Route::post('/rotas', [RotasController::class, 'store'])->name('rotas.store');
@@ -73,9 +78,48 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/rota/{rotas}', [RotasController::class, 'update'])->name('rotas.update');
     Route::delete('/rota/{rotas}', [RotasController::class, 'delete'])->name('rotas.delete');
 
+    // Licence routes
+    Route::get('/licence', [LicenceController::class, 'index'])->name('licence.index');
+    Route::get('/licence/create', [LicenceController::class, 'create'])->name('licence.create');
+    Route::post('/licence', [LicenceController::class, 'store'])->name('licence.store');
+    Route::get('/licence/{licence}', [LicenceController::class, 'show'])->name('licence.show');
+    Route::get('/licence/{licence}/edit', [LicenceController::class, 'edit'])->name('licence.edit');
+    Route::put('/licence/{licence}', [LicenceController::class, 'update'])->name('licence.update');
+    Route::delete('/licence/{licence}', [LicenceController::class, 'delete'])->name('licence.delete');
+
+    // Address Book routes
+    Route::get('/address-book', [AddressBookController::class, 'index'])->name('addressBook.index');
+    Route::get('/address-book/create', [AddressBookController::class, 'create'])->name('addressBook.create');
+    Route::post('/address-book', [AddressBookController::class, 'store'])->name('addressBook.store');
+    Route::get('/address-book/{addressBook}', [AddressBookController::class, 'show'])->name('addressBook.show');
+    Route::get('/address-book/{addressBook}/edit', [AddressBookController::class, 'edit'])->name('addressBook.edit');
+    Route::put('/address-book/{addressBook}', [AddressBookController::class, 'update'])->name('addressBook.update');
+    Route::delete('/address-book/{addressBook}', [AddressBookController::class, 'delete'])->name('addressBook.delete');
+
+    // Address Contact routes
+    Route::get('/address-contact', [AddressContactController::class, 'index'])->name('addressContact.index');
+    Route::get('/address-contact/create', [AddressContactController::class, 'create'])->name('addressContact.create');
+    Route::post('/address-contact', [AddressContactController::class, 'store'])->name('addressContact.store');
+    Route::get('/address-contact/{addressContact}', [AddressContactController::class, 'show'])->name('addressContact.show');
+    Route::get('/address-contact/{addressContact}/edit', [AddressContactController::class, 'edit'])->name('addressContact.edit');
+    Route::put('/address-contact/{addressContact}', [AddressContactController::class, 'update'])->name('addressContact.update');
+    Route::delete('/address-contact/{addressContact}', [AddressContactController::class, 'delete'])->name('addressContact.delete');
+
+
+    // Contracts routes
+    Route::get('/contract', [ContractController::class, 'index'])->name('contract.index');
+    Route::get('/contract/create', [ContractController::class, 'create'])->name('contract.create');
+    Route::post('/contract', [ContractController::class, 'store'])->name('contract.store');
+    Route::get('/contract/{contract}', [ContractController::class, 'show'])->name('contract.show');
+    Route::get('/contract/{contract}/edit', [ContractController::class, 'edit'])->name('contract.edit');
+    Route::put('/contract/{contract}', [ContractController::class, 'update'])->name('contract.update');
+    Route::delete('/contract/{contract}', [ContractController::class, 'delete'])->name('contract.delete');
+
+    // Knowledge Base and Reports routes
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');
     Route::view('/reports/index', 'reports/index')->name('reports');
 
+    // L&D routes
     Route::get('/assign-learning/{id}', [LearningController::class, 'assignLearning'])->name('assignLearning');
     Route::get('/finish-learning/{id}', [LearningController::class, 'finishLearning'])->name('finishLearning');
 });
