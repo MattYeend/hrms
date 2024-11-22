@@ -10,18 +10,21 @@
         <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-                <form action="{{ route('locale.change') }}" method="POST">
-                    @csrf
-                    <select name="locale" onchange="this.form.submit()" class="form-select form-select-sm">
-                        <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : ''}}>English</option>
-                        <option value="de"{{ app()->getLocale() == 'de' ? ' selected' : ''}}>German</option>
-                        <option value="fr"{{ app()->getLocale() == 'fr' ? ' selected' : ''}}>French</option>
-                        <option value="it"{{ app()->getLocale() == 'it' ? ' selected' : ''}}>Italian</option>
-                        <option value="pt"{{ app()->getLocale() == 'pt' ? ' selected' : ''}}>Portuguese</option>
-                        <option value="es"{{ app()->getLocale() == 'es' ? ' selected' : ''}}>Spanish</option>
-                        <option value="cy"{{ app()->getLocale() == 'cy' ? ' selected' : ''}}>Welsh</option>
-                    </select>
-                </form>
+                @guest
+                @else
+                    <form action="{{ route('locale.change') }}" method="POST">
+                        @csrf
+                        <select name="locale" onchange="this.form.submit()" class="form-select form-select-sm">
+                            <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : ''}}>English</option>
+                            <option value="de"{{ app()->getLocale() == 'de' ? ' selected' : ''}}>German</option>
+                            <option value="fr"{{ app()->getLocale() == 'fr' ? ' selected' : ''}}>French</option>
+                            <option value="it"{{ app()->getLocale() == 'it' ? ' selected' : ''}}>Italian</option>
+                            <option value="pt"{{ app()->getLocale() == 'pt' ? ' selected' : ''}}>Portuguese</option>
+                            <option value="es"{{ app()->getLocale() == 'es' ? ' selected' : ''}}>Spanish</option>
+                            <option value="cy"{{ app()->getLocale() == 'cy' ? ' selected' : ''}}>Welsh</option>
+                        </select>
+                    </form>
+                @endguest
             </ul>
 
             <ul class="navbar-nav mx-auto">
