@@ -15,7 +15,7 @@ class LocaleController extends Controller
     public function __invoke(Request $request)
     {
         $locale = $request->input('locale');
-        if(in_array($locale, ['en','de','fr','pt','es','cy'])){
+        if(in_array($locale, ['en','de','fr','pt','es','cy', 'it'])){
             Session::put('locale', $locale);
             App::setLocale($locale);
         }
