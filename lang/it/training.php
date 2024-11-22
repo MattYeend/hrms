@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'training' => 'Training',
-    'training_page' => 'Training Page'
+    'training' => 'Formazione',
+    'training_page' => 'Pagina della Formazione',
 ];
