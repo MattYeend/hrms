@@ -10,8 +10,7 @@
         <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-                @guest
-                @else
+                @auth
                     <form action="{{ route('locale.change') }}" method="POST">
                         @csrf
                         <select name="locale" onchange="this.form.submit()" class="form-select form-select-sm">
@@ -24,7 +23,7 @@
                             <option value="cy"{{ app()->getLocale() == 'cy' ? ' selected' : ''}}>Welsh</option>
                         </select>
                     </form>
-                @endguest
+                @endauth
             </ul>
 
             <ul class="navbar-nav mx-auto">
@@ -33,8 +32,7 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
-                @guest
-                @else
+                @auth
                     <div id="theme-switch" class="mt-10px flex justify-end">
                         <label class="switch">
                             <input type="checkbox" id="dark-mode-toggle" {{ Auth::user()->dark_mode ? 'checked' : '' }}>
@@ -90,7 +88,7 @@
                             </form>
                         </div>
                     </li>
-                @endguest
+                @endauth
             </ul>
         </div>
     </div>
