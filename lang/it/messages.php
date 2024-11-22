@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome' => 'Welcome',
-    'latest_posts' => 'Latest Posts',
-    'remaining' => '{0} No remaining posts.|[1,*] :count remaining posts',
+    'welcome' => 'Benvenuto',
+    'latest_posts' => 'Ultimi Post',
+    'remaining' => '{0} Nessun post rimanente.|[1,*] :count post rimanenti',
 ];

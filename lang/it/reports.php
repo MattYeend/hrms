@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'reports' => 'Reports',
-    'reports_page' => 'Reports Page'
+    'reports' => 'Report',
+    'reports_page' => 'Pagina dei Report',
 ];

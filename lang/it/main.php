@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'hello' => 'Hello',
-    'dashboard' => 'Dashboard',
-    'super_admin_dashboard' => 'Super Admin Dashboard',
-    'admin_dashboard' => 'Admin Dashboard',
+    'hello' => 'Ciao',
+    'dashboard' => 'Cruscotto',
+    'super_admin_dashboard' => 'Cruscotto Super Admin',
+    'admin_dashboard' => 'Cruscotto Admin',
 ];
