@@ -1,15 +1,15 @@
 <?php
 
 return [
-    'address_contact' => 'Company Address Contact',
-    'create' => 'Create a Address Contact',
-    'edit' => 'Update',
-    'view' => 'View Address Contact',
-    'delete' => 'Delete',
-    'name' => 'Name',
+    'address_contact' => 'Contatto Indirizzo Aziendale',
+    'create' => 'Crea un Contatto Indirizzo',
+    'edit' => 'Aggiorna',
+    'view' => 'Visualizza Contatto Indirizzo',
+    'delete' => 'Elimina',
+    'name' => 'Nome',
     'email' => 'Email',
-    'phone' => 'Phone', 
-    'position' => 'Position',
-    'main_contact' => 'Main Contact',
-    'secondary_contact' => 'Secondary Contact',
+    'phone' => 'Telefono',
+    'position' => 'Posizione',
+    'main_contact' => 'Contatto Principale',
+    'secondary_contact' => 'Contatto Secondario',
 ];

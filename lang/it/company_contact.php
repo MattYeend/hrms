@@ -1,13 +1,13 @@
 <?php 
 
 return [
-    'company_contact' => 'Company Contact',
-    'company' => 'Company',
-    'create' => 'Create a Company Contact',
-    'edit' => 'Update',
-    'view' => 'View Company Contact',
-    'delete' => 'Delete',
-    'name' => 'Name',
-    'email' => 'Email', 
-    'phone' => 'Phone',
+    'company_contact' => 'Contatto Aziendale',
+    'company' => 'Azienda',
+    'create' => 'Crea un Contatto Aziendale',
+    'edit' => 'Aggiorna',
+    'view' => 'Visualizza Contatto Aziendale',
+    'delete' => 'Elimina',
+    'name' => 'Nome',
+    'email' => 'Email',
+    'phone' => 'Telefono',
 ];
