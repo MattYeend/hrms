@@ -8,13 +8,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
 class LocaleController extends Controller
-{
-    public function __construct()
-    {
-        // Add Middleware to protect routes
-        // E.G $this->middleware('auth');
-    }
-    
+{    
     /**
      * Handle the incoming request.
      */
