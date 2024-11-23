@@ -32,11 +32,13 @@
                 {{ __('dropdown.address_contact') }}
             </a>
         </li>
-        <li>
-            <a class="nav-link" href="{{ route('contract.index') }}">
-                {{ __('dropdown.contract') }}
-            </a>
-        </li>
+        @if(auth()->user()->isSuperAdmin())
+            <li>
+                <a class="nav-link" href="{{ route('contract.index') }}">
+                    {{ __('dropdown.contract') }}
+                </a>
+            </li>
+        @endif
         <li>
             <a class="nav-link" href="{{ route('knowledge') }}">
                 {{ __('dropdown.knowledge_base') }}
