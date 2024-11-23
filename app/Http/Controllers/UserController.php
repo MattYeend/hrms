@@ -36,7 +36,6 @@ class UserController extends Controller
         // Admins and super admins to view all
         $this->authorize('viewAny', User::class);
 
-        // $users = User::with('role', 'department')->paginate(10);
         $users = User::with('role', 'department')->get();
 
         $roleOrder = ['Super Admin', 'Admin', 'User'];
@@ -58,7 +57,6 @@ class UserController extends Controller
             ['path' => request()->url(), 'query' => request()->query()]
         );
 
-        // $paginatedUsers = $sortedUsers->forPage(request('page', 1), 10);
         return view('users.index', ['users' => $paginatedUsers]);
     }
 
