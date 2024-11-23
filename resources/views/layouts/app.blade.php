@@ -28,10 +28,10 @@
         <div class="container mt-3">
             <div class="row">
                 <!-- Sidebar on the left side -->
-                <div class="col-md-3">
+                <div class="col-md-2">
                     @include('layouts.menu')
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-10">
                     <main class="py-4 mb-5">
                         @yield('content')
                     </main>
