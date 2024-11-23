@@ -15,11 +15,13 @@
                 {{ __('dropdown.rotas') }}
             </a>
         </li>
-        <li>
-            <a class="nav-link" href="{{ route('licence.index') }}">
-                {{ __('dropdown.licence') }}
-            </a>
-        </li>
+        @if(auth()->user()->isSuperAdmin())
+            <li>
+                <a class="nav-link" href="{{ route('licence.index') }}">
+                    {{ __('dropdown.licence') }}
+                </a>
+            </li>
+        @endif
         <li>
             <a class="nav-link" href="{{ route('addressBook.index') }}">
                 {{ __('dropdown.address_book') }}
