@@ -1,47 +1,47 @@
-<ul class="list-group list-group-flush">
+<ul class="list-group list-group-flush menu">
     @auth
-        <li class="list-group-item border-0">
-            <a class="nav-link text-dark fw-semibold" href="{{ route('calendar') }}">
+        <li>
+            <a class="nav-link" href="{{ route('calendar') }}">
                 {{ __('dropdown.calendar') }}
             </a>
         </li>
-        <li class="list-group-item border-0">
-            <a class="nav-link text-dark fw-semibold" href="{{ route('user.index') }}">
+        <li>
+            <a class="nav-link" href="{{ route('user.index') }}">
                 {{ __('dropdown.user') }}
             </a>
         </li>
-        <li class="list-group-item border-0">
-            <a class="nav-link text-dark fw-semibold" href="{{ route('rotas.index') }}">
+        <li>
+            <a class="nav-link" href="{{ route('rotas.index') }}">
                 {{ __('dropdown.rotas') }}
             </a>
         </li>
-        <li class="list-group-item border-0">
-            <a class="nav-link text-dark fw-semibold" href="{{ route('licence.index') }}">
+        <li>
+            <a class="nav-link" href="{{ route('licence.index') }}">
                 {{ __('dropdown.licence') }}
             </a>
         </li>
-        <li class="list-group-item border-0">
-            <a class="nav-link text-dark fw-semibold" href="{{ route('addressBook.index') }}">
+        <li>
+            <a class="nav-link" href="{{ route('addressBook.index') }}">
                 {{ __('dropdown.address_book') }}
             </a>
         </li>
-        <li class="list-group-item border-0">
-            <a class="nav-link text-dark fw-semibold" href="{{ route('addressContact.index') }}">
+        <li>
+            <a class="nav-link" href="{{ route('addressContact.index') }}">
                 {{ __('dropdown.address_contact') }}
             </a>
         </li>
-        <li class="list-group-item border-0">
-            <a class="nav-link text-dark fw-semibold" href="{{ route('contract.index') }}">
+        <li>
+            <a class="nav-link" href="{{ route('contract.index') }}">
                 {{ __('dropdown.contract') }}
             </a>
         </li>
-        <li class="list-group-item border-0">
-            <a class="nav-link text-dark fw-semibold" href="{{ route('knowledge') }}">
+        <li>
+            <a class="nav-link" href="{{ route('knowledge') }}">
                 {{ __('dropdown.knowledge_base') }}
             </a>
         </li>
-        <li class="list-group-item border-0">
-            <a class="nav-link text-dark fw-semibold" href="{{ route('reports') }}">
+        <li>
+            <a class="nav-link" href="{{ route('reports') }}">
                 {{ __('dropdown.reports') }}
             </a>
         </li>
