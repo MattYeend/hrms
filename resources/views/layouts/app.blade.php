@@ -25,9 +25,19 @@
     <div id="app">
         @include('layouts.nav')
 
-        <main class="py-4 mb-5">
-            @yield('content')
-        </main>
+        <div class="container mt-3">
+            <div class="row">
+                <!-- Sidebar on the left side -->
+                <div class="col-md-3">
+                    @include('layouts.menu')
+                </div>
+                <div class="col-md-9">
+                    <main class="py-4 mb-5">
+                        @yield('content')
+                    </main>
+                </div>
+            </div>
+        </div>
 
         @include('layouts.footer')
     </div>
