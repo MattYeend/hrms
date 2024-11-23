@@ -25,10 +25,9 @@
     <div id="app">
         @include('layouts.nav')
 
-        <div class="container mt-3">
+        <div class="container-fluid">
             <div class="row">
-                <!-- Sidebar on the left side -->
-                <div class="col-md-2">
+                <div class="col-md-2 p-0">
                     @include('layouts.menu')
                 </div>
                 <div class="col-md-10">
