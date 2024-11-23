@@ -77,4 +77,11 @@ body.dark-mode .navbar{
 body.dark-mode .menu{
     background-color: $light-dark-mode;
     color: $gray-light;
+
+    .nav-link{
+        color: $gray-light;
+        &:hover{
+            color: $gray-light;
+        }
+    }
 }
