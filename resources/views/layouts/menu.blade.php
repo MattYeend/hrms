@@ -15,30 +15,6 @@
                 {{ __('dropdown.rotas') }}
             </a>
         </li>
-        @if(auth()->user()->isSuperAdmin())
-            <li>
-                <a class="nav-link" href="{{ route('licence.index') }}">
-                    {{ __('dropdown.licence') }}
-                </a>
-            </li>
-        @endif
-        <li>
-            <a class="nav-link" href="{{ route('addressBook.index') }}">
-                {{ __('dropdown.address_book') }}
-            </a>
-        </li>
-        <li>
-            <a class="nav-link" href="{{ route('addressContact.index') }}">
-                {{ __('dropdown.address_contact') }}
-            </a>
-        </li>
-        @if(auth()->user()->isSuperAdmin())
-            <li>
-                <a class="nav-link" href="{{ route('contract.index') }}">
-                    {{ __('dropdown.contract') }}
-                </a>
-            </li>
-        @endif
         <li>
             <a class="nav-link" href="{{ route('knowledge') }}">
                 {{ __('dropdown.knowledge_base') }}
@@ -49,5 +25,27 @@
                 {{ __('dropdown.reports') }}
             </a>
         </li>
+        @if(auth()->user()->isSuperAdmin())
+            <li>
+                <a class="nav-link" href="{{ route('licence.index') }}">
+                    {{ __('dropdown.licence') }}
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="{{ route('contract.index') }}">
+                    {{ __('dropdown.contract') }}
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="{{ route('addressBook.index') }}">
+                    {{ __('dropdown.address_book') }}
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="{{ route('addressContact.index') }}">
+                    {{ __('dropdown.address_contact') }}
+                </a>
+            </li>
+        @endif
     @endauth
 </ul>
