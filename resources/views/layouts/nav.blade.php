@@ -10,6 +10,9 @@
         <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
+            </ul>
+
+            <ul class="navbar-nav mx-auto">
                 @auth
                     <form action="{{ route('locale.change') }}" method="POST">
                         @csrf
@@ -24,9 +27,6 @@
                         </select>
                     </form>
                 @endauth
-            </ul>
-
-            <ul class="navbar-nav mx-auto">
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -45,34 +45,6 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('calendar') }}">
-                                {{ __('dropdown.calendar') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('user.index') }}">
-                                {{ __('dropdown.user') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('rotas.index') }}">
-                                {{ __('dropdown.rotas') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('licence.index') }}">
-                                {{ __('dropdown.licence') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('addressBook.index') }}">
-                                {{ __('dropdown.address_book') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('addressContact.index') }}">
-                                {{ __('dropdown.address_contact') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('contract.index') }}">
-                                {{ __('dropdown.contract') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('knowledge') }}">
-                                {{ __('dropdown.knowledge_base') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('reports') }}">
-                                {{ __('dropdown.reports') }}
-                            </a>
-                            <hr />
                             <a class="dropdown-item" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
                                 {{ __('dropdown.profile') }}
                             </a>
@@ -93,3 +65,42 @@
         </div>
     </div>
 </nav>
+
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('calendar') }}">{{ __('dropdown.calendar') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.index') }}">{{ __('dropdown.user') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('rotas.index') }}">{{ __('dropdown.rotas') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('licence.index') }}">{{ __('dropdown.licence') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('addressBook.index') }}">{{ __('dropdown.address_book') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('addressContact.index') }}">{{ __('dropdown.address_contact') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contract.index') }}">{{ __('dropdown.contract') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('knowledge') }}">{{ __('dropdown.knowledge_base') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('reports') }}">{{ __('dropdown.reports') }}</a>
+                    </li>
+                @endauth
+            </ul>
+        </div>
+    </div>
+</div>
