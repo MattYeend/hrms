@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Illuminate\Pagination\LengthAwarePaginator;
 use DateTimeZone;
 
 class UserController extends Controller
@@ -35,8 +36,30 @@ class UserController extends Controller
         // Admins and super admins to view all
         $this->authorize('viewAny', User::class);
 
-        $users = User::with('role', 'department')->paginate(10);
-        return view('users.index', compact('users'));
+        // $users = User::with('role', 'department')->paginate(10);
+        $users = User::with('role', 'department')->get();
+
+        $roleOrder = ['Super Admin', 'Admin', 'User'];
+
+        $sortedUsers = $users->sortBy(function($user) use($roleOrder){
+            $roleRank = array_search($user->role->name, $roleOrder);
+            $roleRank = $roleRank === false ? count($roleOrder) : $roleRank;
+            $deptRank = $user->department->name === 'C Suite' ? 0 : 1;
+            return [$roleRank, $deptRank, $user->department->name];
+        });
+
+        $currentPage = request('page', 1);
+        $perPage = 10;
+        $paginatedUsers = new LengthAwarePaginator(
+            $sortedUsers->forPage($currentPage, $perPage),
+            $sortedUsers->count(),
+            $perPage,
+            $currentPage,
+            ['path' => request()->url(), 'query' => request()->query()]
+        );
+
+        // $paginatedUsers = $sortedUsers->forPage(request('page', 1), 10);
+        return view('users.index', ['users' => $paginatedUsers]);
     }
 
     /**
