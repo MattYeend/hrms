@@ -1,4 +1,4 @@
-<ul class="list-group list-group-flush menu">
+<ul class="menu navbar-light">
     @auth
         <li>
             <a class="nav-link" href="{{ route('calendar') }}">

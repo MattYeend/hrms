@@ -1,0 +1,27 @@
+.menu {
+    background-color: $footer-colour;
+    padding: 1rem;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+        color: $text-colour;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: darken($navbar-bg-colour, 10%);
+            color: $text-colour;
+        }
+    }
+}
