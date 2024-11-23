@@ -20,11 +20,13 @@
                 {{ __('dropdown.knowledge_base') }}
             </a>
         </li>
-        <li>
-            <a class="nav-link" href="{{ route('reports') }}">
-                {{ __('dropdown.reports') }}
-            </a>
-        </li>
+        @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite())
+            <li>
+                <a class="nav-link" href="{{ route('reports') }}">
+                    {{ __('dropdown.reports') }}
+                </a>
+            </li>
+        @endif
         @if(auth()->user()->isSuperAdmin())
             <li>
                 <a class="nav-link" href="{{ route('licence.index') }}">
