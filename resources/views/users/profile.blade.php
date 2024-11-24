@@ -19,11 +19,11 @@
                                 <img src="{{ asset('storage/' . $user->profile_picture) }}" alt="profile_picture" class="profile-picture-circle">
                             @endif
                             <p>{{ __('users.first_line') }}: {{ $user->first_line }}</p>
-                            <p>{{ __('users.second_line') }}: {{ $user->second_line?:'Not Provided' }}</p>
-                            <p>{{ __('users.town') }}: {{ $user->town?:'Not Provided' }}</p>
-                            <p>{{ __('users.city') }}: {{ $user->city?:'Not Provided' }}</p>
-                            <p>{{ __('users.county') }}: {{ $user->county?:'Not Provided' }}</p>
-                            <p>{{ __('users.country') }}: {{ $user->country?:'Not Provided' }}</p>
+                            <p>{{ __('users.second_line') }}: {{ $user->second_line?: __{{users.not_provided}} }}</p>
+                            <p>{{ __('users.town') }}: {{ $user->town?: __{{users.not_provided}} }}</p>
+                            <p>{{ __('users.city') }}: {{ $user->city?: __{{users.not_provided}} }}</p>
+                            <p>{{ __('users.county') }}: {{ $user->county?: __{{users.not_provided}} }}</p>
+                            <p>{{ __('users.country') }}: {{ $user->country?: __{{users.not_provided}} }}</p>
                             <p>{{ __('users.post_code') }}: {{ $user->post_code }}</p>
                             <p>{{ __('users.full_or_part') }}: {{ $user->full_or_part }}</p>
                         </div>
