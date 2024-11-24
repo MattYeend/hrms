@@ -40,25 +40,29 @@
                                 <tbody>
                                     @foreach($companies as $company)
                                         <tr>
-                                            <td>{{ $company->name }}</td>
-                                            <td>{{ $company->company_contact }}</td>
-                                            <td>{{ $company->pay_day }}</td>
-                                            <td>{{ $company->active }}</td>
-                                            <td>{{ $company->work_weekdays }}</td>
-                                            <td>{{ $company->contract }}</td>
-                                            <td>{{ $company->address }}</td>
-                                            <td>{{ $company->company_relationship_manager }}</td>
+                                        <td>{{ $company->name }}</td>
+                                        <td>{{ $company->companyContact->name ?? 'Not Provided' }}</td>
+                                        <td>{{ $company->pay_day }}</td>
+                                        <td>{{ $company->active ? 'Yes' : 'No' }}</td>
+                                        <td>{{ $company->work_weekends ? 'Yes' : 'No' }}</td>
+                                        <td>{{ $company->contract->name ?? 'Not Provided' }}</td>
+                                        <td>
+                                            {{ $company->addressBook->first_line }}<br />
+                                            {{ $company->addressBook->country }}<br />
+                                            {{ $company->addressBook->post_code }}
+                                        </td>
+                                        <td>{{ $company->companyRelationshipManager->name ?? 'Not Provided' }}</td>
                                             <td>
-                                                <a href="{{ route('company.show', $company->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('users.view') }}</a>
+                                                <a href="{{ route('company.show', $company->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('companies.view') }}</a>
                                                 @can('update', $company)
-                                                    <a href="{{ route('company.edit', $company->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('users.edit') }}</a>
+                                                    <a href="{{ route('company.edit', $company->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('companies.edit') }}</a>
                                                 @endcan
                                                 @can('delete', $company)
                                                     @if (auth()->user()->id !== $company->user_id)
                                                         <form action="{{ route('company.delete', $company->id) }}" method="POST" style="display: inline-block;">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('users.delete') }}</button>
+                                                            <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('companies.delete') }}</button>
                                                         </form>
                                                     @endif
                                                 @endcan

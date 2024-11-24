@@ -11,8 +11,11 @@ return [
     'name' => 'Nom',
     'pay_day' => 'Jour de Paie',
     'active' => 'Actif',
-    'work_weekdays' => 'Jours de Travail en Semaine ?',
+    'work_weekdays' => 'Jours Ouvrables?',
     'contract' => 'Contrat',
     'address' => 'Adresse',
-    'company_relationship_manager' => 'Responsable des Relations avec l\'Entreprise',
+    'company_relationship_manager' => 'Responsable des Relations d\'Entreprise',
+    'not_provided' => 'Non Fournie',
+    'yes' => 'Oui',
+    'no' => 'Non'
 ];

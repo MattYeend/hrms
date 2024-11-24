@@ -15,4 +15,7 @@ return [
     'contract' => 'Contract',
     'address' => 'Address',
     'company_relationship_manager' => 'Company Relationship Manager',
+    'not_provided' => 'Not Provided',
+    'yes' => 'Yes',
+    'no' => 'No'
 ];

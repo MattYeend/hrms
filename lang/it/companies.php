@@ -14,5 +14,8 @@ return [
     'work_weekdays' => 'Giorni Lavorativi?',
     'contract' => 'Contratto',
     'address' => 'Indirizzo',
-    'company_relationship_manager' => 'Responsabile delle Relazioni Aziendali',
+    'company_relationship_manager' => 'Responsabile Relazioni Aziendali',
+    'not_provided' => 'Non Fornito',
+    'yes' => 'Sì',
+    'no' => 'No'
 ];
