@@ -8,12 +8,18 @@ use Illuminate\Auth\Access\Response;
 
 class CompanyPolicy
 {
+    public function before(User $user)
+    {
+        if ($user->isSuperAdmin()) {
+            return true;
+        }
+    }
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -21,7 +27,7 @@ class CompanyPolicy
      */
     public function view(User $user, company $company): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -29,7 +35,7 @@ class CompanyPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -37,7 +43,7 @@ class CompanyPolicy
      */
     public function update(User $user, company $company): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -45,7 +51,7 @@ class CompanyPolicy
      */
     public function delete(User $user, company $company): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +59,7 @@ class CompanyPolicy
      */
     public function restore(User $user, company $company): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -61,6 +67,6 @@ class CompanyPolicy
      */
     public function forceDelete(User $user, company $company): bool
     {
-        //
+        return false;
     }
 }
