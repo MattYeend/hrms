@@ -115,14 +115,14 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/contract/{contract}', [ContractController::class, 'update'])->name('contract.update');
     Route::delete('/contract/{contract}', [ContractController::class, 'delete'])->name('contract.delete');
 
-        // Companies routes
-        Route::get('/company', [CompanyController::class, 'index'])->name('company.index');
-        Route::get('/company/create', [CompanyController::class, 'create'])->name('company.create');
-        Route::post('/company', [CompanyController::class, 'store'])->name('company.store');
-        Route::get('/company/{company}', [CompanyController::class, 'show'])->name('company.show');
-        Route::get('/company/{company}/edit', [CompanyController::class, 'edit'])->name('company.edit');
-        Route::put('/company/{company}', [CompanyController::class, 'update'])->name('company.update');
-        Route::delete('/company/{company}', [CompanyController::class, 'delete'])->name('company.delete');
+    // Companies routes
+    Route::get('/company', [CompanyController::class, 'index'])->name('company.index');
+    Route::get('/company/create', [CompanyController::class, 'create'])->name('company.create');
+    Route::post('/company', [CompanyController::class, 'store'])->name('company.store');
+    Route::get('/company/{company}', [CompanyController::class, 'show'])->name('company.show');
+    Route::get('/company/{company}/edit', [CompanyController::class, 'edit'])->name('company.edit');
+    Route::put('/company/{company}', [CompanyController::class, 'update'])->name('company.update');
+    Route::delete('/company/{company}', [CompanyController::class, 'delete'])->name('company.delete');
 
     // Knowledge Base and Reports routes
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');
