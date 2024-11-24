@@ -12,8 +12,14 @@
             </div>
 
             <div class="mb-3">
-                <label for="company_contact">{{ __('companies.company_contact') }}</label>
-                <input type="text" name="company_contact" id="company_contact"class="form-control" value="{{ old('company_contact', $company->company_contact ?? '') }}">
+                <label for="company_contact_id">{{ __('companies.company_contact') }}</label>
+                <select name="company_contact_id" id="company_contact_id" class="form-control">
+                    @foreach($contacts as $contact)
+                        <option value="{{ $contact->id }}" {{ old('company_contact_id', $company->company_contact_id ?? '') == $contact->id ? 'selected' : '' }}>
+                            {{ $contact->name }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="mb-3">
@@ -34,18 +40,36 @@
             </div>
 
             <div class="mb-3">
-                <label for="contract">{{ __('companies.contract') }} @if(!isset($company))<span class="text-danger">*</span>@endif</label>
-                <input type="text" name="contract" id="contract" class="form-control" value="{{ old('contract', $company->contract ?? '') }}" required>
+                <label for="contract_id">{{ __('companies.contract') }}</label>
+                <select name="contract_id" id="contract_id" class="form-control">
+                    @foreach($contracts as $contract)
+                        <option value="{{ $contract->id }}" {{ old('contract_id', $company->contract_id ?? '') == $contract->id ? 'selected' : '' }}>
+                            {{ $contract->name }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="mb-3">
-                <label for="address">{{ __('companies.address') }} @if(!isset($company))<span class="text-danger">*</span>@endif</label>
-                <input type="text" name="address" id="address" class="form-control" value="{{ old('address', $company->address ?? '') }}" required>
+                <label for="address_book_id">{{ __('companies.address') }}</label>
+                <select name="address_book_id" id="address_book_id" class="form-control">
+                    @foreach($addresses as $address)
+                        <option value="{{ $address->id }}" {{ old('address_book_id', $company->address_book_id ?? '') == $address->id ? 'selected' : '' }}>
+                            {{ $address->first_line }}, {{ $address->country }}, {{ $address->post_code }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="mb-3">
-                <label for="company_relationship_manager">{{ __('companies.company_relationship_manager') }} @if(!isset($company))<span class="text-danger">*</span>@endif</label>
-                <input type="text" name="company_relationship_manager" id="company_relationship_manager" class="form-control" value="{{ old('company_relationship_manager', $company->company_relationship_manager ?? '') }}" required>
+                <label for="company_relationship_manager">{{ __('companies.company_relationship_manager') }}</label>
+                <select name="company_relationship_manager" id="company_relationship_manager" class="form-control">
+                    @foreach($relationshipManagers as $manager)
+                        <option value="{{ $manager->id }}" {{ old('company_relationship_manager', $company->company_relationship_manager ?? '') == $manager->id ? 'selected' : '' }}>
+                            {{ $manager->getName() }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
         </div>
     </div>
