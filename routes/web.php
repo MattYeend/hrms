@@ -14,6 +14,7 @@ use App\Http\Controllers\LicenceController;
 use App\Http\Controllers\AddressBookController;
 use App\Http\Controllers\AddressContactController;
 use App\Http\Controllers\ContractController;
+use App\Http\Controllers\CompanyController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -105,7 +106,6 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/address-contact/{addressContact}', [AddressContactController::class, 'update'])->name('addressContact.update');
     Route::delete('/address-contact/{addressContact}', [AddressContactController::class, 'delete'])->name('addressContact.delete');
 
-
     // Contracts routes
     Route::get('/contract', [ContractController::class, 'index'])->name('contract.index');
     Route::get('/contract/create', [ContractController::class, 'create'])->name('contract.create');
@@ -114,6 +114,15 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/contract/{contract}/edit', [ContractController::class, 'edit'])->name('contract.edit');
     Route::put('/contract/{contract}', [ContractController::class, 'update'])->name('contract.update');
     Route::delete('/contract/{contract}', [ContractController::class, 'delete'])->name('contract.delete');
+
+        // Companies routes
+        Route::get('/company', [CompanyController::class, 'index'])->name('company.index');
+        Route::get('/company/create', [CompanyController::class, 'create'])->name('company.create');
+        Route::post('/company', [CompanyController::class, 'store'])->name('company.store');
+        Route::get('/company/{company}', [CompanyController::class, 'show'])->name('company.show');
+        Route::get('/company/{company}/edit', [CompanyController::class, 'edit'])->name('company.edit');
+        Route::put('/company/{company}', [CompanyController::class, 'update'])->name('company.update');
+        Route::delete('/company/{company}', [CompanyController::class, 'delete'])->name('company.delete');
 
     // Knowledge Base and Reports routes
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');

@@ -29,6 +29,11 @@
         @endif
         @if(auth()->user()->isSuperAdmin())
             <li>
+                <a class="nav-link" href="{{ route('company.index') }}">
+                    {{ __('dropdown.company') }}
+                </a>
+            </li>
+            <li>
                 <a class="nav-link" href="{{ route('licence.index') }}">
                     {{ __('dropdown.licence') }}
                 </a>

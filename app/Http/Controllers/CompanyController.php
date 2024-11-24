@@ -41,7 +41,7 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Company $Company)
+    public function show(Company $company)
     {
         //
     }
@@ -49,7 +49,7 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Company $Company)
+    public function edit(Company $company)
     {
         //
     }
@@ -57,7 +57,7 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCompanyRequest $request, Company $Company)
+    public function update(UpdateCompanyRequest $request, Company $company)
     {
         //
     }
@@ -65,7 +65,7 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Company $Company)
+    public function destroy(Company $company)
     {
         //
     }
