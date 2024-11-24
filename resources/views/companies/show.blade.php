@@ -15,16 +15,18 @@
                     @endif
                     <div class="row">
                         <div class="col-md-6">
-                            <p>{{ __('companies.name') }}: {{ $user->first_line }}</p>
-                            <p>{{ __('companies.company_contact') }}: {{ $user->second_line?:'Not Provided' }}</p>
-                            <p>{{ __('companies.pay_day') }}: {{ $user->town?:'Not Provided' }}</p>
-                            <p>{{ __('companies.active') }}: {{ $user->city?:'Not Provided' }}</p>
+                            <p>{{ __('companies.name') }}: {{ $company->name }}</p>
+                            <p>{{ __('companies.company_contact') }}: {{ $company->companyContact->name ?? __('companies.not_provided') }}</p>
+                            <p>{{ __('companies.pay_day') }}: {{ $company->pay_day }}</p>
+                            <p>{{ __('companies.active') }}: {{ $company->active ? '__('companies.yes') : __('companies.no') }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p>{{ __('companies.work_weekdays') }}: {{ $user->county?:'Not Provided' }}</p>
-                            <p>{{ __('companies.contract') }}: {{ $user->country?:'Not Provided' }}</p>
-                            <p>{{ __('companies.address') }}: {{ $user->post_code }}</p>
-                            <p>{{ __('companies.company_relationship_manager') }}: {{ $user->full_or_part }}</p>
+                            <p>{{ __('companies.work_weekdays') }}: {{ $company->work_weekends ? __('companies.yes') : __('companies.no') }}</p>
+                            <p>{{ __('companies.contract') }}: {{ $company->contract->name ?? __('companies.not_provided') }}</p>
+                            <p>{{ __('companies.address') }}: {{ $company->addressBook->first_line }}<br />
+                                                {{ $company->addressBook->country }}<br />
+                                                {{ $company->addressBook->post_code }}</p>
+                            <p>{{ __('companies.company_relationship_manager') }}: {{ $company->companyRelationshipManager->name ?? __('companies.not_provided') }}</p>
                         </div>
                     </div>
                 </div>

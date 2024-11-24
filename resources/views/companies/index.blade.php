@@ -40,18 +40,18 @@
                                 <tbody>
                                     @foreach($companies as $company)
                                         <tr>
-                                        <td>{{ $company->name }}</td>
-                                        <td>{{ $company->companyContact->name ?? __('companies.not_provided') }}</td>
-                                        <td>{{ $company->pay_day }}</td>
-                                        <td>{{ $company->active ? '__('companies.yes') : __('companies.no') }}</td>
-                                        <td>{{ $company->work_weekends ? __('companies.yes') : __('companies.no') }}</td>
-                                        <td>{{ $company->contract->name ?? __('companies.not_provided') }}</td>
-                                        <td>
-                                            {{ $company->addressBook->first_line }}<br />
-                                            {{ $company->addressBook->country }}<br />
-                                            {{ $company->addressBook->post_code }}
-                                        </td>
-                                        <td>{{ $company->companyRelationshipManager->name ?? __('companies.not_provided') }}</td>
+                                            <td>{{ $company->name }}</td>
+                                            <td>{{ $company->companyContact->name ?? __('companies.not_provided') }}</td>
+                                            <td>{{ $company->pay_day }}</td>
+                                            <td>{{ $company->active ? '__('companies.yes') : __('companies.no') }}</td>
+                                            <td>{{ $company->work_weekends ? __('companies.yes') : __('companies.no') }}</td>
+                                            <td>{{ $company->contract->name ?? __('companies.not_provided') }}</td>
+                                            <td>
+                                                {{ $company->addressBook->first_line }}<br />
+                                                {{ $company->addressBook->country }}<br />
+                                                {{ $company->addressBook->post_code }}
+                                            </td>
+                                            <td>{{ $company->companyRelationshipManager->name ?? __('companies.not_provided') }}</td>
                                             <td>
                                                 <a href="{{ route('company.show', $company->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('companies.view') }}</a>
                                                 @can('update', $company)
