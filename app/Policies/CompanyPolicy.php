@@ -8,6 +8,10 @@ use Illuminate\Auth\Access\Response;
 
 class CompanyPolicy
 {
+    /**
+     * Perform preliminary checks before any other authorization methods.
+     * Grants all permissions to super admins.
+     */
     public function before(User $user)
     {
         if ($user->isSuperAdmin()) {
