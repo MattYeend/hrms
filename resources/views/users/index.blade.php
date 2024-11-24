@@ -31,8 +31,8 @@
                         <tr>
                             <td>{{ $user->getFullNameLong() }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->role->name ?? __{{users.not_provided}} }}</td>
-                            <td>{{ $user->department->name ?? __{{users.not_provided}} }}</td>
+                            <td>{{ $user->role->name ?? __(users.not_provided) }}</td>
+                            <td>{{ $user->department->name ?? __(users.not_provided) }}</td>
                             <td>
                                 <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('users.view') }}</a>
                                 @can('update', $user)
