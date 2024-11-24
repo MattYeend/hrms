@@ -54,4 +54,5 @@ return [
     'full_time' => 'Full Time',
     'part_time' => 'Part Time',
     'select_option' => 'Seleziona un\'opzione',
+    'not_provided' => 'Non Fornito',
 ];

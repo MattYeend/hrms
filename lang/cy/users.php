@@ -54,4 +54,5 @@ return [
     'full_time' => 'Amser Llawn',
     'part_time' => 'Rhan Amser',
     'select_option' => 'Dewiswch opsiwn',
+    'not_provided' => 'Heb ei Ddarparu',
 ];
