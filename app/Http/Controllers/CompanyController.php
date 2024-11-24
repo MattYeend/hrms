@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Logger;
+use App\Models\Contract;
+use App\Models\CompanyContract;
+use App\Models\User;
+use App\Models\AddressBook;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 
@@ -21,7 +25,7 @@ class CompanyController extends Controller
     {
         $this->authorize('viewAny', Company::class);
 
-        $companies = Company::paginate(10);
+        $companies = Company::with(['contract', 'companyContact', 'companyRelationshipManager', 'addressBook'])->paginate(10);
         return view('companies.index', compact('companies'));
     }
 
@@ -32,7 +36,12 @@ class CompanyController extends Controller
     {
         $this->authorize('create', Company::class);
 
-        return view('companies.create');
+        $contracts = Contract::all();
+        $contacts = CompanyContact::all();
+        $relationshipManagers = User::all();
+        $addresses = AddressBook::all();
+
+        return view('companies.create', compact('contracts', 'contacts', 'relationshipManagers', 'addresses'));
     }
 
     /**
@@ -55,6 +64,7 @@ class CompanyController extends Controller
     {
         $this->authorize('view', $company);
 
+        $company->load(['contract', 'companyContact', 'companyRelationshipManager', 'addressBook', 'createdBy', 'updatedBy']);
         return view('companies.show', compact('company'));
     }
 
@@ -64,7 +74,7 @@ class CompanyController extends Controller
     public function edit(Company $company)
     {
         $this->authorize('update', $company);
-
+        $company->load(['contract', 'companyContact', 'companyRelationshipManager', 'addressBook']);
         return view('companies.edit', compact('company'));
     }
 

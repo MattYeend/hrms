@@ -31,11 +31,15 @@ class Company extends Model
     }
 
     public function companyContact(){
-        return $this->hasOne(companyContact::class, 'company_contact_id');
+        return $this->hasOne(CompanyContact::class, 'company_contact_id');
     }
 
     public function companyRelationshipManager(){
         return $this->belongsTo(User::class, 'company_relationship_manager');
+    }
+
+    public function addressBook(){
+        return $this->belongsTo(AddressBook::class, 'address_book_id');
     }
 
     public function createdBy(){
