@@ -34,6 +34,11 @@
                 </a>
             </li>
             <li>
+                <a class="nav-link" href="{{ route('companyContact.index') }}">
+                    {{ __('dropdown.company_contact') }}
+                </a>
+            </li>
+            <li>
                 <a class="nav-link" href="{{ route('licence.index') }}">
                     {{ __('dropdown.licence') }}
                 </a>
