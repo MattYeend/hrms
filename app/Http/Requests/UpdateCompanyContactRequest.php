@@ -11,7 +11,7 @@ class UpdateCompanyContactRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->user()->isSuperAdmin();
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateCompanyContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'phone' => 'nullable|string|max:15',
+            'company_id' => 'required|exists:companies,id',
         ];
     }
 }
