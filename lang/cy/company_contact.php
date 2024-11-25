@@ -10,4 +10,5 @@ return [
     'name' => 'Enw',
     'email' => 'E-bost',
     'phone' => 'Ffôn',
+    'not_provided' => 'Heb ei Ddarparu',
 ];

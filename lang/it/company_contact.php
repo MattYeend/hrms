@@ -10,4 +10,5 @@ return [
     'name' => 'Nome',
     'email' => 'Email',
     'phone' => 'Telefono',
+    'not_provided' => 'Non Fornito',
 ];
