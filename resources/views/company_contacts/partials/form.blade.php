@@ -24,18 +24,6 @@
                 <label for="phone">{{ __('company_contact.phone') }}</label>
                 <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone', $companyContact->phone ?? '') }}">
             </div>
-
-            <div class="mb-3">
-                <label for="company_id">{{ __('company_contact.company') }}</label>
-                <select name="company_id" id="company_id" class="form-control">
-                    <option value="" disabled selected>{{ __('company_contact.select_option') }}</option>
-                        @foreach($companies as $company)
-                        <option value="{{ $job->id }}" {{ old('company_id', $companyContact->company_id ?? '') == $company->id ? 'selected' : '' }}>
-                            {{ $company->name }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
         </div>
     </div>
 
