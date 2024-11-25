@@ -15,6 +15,7 @@ use App\Http\Controllers\AddressBookController;
 use App\Http\Controllers\AddressContactController;
 use App\Http\Controllers\ContractController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CompanyContactController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -123,6 +124,15 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/company/{company}/edit', [CompanyController::class, 'edit'])->name('company.edit');
     Route::put('/company/{company}', [CompanyController::class, 'update'])->name('company.update');
     Route::delete('/company/{company}', [CompanyController::class, 'delete'])->name('company.delete');
+
+    // Company Contacts routes
+    Route::get('/companyContacts', [CompanyContactController::class, 'index'])->name('companyContact.index');
+    Route::get('/companyContacts/create', [CompanyContactController::class, 'create'])->name('companyContact.create');
+    Route::post('/companyContact', [CompanyContactController::class, 'store'])->name('companyContact.store');
+    Route::get('/companyContact/{companyContact}', [CompanyContactController::class, 'show'])->name('companyContact.show');
+    Route::get('/companyContact/{companyContact}/edit', [CompanyContactController::class, 'edit'])->name('companyContact.edit');
+    Route::put('/companyContact/{companyContact}', [CompanyContactController::class, 'update'])->name('companyContact.update');
+    Route::delete('/companyContact/{companyContact}', [CompanyContactController::class, 'delete'])->name('companyContact.delete');
 
     // Knowledge Base and Reports routes
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');
