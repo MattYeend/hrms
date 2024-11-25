@@ -41,7 +41,7 @@ class CompanyContactController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CompanyContact $CompanyContact)
+    public function show(CompanyContact $companyContact)
     {
         //
     }
@@ -49,7 +49,7 @@ class CompanyContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CompanyContact $CompanyContact)
+    public function edit(CompanyContact $companyContact)
     {
         //
     }
@@ -57,7 +57,7 @@ class CompanyContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCompanyContactRequest $request, CompanyContact $CompanyContact)
+    public function update(UpdateCompanyContactRequest $request, CompanyContact $companyContact)
     {
         //
     }
@@ -65,7 +65,7 @@ class CompanyContactController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CompanyContact $CompanyContact)
+    public function destroy(CompanyContact $companyContact)
     {
         //
     }

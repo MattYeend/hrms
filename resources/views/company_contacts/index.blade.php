@@ -26,20 +26,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($CompanyContacts as $CompanyContact)
+                    @foreach($CompanyContacts as $companyContact)
                         <tr>
-                            <td>{{ $company_contact->name() }}</td>
-                            <td>{{ $company_contact->email }}</td>
-                            <td>{{ $company_contact->phone ?? __(company_contact.not_provided) }}</td>
-                            <td>{{ $company_contact->company->name ?? __(company_contact.not_provided) }}</td>
+                            <td>{{ $companyContact->name }}</td>
+                            <td>{{ $companyContact->email }}</td>
+                            <td>{{ $companyContact->phone ?? __(company_contact.not_provided) }}</td>
+                            <td>{{ $companyContact->company->name }}</td>
                             <td>
-                                <a href="{{ route('companyContact.show', $company_contact->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('company_contact.view') }}</a>
+                                <a href="{{ route('companyContact.show', $companyContact->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('company_contact.view') }}</a>
                                 @can('update', $companyContact)
-                                    <a href="{{ route('companyContact.edit', $company_contact->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('company_contact.edit') }}</a>
+                                    <a href="{{ route('companyContact.edit', $companyContact->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('company_contact.edit') }}</a>
                                 @endcan
-                                @can('delete', $CompanyContact)
-                                    @if (auth()->user()->id !== $company_contact->id)
-                                        <form action="{{ route('companyContact.delete', $company_contact->id) }}" method="POST" style="display: inline-block;">
+                                @can('delete', $companyContact)
+                                    @if (auth()->user()->id !== $companyContact->id)
+                                        <form action="{{ route('companyContact.delete', $companyContact->id) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('company_contact.delete') }}</button>
