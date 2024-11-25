@@ -10,12 +10,19 @@ use App\Models\User;
 use App\Models\AddressBook;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            if (Auth::user()->role !== 'Super Admin') {
+                abort(403, 'Unauthorized action.');
+            }
+            return $next($request);
+        });
     }
     
     /**
