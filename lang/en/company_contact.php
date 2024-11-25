@@ -11,4 +11,5 @@ return [
     'email' => 'Email', 
     'phone' => 'Phone',
     'not_provided' => 'Not Provided',
+    'select_option' => 'Select an option',
 ];

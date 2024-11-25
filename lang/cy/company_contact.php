@@ -11,4 +11,5 @@ return [
     'email' => 'E-bost',
     'phone' => 'Ffôn',
     'not_provided' => 'Heb ei Ddarparu',
+    'select_option' => 'Dewiswch opsiwn',
 ];
