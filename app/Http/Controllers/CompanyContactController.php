@@ -27,7 +27,11 @@ class CompanyContactController extends Controller
      */
     public function index()
     {
-        //
+        $this->authorize('viewAny', CompanyContact::class);
+
+        $contacts = CompanyContact::with('company')->get();
+        
+        return view('company_contacts.index', compact('contacts'));
     }
 
     /**
@@ -35,7 +39,9 @@ class CompanyContactController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', CompanyContact::class);
+
+        return view('company_contacts.create');
     }
 
     /**
@@ -43,7 +49,13 @@ class CompanyContactController extends Controller
      */
     public function store(StoreCompanyContactRequest $request)
     {
-        //
+        $this->authorize('create', CompanyContact::class);
+
+        $validated = $request->validated();
+        $contact = CompanyContact::create($validated);
+
+        return redirect()->route('company_contacts.index')
+            ->with('success', 'Company contact created successfully.');
     }
 
     /**
@@ -51,7 +63,11 @@ class CompanyContactController extends Controller
      */
     public function show(CompanyContact $companyContact)
     {
-        //
+        $this->authorize('view', $companyContact);
+        
+        $companyContact->load('company');
+
+        return view('company_contacts.show', compact('companyContact'));
     }
 
     /**
@@ -59,7 +75,9 @@ class CompanyContactController extends Controller
      */
     public function edit(CompanyContact $companyContact)
     {
-        //
+        $this->authorize('update', $companyContact);
+
+        return view('company_contacts.edit', compact('companyContact'));
     }
 
     /**
@@ -67,7 +85,13 @@ class CompanyContactController extends Controller
      */
     public function update(UpdateCompanyContactRequest $request, CompanyContact $companyContact)
     {
-        //
+        $this->authorize('update', $companyContact);
+
+        $validated = $request->validated();
+        $companyContact->update($validated);
+
+        return redirect()->route('company_contacts.index')
+            ->with('success', 'Company contact updated successfully.');
     }
 
     /**
@@ -75,6 +99,11 @@ class CompanyContactController extends Controller
      */
     public function destroy(CompanyContact $companyContact)
     {
-        //
+        $this->authorize('delete', $companyContact);
+
+        $companyContact->delete();
+
+        return redirect()->route('company_contacts.index')
+            ->with('success', 'Company contact deleted successfully.');
     }
 }
