@@ -3,15 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\AddressBook;
+use App\Models\User;
+use App\Models\AddressContact;
 use App\Models\Logger;
 use App\Http\Requests\StoreAddressBookRequest;
 use App\Http\Requests\UpdateAddressBookRequest;
+use Illuminate\Support\Facades\Auth;
 
 class AddressBookController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            if (Auth::user()->role !== 'Super Admin') {
+                abort(403, 'Unauthorized action.');
+            }
+            return $next($request);
+        });
     }
     
     /**
@@ -19,7 +28,11 @@ class AddressBookController extends Controller
      */
     public function index()
     {
-        //
+        $this->authorize('viewAny', AddressBook::class);
+
+        $addressBooks = AddressBook::all();
+
+        return view('address_books.index', compact('addressBooks'));
     }
 
     /**
@@ -27,7 +40,8 @@ class AddressBookController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', AddressBook::class);
+        return view('address_books.create');
     }
 
     /**
@@ -35,7 +49,11 @@ class AddressBookController extends Controller
      */
     public function store(StoreAddressBookRequest $request)
     {
-        //
+        $this->authorize('create', AddressBook::class);
+
+        AddressBook::create($request->validated());
+
+        return redirect()->route('address_books.index')->with('success', 'Address Book created successfully.');
     }
 
     /**
@@ -43,7 +61,9 @@ class AddressBookController extends Controller
      */
     public function show(AddressBook $addressBook)
     {
-        //
+        $this->authorize('view', $addressBook);
+
+        return view('address_books.show', compact('addressBook'));
     }
 
     /**
@@ -51,7 +71,8 @@ class AddressBookController extends Controller
      */
     public function edit(AddressBook $addressBook)
     {
-        //
+        $this->authorize('update', $addressBook);
+        return view('address_books.edit', compact('addressBook'));
     }
 
     /**
@@ -59,7 +80,11 @@ class AddressBookController extends Controller
      */
     public function update(UpdateAddressBookRequest $request, AddressBook $addressBook)
     {
-        //
+        $this->authorize('update', $addressBook);
+
+        $addressBook->update($request->validated());
+
+        return redirect()->route('address_books.index')->with('success', 'Address Book updated successfully.');
     }
 
     /**
@@ -67,6 +92,10 @@ class AddressBookController extends Controller
      */
     public function destroy(AddressBook $addressBook)
     {
-        //
+        $this->authorize('delete', $addressBook);
+        
+        $addressBook->delete();
+
+        return redirect()->route('address_books.index')->with('success', 'Address Book deleted successfully.');
     }
 }
