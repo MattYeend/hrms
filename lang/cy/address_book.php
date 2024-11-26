@@ -16,4 +16,6 @@ return [
     'post_code' => 'Cod Post',
     'head_office' => 'Prif Swyddfa',
     'address_contact' => 'Prif Gyswllt ar gyfer Cyfeiriad',
+    'not_provided' => 'Heb ei Ddarparu',
+    'select_option' => 'Dewiswch opsiwn',
 ];

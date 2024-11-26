@@ -16,4 +16,6 @@ return [
     'post_code' => 'Postleitzahl',
     'head_office' => 'Hauptsitz',
     'address_contact' => 'Hauptkontakt für die Adresse',
+    'not_provided' => 'Nicht angegeben',
+    'select_option' => 'Wählen Sie eine option',
 ];

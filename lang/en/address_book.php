@@ -16,4 +16,6 @@ return [
     'post_code' => 'Post Code',
     'head_office' => 'Head Office',
     'address_contact' => 'Main Contact for Address',
+    'not_provided' => 'Not Provided',
+    'select_option' => 'Select an option',
 ];

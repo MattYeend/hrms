@@ -16,4 +16,6 @@ return [
     'post_code' => 'Code Postal',
     'head_office' => 'Siège Social',
     'address_contact' => 'Contact Principal pour l\'Adresse',
+    'not_provided' => 'Non Fournie',
+    'select_option' => 'Sélectionnez une option',
 ];
