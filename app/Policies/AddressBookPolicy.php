@@ -9,11 +9,22 @@ use Illuminate\Auth\Access\Response;
 class AddressBookPolicy
 {
     /**
+     * Perform preliminary checks before any other authorization methods.
+     * Grants all permissions to super admins.
+     */
+    public function before(User $user)
+    {
+        if ($user->isSuperAdmin()) {
+            return true;
+        }
+    }
+
+    /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -21,7 +32,7 @@ class AddressBookPolicy
      */
     public function view(User $user, address_book $addressBook): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -29,7 +40,7 @@ class AddressBookPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -37,7 +48,7 @@ class AddressBookPolicy
      */
     public function update(User $user, address_book $addressBook): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -45,7 +56,7 @@ class AddressBookPolicy
      */
     public function delete(User $user, address_book $addressBook): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +64,7 @@ class AddressBookPolicy
      */
     public function restore(User $user, address_book $addressBook): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -61,6 +72,6 @@ class AddressBookPolicy
      */
     public function forceDelete(User $user, address_book $addressBook): bool
     {
-        //
+        return false;
     }
 }
