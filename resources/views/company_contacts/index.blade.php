@@ -54,7 +54,7 @@
 
             <!-- Pagination Links -->
             <div class="d-flex justify-content-center">
-                {{ $CompanyContacts->links() }}
+                {{ $companyContacts->links() }}
             </div>
         </div>
     </div>

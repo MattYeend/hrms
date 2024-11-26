@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('address_book.edit') }} {{ $addressBook->name }}</div>
+                <div class="card-header">{{ __('address_book.create') }}</div>
                 <div class="card-body">
                     @include('address_book.partials.form')
                 </div>
