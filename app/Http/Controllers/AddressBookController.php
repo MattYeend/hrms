@@ -31,7 +31,7 @@ class AddressBookController extends Controller
         $this->authorize('viewAny', AddressBook::class);
 
         $addressBooks = AddressBook::all();
-
+        
         return view('address_books.index', compact('addressBooks'));
     }
 
@@ -51,8 +51,8 @@ class AddressBookController extends Controller
     {
         $this->authorize('create', AddressBook::class);
 
-        AddressBook::create($request->validated());
-
+        $addressBook = AddressBook::create($request->validated());
+        Logger::log(Logger::ACTION_CREATE_ADDRESS_BOOK, ['addressBook' => $addressBook]);
         return redirect()->route('address_books.index')->with('success', 'Address Book created successfully.');
     }
 
@@ -62,7 +62,7 @@ class AddressBookController extends Controller
     public function show(AddressBook $addressBook)
     {
         $this->authorize('view', $addressBook);
-
+        Logger::log(Logger::ACTION_SHOW_ADDRESS_BOOK, ['addressBook' => $addressBook]);
         return view('address_books.show', compact('addressBook'));
     }
 
@@ -82,6 +82,7 @@ class AddressBookController extends Controller
     {
         $this->authorize('update', $addressBook);
 
+        Logger::log(Logger::ACTION_UPDATE_ADDRESS_BOOK, ['addressBook' => $addressBook]);
         $addressBook->update($request->validated());
 
         return redirect()->route('address_books.index')->with('success', 'Address Book updated successfully.');
@@ -93,7 +94,7 @@ class AddressBookController extends Controller
     public function destroy(AddressBook $addressBook)
     {
         $this->authorize('delete', $addressBook);
-        
+        Logger::log(Logger::ACTION_DELETE_ADDRESS_BOOK, ['addressBook' => $addressBook]);
         $addressBook->delete();
 
         return redirect()->route('address_books.index')->with('success', 'Address Book deleted successfully.');
