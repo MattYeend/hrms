@@ -100,9 +100,9 @@ class CompanyContactController extends Controller
     public function destroy(CompanyContact $companyContact)
     {
         $this->authorize('delete', $companyContact);
-
-        $companyContact->delete();
         Logger::log(Logger::ACTION_DELETE_COMPANY_CONTACTS, ['companyContact' => $companyContact]);
+        $companyContact->delete();
+
         return redirect()->route('company_contacts.index')
             ->with('success', 'Company contact deleted successfully.');
     }

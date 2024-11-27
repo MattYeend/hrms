@@ -105,9 +105,9 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         $this->authorize('delete', $company);
-
-        $company->delete();
         Logger::log(Logger::ACTION_DELETE_COMPANY, ['company' => $company]);
+        $company->delete();
+
         return redirect()->route('company.index')->with('success', 'Company deleted successfully.');
     }
 }
