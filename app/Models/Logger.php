@@ -292,6 +292,12 @@ class Logger extends Model
     const ACTION_DELETE_ADDRESS_BOOK = 187;
     const ACTION_SHOW_ADDRESS_BOOK = 188;
 
+    // Address Book Contacts
+    const ACTION_CREATE_ADDRESS_BOOK_CONTACT = 189;
+    const ACTION_UPDATE_ADDRESS_BOOK_CONTACT = 190;
+    const ACTION_DELETE_ADDRESS_BOOK_CONTACT = 191;
+    const ACTION_SHOW_ADDRESS_BOOK_CONTACT = 192;
+
     // Temp constants to go below
     
     // Temp constants to go above
