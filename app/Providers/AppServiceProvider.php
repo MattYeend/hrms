@@ -60,7 +60,15 @@ class AppServiceProvider extends ServiceProvider
         MeetingTypes::class => MeetingTypesPolicy::class,
         Notes::class => NotesPolicy::class,
         NoteTypes::class => NoteTypesPolicy::class,
-
+        ProviderContact::class => ProviderContactPolicy::class,
+        Provider::class => ProviderPolicy::class,
+        Roles::class => RolesPolicy::class,
+        Rotas::class => RotasPolicy::class,
+        SalaryRange::class => SalaryRangePolicy::class,
+        Seniority::class => SeniorityPolicy::class,
+        Tiles::class => TilesPolicy::class,
+        Time::class => TimePolicy::class,
+        UserContact::class => UserContactPolicy::class,
         User::class => UserPolicy::class,
     ];
 }
