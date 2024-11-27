@@ -53,7 +53,7 @@ class CompanyContactController extends Controller
 
         $validated = $request->validated();
         $contact = CompanyContact::create($validated);
-
+        Logger::log(Logger::ACTION_CREATE_COMPANY_CONTACTS, ['companyContact' => $contact]);
         return redirect()->route('company_contacts.index')
             ->with('success', 'Company contact created successfully.');
     }
@@ -66,7 +66,7 @@ class CompanyContactController extends Controller
         $this->authorize('view', $companyContact);
         
         $companyContact->load('company');
-
+        Logger::log(Logger::ACTION_SHOW_COMPANY_CONTACTS, ['companyContact' => $companyContact]);
         return view('company_contacts.show', compact('companyContact'));
     }
 
@@ -89,7 +89,7 @@ class CompanyContactController extends Controller
 
         $validated = $request->validated();
         $companyContact->update($validated);
-
+        Logger::log(Logger::ACTION_UPDATE_COMPANY_CONTACTS, ['companyContact' => $companyContact]);
         return redirect()->route('company_contacts.index')
             ->with('success', 'Company contact updated successfully.');
     }
@@ -102,7 +102,7 @@ class CompanyContactController extends Controller
         $this->authorize('delete', $companyContact);
 
         $companyContact->delete();
-
+        Logger::log(Logger::ACTION_DELETE_COMPANY_CONTACTS, ['companyContact' => $companyContact]);
         return redirect()->route('company_contacts.index')
             ->with('success', 'Company contact deleted successfully.');
     }
