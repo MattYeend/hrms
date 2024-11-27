@@ -59,8 +59,8 @@ class CompanyController extends Controller
         $this->authorize('create', Company::class);
 
         $data = $request->validated();
-        Company::create($data);
-
+        $company = Company::create($data);
+        Logger::log(Logger::ACTION_CREATE_COMPANY, ['company' => $company]);
         return redirect()->route('company.index')->with('success', 'Company created successfully.');
     }
 
@@ -72,6 +72,7 @@ class CompanyController extends Controller
         $this->authorize('view', $company);
 
         $company->load(['contract', 'companyContact', 'companyRelationshipManager', 'addressBook', 'createdBy', 'updatedBy']);
+        Logger::log(Logger::ACTION_SHOW_COMPANY, ['company' => $company]);
         return view('companies.show', compact('company'));
     }
 
@@ -94,7 +95,7 @@ class CompanyController extends Controller
 
         $data = $request->validated();
         $company->update($data);
-
+        Logger::log(Logger::ACTION_UPDATE_COMPANY, ['company' => $company]);
         return redirect()->route('company.index')->with('success', 'Company updated successfully.');
     }
 
@@ -106,7 +107,7 @@ class CompanyController extends Controller
         $this->authorize('delete', $company);
 
         $company->delete();
-
+        Logger::log(Logger::ACTION_DELETE_COMPANY, ['company' => $company]);
         return redirect()->route('company.index')->with('success', 'Company deleted successfully.');
     }
 }
