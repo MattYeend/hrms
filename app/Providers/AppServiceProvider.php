@@ -28,6 +28,25 @@ class AppServiceProvider extends ServiceProvider
     }
 
     protected $policies = [
+        Achievements::class => AchievementsPolicy::class,
+        AddressBook::class => AddressBookPolicy::class,
+        AddressContact::class => AddressContactPolicy::class,
+        BlogCategories::class => BlogCategoriesPolicy::class,
+        BlogComments::class => BlogCommentsPolicy::class,
+        BlogLikes::class => BlogLikesPolicy::class,
+        Blogs::class => BlogsPolicy::class,
+        BlogTypes::class => BlogTypesPolicy::class,
+        Category::class => CategoryPolicy::class,
+        CompanyContact::class => CompanyContactPolicy::class,
+        Company::class => CompanyPolicy::class,
+        ContactRelation::class => ContactRelationPolicy::class,
+        Contract::class => ContractPolicy::class,
+        Department::class => DepartmentPolicy::class,
+        Difficulty::class => DifficultyPolicy::class,
+        Goals::class => GoalsPolicy::class,
+        HolidayEntitlement::class => HolidayEntitlementPolicy::class,
+        Interests::class => InterestsPolicy::class,
+
         User::class => UserPolicy::class,
     ];
 }
