@@ -89,3 +89,24 @@
 -- Created By (to users)
 -- Updated By (to users)
 -- Deleted By (to users)
+
+- Companies
+-- Contract ID (to contracts)
+-- Company Contact ID (to company contacts)
+-- Address Book ID (to address books)
+-- Company Relationship Manager (to users)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- Contracts
+-- Licence ID (to licences)
+
+- Address Books
+-- Address Contact ID (to address contacts)
+
+- Job
+-- Salary Range ID (to salary ranges)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
