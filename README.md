@@ -138,7 +138,7 @@
 -- User ID (to users)
 -- Interests ID (to interests)
 
-- Blogs
+- Learnings
 -- Mark ID (to marks)
 -- Category ID (to categories)
 -- Difficulty ID (to difficulties)
@@ -147,3 +147,19 @@
 -- Created By (to users)
 -- Updated By (to users)
 -- Deleted By (to users)
+
+- User Learning
+-- User ID (to users)
+-- Learning ID (to learnings)
+
+- Providers
+-- Provider Contact ID (to provider contacts)
+
+- User Notes
+-- User ID (to users)
+-- Notes ID (to notes)
+
+- User Achievements
+-- User ID (to users)
+-- Achievements ID (to achievements)
+
