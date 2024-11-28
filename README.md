@@ -203,3 +203,10 @@
 - User Meetings 
 -- User ID (to users)
 -- Meeting ID (to meetings)
+
+- Rotas
+-- User ID (to users)
+-- Department ID (to departments)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
