@@ -128,3 +128,22 @@
 - User Goals
 -- User ID (to users)
 -- Goals ID (to goals)
+
+- Interests
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- User Interests
+-- User ID (to users)
+-- Interests ID (to interests)
+
+- Blogs
+-- Mark ID (to marks)
+-- Category ID (to categories)
+-- Difficulty ID (to difficulties)
+-- Time ID (to times)
+-- Provider ID (to providers)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
