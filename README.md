@@ -52,17 +52,40 @@
 
 ## How everything is related
 - Users
--- Department
--- Roles
--- Seniority
--- Job
--- Holiday Entitlement
--- Contact
--- Created By
--- Updated By
--- Deleted By
+-- Department ID (to departments)
+-- Roles ID (to roles)
+-- Seniority ID (to seniorities)
+-- Job ID (to job)
+-- Holiday Entitlement ID (to holiday entitlements)
+-- Contact ID (to user contacts)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
 
 - Roles
--- Created By
--- Updated By
--- Deleted By
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- Achievements
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- Leave
+-- Leave Status ID (to leave status)
+-- Status Change By (to users)
+-- Leave Type ID (to leave types)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- User Contacts
+-- Relation ID (to contact relations)
+
+- Departments
+-- Company ID (to companies)
+-- Department Lead ID (to users)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
