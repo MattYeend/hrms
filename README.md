@@ -110,3 +110,21 @@
 -- Created By (to users)
 -- Updated By (to users)
 -- Deleted By (to users)
+
+- Notes
+-- Note Types ID (to note types)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- User Tiles
+-- User ID (to users)
+-- Tile ID (to tiles)
+
+- User Language
+-- User ID (to users)
+-- Language ID (to languages)
+
+- User Goals
+-- User ID (to users)
+-- Goals ID (to goals)
