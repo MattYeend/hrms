@@ -187,3 +187,19 @@
 - Logs 
 -- Logged In User ID (to users)
 -- Related To User ID (to users)
+
+- Meetings
+-- Location ID (to locations)
+-- Meeting Type ID (to meeting types)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- Locations
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- User Meetings 
+-- User ID (to users)
+-- Meeting ID (to meetings)
