@@ -18,12 +18,12 @@ return new class extends Migration
             $table->integer('is_virtual')->nullable();
             $table->date('scheduled_at');
             $table->unsignedBigInteger('location_id')->nullable(); 
-            $table->unsignedBigInteger('meeting_type_id')->nullable();             
-            $table->timestamps();
-            $table->softDeletes();
+            $table->unsignedBigInteger('meeting_type_id')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
 
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
             $table->foreign('meeting_type_id')->references('id')->on('meeting_types')->onDelete('cascade');

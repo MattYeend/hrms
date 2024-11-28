@@ -17,11 +17,11 @@ return new class extends Migration
             $table->unsignedBigInteger('department_id')->nullable();
             $table->dateTime('start_time');
             $table->dateTime('end_time');
-            $table->timestamps();
-            $table->softDeletes();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');

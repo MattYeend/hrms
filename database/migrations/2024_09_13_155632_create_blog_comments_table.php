@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
-            $table->timestamps();
             $table->softDeletes();
+            $table->timestamps();
 
             $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('Cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('Cascade');
