@@ -50,7 +50,7 @@
 ## Work Arounds
 - A work around for TinyMCE 6.8.1 is to set `convert_unsafe_embeds` to true which can be found in `hrms\node_modules\tinymce\tinymce.js` on around line 7430 
 
-## How everything's related
+## How everything is related
 - Users
 -- Department
 -- Roles
@@ -58,6 +58,11 @@
 -- Job
 -- Holiday Entitlement
 -- Contact
+-- Created By
+-- Updated By
+-- Deleted By
+
+- Roles
 -- Created By
 -- Updated By
 -- Deleted By
