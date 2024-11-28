@@ -163,3 +163,27 @@
 -- User ID (to users)
 -- Achievements ID (to achievements)
 
+- Blogs
+-- Blog Type ID (to blog types)
+-- Author (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- Categories to Blogs
+-- Blog ID (to blogs)
+-- Category ID (to blog categories)
+
+- Blog Likes
+-- Blog ID (to blogs)
+-- User ID (to users)
+
+- Blog Comments
+-- Blog ID (to blogs)
+-- User ID (to users)
+-- Created By (to users)
+-- Updated By (to users)
+-- Deleted By (to users)
+
+- Logs 
+-- Logged In User ID (to users)
+-- Related To User ID (to users)
