@@ -26,7 +26,10 @@ class LicenceController extends Controller
      */
     public function index()
     {
-        //
+        $this->authorize('viewAny', Licence::class);
+
+        $licences = Licence::all()->paginate(10);
+        return view('licences.index', compact('licences'));
     }
 
     /**
@@ -34,7 +37,9 @@ class LicenceController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', Licence::class);
+
+        return view('licences.create');
     }
 
     /**
@@ -42,7 +47,12 @@ class LicenceController extends Controller
      */
     public function store(StoreLicenceRequest $request)
     {
-        //
+        $this->authorize('create', Licence::class);
+
+        $data = $request->validated();
+        $licence = Licence::create($data);
+        Logger::log(Logger::ACTION_CREATE_LICENCE, ['licence' => $licence]);
+        return redirect()->route('licence.index')->with('success', 'Licence created successfully.');
     }
 
     /**
@@ -50,7 +60,11 @@ class LicenceController extends Controller
      */
     public function show(Licence $licence)
     {
-        //
+        $this->authorize('view', $licence);
+
+        $licence->load([ 'createdBy', 'updatedBy']);
+        Logger::log(Logger::ACTION_SHOW_LICENCE, ['licence' => $licence]);
+        return view('licence.show', compact('licecne'));
     }
 
     /**
@@ -58,7 +72,9 @@ class LicenceController extends Controller
      */
     public function edit(Licence $licence)
     {
-        //
+        $this->authorize('update', $licence);
+        $licence->get();
+        return view('licence.edit', compact('licence'));
     }
 
     /**
@@ -66,7 +82,12 @@ class LicenceController extends Controller
      */
     public function update(UpdateLicenceRequest $request, Licence $licence)
     {
-        //
+        $this->authorize('update', $licence);
+
+        $data = $request->validated();
+        $licence->update($data);
+        Logger::log(Logger::ACTION_UPDATE_LICENCE, ['licence' => $licence]);
+        return redirect()->route('licence.index')->with('success', 'Licence updated successfully.');
     }
 
     /**
@@ -74,6 +95,10 @@ class LicenceController extends Controller
      */
     public function destroy(Licence $licence)
     {
-        //
+        $this->authorize('delete', $licence);
+        Logger::log(Logger::ACTION_DELETE_LICENCE, ['licence' => $licence]);
+        $licence->delete();
+
+        return redirect()->route('licence.index')->with('success', 'Licence deleted successfully.');
     }
 }
