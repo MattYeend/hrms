@@ -8,5 +8,11 @@ return [
     'edit' => 'Update',
     'view' => 'View Licence',
     'delete' => 'Delete',
-    'companies' => 'Companies'
+    'companies' => 'Companies',
+    'not_provided' => 'Not Provided',
+    'select_option' => 'Select an option',
+    'yes' => 'Yes',
+    'no' => 'No',
+    'created_by' => 'Created By',
+    'updated_by' => 'Updated By',
 ];

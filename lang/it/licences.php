@@ -9,4 +9,10 @@ return [
     'view' => 'Visualizza Licenza',
     'delete' => 'Elimina',
     'companies' => 'Aziende',
+    'not_provided' => 'Non Fornito',
+    'select_option' => 'Seleziona un\'opzione',
+    'yes' => 'Sì',
+    'no' => 'No',
+    'created_by' => 'Creato Da',
+    'updated_by' => 'Aggiornato Da',
 ];

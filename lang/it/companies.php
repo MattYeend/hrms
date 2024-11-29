@@ -3,7 +3,7 @@
 return [
     'company' => 'Azienda',
     'departments' => 'Dipartimenti',
-    'create' => 'Crea un’Azienda',
+    'create' => 'Crea un\'Azienda',
     'edit' => 'Aggiorna',
     'view' => 'Visualizza Azienda',
     'delete' => 'Elimina',
