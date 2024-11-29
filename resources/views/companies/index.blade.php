@@ -43,8 +43,8 @@
                                             <td>{{ $company->name }}</td>
                                             <td>{{ $company->companyContact->name ?? __('companies.not_provided') }}</td>
                                             <td>{{ $company->pay_day }}</td>
-                                            <td>{{ $company->active ? '__('companies.yes') : __('companies.no') }}</td>
-                                            <td>{{ $company->work_weekends ? __('companies.yes') : __('companies.no') }}</td>
+                                            <td>{{ $company->active ?? '__('companies.yes') : __('companies.no') }}</td>
+                                            <td>{{ $company->work_weekends ?? __('companies.yes') : __('companies.no') }}</td>
                                             <td>{{ $company->contract->name ?? __('companies.not_provided') }}</td>
                                             <td>
                                                 {{ $company->addressBook->first_line }}<br />
