@@ -9,11 +9,22 @@ use Illuminate\Auth\Access\Response;
 class LicencePolicy
 {
     /**
+     * Perform preliminary checks before any other authorization methods.
+     * Grants all permissions to super admins.
+     */
+    public function before(User $user)
+    {
+        if ($user->isSuperAdmin()) {
+            return true;
+        }
+    }
+
+    /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -21,7 +32,7 @@ class LicencePolicy
      */
     public function view(User $user, licence $licence): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -29,7 +40,7 @@ class LicencePolicy
      */
     public function create(User $user): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -37,7 +48,7 @@ class LicencePolicy
      */
     public function update(User $user, licence $licence): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -45,7 +56,7 @@ class LicencePolicy
      */
     public function delete(User $user, licence $licence): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +64,7 @@ class LicencePolicy
      */
     public function restore(User $user, licence $licence): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -61,6 +72,6 @@ class LicencePolicy
      */
     public function forceDelete(User $user, licence $licence): bool
     {
-        //
+        return false;
     }
 }
