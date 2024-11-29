@@ -6,12 +6,19 @@ use App\Models\Licence;
 use App\Models\Logger;
 use App\Http\Requests\StoreLicenceRequest;
 use App\Http\Requests\UpdateLicenceRequest;
+use Illuminate\Support\Facades\Auth;
 
 class LicenceController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            if (Auth::user()->role !== 'Super Admin') {
+                abort(403, 'Unauthorized action.');
+            }
+            return $next($request);
+        });
     }
     
     /**
