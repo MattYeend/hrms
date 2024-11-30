@@ -17,12 +17,12 @@
                         <div class="col-md-6">
                             <p>{{ __('address_book.first_line') }}: {{ $addressBook->first_line }}</p>
                             <p>{{ __('address_book.second_line') }}: {{ $addressBook->second_line ?? __(address_book.not_provided) }}</p>
-                            <p>{{ __('address_book.town') }}: {{ $address->town ?? __(address_book.not_provided) }}</p>
-                            <p>{{ __('address_book.city') }}: {{ $address->city ?? __(address_book.not_provided) }}</p>
+                            <p>{{ __('address_book.town') }}: {{ $addressBook->town ?? __(address_book.not_provided) }}</p>
+                            <p>{{ __('address_book.city') }}: {{ $addressBook->city ?? __(address_book.not_provided) }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p>{{ __('address_book.county') }}: {{ $addressBook->county?: __(address_book.not_provided) }}</p>
-                            <p>{{ __('address_book.contry') }}: {{ $addressBook->country }}</p>
+                            <p>{{ __('address_book.county') }}: {{ $addressBook->county?? __(address_book.not_provided) }}</p>
+                            <p>{{ __('address_book.country') }}: {{ $addressBook->country }}</p>
                             <p>{{ __('address_book.post_code') }}: {{ $addressBook->post_code }}</p>
                             <p>{{ __('address_book.head_office') }}: {{ $addressBook->head_office }}</p>
                             <p>{{ __('address_book.address_contact') }}: {{ $addressBook->addressContact->name }}</p>

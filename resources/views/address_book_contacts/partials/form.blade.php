@@ -12,7 +12,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="email">{{ __('address_book_contacts.email') }}</label>
+                <label for="email">{{ __('address_book_contacts.email') }} @if(!isset($addressContact))<span class="text-danger">*</span>@endif</label>
                 <input type="text" name="email" id="email"class="form-control" value="{{ old('email', $addressContact->email ?? '') }}" required>
             </div>
 
@@ -24,8 +24,8 @@
 
         <div class="col-md-6">
             <div class="mb-3">
-                <label for="position">{{ __('address_book_contacts.position') }}</label>
-                <input type="text" name="position" id="position" class="form-control" value="{{ old('position', $addressContact->position ?? '') }}">
+                <label for="position">{{ __('address_book_contacts.position') }} @if(!isset($addressContact))<span class="text-danger">*</span>@endif</label>
+                <input type="text" name="position" id="position" class="form-control" value="{{ old('position', $addressContact->position ?? '') }}" required>
             </div>
 
             <div class="mb-3">
