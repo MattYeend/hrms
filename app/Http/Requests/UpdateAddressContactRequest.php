@@ -11,7 +11,7 @@ class UpdateAddressContactRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->user()->isSuperAdmin();
     }
 
     /**
@@ -22,7 +22,12 @@ class UpdateAddressContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'phone' => 'nullable|string|max:255',
+            'position' => 'required|string|max:255',
+            'main_contact' => 'nullable|integer',
+            'secondary_contact' => 'nullable|integer',
         ];
     }
 }
