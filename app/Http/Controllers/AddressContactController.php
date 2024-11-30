@@ -6,12 +6,19 @@ use App\Models\AddressContact;
 use App\Models\Logger;
 use App\Http\Requests\StoreAddressContactRequest;
 use App\Http\Requests\UpdateAddressContactRequest;
+use Illuminate\Support\Facades\Auth;
 
 class AddressContactController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            if (Auth::user()->role !== 'Super Admin') {
+                abort(403, 'Unauthorized action.');
+            }
+            return $next($request);
+        });
     }
     
     /**
@@ -19,7 +26,11 @@ class AddressContactController extends Controller
      */
     public function index()
     {
-        //
+        $this->authorize('viewAny', AddressContact::class);
+
+        $addressContact = AddressContact::all();
+        
+        return view('address_book_contacts.index', compact('addressContact'));
     }
 
     /**
@@ -27,7 +38,8 @@ class AddressContactController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', AddressContact::class);
+        return view('address_book_contacts.create');
     }
 
     /**
@@ -35,7 +47,11 @@ class AddressContactController extends Controller
      */
     public function store(StoreAddressContactRequest $request)
     {
-        //
+        $this->authorize('create', AddressContact::class);
+
+        $addressContact = AddressContact::create($request->validated());
+        Logger::log(Logger::ACTION_CREATE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
+        return redirect()->route('address_book_contacts.index')->with('success', 'Address Contact created successfully.');
     }
 
     /**
@@ -43,7 +59,9 @@ class AddressContactController extends Controller
      */
     public function show(AddressContact $addressContact)
     {
-        //
+        $this->authorize('view', $addressContact);
+        Logger::log(Logger::ACTION_SHOW_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
+        return view('address_book_contacts.show', compact('addressContact'));
     }
 
     /**
@@ -51,7 +69,8 @@ class AddressContactController extends Controller
      */
     public function edit(AddressContact $addressContact)
     {
-        //
+        $this->authorize('update', $addressContact);
+        return view('address_book_contacts.edit', compact('addressContact'));
     }
 
     /**
@@ -59,7 +78,12 @@ class AddressContactController extends Controller
      */
     public function update(UpdateAddressContactRequest $request, AddressContact $addressContact)
     {
-        //
+        $this->authorize('update', $addressContact);
+
+        Logger::log(Logger::ACTION_UPDATE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
+        $addressContact->update($request->validated());
+
+        return redirect()->route('address_book_contacts.index')->with('success', 'Address Contact updated successfully.');
     }
 
     /**
@@ -67,6 +91,10 @@ class AddressContactController extends Controller
      */
     public function destroy(AddressContact $addressContact)
     {
-        //
+        $this->authorize('delete', $addressContact);
+        Logger::log(Logger::ACTION_DELETE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
+        $addressContact->delete();
+
+        return redirect()->route('address_book_contacts.index')->with('success', 'Address Contact deleted successfully.');
     }
 }
