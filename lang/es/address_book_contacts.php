@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'address_contact' => 'Contacto de la Dirección de la Empresa',
+    'address_contact' => 'Contacto de Dirección de la Empresa',
     'create' => 'Crear un Contacto de Dirección',
     'edit' => 'Actualizar',
     'view' => 'Ver Contacto de Dirección',
@@ -12,4 +12,7 @@ return [
     'position' => 'Cargo',
     'main_contact' => 'Contacto Principal',
     'secondary_contact' => 'Contacto Secundario',
+    'not_provided' => 'No Proporcionado',
+    'yes' => 'Sí',
+    'no' => 'No',
 ];

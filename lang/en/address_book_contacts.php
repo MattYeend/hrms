@@ -12,4 +12,7 @@ return [
     'position' => 'Position',
     'main_contact' => 'Main Contact',
     'secondary_contact' => 'Secondary Contact',
+    'not_provided' => 'Not Provided',
+    'yes' => 'Yes',
+    'no' => 'No',
 ];

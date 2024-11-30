@@ -9,7 +9,10 @@ return [
     'name' => 'Nome',
     'email' => 'E-mail',
     'phone' => 'Telefone',
-    'position' => 'Cargo',
+    'position' => 'Posição',
     'main_contact' => 'Contato Principal',
     'secondary_contact' => 'Contato Secundário',
+    'not_provided' => 'Não Fornecido',
+    'yes' => 'Sim',
+    'no' => 'Não',
 ];

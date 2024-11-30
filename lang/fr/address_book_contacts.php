@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'address_contact' => 'Contact pour l\'Adresse de l\'Entreprise',
-    'create' => 'Créer un Contact pour l\'Adresse',
+    'address_contact' => 'Contact d\'Adresse de l\'Entreprise',
+    'create' => 'Créer un Contact d\'Adresse',
     'edit' => 'Mettre à Jour',
-    'view' => 'Voir le Contact pour l\'Adresse',
+    'view' => 'Voir le Contact d\'Adresse',
     'delete' => 'Supprimer',
     'name' => 'Nom',
     'email' => 'E-mail',
@@ -12,4 +12,7 @@ return [
     'position' => 'Poste',
     'main_contact' => 'Contact Principal',
     'secondary_contact' => 'Contact Secondaire',
+    'not_provided' => 'Non Fourni',
+    'yes' => 'Oui',
+    'no' => 'Non',
 ];

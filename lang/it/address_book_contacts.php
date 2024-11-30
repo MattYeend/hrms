@@ -7,9 +7,12 @@ return [
     'view' => 'Visualizza Contatto Indirizzo',
     'delete' => 'Elimina',
     'name' => 'Nome',
-    'email' => 'Email',
+    'email' => 'E-mail',
     'phone' => 'Telefono',
     'position' => 'Posizione',
     'main_contact' => 'Contatto Principale',
     'secondary_contact' => 'Contatto Secondario',
+    'not_provided' => 'Non Fornito',
+    'yes' => 'Sì',
+    'no' => 'No',
 ];
