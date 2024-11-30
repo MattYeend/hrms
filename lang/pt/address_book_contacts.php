@@ -15,4 +15,5 @@ return [
     'not_provided' => 'Não Fornecido',
     'yes' => 'Sim',
     'no' => 'Não',
+    'address' => 'Endereço',
 ];

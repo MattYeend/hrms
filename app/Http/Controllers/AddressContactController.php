@@ -28,9 +28,9 @@ class AddressContactController extends Controller
     {
         $this->authorize('viewAny', AddressContact::class);
 
-        $addressContact = AddressContact::all();
+        $addressContacts = AddressContact::with('addressBook')->paginate(10);
         
-        return view('address_book_contacts.index', compact('addressContact'));
+        return view('address_book_contacts.index', compact('addressContacts'));
     }
 
     /**

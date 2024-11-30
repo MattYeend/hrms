@@ -15,4 +15,5 @@ return [
     'not_provided' => 'No Proporcionado',
     'yes' => 'Sí',
     'no' => 'No',
+    'address' => 'Dirección',
 ];

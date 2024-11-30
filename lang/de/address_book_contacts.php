@@ -15,4 +15,5 @@ return [
     'not_provided' => 'Nicht angegeben',
     'yes' => 'Ja',
     'no' => 'Nein',
+    'address' => 'Adresse',
 ];

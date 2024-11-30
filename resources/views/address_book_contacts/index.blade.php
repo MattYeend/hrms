@@ -23,6 +23,7 @@
                         <th>{{ __('address_book_contacts.position') }}</th>
                         <th>{{ __('address_book_contacts.main_contact') }}</th>
                         <th>{{ __('address_book_contacts.secondary_contact') }}</th>
+                        <th>{{ __('address_book_contacts.address') }}</th>
                         <th>{{ __('address_book_contacts.actions') }}</th>
                     </tr>
                 </thead>
@@ -35,6 +36,11 @@
                             <td>{{ $addressContact->position }}</td>
                             <td>{{ $addressContact->main_contact ?? __(address_book_contacts.not_provided) }}</td>
                             <td>{{ $addressContact->secondary_contact ?? __(address_book_contacts.not_provided) }}</td>
+                            <td>
+                                {{ $addressContact->addressBook->first_line }}<br />
+                                {{ $addressContact->addressBook->country }}</br />
+                                {{ $addressContact->addressBook->post_code }}
+                            </td>
                             <td>
                                 <a href="{{ route('addressContact.show', $addressContact->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('address_book_contacts.view') }}</a>
                                 @can('update', $addressContact)

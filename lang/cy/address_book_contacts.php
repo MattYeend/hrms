@@ -15,4 +15,5 @@ return [
     'not_provided' => 'Heb ei Ddarparu',
     'yes' => 'Ie',
     'no' => 'Na',
+    'address' => 'Cyfeiriad',
 ];

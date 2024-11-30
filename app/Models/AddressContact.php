@@ -19,4 +19,8 @@ class AddressContact extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function addressBook(){
+        return $this->hasOne(AddressBook::class, 'address_contact_id');
+    }
 }
