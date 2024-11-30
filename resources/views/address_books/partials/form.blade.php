@@ -64,6 +64,6 @@
 
     <!-- Submit Button -->
     <div class="text-center mt-4">
-        <button class="btn btn-primary" type="submit">{{ isset($addressBook) ? 'Update' : 'Create' }}</button>
+        <button class="btn btn-primary" type="submit">{{ isset($addressBook) ? __('address_book.edit') : __('address_book.create') }}</button>
     </div>
 </form>

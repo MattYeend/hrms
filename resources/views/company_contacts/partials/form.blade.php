@@ -29,6 +29,6 @@
 
     <!-- Submit Button -->
     <div class="text-center mt-4">
-        <button class="btn btn-primary" type="submit">{{ isset($companyContact) ? 'Update ' . $companyContact->name : 'Create' }}</button>
+        <button class="btn btn-primary" type="submit">{{ isset($companyContact) ? __('company_contact.edit') . ' ' . $companyContact->name : __('company_contact.create') }}</button>
     </div>
 </form>

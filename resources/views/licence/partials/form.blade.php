@@ -20,6 +20,6 @@
 
     <!-- Submit Button -->
     <div class="text-center mt-4">
-        <button class="btn btn-primary" type="submit">{{ isset($licence) ? 'Update ' . $licence->name : 'Create' }}</button>
+        <button class="btn btn-primary" type="submit">{{ isset($licence) ? __('licences.update') . ' ' . $licence->name : __('licences.create') }}</button>
     </div>
 </form>

@@ -36,6 +36,6 @@
     </div>
 
     <div class="text-center mt-4">
-        <button class="btn btn-primary" type="submit">{{ isset($rotas) ? __('Update') : __('Create') }}</button>
+        <button class="btn btn-primary" type="submit">{{ isset($rotas) ? __('rotas.edit') : __('rotas.create') }}</button>
     </div>
 </form>

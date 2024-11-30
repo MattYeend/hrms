@@ -290,7 +290,7 @@
 
     <!-- Submit Button -->
     <div class="text-center mt-4">
-        <button class="btn btn-primary" type="submit">{{ isset($user) ? 'Update ' . $user->getShortName() : 'Create' }}</button>
+        <button class="btn btn-primary" type="submit">{{ isset($user) ? __('users.edit') . ' ' . $user->getShortName() : __('users.create') }}</button>
     </div>
 </form>
 
