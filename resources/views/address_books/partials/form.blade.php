@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="mb-3">
-                <label for="first_line">{{ __('address_book.name') }} @if(!isset($addressBook))<span class="text-danger">*</span>@endif</label>
+                <label for="first_line">{{ __('address_book.first_line') }} @if(!isset($addressBook))<span class="text-danger">*</span>@endif</label>
                 <input type="text" name="first_line" id="first_line"class="form-control" value="{{ old('first_line', $addressBook->first_line ?? '') }}" required>
             </div>
 
