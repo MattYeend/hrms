@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    {{ __('errors.408') }}
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message ?? __('errors.408') }}
+                    </div>
                 </div>
             </div>
         </div>
