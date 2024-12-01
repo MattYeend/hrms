@@ -11,7 +11,7 @@ class UpdateContractRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->user()->isSuperAdmin();
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateContractRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'start' => 'required|date',
+            'end' => 'required|date',
+            'licence_id' => 'required|exists:licence,id',
         ];
     }
 }
