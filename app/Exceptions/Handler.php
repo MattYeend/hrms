@@ -26,19 +26,27 @@ class Handler extends ExceptionHandler
      */
     public function register(): void
     {
-        $this->renderable(function (NotFoundHttpException $e) {
-            Log::info('From renderable method: ' . $e->getMessage());
-
-            return response()->json([
-                'message' => 'From renderable method: Resource not found',
-            ], Response::HTTP_NOT_FOUND);
-        });
-
         $this->renderable(function (Throwable $e) {
+            $statusCode = $this->getStatusCode($e);
+            $viewPath = "errors.$statusCode";
+            if (view()->exists($viewPath)) {
+                return response()->view($viewPath, [], $statusCode);
+            }
+    
             return response()->json([
-                'status' => Response::HTTP_INTERNAL_SERVER_ERROR,
+                'status' => $statusCode,
                 'message' => $e->getMessage(),
-            ], Response::HTTP_INTERNAL_SERVER_ERROR);
-        });
+            ], $statusCode);
+        });    
+    }
+
+    protected function getStatusCode(Throwable $e): int
+    {
+        if (method_exists($e, 'getStatusCode')) {
+            return $e->getStatusCode();
+        }
+
+        // Default to 500 for other exceptions
+        return Response::HTTP_INTERNAL_SERVER_ERROR;
     }
 }
