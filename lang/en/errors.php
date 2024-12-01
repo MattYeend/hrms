@@ -14,4 +14,5 @@ return [
     '502' => '502 Bad Gateway',
     '503' => '503 Service Unavailable',
     '504' => '504 Gateway Timeout',
+    'default' => 'An error occurred. Please try again later.',
 ];
