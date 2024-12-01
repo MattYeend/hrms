@@ -29,24 +29,31 @@ class Handler extends ExceptionHandler
         $this->renderable(function (Throwable $e) {
             $statusCode = $this->getStatusCode($e);
             $viewPath = "errors.$statusCode";
+            $message = $e->getMessage() ?: __('errors.default');
+
             if (view()->exists($viewPath)) {
-                return response()->view($viewPath, [], $statusCode);
+                return response()->view($viewPath, ['message' => $message, 'statusCode' => $statusCode], $statusCode);
             }
-    
+
+            // If no custom view exists, return a JSON response with the status and message
             return response()->json([
                 'status' => $statusCode,
-                'message' => $e->getMessage(),
+                'message' => $message,
             ], $statusCode);
-        });    
+        });
     }
 
+    /**
+     * Get the status code for the given exception.
+     */
     protected function getStatusCode(Throwable $e): int
     {
+        // Check if the exception has a status code method
         if (method_exists($e, 'getStatusCode')) {
             return $e->getStatusCode();
         }
 
-        // Default to 500 for other exceptions
+        // Default to 500 for any exception without a status code
         return Response::HTTP_INTERNAL_SERVER_ERROR;
     }
 }
