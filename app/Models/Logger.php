@@ -298,7 +298,7 @@ class Logger extends Model
     const ACTION_DELETE_ADDRESS_BOOK_CONTACT = 191;
     const ACTION_SHOW_ADDRESS_BOOK_CONTACT = 192;
 
-    // Address Book Contacts
+    // Company Contracts
     const ACTION_CREATE_CONTRACT = 193;
     const ACTION_UPDATE_CONTRACT = 194;
     const ACTION_DELETE_CONTRACT = 195;
