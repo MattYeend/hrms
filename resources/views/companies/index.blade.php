@@ -58,7 +58,7 @@
                                                     <a href="{{ route('company.edit', $company->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('companies.edit') }}</a>
                                                 @endcan
                                                 @can('delete', $company)
-                                                    @if (auth()->user()->id !== $company->user_id)
+                                                    @if (isset($company->contract->end) && now()->gt($company->contract->end))
                                                         <form action="{{ route('company.delete', $company->id) }}" method="POST" style="display: inline-block;">
                                                             @csrf
                                                             @method('DELETE')

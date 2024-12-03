@@ -55,7 +55,8 @@ class CompanyPolicy
      */
     public function delete(User $user, Company $company): bool
     {
-        return false;
+        $contractEndDate = $company->contract->end ?? null;
+        return $contractEndDate && now()->greaterThan($contractEndDate);
     }
 
     /**
