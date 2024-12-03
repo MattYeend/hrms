@@ -47,13 +47,11 @@
                                     <a href="{{ route('addressContact.edit', $addressContact->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('address_book_contacts.edit') }}</a>
                                 @endcan
                                 @can('delete', $addressContact)
-                                    @if (auth()->user()->id !== $addressContact->id)
-                                        <form action="{{ route('addressContact.delete', $addressContact->id) }}" method="POST" style="display: inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('address_book_contacts.delete') }}</button>
-                                        </form>
-                                    @endif
+                                    <form action="{{ route('addressContact.delete', $addressContact->id) }}" method="POST" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('address_book_contacts.delete') }}</button>
+                                    </form>
                                 @endcan
                             </td>
                         </tr>
