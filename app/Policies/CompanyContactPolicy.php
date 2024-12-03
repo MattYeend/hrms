@@ -56,7 +56,10 @@ class CompanyContactPolicy
      */
     public function delete(User $user, CompanyContact $companyContact): bool
     {
-        return false;
+        $companyContactsCount = $companyContact->company->companyContacts()->count();
+
+        // Allow deletion only if there is more than one contact for the company
+        return $companyContactsCount > 1;
     }
 
     /**

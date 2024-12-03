@@ -38,13 +38,11 @@
                                     <a href="{{ route('companyContact.edit', $companyContact->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('company_contact.edit') }}</a>
                                 @endcan
                                 @can('delete', $companyContact)
-                                    @if (auth()->user()->id !== $companyContact->id)
-                                        <form action="{{ route('companyContact.delete', $companyContact->id) }}" method="POST" style="display: inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('company_contact.delete') }}</button>
-                                        </form>
-                                    @endif
+                                    <form action="{{ route('companyContact.delete', $companyContact->id) }}" method="POST" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('company_contact.delete') }}</button>
+                                    </form>
                                 @endcan
                             </td>
                         </tr>
