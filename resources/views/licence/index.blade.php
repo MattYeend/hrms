@@ -46,13 +46,11 @@
                                                     <a href="{{ route('licence.edit', $licence->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('licences.edit') }}</a>
                                                 @endcan
                                                 @can('delete', $licence)
-                                                    @if (auth()->user()->id !== $licence->user_id)
-                                                        <form action="{{ route('licence.delete', $licence->id) }}" method="POST" style="display: inline-block;">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('licences.delete') }}</button>
-                                                        </form>
-                                                    @endif
+                                                    <form action="{{ route('licence.delete', $licence->id) }}" method="POST" style="display: inline-block;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('licences.delete') }}</button>
+                                                    </form>
                                                 @endcan
                                             </td>
                                         </tr>

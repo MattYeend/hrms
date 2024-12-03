@@ -56,7 +56,10 @@ class LicencePolicy
      */
     public function delete(User $user, licence $licence): bool
     {
-        return false;
+        $isUsedInContracts = $licence->contracts()->exists();
+
+        // Allow deletion only if the licence is not used in any contracts
+        return !$isUsedInContracts;
     }
 
     /**

@@ -32,4 +32,8 @@ class Licence extends Model
     public function deletedBy(){
         return $this->belongsTo(User::class, 'deleted_by');
     }
+
+    public function contracts(){
+        return $this->hasMany(Contract::class);
+    }
 }
