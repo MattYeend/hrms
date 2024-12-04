@@ -16,6 +16,7 @@ use App\Http\Controllers\AddressContactController;
 use App\Http\Controllers\ContractController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CompanyContactController;
+use App\Http\Controllers\DepartmentController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -133,6 +134,15 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/companyContact/{companyContact}/edit', [CompanyContactController::class, 'edit'])->name('companyContact.edit');
     Route::put('/companyContact/{companyContact}', [CompanyContactController::class, 'update'])->name('companyContact.update');
     Route::delete('/companyContact/{companyContact}', [CompanyContactController::class, 'delete'])->name('companyContact.delete');
+
+    // Departments routes
+    Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
+    Route::get('/departments/create', [DepartmentController::class, 'create'])->name('departments.create');
+    Route::post('/department', [DepartmentController::class, 'store'])->name('departments.store');
+    Route::get('/department/{department}', [DepartmentController::class, 'show'])->name('departments.show');
+    Route::get('/department/{department}/edit', [DepartmentController::class, 'edit'])->name('departments.edit');
+    Route::put('/department/{department}', [DepartmentController::class, 'update'])->name('departments.update');
+    Route::delete('/department/{department}', [DepartmentController::class, 'delete'])->name('departments.delete');
 
     // Knowledge Base and Reports routes
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');

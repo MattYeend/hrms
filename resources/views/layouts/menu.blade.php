@@ -22,6 +22,11 @@
         </li>
         @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite())
             <li>
+                <a class="nav-link" href="{{ route('departments.index') }}">
+                    {{ __('dropdown.department') }}
+                </a>
+            </li>
+            <li>
                 <a class="nav-link" href="{{ route('reports') }}">
                     {{ __('dropdown.reports') }}
                 </a>
