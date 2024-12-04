@@ -8,5 +8,9 @@ return [
     'delete' => 'Delete',
     'users' => 'Users',
     'dept_lead' => 'Department Lead',
-    'company' => 'Company'
+    'company' => 'Company',
+    'not_provided' => 'Not Provided',
+    'yes' => 'Yes',
+    'no' => 'No',
+    'select_option' => 'Select an option',
 ];

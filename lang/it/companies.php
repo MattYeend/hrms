@@ -15,7 +15,8 @@ return [
     'contract' => 'Contratto',
     'address' => 'Indirizzo',
     'company_relationship_manager' => 'Responsabile Relazioni Aziendali',
-    'not_provided' => 'Non Fornito',
+    'not_provided' => 'Non fornito',
     'yes' => 'Sì',
-    'no' => 'No'
+    'no' => 'No',
+    'select_option' => 'Seleziona un\'opzione',
 ];

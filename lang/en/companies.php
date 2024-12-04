@@ -17,5 +17,6 @@ return [
     'company_relationship_manager' => 'Company Relationship Manager',
     'not_provided' => 'Not Provided',
     'yes' => 'Yes',
-    'no' => 'No'
+    'no' => 'No',
+    'select_option' => 'Select an option',
 ];

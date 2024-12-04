@@ -10,12 +10,14 @@ return [
     'company_contact' => 'Cyswllt Cwmni',
     'name' => 'Enw',
     'pay_day' => 'Diwrnod Talu',
-    'active' => 'Gweithredol',
+    'active' => 'Egnïol',
     'work_weekdays' => 'Dyddiau Gwaith yr Wythnos?',
     'contract' => 'Contract',
     'address' => 'Cyfeiriad',
-    'company_relationship_manager' => 'Rheolwr Perthynas y Cwmni',
+    'company_relationship_manager' => 'Rheolwr Perthynas Cwmni',
     'not_provided' => 'Heb ei Ddarparu',
     'yes' => 'Ie',
-    'no' => 'Na'
+    'no' => 'Na',
+    'select_option' => 'Dewiswch opsiwn',
 ];
+

@@ -13,6 +13,7 @@
 
             <div class="mb-3">
                 <label for="company_contact_id">{{ __('companies.company_contact') }}</label>
+                <option value="" disabled selected>{{ __('companies.select_option') }}</option>
                 <select name="company_contact_id" id="company_contact_id" class="form-control">
                     @foreach($contacts as $contact)
                         <option value="{{ $contact->id }}" {{ old('company_contact_id', $company->company_contact_id ?? '') == $contact->id ? 'selected' : '' }}>
@@ -41,6 +42,7 @@
 
             <div class="mb-3">
                 <label for="contract_id">{{ __('companies.contract') }}</label>
+                <option value="" disabled selected>{{ __('companies.select_option') }}</option>
                 <select name="contract_id" id="contract_id" class="form-control">
                     @foreach($contracts as $contract)
                         <option value="{{ $contract->id }}" {{ old('contract_id', $company->contract_id ?? '') == $contract->id ? 'selected' : '' }}>
@@ -52,6 +54,7 @@
 
             <div class="mb-3">
                 <label for="address_book_id">{{ __('companies.address') }}</label>
+                <option value="" disabled selected>{{ __('companies.select_option') }}</option>
                 <select name="address_book_id" id="address_book_id" class="form-control">
                     @foreach($addresses as $address)
                         <option value="{{ $address->id }}" {{ old('address_book_id', $company->address_book_id ?? '') == $address->id ? 'selected' : '' }}>
@@ -63,6 +66,7 @@
 
             <div class="mb-3">
                 <label for="company_relationship_manager">{{ __('companies.company_relationship_manager') }}</label>
+                <option value="" disabled selected>{{ __('companies.select_option') }}</option>
                 <select name="company_relationship_manager" id="company_relationship_manager" class="form-control">
                     @foreach($relationshipManagers as $manager)
                         <option value="{{ $manager->id }}" {{ old('company_relationship_manager', $company->company_relationship_manager ?? '') == $manager->id ? 'selected' : '' }}>

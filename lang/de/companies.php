@@ -3,9 +3,9 @@
 return [
     'company' => 'Unternehmen',
     'departments' => 'Abteilungen',
-    'create' => 'Unternehmen erstellen',
+    'create' => 'Ein Unternehmen erstellen',
     'edit' => 'Aktualisieren',
-    'view' => 'Unternehmen anzeigen',
+    'view' => 'Unternehmen ansehen',
     'delete' => 'Löschen',
     'company_contact' => 'Unternehmenskontakt',
     'name' => 'Name',
@@ -14,8 +14,9 @@ return [
     'work_weekdays' => 'Arbeitstage?',
     'contract' => 'Vertrag',
     'address' => 'Adresse',
-    'company_relationship_manager' => 'Unternehmensbeziehungsmanager',
+    'company_relationship_manager' => 'Beziehungsmanager des Unternehmens',
     'not_provided' => 'Nicht angegeben',
     'yes' => 'Ja',
-    'no' => 'Nein'
+    'no' => 'Nein',
+    'select_option' => 'Option auswählen',
 ];

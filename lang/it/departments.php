@@ -7,6 +7,10 @@ return [
     'view' => 'Visualizza Dipartimento',
     'delete' => 'Elimina',
     'users' => 'Utenti',
-    'dept_lead' => 'Responsabile del Dipartimento',
+    'dept_lead' => 'Capo Dipartimento',
     'company' => 'Azienda',
+    'not_provided' => 'Non fornito',
+    'yes' => 'Sì',
+    'no' => 'No',
+    'select_option' => 'Seleziona un\'opzione',
 ];
