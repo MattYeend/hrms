@@ -11,4 +11,9 @@ return [
     'start' => 'Inicio',
     'end' => 'Fin',
     'licence' => 'Licencia',
+    'not_provided' => 'No proporcionado',
+    'yes' => 'Sí',
+    'no' => 'No',
+    'select_option' => 'Seleccione una opción',
+    'actions' => 'Acción',
 ];
