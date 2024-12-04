@@ -16,9 +16,11 @@ class DepartmentController extends Controller
     {
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
-            if (Auth::user()->role !== 'Super Admin') {
+            $user = auth()->user();
+            if (!$user->isSuperAdmin() && !$user->isAdmin() && !$user->cSuite()) {
                 abort(403, 'Unauthorized action.');
             }
+
             return $next($request);
         });
     }
