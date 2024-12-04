@@ -9,7 +9,9 @@ return [
     'delete_rota' => 'Löschen',
     'rotas' => 'Dienstpläne',
     'user' => 'Benutzer',
-    'department' => 'Abteilung',
-    'actions' => 'Aktionen',
-    'select_option' => 'Wählen Sie eine option',
+    'department' => 'Abteilung',    
+    'not_provided' => 'Nicht angegeben',
+    'yes' => 'Ja',
+    'no' => 'Nein',
+    'select_option' => 'Option auswählen',
 ];
