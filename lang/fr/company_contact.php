@@ -10,6 +10,9 @@ return [
     'name' => 'Nom',
     'email' => 'E-mail',
     'phone' => 'Téléphone',
-    'not_provided' => 'Non Fournie',
-    'select_option' => 'Sélectionnez une option',
+    'not_provided' => 'Non Fourni',
+    'select_option' => 'Sélectionner une option',
+    'yes' => 'Oui',
+    'no' => 'Non',
+    'actions' => 'Actions',
 ];

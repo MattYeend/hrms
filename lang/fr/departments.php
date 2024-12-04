@@ -8,9 +8,10 @@ return [
     'delete' => 'Supprimer',
     'users' => 'Utilisateurs',
     'dept_lead' => 'Chef de Département',
-    'company' => 'Entreprise',
-    'not_provided' => 'Non fourni',
+    'company' => 'Entreprise',  
+    'not_provided' => 'Non Fourni',
+    'select_option' => 'Sélectionner une option',
     'yes' => 'Oui',
     'no' => 'Non',
-    'select_option' => 'Sélectionnez une option',
+    'actions' => 'Actions',
 ];

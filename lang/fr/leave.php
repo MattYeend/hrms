@@ -13,9 +13,12 @@ return [
     'outstanding_requests' => 'Demandes en attente',
     'employee_name' => 'Nom de l\'employé',
     'status' => 'Statut',
-    'actions' => 'Action',
     'no_outstanding_requests' => 'Aucune demande en attente',
     'approve' => 'Approuver',
     'deny' => 'Refuser',
-
+    'not_provided' => 'Non Fourni',
+    'select_option' => 'Sélectionner une option',
+    'yes' => 'Oui',
+    'no' => 'Non',
+    'actions' => 'Actions',
 ];
