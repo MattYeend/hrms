@@ -13,8 +13,12 @@ return [
     'outstanding_requests' => 'Outstanding Requests',
     'employee_name' => 'Employee Name',
     'status' => 'Status', 
-    'actions' => 'Action',
     'no_outstanding_requests' => 'No Outstanding Requests',
     'approve' => 'Approve',
-    'deny' => 'Deny'
+    'deny' => 'Deny',
+    'not_provided' => 'Not Provided',
+    'yes' => 'Yes',
+    'no' => 'No',
+    'select_option' => 'Select an option',
+    'actions' => 'Actions',
 ];

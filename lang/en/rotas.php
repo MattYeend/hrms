@@ -10,6 +10,9 @@ return [
     'rotas' => 'Rotas',
     'user' => 'User',
     'department' => 'Department',
-    'actions' => 'Actions',
+    'not_provided' => 'Not Provided',
+    'yes' => 'Yes',
+    'no' => 'No',
     'select_option' => 'Select an option',
+    'actions' => 'Actions',
 ];
