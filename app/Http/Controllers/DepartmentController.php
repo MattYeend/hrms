@@ -28,7 +28,10 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $this->authorize('viewAny', Department::class);
+
+        $departments = Department::with(['company', 'departmentLead'])->paginate(10);
+        return view('departments.index', compact('departments'));
     }
 
     /**
@@ -36,7 +39,12 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', Department::class);
+
+        $company = Company::all();
+        $departmentLead = Users::all();
+
+        return view('departments.create', compact('company', 'departmentLead'));
     }
 
     /**
@@ -44,38 +52,58 @@ class DepartmentController extends Controller
      */
     public function store(StoreDepartmentRequest $request)
     {
-        //
+        $this->authorize('create', Department::class);
+
+        $data = $request->validated();
+        $department = Department::create($data);
+        Logger::log(Logger::ACTION_CREATE_DEPARTMENT, ['department' => $department]);
+        return redirect()->route('departments.index')->with('success', 'Department created successfully.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Department $Department)
+    public function show(Department $department)
     {
-        //
+        $this->authorize('view', $department);
+
+        $department->load(['company', 'departmentLead']);
+        Logger::log(Logger::ACTION_SHOW_DEPARTMENT, ['department' => $department]);
+        return view('departments.show', compact('department'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Department $Department)
+    public function edit(Department $department)
     {
-        //
+        $this->authorize('update', $department);
+        $department->load(['company', 'departmentLead']);
+        return view('departments.edit', compact('department'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDepartmentRequest $request, Department $Department)
+    public function update(UpdateDepartmentRequest $request, Department $department)
     {
-        //
+        $this->authorize('update', $department);
+
+        $data = $request->validated();
+        $department->update($data);
+        Logger::log(Logger::ACTION_UPDATE_DEPARTMENT, ['department' => $department]);
+        return redirect()->route('departments.index')->with('success', 'Department updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Department $Department)
+    public function destroy(Department $department)
     {
-        //
+        $this->authorize('delete', $department);
+        Logger::log(Logger::ACTION_DELETE_DEPARTMENT, ['department' => $department]);
+        $department->delete();
+
+        return redirect()->route('departments.index')->with('success', 'Department deleted successfully.');
     }
 }
