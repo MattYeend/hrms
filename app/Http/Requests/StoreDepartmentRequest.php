@@ -11,7 +11,7 @@ class StoreDepartmentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite();
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreDepartmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'slug' => 'required|string|max:255',
+            'company_id' => 'nullable|exists:companies,id',
+            'dept_lead_id' => 'nullable|exists:users,id',
         ];
     }
 }
