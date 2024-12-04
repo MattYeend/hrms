@@ -13,8 +13,12 @@ return [
     'outstanding_requests' => 'Ceisiadau heb eu penderfynu',
     'employee_name' => "Enw'r Gweithiwr",
     'status' => 'Statws', 
-    'actions' => 'Gweithredu',
     'no_outstanding_requests' => 'Dim Ceisiadau heb eu penderfynu',
     'approve' => 'Cymeradwyo',
-    'deny' => 'Gwadu'
+    'deny' => 'Gwadu',
+    'not_provided' => 'Heb ei ddarparu',
+    'select_option' => 'Dewiswch opsiwn',
+    'yes' => 'Ie',
+    'no' => 'Na',
+    'actions' => 'Camau Gweithredu',
 ];

@@ -11,4 +11,9 @@ return [
     'start' => 'Cychwyn',
     'end' => 'Diwedd',
     'licence' => 'Trwydded',
+    'not_provided' => 'Heb ei ddarparu',
+    'select_option' => 'Dewiswch opsiwn',
+    'yes' => 'Ie',
+    'no' => 'Na',
+    'actions' => 'Camau Gweithredu',
 ];

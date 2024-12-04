@@ -15,9 +15,10 @@ return [
     'contract' => 'Contract',
     'address' => 'Cyfeiriad',
     'company_relationship_manager' => 'Rheolwr Perthynas Cwmni',
-    'not_provided' => 'Heb ei Ddarparu',
+    'not_provided' => 'Heb ei ddarparu',
+    'select_option' => 'Dewiswch opsiwn',
     'yes' => 'Ie',
     'no' => 'Na',
-    'select_option' => 'Dewiswch opsiwn',
+    'actions' => 'Camau Gweithredu',
 ];
 
