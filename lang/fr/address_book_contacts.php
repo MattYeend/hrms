@@ -12,8 +12,10 @@ return [
     'position' => 'Poste',
     'main_contact' => 'Contact Principal',
     'secondary_contact' => 'Contact Secondaire',
+    'address' => 'Adresse',
     'not_provided' => 'Non Fourni',
+    'select_option' => 'Sélectionner une option',
     'yes' => 'Oui',
     'no' => 'Non',
-    'address' => 'Adresse',
+    'actions' => 'Actions',
 ];

@@ -17,7 +17,7 @@ return [
     'head_office' => 'Sede Centrale',
     'address_contact' => 'Contatto Principale per l\'Indirizzo',
     'not_provided' => 'Non Fornito',
-    'select_option' => 'Seleziona un’opzione',
+    'select_option' => 'Seleziona un\'opzione',
     'yes' => 'Sì',
     'no' => 'No',
     'actions' => 'Azioni',

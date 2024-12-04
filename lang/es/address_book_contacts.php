@@ -12,8 +12,10 @@ return [
     'position' => 'Cargo',
     'main_contact' => 'Contacto Principal',
     'secondary_contact' => 'Contacto Secundario',
+    'address' => 'Dirección',
     'not_provided' => 'No Proporcionado',
+    'select_option' => 'Seleccionar una opción',
     'yes' => 'Sí',
     'no' => 'No',
-    'address' => 'Dirección',
+    'actions' => 'Acciones',
 ];

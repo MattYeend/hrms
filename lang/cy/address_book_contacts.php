@@ -12,8 +12,10 @@ return [
     'position' => 'Swydd',
     'main_contact' => 'Prif Gyswllt',
     'secondary_contact' => 'Cyswllt Eilaidd',
-    'not_provided' => 'Heb ei Ddarparu',
+    'address' => 'Cyfeiriad',
+    'not_provided' => 'Heb ei ddarparu',
+    'select_option' => 'Dewiswch opsiwn',
     'yes' => 'Ie',
     'no' => 'Na',
-    'address' => 'Cyfeiriad',
+    'actions' => 'Camau Gweithredu',
 ];
