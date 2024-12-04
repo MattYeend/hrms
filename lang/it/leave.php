@@ -13,8 +13,12 @@ return [
     'outstanding_requests' => 'Richieste in sospeso',
     'employee_name' => 'Nome del dipendente',
     'status' => 'Stato',
-    'actions' => 'Azioni',
     'no_outstanding_requests' => 'Nessuna richiesta in sospeso',
     'approve' => 'Approva',
     'deny' => 'Rifiuta',
+    'not_provided' => 'Non Fornito',
+    'select_option' => 'Seleziona un\'opzione',
+    'yes' => 'Sì',
+    'no' => 'No',
+    'actions' => 'Azioni',
 ];

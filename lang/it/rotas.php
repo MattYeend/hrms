@@ -10,6 +10,9 @@ return [
     'rotas' => 'Turni',
     'user' => 'Utente',
     'department' => 'Dipartimento',
-    'actions' => 'Azioni',
+    'not_provided' => 'Non Fornito',
     'select_option' => 'Seleziona un\'opzione',
+    'yes' => 'Sì',
+    'no' => 'No',
+    'actions' => 'Azioni',
 ];
