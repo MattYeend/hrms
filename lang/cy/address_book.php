@@ -15,7 +15,10 @@ return [
     'country' => 'Gwlad',
     'post_code' => 'Cod Post',
     'head_office' => 'Prif Swyddfa',
-    'address_contact' => 'Prif Gyswllt ar gyfer Cyfeiriad',
-    'not_provided' => 'Heb ei Ddarparu',
+    'address_contact' => 'Cyswllt Prif Gyfeiriad',
+    'not_provided' => 'Heb ei ddarparu',
     'select_option' => 'Dewiswch opsiwn',
+    'yes' => 'Ie',
+    'no' => 'Na',
+    'actions' => 'Camau Gweithredu',
 ];

@@ -2,10 +2,10 @@
 
 return [
     'address_book' => 'Firmenadressbuch',
-    'company' => 'Unternehmen',
+    'company' => 'Firma',
     'create' => 'Adresse erstellen',
     'edit' => 'Aktualisieren',
-    'view' => 'Adresse ansehen',
+    'view' => 'Adresse anzeigen',
     'delete' => 'Löschen',
     'first_line' => 'Erste Zeile',
     'second_line' => 'Zweite Zeile',
@@ -15,7 +15,10 @@ return [
     'country' => 'Land',
     'post_code' => 'Postleitzahl',
     'head_office' => 'Hauptsitz',
-    'address_contact' => 'Hauptkontakt für die Adresse',
+    'address_contact' => 'Hauptkontakt für Adresse',
     'not_provided' => 'Nicht angegeben',
-    'select_option' => 'Wählen Sie eine option',
+    'select_option' => 'Option auswählen',
+    'yes' => 'Ja',
+    'no' => 'Nein',
+    'actions' => 'Aktionen',
 ];

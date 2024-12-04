@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'address_book' => 'Libreta de Direcciones de la Empresa',
+    'address_book' => 'Agenda de Direcciones de la Empresa',
     'company' => 'Empresa',
     'create' => 'Crear una dirección',
     'edit' => 'Actualizar',
@@ -11,11 +11,14 @@ return [
     'second_line' => 'Segunda Línea',
     'town' => 'Pueblo',
     'city' => 'Ciudad',
-    'county' => 'Provincia',
+    'county' => 'Condado',
     'country' => 'País',
     'post_code' => 'Código Postal',
     'head_office' => 'Oficina Central',
-    'address_contact' => 'Contacto Principal para la Dirección',
+    'address_contact' => 'Contacto Principal de la Dirección',
     'not_provided' => 'No Proporcionado',
     'select_option' => 'Seleccionar una opción',
+    'yes' => 'Sí',
+    'no' => 'No',
+    'actions' => 'Acciones',
 ];

@@ -18,4 +18,7 @@ return [
     'address_contact' => 'Main Contact for Address',
     'not_provided' => 'Not Provided',
     'select_option' => 'Select an option',
+    'yes' => 'Yes',
+    'no' => 'No',
+    'actions' => 'Actions',
 ];

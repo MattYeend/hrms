@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'address_book' => 'Livro de Endereços da Empresa',
+    'address_book' => 'Agenda de Endereços da Empresa',
     'company' => 'Empresa',
     'create' => 'Criar um endereço',
     'edit' => 'Atualizar',
@@ -9,13 +9,16 @@ return [
     'delete' => 'Excluir',
     'first_line' => 'Primeira Linha',
     'second_line' => 'Segunda Linha',
-    'town' => 'Cidade Pequena',
-    'city' => 'Cidade',
-    'county' => 'Município',
+    'town' => 'Cidade',
+    'city' => 'Grande Cidade',
+    'county' => 'Condado',
     'country' => 'País',
     'post_code' => 'Código Postal',
     'head_office' => 'Sede',
-    'address_contact' => 'Contato Principal para o Endereço',
+    'address_contact' => 'Contato Principal do Endereço',
     'not_provided' => 'Não Fornecido',
-    'select_option' => 'Selecione uma opção',
+    'select_option' => 'Selecionar uma opção',
+    'yes' => 'Sim',
+    'no' => 'Não',
+    'actions' => 'Ações',
 ];
