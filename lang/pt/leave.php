@@ -12,9 +12,13 @@ return [
     'taken' => 'levado', 
     'outstanding_requests' => 'Pedidos pendentes',
     'employee_name' => 'Nome do funcionário',
-    'status' => 'estado', 
-    'actions' => 'Ação',
+    'status' => 'estado',
     'no_outstanding_requests' => 'Nenhum pedido pendente',
     'approve' => 'Aprovar',
-    'deny' => 'negar'
+    'deny' => 'negar',
+    'not_provided' => 'Não Fornecido',
+    'select_option' => 'Selecionar uma opção',
+    'yes' => 'Sim',
+    'no' => 'Não',
+    'actions' => 'Ações',
 ];

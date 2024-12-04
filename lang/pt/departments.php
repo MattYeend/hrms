@@ -9,8 +9,9 @@ return [
     'users' => 'Usuários',
     'dept_lead' => 'Chefe do Departamento',
     'company' => 'Empresa',
-    'not_provided' => 'Não fornecido',
+    'not_provided' => 'Não Fornecido',
+    'select_option' => 'Selecionar uma opção',
     'yes' => 'Sim',
     'no' => 'Não',
-    'select_option' => 'Selecione uma opção',
+    'actions' => 'Ações',
 ];

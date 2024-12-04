@@ -10,6 +10,9 @@ return [
     'rotas' => 'Turnos',
     'user' => 'Usuário',
     'department' => 'Departamento',
+    'not_provided' => 'Não Fornecido',
+    'select_option' => 'Selecionar uma opção',
+    'yes' => 'Sim',
+    'no' => 'Não',
     'actions' => 'Ações',
-    'select_option' => 'Selecione uma opção',
 ];

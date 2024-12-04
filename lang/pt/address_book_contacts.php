@@ -12,8 +12,10 @@ return [
     'position' => 'Posição',
     'main_contact' => 'Contato Principal',
     'secondary_contact' => 'Contato Secundário',
+    'address' => 'Endereço',
     'not_provided' => 'Não Fornecido',
+    'select_option' => 'Selecionar uma opção',
     'yes' => 'Sim',
     'no' => 'Não',
-    'address' => 'Endereço',
+    'actions' => 'Ações',
 ];
