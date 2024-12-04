@@ -4,14 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Department;
 use App\Models\Logger;
+use App\Models\Company;
+use App\Models\User;
 use App\Http\Requests\StoreDepartmentRequest;
 use App\Http\Requests\UpdateDepartmentRequest;
+use Illuminate\Support\Facades\Auth;
 
 class DepartmentController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            if (Auth::user()->role !== 'Super Admin') {
+                abort(403, 'Unauthorized action.');
+            }
+            return $next($request);
+        });
     }
     
     /**
