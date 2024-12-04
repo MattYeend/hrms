@@ -14,4 +14,5 @@ return [
     'yes' => 'Ja',
     'no' => 'Nein',
     'select_option' => 'Option auswählen',
+    'actions' => 'Aktionen',
 ];
