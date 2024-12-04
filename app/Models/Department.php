@@ -65,4 +65,8 @@ class Department extends Model
     public function rotas(){
         return $this->hasMany(Rotas::class);
     }
+
+    public function users(){
+        return $this->hasMany(User::class, 'department_id');
+    }
 }
