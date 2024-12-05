@@ -56,6 +56,9 @@ When creating a new language file for pages (e.g. a new `create.blade.php` or `i
 - `'edit' => 'Update'`
 - `'view' => 'View ...'`
 - `'delete' => 'Delete'`
+- `'not_provided' => 'Not Provided'`
+- `'yes' => 'Yes'`
+- `'no' => 'No'`
 
 ## How everything is related
 Users
