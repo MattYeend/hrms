@@ -52,6 +52,8 @@
 
 ## Language files
 When creating a new language file for pages (e.g. a new `create.blade.php` or `index.blade.php`), the following options need to be in
+- `'create' => 'Create a ...'`
+- `'edit' => 'Update'`
 
 ## How everything is related
 Users
