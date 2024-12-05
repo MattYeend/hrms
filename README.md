@@ -59,6 +59,8 @@ When creating a new language file for pages (e.g. a new `create.blade.php` or `i
 - `'not_provided' => 'Not Provided'`
 - `'yes' => 'Yes'`
 - `'no' => 'No'`
+- `'select_option' => 'Select an option'`
+- `'action' => 'Actions'`
 
 ## How everything is related
 Users
