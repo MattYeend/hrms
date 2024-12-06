@@ -221,18 +221,16 @@ class User extends Authenticatable
     public function hrStaff(){
         $hrStaffCodes = [
             'CHRO', // Chief HR Officer
-            'CEO', // Chief Executive Officer
-            'COO', // Chief Operations Officer
-            'CFO', // Chief Financial Officer
-            'CTO', // Chief Technology Officer
-            'CMO', // Chief Marketing Officer
-            'CIO', // Chief Information Officer
-            'CCO', // Chief Compliance Officer
-            'CRO', // Chief Risk Officer
-            'CDO', // Chief Data Officer
-            'CCO', // Chief Customer Officer
-            'CSO', // Chief Strategy Officer
-            'CEO' // Chief Engineering Officer
+            'HRM', // Human Resources Manager
+            'HRG', // HR Generalist
+            'REC', // Recruitment Specialist
+            'HRC', // HR Coordinator
+            'CBS', // Compensation and Benefits Specialist
+            'TDM', // Training and Development Manager
+            'ERS', // Employee Relations Specialist
+            'HRAN', // HR Analyst
+            'HRAS', // HR Assistant
+            'HRD' // HR Director
         ];
         return $this->job && in_array($this->job->code, $hrStaffCodes);
     }

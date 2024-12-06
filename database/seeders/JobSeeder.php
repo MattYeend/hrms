@@ -374,14 +374,14 @@ class JobSeeder extends Seeder
             [
                 'name' => 'HR Analyst',
                 'slug' => 'hr-analyst',
-                'code' => 'HRA',
+                'code' => 'HRAN',
                 'probation_length' => 6,
                 'salary_range_id' => 8
             ],
             [
                 'name' => 'HR Assistant',
                 'slug' => 'hr-assistant',
-                'code' => 'HRA',
+                'code' => 'HRAS',
                 'probation_length' => 6,
                 'salary_range_id' => 10
             ],
