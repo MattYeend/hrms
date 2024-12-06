@@ -188,7 +188,8 @@ class User extends Authenticatable
             'CDO', // Chief Data Officer
             'CCO', // Chief Customer Officer
             'CSO', // Chief Strategy Officer
-            'CEO' // Chief Engineering Officer
+            'CEO', // Chief Engineering Officer
+            'CHRO' // Chief HR Officer
         ];
         return $this->job && in_array($this->job->code, $cSuiteCodes);
     }
@@ -215,5 +216,24 @@ class User extends Authenticatable
 
     public function rotas(){
         return $this->hasMany(Rotas::class);
+    }
+
+    public function hrStaff(){
+        $hrStaffCodes = [
+            'CHRO', // Chief HR Officer
+            'CEO', // Chief Executive Officer
+            'COO', // Chief Operations Officer
+            'CFO', // Chief Financial Officer
+            'CTO', // Chief Technology Officer
+            'CMO', // Chief Marketing Officer
+            'CIO', // Chief Information Officer
+            'CCO', // Chief Compliance Officer
+            'CRO', // Chief Risk Officer
+            'CDO', // Chief Data Officer
+            'CCO', // Chief Customer Officer
+            'CSO', // Chief Strategy Officer
+            'CEO' // Chief Engineering Officer
+        ];
+        return $this->job && in_array($this->job->code, $hrStaffCodes);
     }
 }
