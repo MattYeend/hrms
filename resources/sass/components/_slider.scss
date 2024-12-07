@@ -78,6 +78,11 @@ body.dark-mode .menu{
     background-color: $light-dark-mode;
     color: $gray-light;
 
+    &::-webkit-scrollbar-thumb {
+        background-color: $gray-light;
+        border-radius: 4px;
+    }
+
     .nav-link{
         color: $gray-light;
         &:hover{
