@@ -32,6 +32,13 @@
                 </a>
             </li>
         @endif
+        @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite() || auth()->user()->hrStaff)
+            <li>
+                <a class="nav-link" href="{{ route('job.index') }}">
+                    {{ __('dropdown.jobs') }}
+                </a>
+            </li>
+        @endif
         @if(auth()->user()->isSuperAdmin())
             <li>
                 <a class="nav-link" href="{{ route('company.index') }}">

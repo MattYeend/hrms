@@ -14,4 +14,5 @@ return [
     'address_book' => 'Company Address Book',
     'address_contact' => 'Company Address Contact',
     'contract' => 'Company Contracts',
+    'jobs' => 'Jobs', 
 ];
