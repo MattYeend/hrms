@@ -81,7 +81,7 @@ class DepartmentController extends Controller
     {
         $this->authorize('update', $department);
         $department->load(['company', 'departmentLead']);
-        return view('departments.edit', compact('department'));
+        return view('departments.update', compact('department'));
     }
 
     /**

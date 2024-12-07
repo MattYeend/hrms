@@ -74,7 +74,7 @@ class LicenceController extends Controller
     {
         $this->authorize('update', $licence);
         $licence->get();
-        return view('licence.edit', compact('licence'));
+        return view('licence.update', compact('licence'));
     }
 
     /**

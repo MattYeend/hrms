@@ -17,6 +17,7 @@ return new class extends Migration
             $table->date('start');
             $table->date('end');
             $table->unsignedBigInteger('licence_id')->nullable();
+            $table->unsignedBigInteger('company_id')->nullable(); 
             $table->timestamps();
         });
     }

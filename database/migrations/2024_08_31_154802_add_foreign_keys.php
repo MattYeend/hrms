@@ -74,6 +74,7 @@ return new class extends Migration
 
         Schema::table('contracts', function (Blueprint $table){
             $table->foreign('licence_id')->references('id')->on('licences')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
         });
 
         Schema::table('address_books', function (Blueprint $table){
@@ -214,6 +215,7 @@ return new class extends Migration
 
         Schema::table('contracts', function (Blueprint $table){
             $table->dropForeign('licence_id');
+            $table->dropForeign('company_id');
         });
 
         Schema::table('address_books', function (Blueprint $table){

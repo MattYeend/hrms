@@ -83,7 +83,7 @@ class CompanyController extends Controller
     {
         $this->authorize('update', $company);
         $company->load(['contract', 'companyContact', 'companyRelationshipManager', 'addressBook']);
-        return view('companies.edit', compact('company'));
+        return view('companies.update', compact('company'));
     }
 
     /**

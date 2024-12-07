@@ -77,7 +77,7 @@ class CompanyContactController extends Controller
     {
         $this->authorize('update', $companyContact);
 
-        return view('company_contacts.edit', compact('companyContact'));
+        return view('company_contacts.update', compact('companyContact'));
     }
 
     /**

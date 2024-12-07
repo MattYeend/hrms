@@ -77,7 +77,7 @@ class ContractController extends Controller
     {
         $this->authorize('update', $contract);
         $contract->load(['licence']);
-        return view('company_contracts.edit', compact('contract'));
+        return view('company_contracts.update', compact('contract'));
     }
 
     /**

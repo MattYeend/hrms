@@ -71,7 +71,7 @@ class JobController extends Controller
     {
         $this->authorize('update', $job);
         $job->load(['salaryRange', 'users']);
-        return view('job.edit', compact('job'));
+        return view('job.update', compact('job'));
     }
 
     /**

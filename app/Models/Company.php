@@ -27,11 +27,11 @@ class Company extends Model
     ];
 
     public function contract(){
-        return $this->hasOne(Contract::class, 'contract_id');
+        return $this->hasOne(Contract::class, 'company_id');
     }
 
     public function companyContact(){
-        return $this->hasOne(CompanyContact::class, 'company_contact_id');
+        return $this->belongsTo(CompanyContact::class, 'company_contact_id');
     }
 
     public function companyRelationshipManager(){

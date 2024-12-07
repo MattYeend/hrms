@@ -70,7 +70,7 @@ class AddressContactController extends Controller
     public function edit(AddressContact $addressContact)
     {
         $this->authorize('update', $addressContact);
-        return view('address_book_contacts.edit', compact('addressContact'));
+        return view('address_book_contacts.update', compact('addressContact'));
     }
 
     /**

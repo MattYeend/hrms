@@ -72,7 +72,7 @@ class AddressBookController extends Controller
     public function edit(AddressBook $addressBook)
     {
         $this->authorize('update', $addressBook);
-        return view('address_books.edit', compact('addressBook'));
+        return view('address_books.update', compact('addressBook'));
     }
 
     /**
