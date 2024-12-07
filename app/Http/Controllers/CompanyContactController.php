@@ -15,7 +15,7 @@ class CompanyContactController extends Controller
     {
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
-            if (Auth::user()->role !== 'Super Admin') {
+            if (Auth::user()->role->name !== 'Super Admin') {
                 abort(403, 'Unauthorized action.');
             }
             return $next($request);
