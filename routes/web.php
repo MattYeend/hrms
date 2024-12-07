@@ -17,6 +17,7 @@ use App\Http\Controllers\ContractController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CompanyContactController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\JobController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -143,6 +144,15 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/department/{department}/edit', [DepartmentController::class, 'edit'])->name('departments.edit');
     Route::put('/department/{department}', [DepartmentController::class, 'update'])->name('departments.update');
     Route::delete('/department/{department}', [DepartmentController::class, 'delete'])->name('departments.delete');
+
+    // Job routes
+    Route::get('/jobs', [JobController::class, 'index'])->name('job.index');
+    Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
+    Route::post('/job', [JobController::class, 'store'])->name('job.store');
+    Route::get('/job/{job}', [JobController::class, 'show'])->name('job.show');
+    Route::get('/job/{job}/edit', [JobController::class, 'edit'])->name('job.edit');
+    Route::put('/job/{job}', [JobController::class, 'update'])->name('job.update');
+    Route::delete('/job/{job}', [JobController::class, 'delete'])->name('job.delete');
 
     // Knowledge Base and Reports routes
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');
