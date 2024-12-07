@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\job;
+use App\Models\Job;
 use Illuminate\Auth\Access\Response;
 
 class JobPolicy
@@ -23,15 +23,15 @@ class JobPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, job $job): bool
+    public function view(User $user, Job $job): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -39,38 +39,44 @@ class JobPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return $user->isSuperAdmin() || $user->isAdmin() || $user->cSuite() || $user->hrStaff();
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, job $job): bool
+    public function update(User $user, Job $job): bool
     {
-        return false;
+        return $user->isSuperAdmin() || $user->isAdmin() || $user->cSuite() || $user->hrStaff();
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, job $job): bool
+    public function delete(User $user, Job $job): bool
     {
-        return false;
+        return $user->isSuperAdmin() || $user->isAdmin() || $user->cSuite() || $user->hrStaff();
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, job $job): bool
+    public function restore(User $user, Job $job): bool
     {
-        return false;
+        return $user->isSuperAdmin() || $user->isAdmin() || $user->cSuite() || $user->hrStaff();
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, job $job): bool
+    public function forceDelete(User $user, Job $job): bool
     {
-        return false;
+        return $user->isSuperAdmin() || $user->isAdmin() || $user->cSuite() || $user->hrStaff();
+    }
+
+    public function viewSensitiveInfo(User $user, Job $job)
+    {
+        $allowed = $authUser->isSuperAdmin() || $authUser->isAdmin() || $authUser->cSuite() || $user->hrStaff();
+        return $allowed;
     }
 }
