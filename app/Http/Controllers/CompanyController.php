@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\Logger;
 use App\Models\Contract;
-use App\Models\CompanyContract;
+use App\Models\CompanyContact;
 use App\Models\User;
 use App\Models\AddressBook;
 use App\Http\Requests\StoreCompanyRequest;
@@ -44,7 +44,7 @@ class CompanyController extends Controller
         $this->authorize('create', Company::class);
 
         $contracts = Contract::all();
-        $contacts = CompanyContact::all();
+        $companyContacts = CompanyContact::all();
         $relationshipManagers = User::all();
         $addresses = AddressBook::all();
 
@@ -83,7 +83,11 @@ class CompanyController extends Controller
     {
         $this->authorize('update', $company);
         $company->load(['contract', 'companyContact', 'companyRelationshipManager', 'addressBook']);
-        return view('companies.update', compact('company'));
+        $contracts = Contract::all();
+        $companyContacts = CompanyContact::all();
+        $relationshipManagers = User::all();
+        $addresses = AddressBook::all();
+        return view('companies.update', compact('company', 'contracts', 'companyContacts', 'relationshipManagers', 'addresses'));
     }
 
     /**

@@ -18,7 +18,7 @@
                             <p>{{ __('companies.name') }}: {{ $company->name }}</p>
                             <p>{{ __('companies.company_contact') }}: {{ $company->companyContact->name ?? __('companies.not_provided') }}</p>
                             <p>{{ __('companies.pay_day') }}: {{ $company->pay_day }}</p>
-                            <p>{{ __('companies.active') }}: {{ $company->active ? '__('companies.yes') : __('companies.no') }}</p>
+                            <p>{{ __('companies.active') }}: {{ $company->active ? __('companies.yes') : __('companies.no') }}</p>
                         </div>
                         <div class="col-md-6">
                             <p>{{ __('companies.work_weekdays') }}: {{ $company->work_weekends ? __('companies.yes') : __('companies.no') }}</p>
