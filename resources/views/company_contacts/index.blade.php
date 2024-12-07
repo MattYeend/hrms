@@ -9,7 +9,7 @@
 
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <span>{{ __(company_contact.company_contact)}}</span>
+            <span>{{ __('company_contact.company_contact') }}</span>
             @can('create', App\Models\CompanyContact::class)
                 <a href="{{ route('companyContact.create') }}" class="btn btn-success">{{ __('company_contact.create') }}</a>
             @endcan
@@ -26,12 +26,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($CompanyContacts as $companyContact)
+                    @foreach($contacts as $companyContact)
                         <tr>
                             <td>{{ $companyContact->name }}</td>
                             <td>{{ $companyContact->email }}</td>
-                            <td>{{ $companyContact->phone ?? __(company_contact.not_provided) }}</td>
-                            <td>{{ $companyContact->company->name }}</td>
+                            <td>{{ $companyContact->phone ?? __('company_contact.not_provided') }}</td>
+                            <td>{{ $companyContact->company->name ?? __('company_contact.not_provided') }}</td>
                             <td>
                                 <a href="{{ route('companyContact.show', $companyContact->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('company_contact.view') }}</a>
                                 @can('update', $companyContact)
@@ -52,7 +52,7 @@
 
             <!-- Pagination Links -->
             <div class="d-flex justify-content-center">
-                {{ $companyContacts->links() }}
+                {{ $contacts->links() }}
             </div>
         </div>
     </div>

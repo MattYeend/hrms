@@ -19,8 +19,8 @@
                             <p>{{ __('company_contact.email') }}: {{ $companyContact->email }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p>{{ __('company_contact.phone') }}: {{ $companyContact->phone?: __(company_contact.not_provided) }}</p>
-                            <p>{{ __('company_contact.company') }}: {{ $companyContact->company->name }}</p>
+                            <p>{{ __('company_contact.phone') }}: {{ $companyContact->phone ?: __('company_contact.not_provided') }}</p>
+                            <p>{{ __('company_contact.company') }}: {{ $companyContact->company->name ?? __('company_contact.not_provided') }}</p>
                         </div>
                     </div>
                 </div>

@@ -29,7 +29,7 @@ class CompanyContactController extends Controller
     {
         $this->authorize('viewAny', CompanyContact::class);
 
-        $contacts = CompanyContact::with('company')->get();
+        $contacts = CompanyContact::with('company')->paginate(10);
         
         return view('company_contacts.index', compact('contacts'));
     }
