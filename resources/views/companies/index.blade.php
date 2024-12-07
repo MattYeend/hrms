@@ -51,7 +51,7 @@
                                                 {{ $company->addressBook->country }}<br />
                                                 {{ $company->addressBook->post_code }}
                                             </td>
-                                            <td>{{ $company->companyRelationshipManager->name ?? __('companies.not_provided') }}</td>
+                                            <td>{{ $company->companyRelationshipManager->getName() ?? __('companies.not_provided') }}</td>
                                             <td>
                                                 <a href="{{ route('company.show', $company->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('companies.view') }}</a>
                                                 @can('update', $company)

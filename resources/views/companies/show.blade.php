@@ -26,7 +26,7 @@
                             <p>{{ __('companies.address') }}: {{ $company->addressBook->first_line }}<br />
                                                 {{ $company->addressBook->country }}<br />
                                                 {{ $company->addressBook->post_code }}</p>
-                            <p>{{ __('companies.company_relationship_manager') }}: {{ $company->companyRelationshipManager->name ?? __('companies.not_provided') }}</p>
+                            <p>{{ __('companies.company_relationship_manager') }}: {{ $company->companyRelationshipManager->getName() ?? __('companies.not_provided') }}</p>
                         </div>
                     </div>
                 </div>

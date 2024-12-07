@@ -23,13 +23,13 @@ class UpdateCompanyRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'pay_day' => 'required|date',
+            'pay_day' => 'required|string',
             'active' => 'required|boolean',
-            'work_weekends' => 'required|boolean',
+            'work_weekends' => 'nullable|boolean',
             'contract_id' => 'nullable|exists:contracts,id',
             'company_contact_id' => 'nullable|exists:company_contacts,id',
             'company_relationship_manager' => 'nullable|exists:users,id',
-            'address_book_id' => 'nullable|exists:address_book,id',
+            'address_book_id' => 'nullable|exists:address_books,id',
         ];
     }
 }

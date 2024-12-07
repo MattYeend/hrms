@@ -54,7 +54,7 @@ class CompanyContactController extends Controller
         $validated = $request->validated();
         $contact = CompanyContact::create($validated);
         Logger::log(Logger::ACTION_CREATE_COMPANY_CONTACTS, ['companyContact' => $contact]);
-        return redirect()->route('company_contacts.index')
+        return redirect()->route('companyContact.index')
             ->with('success', 'Company contact created successfully.');
     }
 
@@ -90,7 +90,7 @@ class CompanyContactController extends Controller
         $validated = $request->validated();
         $companyContact->update($validated);
         Logger::log(Logger::ACTION_UPDATE_COMPANY_CONTACTS, ['companyContact' => $companyContact]);
-        return redirect()->route('company_contacts.index')
+        return redirect()->route('companyContact.index')
             ->with('success', 'Company contact updated successfully.');
     }
 

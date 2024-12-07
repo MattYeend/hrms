@@ -30,6 +30,7 @@
 
             <div class="mb-3">
                 <label for="active">{{ __('companies.active') }} @if(!isset($company))<span class="text-danger">*</span>@endif</label>
+                <input type="hidden" name="active" value="0">
                 <input type="checkbox" name="active" id="active" value="1" {{ old('active', $company->active ?? false) ? 'checked' : '' }}>
             </div>
         </div>
@@ -37,6 +38,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label for="work_weekdays">{{ __('companies.work_weekdays') }} @if(!isset($company))<span class="text-danger">*</span>@endif</label>
+                <input type="hidden" name="work_weekdays" value="0">
                 <input type="checkbox" name="work_weekdays" id="work_weekdays" value="1" {{ old('work_weekdays', $company->work_weekdays ?? false) ? 'checked' : '' }}>
             </div>
 
