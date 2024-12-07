@@ -8,7 +8,7 @@ return [
     'user' => 'Utenti',
     'rotas' => 'Turni',
     'department' => 'Dipartimenti',
-    'companies' => 'Aziende',
+    'company' => 'Aziende',
     'company_contact' => 'Contatto Aziendale',
     'licence' => 'Licenza',
     'address_book' => 'Rubrica Aziendale',

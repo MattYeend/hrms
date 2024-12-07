@@ -8,7 +8,7 @@ return [
     'user' => 'Users',
     'rotas' => 'Rotas',
     'department' => 'Departments',
-    'companies' => 'Companies',
+    'company' => 'Companies',
     'company_contact' => 'Company Contact',
     'licence' => 'Licence',
     'address_book' => 'Company Address Book',

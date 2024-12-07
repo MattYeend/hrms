@@ -8,7 +8,7 @@ return [
     'user' => 'Usuarios',
     'rotas' => 'Rotaciones',
     'department' => 'Departamentos',
-    'companies' => 'Empresas',
+    'company' => 'Empresas',
     'company_contact' => 'Contacto de la Empresa',
     'licence' => 'Licencia',
     'address_book' => 'Libreta de Direcciones de la Empresa',

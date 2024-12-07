@@ -8,7 +8,7 @@ return [
     'user' => 'Defnyddwyr',
     'rotas' => 'Rotas',
     'department' => 'Adrannau',
-    'companies' => 'Cwmnïau',
+    'company' => 'Cwmnïau',
     'company_contact' => 'Cyswllt y Cwmni',
     'licence' => 'Trwydded',
     'address_book' => 'Llyfr Cyfeiriadau Cwmni',
