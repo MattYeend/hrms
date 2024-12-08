@@ -29,7 +29,7 @@
                                         <th>{{ __('departments.name') }}</th>
                                         <th>{{ __('departments.company') }}</th>
                                         <th>{{ __('departments.dept_lead') }}</th>
-                                        <th>{{ __('departments.actions') }}</th>
+                                        <th>{{ __('departments.action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,7 +37,7 @@
                                         <tr>
                                             <td>{{ $department->name }}</td>
                                             <td>{{ $department->company->name ?? __('departments.not_provided') }}</td>
-                                            <td>{{ $department->dept_lead->getName() ?? __('departments.not_provided') }}</td>
+                                            <td>{{ $department->departmentLead->getName() ?? __('departments.not_provided') }}</td>
                                             <td>
                                                 <a href="{{ route('departments.show', $department->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('departments.view') }}</a>
                                                 @can('update', $department)

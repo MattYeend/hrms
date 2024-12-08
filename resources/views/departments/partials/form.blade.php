@@ -13,10 +13,10 @@
 
             <div class="mb-3">
                 <label for="company_id">{{ __('departments.company') }}</label>
-                <option value="" disabled selected>{{ __('departments.select_option') }}</option>
                 <select name="company_id" id="company_id" class="form-control">
+                    <option value="" disabled selected>{{ __('departments.select_option') }}</option>
                     @foreach($company as $companies)
-                        <option value="{{ $companies->id }}" {{ old('company_id', $company->company_id ?? '') == $companies->id ? 'selected' : '' }}>
+                        <option value="{{ $companies->id }}" {{ old('company_id', $department->company_id ?? '') == $companies->id ? 'selected' : '' }}>
                             {{ $companies->name }}
                         </option>
                     @endforeach
@@ -26,12 +26,12 @@
 
         <div class="col-md-6">
             <div class="mb-3">
-                <label for="dept_lead_id">{{ __('departments.contract') }}</label>
-                <option value="" disabled selected>{{ __('departments.select_option') }}</option>
+                <label for="dept_lead_id">{{ __('departments.dept_lead') }}</label>
                 <select name="dept_lead_id" id="dept_lead_id" class="form-control">
+                    <option value="" disabled selected>{{ __('departments.select_option') }}</option>
                     @foreach($departmentLead as $deptLead)
                         <option value="{{ $deptLead->id }}" {{ old('dept_lead_id', $department->dept_lead_id ?? '') == $deptLead->id ? 'selected' : '' }}>
-                            {{ $deptLead->name }}
+                            {{ $deptLead->getName() }}
                         </option>
                     @endforeach
                 </select>

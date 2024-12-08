@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <p>{{ __('departments.name') }}: {{ $department->name }}</p>
-                            <p>{{ __('departments.company->name') }}: {{ $department->company->name ?? __('departments.not_provided') }}</p>
+                            <p>{{ __('departments.company') }}: {{ $department->company->name ?? __('departments.not_provided') }}</p>
                         </div>
                         <div class="col-md-6">
                             <p>{{ __('departments.dept_lead') }}: {{ $department->departmentLead->getName() }}</p>

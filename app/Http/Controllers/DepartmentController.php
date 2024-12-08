@@ -44,7 +44,7 @@ class DepartmentController extends Controller
         $this->authorize('create', Department::class);
 
         $company = Company::all();
-        $departmentLead = Users::all();
+        $departmentLead = User::all();
 
         return view('departments.create', compact('company', 'departmentLead'));
     }
@@ -81,7 +81,9 @@ class DepartmentController extends Controller
     {
         $this->authorize('update', $department);
         $department->load(['company', 'departmentLead']);
-        return view('departments.update', compact('department'));
+        $company = Company::all();
+        $departmentLead = User::all();
+        return view('departments.update', compact('department', 'company', 'departmentLead'));
     }
 
     /**
