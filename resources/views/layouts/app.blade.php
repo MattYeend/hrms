@@ -27,14 +27,22 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 p-0">
-                    @include('layouts.menu')
-                </div>
-                <div class="col-md-10">
-                    <main class="py-4 mb-5">
-                        @yield('content')
-                    </main>
-                </div>
+                @auth
+                    <div class="col-md-2 p-0">
+                        @include('layouts.menu')
+                    </div>
+                    <div class="col-md-10">
+                        <main class="py-4 mb-5">
+                            @yield('content')
+                        </main>
+                    </div>
+                @else
+                    <div class="col-md-12">
+                        <main class="py-4 mb-5">
+                            @yield('content')
+                        </main>
+                    </div>
+                @endauth
             </div>
         </div>
 

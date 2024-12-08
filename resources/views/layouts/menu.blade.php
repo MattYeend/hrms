@@ -1,5 +1,5 @@
-<ul class="menu navbar-light">
-    @auth
+@auth
+    <ul class="menu navbar-light">
         <li>
             <a class="nav-link" href="{{ route('calendar') }}">
                 {{ __('dropdown.calendar') }}
@@ -71,5 +71,5 @@
                 </a>
             </li>
         @endif
-    @endauth
-</ul>
+    </ul>
+@endauth
