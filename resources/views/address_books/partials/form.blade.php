@@ -13,7 +13,7 @@
 
             <div class="mb-3">
                 <label for="second_line">{{ __('address_book.second_line') }}</label>
-                <input type="text" name="second_line" id="second_line"class="form-control" value="{{ old('second_line', $addressBook->second_line ?? '') }}" required>
+                <input type="text" name="second_line" id="second_line"class="form-control" value="{{ old('second_line', $addressBook->second_line ?? '') }}">
             </div>
 
             <div class="mb-3">
@@ -49,12 +49,12 @@
             </div>
 
             <div class="mb-3">
-                <label for="address_contact_id">{{ __('address_book.role') }}</label>
+                <label for="address_contact_id">{{ __('address_book.address_contact') }}</label>
                 <select name="address_contact_id" id="address_contact_id" class="form-control">
                     <option value="" disabled selected>{{ __('address_book.select_option') }}</option>
                     @foreach($addressContact as $contact)
                         <option value="{{ $contact->id }}" {{ old('address_contact_id', $addressBook->address_contact_id ?? '') == $contact->id ? 'selected' : '' }}>
-                            {{ $contact->name}}
+                            {{ $contact->name }}
                         </option>
                     @endforeach
                 </select>

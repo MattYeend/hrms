@@ -30,7 +30,7 @@ class AddressBookController extends Controller
     {
         $this->authorize('viewAny', AddressBook::class);
 
-        $addressBooks = AddressBook::all();
+        $addressBooks = AddressBook::paginate(10);
         
         return view('address_books.index', compact('addressBooks'));
     }
@@ -41,7 +41,8 @@ class AddressBookController extends Controller
     public function create()
     {
         $this->authorize('create', AddressBook::class);
-        return view('address_books.create');
+        $addressContact = AddressContact::all(); 
+        return view('address_books.create', compact('addressContact'));
     }
 
     /**
@@ -53,7 +54,7 @@ class AddressBookController extends Controller
 
         $addressBook = AddressBook::create($request->validated());
         Logger::log(Logger::ACTION_CREATE_ADDRESS_BOOK, ['addressBook' => $addressBook]);
-        return redirect()->route('address_books.index')->with('success', 'Address Book created successfully.');
+        return redirect()->route('addressBook.index')->with('success', 'Address Book created successfully.');
     }
 
     /**
@@ -72,7 +73,8 @@ class AddressBookController extends Controller
     public function edit(AddressBook $addressBook)
     {
         $this->authorize('update', $addressBook);
-        return view('address_books.update', compact('addressBook'));
+        $addressContact = AddressContact::all(); 
+        return view('address_books.update', compact('addressBook', 'addressContact'));
     }
 
     /**
@@ -85,7 +87,7 @@ class AddressBookController extends Controller
         Logger::log(Logger::ACTION_UPDATE_ADDRESS_BOOK, ['addressBook' => $addressBook]);
         $addressBook->update($request->validated());
 
-        return redirect()->route('address_books.index')->with('success', 'Address Book updated successfully.');
+        return redirect()->route('addressBook.index')->with('success', 'Address Book updated successfully.');
     }
 
     /**
@@ -97,6 +99,6 @@ class AddressBookController extends Controller
         Logger::log(Logger::ACTION_DELETE_ADDRESS_BOOK, ['addressBook' => $addressBook]);
         $addressBook->delete();
 
-        return redirect()->route('address_books.index')->with('success', 'Address Book deleted successfully.');
+        return redirect()->route('addressBook.index')->with('success', 'Address Book deleted successfully.');
     }
 }

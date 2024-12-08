@@ -30,7 +30,7 @@ class UpdateAddressBookRequest extends FormRequest
             'country' => 'required|string|max:255',
             'post_code' => 'required|string|max:20',
             'head_office' => 'required|integer',
-            'address_contact_id' => 'required|exists:address_contact,id',
+            'address_contact_id' => 'required|exists:address_contacts,id',
         ];
     }
 }

@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('address_book.edit') }} {{ $addressBook->name }}</div>
                 <div class="card-body">
-                    @include('address_book.partials.form')
+                    @include('address_books.partials.form')
                 </div>
             </div>
         </div>

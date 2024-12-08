@@ -9,7 +9,7 @@
 
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <span>{{ __(address_book.address_book)}}</span>
+            <span>{{ __('address_book.address_book')}}</span>
             @can('create', App\Models\AddressBook::class)
                 <a href="{{ route('addressBook.create') }}" class="btn btn-success">{{ __('address_book.create') }}</a>
             @endcan
@@ -31,16 +31,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($addressBook as $address)
+                    @foreach($addressBooks as $address)
                         <tr>
                             <td>{{ $address->first_line }}</td>
-                            <td>{{ $address->second_line ?? __(address_book.not_provided) }}</td>
-                            <td>{{ $address->town ?? __(address_book.not_provided) }}</td>
-                            <td>{{ $address->city ?? __(address_book.not_provided) }}</td>
-                            <td>{{ $address->county ?? __(address_book.not_provided) }}</td>
+                            <td>{{ $address->second_line ?? __('address_book.not_provided') }}</td>
+                            <td>{{ $address->town ?? __('address_book.not_provided') }}</td>
+                            <td>{{ $address->city ?? __('address_book.not_provided') }}</td>
+                            <td>{{ $address->county ?? __('address_book.not_provided') }}</td>
                             <td>{{ $address->country }}</td>
                             <td>{{ $address->post_code }}</td>
-                            <td>{{ $address->head_office }}</td>
+                            <td>{{ $address->head_office ? __('address_book.yes') : __('address_book.no') }}</td>
                             <td>{{ $address->addressContact->name }}</td>
                             <td>
                                 <a href="{{ route('addressBook.show', $address->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('address_book.view') }}</a>
@@ -64,7 +64,7 @@
 
             <!-- Pagination Links -->
             <div class="d-flex justify-content-center">
-                {{ $addressBook->links() }}
+                {{ $addressBooks->links() }}
             </div>
         </div>
     </div>

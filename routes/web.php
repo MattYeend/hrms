@@ -128,13 +128,13 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('/company/{company}', [CompanyController::class, 'delete'])->name('company.delete');
 
     // Company Contacts routes
-    Route::get('/companyContacts', [CompanyContactController::class, 'index'])->name('companyContact.index');
-    Route::get('/companyContacts/create', [CompanyContactController::class, 'create'])->name('companyContact.create');
-    Route::post('/companyContact', [CompanyContactController::class, 'store'])->name('companyContact.store');
-    Route::get('/companyContact/{companyContact}', [CompanyContactController::class, 'show'])->name('companyContact.show');
-    Route::get('/companyContact/{companyContact}/edit', [CompanyContactController::class, 'edit'])->name('companyContact.edit');
-    Route::put('/companyContact/{companyContact}', [CompanyContactController::class, 'update'])->name('companyContact.update');
-    Route::delete('/companyContact/{companyContact}', [CompanyContactController::class, 'delete'])->name('companyContact.delete');
+    Route::get('/company-contacts', [CompanyContactController::class, 'index'])->name('companyContact.index');
+    Route::get('/company-contacts/create', [CompanyContactController::class, 'create'])->name('companyContact.create');
+    Route::post('/company-contact', [CompanyContactController::class, 'store'])->name('companyContact.store');
+    Route::get('/company-contact/{companyContact}', [CompanyContactController::class, 'show'])->name('companyContact.show');
+    Route::get('/company-contact/{companyContact}/edit', [CompanyContactController::class, 'edit'])->name('companyContact.edit');
+    Route::put('/company-contact/{companyContact}', [CompanyContactController::class, 'update'])->name('companyContact.update');
+    Route::delete('/company-contact/{companyContact}', [CompanyContactController::class, 'delete'])->name('companyContact.delete');
 
     // Departments routes
     Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
