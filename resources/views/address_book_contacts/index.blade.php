@@ -8,7 +8,7 @@
 
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <span>{{ __(address_book_contacts.address_contact)}}</span>
+            <span>{{ __('address_book_contacts.address_contact')}}</span>
             @can('create', App\Models\addressContact::class)
                 <a href="{{ route('addressContact.create') }}" class="btn btn-success">{{ __('address_book_contacts.create') }}</a>
             @endcan
@@ -32,10 +32,10 @@
                         <tr>
                             <td>{{ $addressContact->name }}</td>
                             <td>{{ $addressContact->email }}</td>
-                            <td>{{ $addressContact->phone ?? __(address_book_contacts.not_provided) }}</td>
+                            <td>{{ $addressContact->phone ?? __('address_book_contacts.not_provided') }}</td>
                             <td>{{ $addressContact->position }}</td>
-                            <td>{{ $addressContact->main_contact ?? __(address_book_contacts.not_provided) }}</td>
-                            <td>{{ $addressContact->secondary_contact ?? __(address_book_contacts.not_provided) }}</td>
+                            <td>{{ $addressContact->main_contact ?? __('address_book_contacts.not_provided') }}</td>
+                            <td>{{ $addressContact->secondary_contact ?? __('address_book_contacts.not_provided') }}</td>
                             <td>
                                 {{ $addressContact->addressBook->first_line }}<br />
                                 {{ $addressContact->addressBook->country }}</br />

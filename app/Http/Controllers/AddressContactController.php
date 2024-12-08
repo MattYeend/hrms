@@ -51,7 +51,7 @@ class AddressContactController extends Controller
 
         $addressContact = AddressContact::create($request->validated());
         Logger::log(Logger::ACTION_CREATE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
-        return redirect()->route('address_book_contacts.index')->with('success', 'Address Contact created successfully.');
+        return redirect()->route('addressContact.index')->with('success', 'Address Contact created successfully.');
     }
 
     /**
@@ -83,7 +83,7 @@ class AddressContactController extends Controller
         Logger::log(Logger::ACTION_UPDATE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
         $addressContact->update($request->validated());
 
-        return redirect()->route('address_book_contacts.index')->with('success', 'Address Contact updated successfully.');
+        return redirect()->route('addressContact.index')->with('success', 'Address Contact updated successfully.');
     }
 
     /**
@@ -95,6 +95,6 @@ class AddressContactController extends Controller
         Logger::log(Logger::ACTION_DELETE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
         $addressContact->delete();
 
-        return redirect()->route('address_book_contacts.index')->with('success', 'Address Contact deleted successfully.');
+        return redirect()->route('addressContact.index')->with('success', 'Address Contact deleted successfully.');
     }
 }
