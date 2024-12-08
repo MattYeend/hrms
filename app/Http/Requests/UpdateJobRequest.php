@@ -11,6 +11,7 @@ class UpdateJobRequest extends FormRequest
      */
     public function authorize(): bool
     {
+        $user = auth()->user();
         return $user->isSuperAdmin() || $user->isAdmin() || $user->cSuite() || $user->hrStaff();
     }
 
@@ -23,12 +24,12 @@ class UpdateJobRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'slug' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255',
             'code' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'expectations' => 'nullable|string',
             'probation_length' => 'required|integer',
-            'salary_range_id' => 'required|exists:salary_range,id',
+            'salary_range_id' => 'required|exists:salary_ranges,id',
             'created_by' => 'nullable|exists:users,id',
             'updated_by' => 'nullable|exists:users,id',
             'deleted_by' => 'nullable|exists:users,id'

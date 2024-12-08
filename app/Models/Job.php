@@ -47,7 +47,7 @@ class Job extends Model
     }
 
     public function salaryRange(){
-        return $this->hasOne(SalaryRange::class, 'salary_range_id');
+        return $this->belongsTo(SalaryRange::class, 'salary_range_id');
     }
 
     public function users(){

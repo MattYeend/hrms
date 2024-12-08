@@ -35,11 +35,11 @@
 
             <div class="mb-3">
                 <label for="salary_range_id">{{ __('job.salary_range') }} @if(!isset($job))<span class="text-danger">*</span>@endif</label>
-                <option value="" disabled selected>{{ __('job.select_option') }}</option>
                 <select name="salary_range_id" id="salary_range_id" class="form-control">
+                    <option value="" disabled selected>{{ __('job.select_option') }}</option>
                     @foreach($salaryRange as $SR)
-                        <option value="{{ $companies->id }}" {{ old('salary_range_id', $salaryRange->salary_range_id ?? '') == $SR->id ? 'selected' : '' }}>
-                            {{ $SR->lower_range }} - {{ $SR-upper_range }}
+                        <option value="{{ $SR->id }}" {{ old('salary_range_id', $job->salary_range_id ?? '') == $SR->id ? 'selected' : '' }}>
+                            {{ $SR->lower_range }} - {{ $SR->upper_range }}
                         </option>
                     @endforeach
                 </select>

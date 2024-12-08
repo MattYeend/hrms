@@ -13,6 +13,7 @@ return [
     'job' => 'Jobs',
     'salary_range' => 'Salary Range', 
     'users' => 'Users',
+    'name' => 'Name',
     'code' => 'Code', 
     'description' => 'Description', 
     'expectations' => 'Expectations', 

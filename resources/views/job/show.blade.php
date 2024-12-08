@@ -17,7 +17,7 @@
                         <div class="col-md-6">
                             <p>{{ __('job.name') }}: {{ $job->name }}</p>
                             <p>{{ __('job.code') }}: {{ $job->code ?? __('job.not_provided') }}</p>
-                            <p>{{ __('job.salary_range') }}: {{ $job->salary_range }}</p>
+                            <p>{{ __('job.salary_range') }}: {{$currencySymbol}}{{ $job->salaryRange->lower_range }} - {{$currencySymbol}}{{ $job->salaryRange->upper_range }}</p>
                         </div>
                         <div class="col-md-6">
                             <p>{{ __('job.description') }}: {{ $job->description ?? __('job.not_provided') }}</p>

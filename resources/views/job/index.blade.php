@@ -29,7 +29,7 @@
                                         <th>{{ __('job.name') }}</th>
                                         <th>{{ __('job.code') }}</th>
                                         <th>{{ __('job.probation_length') }}</th>
-                                        <th>{{ __('job.actions') }}</th>
+                                        <th>{{ __('job.action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,7 +45,7 @@
                                                 @endcan
                                                 @can('delete', $job)
                                                     @if ($job->users->isEmpty())
-                                                        <form action="{{ route('job.delete', $department->id) }}" method="POST" style="display: inline-block;">
+                                                        <form action="{{ route('job.delete', $job->id) }}" method="POST" style="display: inline-block;">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('job.delete') }}</button>

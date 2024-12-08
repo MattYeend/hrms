@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use App\Models\Logger;
+use App\Models\SalaryRange;
+use App\Models\Users;
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
 
@@ -21,7 +23,7 @@ class JobController extends Controller
     {
         $this->authorize('viewAny', Job::class);
 
-        $jobs = Job::with(['salaryRange', 'users', 'createdBy', 'updatedBy', 'deletedBy'])->get();
+        $jobs = Job::with(['salaryRange', 'users', 'createdBy', 'updatedBy', 'deletedBy'])->paginate(10);
         
         return view('job.index', compact('jobs'));
     }
@@ -60,8 +62,18 @@ class JobController extends Controller
         $this->authorize('view', $job);
 
         $job->load(['salaryRange', 'users', 'createdBy', 'updatedBy', 'deletedBy']);
-        Logger::log(Logger::ACTION_SHOW_Job, ['job' => $job]);
-        return view('job.show', compact('job'));
+        Logger::log(Logger::ACTION_SHOW_JOB, ['job' => $job]);
+
+        $currencySymbols = [
+            'US' => '$',
+            'EU' => '€',
+            'UK' => '£',
+            'IN' => '₹',
+        ];
+        $userRegion = auth()->user()->region;
+
+        $currencySymbol = $currencySymbols[$userRegion] ?? '£';
+        return view('job.show', compact('job', 'currencySymbol'));
     }
 
     /**
@@ -71,7 +83,8 @@ class JobController extends Controller
     {
         $this->authorize('update', $job);
         $job->load(['salaryRange', 'users']);
-        return view('job.update', compact('job'));
+        $salaryRange = SalaryRange::all();
+        return view('job.update', compact('job', 'salaryRange'));
     }
 
     /**
