@@ -9,9 +9,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <span>{{ __('companies.company') }}</span>
-                    @can('create', App\Models\Companies::class)
-                        <a href="{{ route('company.create') }}" class="btn btn-success">{{ __('companies.create') }}</a>
+                    <span>{{ __('licences.licence') }}</span>
+                    @can('create', App\Models\Licence::class)
+                        <a href="{{ route('company.create') }}" class="btn btn-success">{{ __('licences.create') }}</a>
                     @endcan
                 </div>
 
@@ -60,7 +60,7 @@
 
                             <!-- Pagination Links -->
                             <div class="d-flex justify-content-center">
-                                {{ $licence->links() }}
+                                {{ $licences->links() }}
                             </div>
                         </div>
                     </div>

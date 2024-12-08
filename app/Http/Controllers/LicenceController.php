@@ -28,8 +28,8 @@ class LicenceController extends Controller
     {
         $this->authorize('viewAny', Licence::class);
 
-        $licences = Licence::all()->paginate(10);
-        return view('licences.index', compact('licences'));
+        $licences = Licence::paginate(10);
+        return view('licence.index', compact('licences'));
     }
 
     /**
@@ -39,7 +39,7 @@ class LicenceController extends Controller
     {
         $this->authorize('create', Licence::class);
 
-        return view('licences.create');
+        return view('licence.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class LicenceController extends Controller
 
         $licence->load([ 'createdBy', 'updatedBy']);
         Logger::log(Logger::ACTION_SHOW_LICENCE, ['licence' => $licence]);
-        return view('licence.show', compact('licecne'));
+        return view('licence.show', compact('licence'));
     }
 
     /**

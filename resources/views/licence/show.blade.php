@@ -15,12 +15,12 @@
                     @endif
                     <div class="row">
                         <div class="col-md-6">
-                            <p>{{ __('licence.name') }}: {{ $licence->name }}</p>
-                            <p>{{ __('licence.price') }}: {{ $licence->price ?? __('licences.not_provided') }}</p>
+                            <p>{{ __('licences.name') }}: {{ $licence->name }}</p>
+                            <p>{{ __('licences.price') }}: {{ $licence->price ?? __('licences.not_provided') }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p>{{ __('licence.created_by') }}: {{ $licence->created_by->first_name ? __('licences.yes') : __('licences.no') }}</p>
-                            <p>{{ __('licence.updated_by') }}: {{ $licence->updated_by->first_name ?? __('licences.not_provided') }}</p>
+                            <p>{{ __('licences.created_by') }}: {{ $licence->createdBy->first_name ?? __('licences.not_provided') }}</p>
+                            <p>{{ __('licences.updated_by') }}: {{ $licence->updatedBy->first_name ?? __('licences.not_provided') }}</p>
                         </div>
                     </div>
                 </div>
