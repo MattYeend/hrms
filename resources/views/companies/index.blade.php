@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span>{{ __('companies.company') }}</span>
-                    @can('create', App\Models\Companies::class)
+                    @can('create', App\Models\Company::class)
                         <a href="{{ route('company.create') }}" class="btn btn-success">{{ __('companies.create') }}</a>
                     @endcan
                 </div>
