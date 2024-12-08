@@ -29,7 +29,7 @@ class ContractController extends Controller
     {
         $this->authorize('viewAny', Contract::class);
 
-        $contracts = Contract::with(['licences'])->paginate(10);
+        $contracts = Contract::with(['licence'])->paginate(10);
         return view('company_contracts.index', compact('contracts'));
     }
 
@@ -40,7 +40,7 @@ class ContractController extends Controller
     {
         $this->authorize('create', Contract::class);
 
-        $licences = Licence::all();
+        $licence = Licence::all();
 
         return view('company_contracts.create', compact('licence'));
     }
@@ -55,7 +55,7 @@ class ContractController extends Controller
         $data = $request->validated();
         $contract = Contract::create($data);
         Logger::log(Logger::ACTION_CREATE_CONTRACT, ['contract' => $contract]);
-        return redirect()->route('company_contracts.index')->with('success', 'Contract created successfully.');
+        return redirect()->route('contract.index')->with('success', 'Contract created successfully.');
     }
 
     /**
@@ -63,7 +63,7 @@ class ContractController extends Controller
      */
     public function show(Contract $contract)
     {
-        $this->authorize('view', $company);
+        $this->authorize('view', $contract);
 
         $contract->load(['licence']);
         Logger::log(Logger::ACTION_SHOW_CONTRACT, ['contract' => $contract]);
@@ -77,7 +77,8 @@ class ContractController extends Controller
     {
         $this->authorize('update', $contract);
         $contract->load(['licence']);
-        return view('company_contracts.update', compact('contract'));
+        $licence = Licence::all();
+        return view('company_contracts.update', compact('contract', 'licence'));
     }
 
     /**
@@ -90,7 +91,7 @@ class ContractController extends Controller
         $data = $request->validated();
         $contract->update($data);
         Logger::log(Logger::ACTION_UPDATE_CONTRACT, ['contract' => $contract]);
-        return redirect()->route('company_contracts.index')->with('success', 'Contract updated successfully.');
+        return redirect()->route('contract.index')->with('success', 'Contract updated successfully.');
     }
 
     /**
@@ -102,6 +103,6 @@ class ContractController extends Controller
         Logger::log(Logger::ACTION_DELETE_CONTRACT, ['contract' => $contract]);
         $contract->delete();
 
-        return redirect()->route('company_contracts.index')->with('success', 'Contract deleted successfully.');
+        return redirect()->route('contract.index')->with('success', 'Contract deleted successfully.');
     }
 }

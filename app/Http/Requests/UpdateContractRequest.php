@@ -25,7 +25,7 @@ class UpdateContractRequest extends FormRequest
             'name' => 'required|string|max:255',
             'start' => 'required|date',
             'end' => 'required|date',
-            'licence_id' => 'required|exists:licence,id',
+            'licence_id' => 'required|exists:licences,id',
         ];
     }
 }

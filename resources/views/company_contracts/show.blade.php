@@ -15,12 +15,12 @@
                     @endif
                     <div class="row">
                         <div class="col-md-6">
-                            <p>{{ __('contract.name') }}: {{ $contract->name }}</p>
-                            <p>{{ __('contract.start') }}: {{ $contract->start }}</p>
+                            <p>{{ __('contracts.name') }}: {{ $contract->name }}</p>
+                            <p>{{ __('contracts.start') }}: {{ $contract->start->format('d/m/Y') }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p>{{ __('contract.end') }}: {{ $contract->end }}</p>
-                            <p>{{ __('contract.licence') }}: {{ $contract->licence->name }}</p>
+                            <p>{{ __('contracts.end') }}: {{ $contract->end->format('d/m/Y') }}</p>
+                            <p>{{ __('contracts.licence') }}: {{ $contract->licence->name }}</p>
                         </div>
                     </div>
                 </div>

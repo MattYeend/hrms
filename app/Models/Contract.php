@@ -18,7 +18,12 @@ class Contract extends Model
         'updated_at'
     ];
 
+    protected $casts = [
+        'start' => 'datetime',
+        'end' => 'datetime'
+    ];
+
     public function licence(){
-        return $this->hasOne(Licence::class, 'licence_id');
+        return $this->belongsTo(Licence::class, 'licence_id');
     }
 }

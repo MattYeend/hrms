@@ -8,7 +8,7 @@
 
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <span>{{ __(contracts.name)}}</span>
+            <span>{{ __('contracts.name')}}</span>
             @can('create', App\Models\Contract::class)
                 <a href="{{ route('contract.create') }}" class="btn btn-success">{{ __('contracts.create') }}</a>
             @endcan
@@ -28,8 +28,8 @@
                     @foreach($contracts as $contract)
                         <tr>
                             <td>{{ $contract->name }}</td>
-                            <td>{{ $contract->start }}</td>
-                            <td>{{ $contract->end }}</td>
+                            <td>{{ $contract->start->format('d/m/Y') }}</td>
+                            <td>{{ $contract->end->format('d/m/Y') }}</td>
                             <td>{{ $contract->licence->name }}</td>
                             <td>
                                 <a href="{{ route('contract.show', $contract->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('contracts.view') }}</a>
@@ -53,7 +53,7 @@
 
             <!-- Pagination Links -->
             <div class="d-flex justify-content-center">
-                {{ $companyContracts->links() }}
+                {{ $contracts->links() }}
             </div>
         </div>
     </div>

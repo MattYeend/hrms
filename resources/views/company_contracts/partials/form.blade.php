@@ -24,12 +24,12 @@
             </div>
 
             <div class="mb-3">
-                <label for="licence_id">{{ __('contracts.role') }}</label>
+                <label for="licence_id">{{ __('contracts.licence') }}</label>
                 <select name="licence_id" id="licence_id" class="form-control">
                     <option value="" disabled selected>{{ __('contracts.select_option') }}</option>
                     @foreach($licence as $licences)
                         <option value="{{ $licences->id }}" {{ old('licence_id', $contract->licence_id ?? '') == $licences->id ? 'selected' : '' }}>
-                            {{ $contract->name}}
+                            {{ $licences->name}}
                         </option>
                     @endforeach
                 </select>
