@@ -1,12 +1,15 @@
 .menu {
     background-color: $footer-colour;
     padding: 1rem;
-    height: 100vh;
+    height: calc(100vh - 58px - 40px);
+    position: fixed;
+    left: 0;
     overflow-y: auto;
     box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
     list-style: none;
     display: flex;
     flex-direction: column;
+    z-index: 999; /* Ensures it stays on top if needed */
 
     &::-webkit-scrollbar {
         width: 8px;
