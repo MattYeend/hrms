@@ -304,6 +304,11 @@ class Logger extends Model
     const ACTION_DELETE_CONTRACT = 195;
     const ACTION_SHOW_CONTRACT = 196;
 
+    // Errors
+    const ACTION_GENERAL_ERRORS = 197;
+    const ACTION_FOUR_HUNDRED_ERRORS = 198;
+    const ACTION_FIVE_HUNDRED_ERRORS = 199;
+
     // Temp constants to go below
     
     // Temp constants to go above
