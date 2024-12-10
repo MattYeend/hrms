@@ -11,6 +11,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.5",
+        "league/commonmark": "2.6.0",
         "outhebox/blade-flags": "^1.5",
         "symfony/http-foundation": "7.1.7",
         "symfony/process": "7.1.7"
