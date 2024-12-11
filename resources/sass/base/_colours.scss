@@ -44,18 +44,21 @@ $warning-colour: #FFED4A;
 $info-colour: #6CB2EB;
 
 // Neutral colours
+// White
 $white: #FFF;
 $white-dark-super: darken($white-colour, 5%);
 $white-dark: darken($white, 10%);
 $white-darker: darken($white, 20%);
 $white-darkest: darken($white, 30%);
 $white-dark-extreme: darken($white, 40%);
+// Black
 $black: #000;
 $black-light-super: lighten($black-colour, 5%);
 $black-light: lighten($black, 10%);
 $black-lighter: lighten($black, 20%);
 $black-lightest: lighten($black, 30%);
 $black-light-extreme: lighten($black, 40%);
+// Gray
 $gray-light: #F8F8FA;
 $gray-light-super: lighten($gray-light, 5%);
 $gray-light-light: lighten($gray-light, 10%);
@@ -67,6 +70,7 @@ $gray-light-dark: darken($gray-light, 10%);
 $gray-light-darker: darken($gray-light, 20%);
 $gray-light-darkest: darken($gray-light, 30%);
 $gray-light-dark-extreme: darken($gray-light, 40%);
+// Dark Gray
 $gray-dark: #343A40;
 $gray-dark-super: lighten($gray-dark, 5%);
 $gray-dark-light: lighten($gray-dark, 10%);
@@ -78,6 +82,7 @@ $gray-dark-dark: darken($gray-dark, 10%);
 $gray-dark-darker: darken($gray-dark, 20%);
 $gray-dark-darkest: darken($gray-dark, 30%);
 $gray-dark-dark-extreme: darken($gray-dark, 40%);
+// Text Colour
 $text-colour: #333;
 $text-colour-super: lighten($text-colour, 5%);
 $text-colour-light: lighten($text-colour, 10%);
@@ -89,6 +94,7 @@ $text-colour-dark: darken($text-colour, 10%);
 $text-colour-darker: darken($text-colour, 20%);
 $text-colour-darkest: darken($text-colour, 30%);
 $text-colour-dark-extreme: darken($text-colour, 40%);
+// Secondary Text Colour
 $text-secondary-colour: #6C757D;
 $text-secondary-colour-super: lighten($text-secondary-colour, 5%);
 $text-secondary-colour-light: lighten($text-secondary-colour, 10%);
