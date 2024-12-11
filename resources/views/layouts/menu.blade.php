@@ -21,6 +21,7 @@
             </a>
         </li>
         @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite())
+            <li class="menu-heading">Admin Tools</li>
             <li>
                 <a class="nav-link" href="{{ route('departments.index') }}">
                     {{ __('dropdown.department') }}
@@ -40,6 +41,7 @@
             </li>
         @endif
         @if(auth()->user()->isSuperAdmin())
+            <li class="menu-heading">Super Admin Tools</li>
             <li>
                 <a class="nav-link" href="{{ route('company.index') }}">
                     {{ __('dropdown.company') }}
