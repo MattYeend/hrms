@@ -47,7 +47,7 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
         padding: 0.5rem 1rem;
-        background-color: lighten($footer-colour, 5%);
+        background-color: $footer-dark-super;
         border-radius: 5px;
     }
 }
