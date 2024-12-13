@@ -40,19 +40,19 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/api/rotas', [RotasController::class, 'getRotas'])->name('rotas.get');
 
     // User routes
-    Route::get('/user', [UserController::class, 'index'])->name('user.index');
-    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
-    Route::post('/user', [UserController::class, 'store'])->name('user.store');
-    Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
-    Route::put('/user/{user}', [UserController::class, 'update'])->name('user.update');
-    Route::delete('/user/{user}', [UserController::class, 'delete'])->name('user.delete');
-    Route::get('/user/{id}/profile', [UserController::class, 'show'])->name('user.show');
+    Route::get('/users', [UserController::class, 'index'])->name('user.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('user.create');
+    Route::post('/users', [UserController::class, 'store'])->name('user.store');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/users/{user}', [UserController::class, 'delete'])->name('user.delete');
+    Route::get('/users/{id}/profile', [UserController::class, 'show'])->name('user.show');
     Route::get('/show/{id}', [UserController::class, 'show'])->name('profile');
     Route::get('/get-dark-mode-preference', [UserController::class, 'getDarkModePreference'])->name('get-dark-mode-preference');
     Route::post('/toggle-dark-mode', [UserController::class, 'toggleDarkMode'])->name('toggle-dark-mode');
-    Route::post('/user/{user}/profile-picture', [UserController::class, 'uploadProfilePicture'])->name('user.uploadProfilePicture');
-    Route::post('/user/{user}/cv', [UserController::class, 'uploadCv'])->name('user.uploadCv');
-    Route::post('/user/{user}/cover-letter', [UserController::class, 'uploadCoverLetter'])->name('user.uploadCoverLetter');
+    Route::post('/users/{user}/profile-picture', [UserController::class, 'uploadProfilePicture'])->name('user.uploadProfilePicture');
+    Route::post('/users/{user}/cv', [UserController::class, 'uploadCv'])->name('user.uploadCv');
+    Route::post('/users/{user}/cover-letter', [UserController::class, 'uploadCoverLetter'])->name('user.uploadCoverLetter');
     Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
     Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
@@ -65,100 +65,100 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/calendar', [LeaveController::class, 'index'])->name('calendar');
     Route::get('/leaves/create', [LeaveController::class, 'create'])->name('leave.create');
     Route::post('/leaves', [LeaveController::class, 'store'])->name('leave.store');
-    Route::get('/leave/{leave}', [LeaveController::class, 'show'])->name('leave.show');
-    Route::get('/leave/{leave}/edit', [LeaveController::class, 'edit'])->name('leave.edit');
-    Route::put('/leave/{leave}', [LeaveController::class, 'update'])->name('leave.update');
-    Route::delete('/leave/{leave}', [LeaveController::class, 'delete'])->name('leave.delete');
-    Route::post('/leave/{leave}/approve', [LeaveController::class, 'approve'])->name('leave.approve');
-    Route::post('/leave/{leave}/deny', [LeaveController::class, 'deny'])->name('leave.deny');
+    Route::get('/leaves/{leave}', [LeaveController::class, 'show'])->name('leave.show');
+    Route::get('/leaves/{leave}/edit', [LeaveController::class, 'edit'])->name('leave.edit');
+    Route::put('/leaves/{leave}', [LeaveController::class, 'update'])->name('leave.update');
+    Route::delete('/leaves/{leave}', [LeaveController::class, 'delete'])->name('leave.delete');
+    Route::post('/leaves/{leave}/approve', [LeaveController::class, 'approve'])->name('leave.approve');
+    Route::post('/leaves/{leave}/deny', [LeaveController::class, 'deny'])->name('leave.deny');
     Route::get('/leaves/outstanding', [LeaveController::class, 'outstandingRequests'])->name('leave.outstanding');
 
     // Rotas routes
     Route::get('/rotas', [RotasController::class, 'index'])->name('rotas.index');
     Route::get('/rotas/create', [RotasController::class, 'create'])->name('rotas.create');
     Route::post('/rotas', [RotasController::class, 'store'])->name('rotas.store');
-    Route::get('/rota/{rotas}', [RotasController::class, 'show'])->name('rotas.show');
-    Route::get('/rota/{rotas}/edit', [RotasController::class, 'edit'])->name('rotas.edit');
-    Route::put('/rota/{rotas}', [RotasController::class, 'update'])->name('rotas.update');
-    Route::delete('/rota/{rotas}', [RotasController::class, 'delete'])->name('rotas.delete');
+    Route::get('/rotas/{rotas}', [RotasController::class, 'show'])->name('rotas.show');
+    Route::get('/rotas/{rotas}/edit', [RotasController::class, 'edit'])->name('rotas.edit');
+    Route::put('/rotas/{rotas}', [RotasController::class, 'update'])->name('rotas.update');
+    Route::delete('/rotas/{rotas}', [RotasController::class, 'delete'])->name('rotas.delete');
 
     // Licence routes
-    Route::get('/licence', [LicenceController::class, 'index'])->name('licence.index');
-    Route::get('/licence/create', [LicenceController::class, 'create'])->name('licence.create');
-    Route::post('/licence', [LicenceController::class, 'store'])->name('licence.store');
-    Route::get('/licence/{licence}', [LicenceController::class, 'show'])->name('licence.show');
-    Route::get('/licence/{licence}/edit', [LicenceController::class, 'edit'])->name('licence.edit');
-    Route::put('/licence/{licence}', [LicenceController::class, 'update'])->name('licence.update');
-    Route::delete('/licence/{licence}', [LicenceController::class, 'delete'])->name('licence.delete');
+    Route::get('/licences', [LicenceController::class, 'index'])->name('licence.index');
+    Route::get('/licences/create', [LicenceController::class, 'create'])->name('licence.create');
+    Route::post('/licences', [LicenceController::class, 'store'])->name('licence.store');
+    Route::get('/licences/{licence}', [LicenceController::class, 'show'])->name('licence.show');
+    Route::get('/licences/{licence}/edit', [LicenceController::class, 'edit'])->name('licence.edit');
+    Route::put('/licences/{licence}', [LicenceController::class, 'update'])->name('licence.update');
+    Route::delete('/licences/{licence}', [LicenceController::class, 'delete'])->name('licence.delete');
 
     // Address Book routes
-    Route::get('/address-book', [AddressBookController::class, 'index'])->name('addressBook.index');
-    Route::get('/address-book/create', [AddressBookController::class, 'create'])->name('addressBook.create');
-    Route::post('/address-book', [AddressBookController::class, 'store'])->name('addressBook.store');
-    Route::get('/address-book/{addressBook}', [AddressBookController::class, 'show'])->name('addressBook.show');
-    Route::get('/address-book/{addressBook}/edit', [AddressBookController::class, 'edit'])->name('addressBook.edit');
-    Route::put('/address-book/{addressBook}', [AddressBookController::class, 'update'])->name('addressBook.update');
-    Route::delete('/address-book/{addressBook}', [AddressBookController::class, 'delete'])->name('addressBook.delete');
+    Route::get('/address-books', [AddressBookController::class, 'index'])->name('addressBook.index');
+    Route::get('/address-books/create', [AddressBookController::class, 'create'])->name('addressBook.create');
+    Route::post('/address-books', [AddressBookController::class, 'store'])->name('addressBook.store');
+    Route::get('/address-books/{addressBook}', [AddressBookController::class, 'show'])->name('addressBook.show');
+    Route::get('/address-books/{addressBook}/edit', [AddressBookController::class, 'edit'])->name('addressBook.edit');
+    Route::put('/address-books/{addressBook}', [AddressBookController::class, 'update'])->name('addressBook.update');
+    Route::delete('/address-books/{addressBook}', [AddressBookController::class, 'delete'])->name('addressBook.delete');
 
     // Address Contact routes
-    Route::get('/address-contact', [AddressContactController::class, 'index'])->name('addressContact.index');
-    Route::get('/address-contact/create', [AddressContactController::class, 'create'])->name('addressContact.create');
-    Route::post('/address-contact', [AddressContactController::class, 'store'])->name('addressContact.store');
-    Route::get('/address-contact/{addressContact}', [AddressContactController::class, 'show'])->name('addressContact.show');
-    Route::get('/address-contact/{addressContact}/edit', [AddressContactController::class, 'edit'])->name('addressContact.edit');
-    Route::put('/address-contact/{addressContact}', [AddressContactController::class, 'update'])->name('addressContact.update');
-    Route::delete('/address-contact/{addressContact}', [AddressContactController::class, 'delete'])->name('addressContact.delete');
+    Route::get('/address-contacts', [AddressContactController::class, 'index'])->name('addressContact.index');
+    Route::get('/address-contacts/create', [AddressContactController::class, 'create'])->name('addressContact.create');
+    Route::post('/address-contacts', [AddressContactController::class, 'store'])->name('addressContact.store');
+    Route::get('/address-contacts/{addressContact}', [AddressContactController::class, 'show'])->name('addressContact.show');
+    Route::get('/address-contacts/{addressContact}/edit', [AddressContactController::class, 'edit'])->name('addressContact.edit');
+    Route::put('/address-contacts/{addressContact}', [AddressContactController::class, 'update'])->name('addressContact.update');
+    Route::delete('/address-contacts/{addressContact}', [AddressContactController::class, 'delete'])->name('addressContact.delete');
 
     // Contracts routes
-    Route::get('/contract', [ContractController::class, 'index'])->name('contract.index');
-    Route::get('/contract/create', [ContractController::class, 'create'])->name('contract.create');
-    Route::post('/contract', [ContractController::class, 'store'])->name('contract.store');
-    Route::get('/contract/{contract}', [ContractController::class, 'show'])->name('contract.show');
-    Route::get('/contract/{contract}/edit', [ContractController::class, 'edit'])->name('contract.edit');
-    Route::put('/contract/{contract}', [ContractController::class, 'update'])->name('contract.update');
-    Route::delete('/contract/{contract}', [ContractController::class, 'delete'])->name('contract.delete');
+    Route::get('/contracts', [ContractController::class, 'index'])->name('contract.index');
+    Route::get('/contracts/create', [ContractController::class, 'create'])->name('contract.create');
+    Route::post('/contracts', [ContractController::class, 'store'])->name('contract.store');
+    Route::get('/contracts/{contract}', [ContractController::class, 'show'])->name('contract.show');
+    Route::get('/contracts/{contract}/edit', [ContractController::class, 'edit'])->name('contract.edit');
+    Route::put('/contracts/{contract}', [ContractController::class, 'update'])->name('contract.update');
+    Route::delete('/contracts/{contract}', [ContractController::class, 'delete'])->name('contract.delete');
 
     // Companies routes
-    Route::get('/company', [CompanyController::class, 'index'])->name('company.index');
-    Route::get('/company/create', [CompanyController::class, 'create'])->name('company.create');
-    Route::post('/company', [CompanyController::class, 'store'])->name('company.store');
-    Route::get('/company/{company}', [CompanyController::class, 'show'])->name('company.show');
-    Route::get('/company/{company}/edit', [CompanyController::class, 'edit'])->name('company.edit');
-    Route::put('/company/{company}', [CompanyController::class, 'update'])->name('company.update');
-    Route::delete('/company/{company}', [CompanyController::class, 'delete'])->name('company.delete');
+    Route::get('/companies', [CompanyController::class, 'index'])->name('company.index');
+    Route::get('/companies/create', [CompanyController::class, 'create'])->name('company.create');
+    Route::post('/companies', [CompanyController::class, 'store'])->name('company.store');
+    Route::get('/companies/{company}', [CompanyController::class, 'show'])->name('company.show');
+    Route::get('/companies/{company}/edit', [CompanyController::class, 'edit'])->name('company.edit');
+    Route::put('/companies/{company}', [CompanyController::class, 'update'])->name('company.update');
+    Route::delete('/companies/{company}', [CompanyController::class, 'delete'])->name('company.delete');
 
     // Company Contacts routes
     Route::get('/company-contacts', [CompanyContactController::class, 'index'])->name('companyContact.index');
     Route::get('/company-contacts/create', [CompanyContactController::class, 'create'])->name('companyContact.create');
-    Route::post('/company-contact', [CompanyContactController::class, 'store'])->name('companyContact.store');
-    Route::get('/company-contact/{companyContact}', [CompanyContactController::class, 'show'])->name('companyContact.show');
-    Route::get('/company-contact/{companyContact}/edit', [CompanyContactController::class, 'edit'])->name('companyContact.edit');
-    Route::put('/company-contact/{companyContact}', [CompanyContactController::class, 'update'])->name('companyContact.update');
-    Route::delete('/company-contact/{companyContact}', [CompanyContactController::class, 'delete'])->name('companyContact.delete');
+    Route::post('/company-contacts', [CompanyContactController::class, 'store'])->name('companyContact.store');
+    Route::get('/company-contacts/{companyContact}', [CompanyContactController::class, 'show'])->name('companyContact.show');
+    Route::get('/company-contacts/{companyContact}/edit', [CompanyContactController::class, 'edit'])->name('companyContact.edit');
+    Route::put('/company-contacts/{companyContact}', [CompanyContactController::class, 'update'])->name('companyContact.update');
+    Route::delete('/company-contacts/{companyContact}', [CompanyContactController::class, 'delete'])->name('companyContact.delete');
 
     // Departments routes
     Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
     Route::get('/departments/create', [DepartmentController::class, 'create'])->name('departments.create');
-    Route::post('/department', [DepartmentController::class, 'store'])->name('departments.store');
-    Route::get('/department/{department}', [DepartmentController::class, 'show'])->name('departments.show');
-    Route::get('/department/{department}/edit', [DepartmentController::class, 'edit'])->name('departments.edit');
-    Route::put('/department/{department}', [DepartmentController::class, 'update'])->name('departments.update');
-    Route::delete('/department/{department}', [DepartmentController::class, 'delete'])->name('departments.delete');
+    Route::post('/departments', [DepartmentController::class, 'store'])->name('departments.store');
+    Route::get('/departments/{department}', [DepartmentController::class, 'show'])->name('departments.show');
+    Route::get('/departments/{department}/edit', [DepartmentController::class, 'edit'])->name('departments.edit');
+    Route::put('/departments/{department}', [DepartmentController::class, 'update'])->name('departments.update');
+    Route::delete('/departments/{department}', [DepartmentController::class, 'delete'])->name('departments.delete');
 
     // Job routes
     Route::get('/jobs', [JobController::class, 'index'])->name('job.index');
     Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
-    Route::post('/job', [JobController::class, 'store'])->name('job.store');
-    Route::get('/job/{job}', [JobController::class, 'show'])->name('job.show');
-    Route::get('/job/{job}/edit', [JobController::class, 'edit'])->name('job.edit');
-    Route::put('/job/{job}', [JobController::class, 'update'])->name('job.update');
-    Route::delete('/job/{job}', [JobController::class, 'delete'])->name('job.delete');
+    Route::post('/jobs', [JobController::class, 'store'])->name('job.store');
+    Route::get('/jobs/{job}', [JobController::class, 'show'])->name('job.show');
+    Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])->name('job.edit');
+    Route::put('/jobs/{job}', [JobController::class, 'update'])->name('job.update');
+    Route::delete('/jobs/{job}', [JobController::class, 'delete'])->name('job.delete');
 
     // Knowledge Base and Reports routes
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');
     Route::view('/reports/index', 'reports/index')->name('reports');
 
     // L&D routes
-    Route::get('/assign-learning/{id}', [LearningController::class, 'assignLearning'])->name('assignLearning');
-    Route::get('/finish-learning/{id}', [LearningController::class, 'finishLearning'])->name('finishLearning');
+    Route::get('/assign-learnings/{id}', [LearningController::class, 'assignLearning'])->name('assignLearning');
+    Route::get('/finish-learnings/{id}', [LearningController::class, 'finishLearning'])->name('finishLearning');
 });
