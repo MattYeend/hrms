@@ -30,7 +30,9 @@ class UserFactory extends Factory
             'country' => $this->faker->country,
             'post_code' => $this->faker->postcode,
             'full_or_part' => $this->faker->randomElement(['Full Time', 'Part Time']),
-            'region' => $this->faker->state,
+            'region' => $this->faker->randomElement([
+                'Alaska', 'Arizona', 'Nevada', 'Ohio', 'Wisconsin', // Custom list of states
+            ]),
             'timezone' => $this->faker->timezone,
             'dark_mode' => false,
             'start_date' => now(),
@@ -51,10 +53,12 @@ class UserFactory extends Factory
     {
         return $this->state(function (array $attributes) {
             return [
-                'region' => fake('en_US')->state,
-                'timezone' => fake('en_US')->timezone,
+                'region' => $this->faker->randomElement([
+                    'Alaska', 'Arizona', 'Nevada', 'Ohio', 'Wisconsin'
+                ]),
+                'timezone' => $this->faker->timezone,
                 'country' => 'United States',
-                'post_code' => fake('en_US')->postcode,
+                'post_code' => $this->faker->postcode,
             ];
         });
     }
@@ -65,13 +69,15 @@ class UserFactory extends Factory
     public function spain(): static
     {
         return $this->state(function (array $attributes) {
+            $this->faker->locale('es_ES');  // Set the locale for Spain
+    
             return [
-                'region' => fake('es_ES')->randomElement([
+                'region' => $this->faker->randomElement([ // Spain states
                     'Andalucía', 'Cataluña', 'Madrid', 'Valencia', 'Galicia',
                 ]),
                 'timezone' => 'Europe/Madrid',
                 'country' => 'España',
-                'post_code' => fake('es_ES')->postcode,
+                'post_code' => $this->faker->postcode,
             ];
         });
     }
@@ -82,13 +88,15 @@ class UserFactory extends Factory
     public function italy(): static
     {
         return $this->state(function (array $attributes) {
+            $this->faker->locale('it_IT');  // Set the locale for Italy
+    
             return [
-                'region' => fake('it_IT')->randomElement([
+                'region' => $this->faker->randomElement([ // Italy states
                     'Lazio', 'Lombardia', 'Sicilia', 'Campania', 'Veneto',
                 ]),
                 'timezone' => 'Europe/Rome',
                 'country' => 'Italia',
-                'post_code' => fake('it_IT')->postcode,
+                'post_code' => $this->faker->postcode,
             ];
         });
     }
@@ -99,13 +107,15 @@ class UserFactory extends Factory
     public function france(): static
     {
         return $this->state(function (array $attributes) {
+            $this->faker->locale('fr_FR');  // Set the locale for France
+    
             return [
-                'region' => fake('fr_FR')->randomElement([
+                'region' => $this->faker->randomElement([ // France regions
                     'Île-de-France', 'Provence-Alpes-Côte d\'Azur', 'Nouvelle-Aquitaine',
                 ]),
                 'timezone' => 'Europe/Paris',
                 'country' => 'France',
-                'post_code' => fake('fr_FR')->postcode,
+                'post_code' => $this->faker->postcode,
             ];
         });
     }
