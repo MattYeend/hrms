@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
+            'title' => 'Mr',
             'first_name'=>'Matt',
             'last_name' => 'Yeend',
             'email' => 'matt@test.com',
@@ -78,8 +79,9 @@ class UserSeeder extends Seeder
         $countriesFrance = ['France'];
         $postCodesFrance = ['75001','69001','13001','31000'];
 
-        for($i = 0; $i < 50; $i++){
+        for($i = 0; $i < 20; $i++){
             User::create([
+                'title' => $fakerUS->title,
                 'first_name' => $fakerUS->firstName,
                 'middle_name' => $fakerUS->firstName,
                 'last_name' => $fakerUS->lastName,
@@ -107,8 +109,9 @@ class UserSeeder extends Seeder
             ]);
         }
         
-        for($i = 0; $i < 50; $i++){
+        for($i = 0; $i < 20; $i++){
             User::create([
+                'title' => $fakerSpain->title,
                 'first_name' => $fakerSpain->firstName,
                 'middle_name' => $fakerSpain->firstName,
                 'last_name' => $fakerSpain->lastName,
@@ -136,8 +139,9 @@ class UserSeeder extends Seeder
             ]);
         }
         
-        for($i = 0; $i < 50; $i++){
+        for($i = 0; $i < 20; $i++){
             User::create([
+                'title' => $fakerItaly->title,
                 'first_name' => $fakerItaly->firstName,
                 'middle_name' => $fakerItaly->firstName,
                 'last_name' => $fakerItaly->lastName,
@@ -165,8 +169,9 @@ class UserSeeder extends Seeder
             ]);
         }
         
-        for($i = 0; $i < 50; $i++){
+        for($i = 0; $i < 20; $i++){
             User::create([
+                'title' => $fakerFrance->title,
                 'first_name' => $fakerFrance->firstName,
                 'middle_name' => $fakerFrance->firstName,
                 'last_name' => $fakerFrance->lastName,

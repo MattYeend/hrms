@@ -23,6 +23,7 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'title' => 'required|string|max:10',
             'first_name' => 'required|string|max:255',
             'middle_name' => 'string|max:255',
             'last_name' => 'required|string|max:255',
