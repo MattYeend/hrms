@@ -21,4 +21,6 @@ return [
     'yes' => 'Sì',
     'no' => 'No',
     'actions' => 'Azioni',
+    'is_live' => 'In diretta',
+    'is_test' => 'Test',
 ];

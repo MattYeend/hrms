@@ -15,4 +15,6 @@ return [
     'no' => 'No',
     'select_option' => 'Seleziona un\'opzione',
     'action' => 'Azioni',
+    'is_live' => 'In diretta',
+    'is_test' => 'Test',
 ];

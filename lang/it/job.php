@@ -8,7 +8,7 @@ return [
     'not_provided' => 'Non fornito',
     'yes' => 'Sì',
     'no' => 'No',
-    'select_option' => 'Seleziona un’opzione',
+    'select_option' => 'Seleziona un\'opzione',
     'action' => 'Azioni',
     'job' => 'Lavori',
     'salary_range' => 'Fascia Salariale',
@@ -21,4 +21,6 @@ return [
     'created_by' => 'Creato Da',
     'updated_by' => 'Aggiornato Da',
     'deleted_by' => 'Eliminato Da',
+    'is_live' => 'In diretta',
+    'is_test' => 'Test',
 ];
