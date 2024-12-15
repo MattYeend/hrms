@@ -55,4 +55,6 @@ return [
     'part_time' => 'Teilzeit',
     'select_option' => 'Wählen Sie eine option',
     'not_provided' => 'Nicht angegeben',
+    'is_live' => 'Live-Benutzer',
+    'is_test' => 'Test-Benutzer',
 ];

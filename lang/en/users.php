@@ -55,4 +55,6 @@ return [
     'part_time' => 'Part Time',
     'select_option' => 'Select an option',
     'not_provided' => 'Not Provided',
+    'is_live' => 'Live User',
+    'is_test' => 'Test User',
 ];

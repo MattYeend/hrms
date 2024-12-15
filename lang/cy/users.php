@@ -55,4 +55,6 @@ return [
     'part_time' => 'Rhan Amser',
     'select_option' => 'Dewiswch opsiwn',
     'not_provided' => 'Heb ei Ddarparu',
+    'is_live' => 'Defnyddiwr Byw',
+    'is_test' => 'Defnyddiwr Prawf',
 ];
