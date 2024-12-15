@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\address_contact>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AddressContact>
  */
 class AddressContactFactory extends Factory
 {
@@ -17,7 +17,12 @@ class AddressContactFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'phone' => $this->faker->phoneNumber,
+            'position' => 'Admin',
+            'main_contact' => 1,
+            'is_live' => false,
         ];
     }
 }

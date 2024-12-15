@@ -17,7 +17,15 @@ class UserContactFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'phone' => $this->faker->phoneNumber,
+            'first_line' => $this->faker->streetAddress,
+            'city' => $this->faker->city,
+            'country' => $this->faker->country,
+            'post_code' => $this->faker->postcode,
+            'is_live' => false,
+            'relation_id' => $this->faker->numberBetween(1, 18),
         ];
     }
 }

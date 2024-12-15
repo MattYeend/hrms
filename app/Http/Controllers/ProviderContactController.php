@@ -35,7 +35,7 @@ class ProviderContactController extends Controller
      */
     public function store(StoreProviderContactRequest $request)
     {
-        //
+        // 'is_live' => $request->input('is_live', true),
     }
 
     /**
@@ -59,7 +59,7 @@ class ProviderContactController extends Controller
      */
     public function update(UpdateProviderContactRequest $request, ProviderContact $providerContact)
     {
-        //
+        // 'is_live' => $request->input('is_live', true),
     }
 
     /**

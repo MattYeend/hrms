@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\salary_range>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SalaryRange>
  */
 class SalaryRangeFactory extends Factory
 {
@@ -17,7 +17,8 @@ class SalaryRangeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'lower_range' => $this->faker->numberBetween(18000, 44999),
+            'upper_range' => $this->faker->numberBetween(45000, 100000),
         ];
     }
 }

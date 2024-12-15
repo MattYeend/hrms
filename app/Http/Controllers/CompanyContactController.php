@@ -51,7 +51,9 @@ class CompanyContactController extends Controller
     {
         $this->authorize('create', CompanyContact::class);
 
-        $validated = $request->validated();
+        $validated = $request->validated() + [
+            'is_live' => $request->input('is_live', true),
+        ];
         $contact = CompanyContact::create($validated);
         Logger::log(Logger::ACTION_CREATE_COMPANY_CONTACTS, ['companyContact' => $contact]);
         return redirect()->route('companyContact.index')
@@ -87,7 +89,9 @@ class CompanyContactController extends Controller
     {
         $this->authorize('update', $companyContact);
 
-        $validated = $request->validated();
+        $validated = $request->validated() + [
+            'is_live' => $request->input('is_live', true),
+        ];
         $companyContact->update($validated);
         Logger::log(Logger::ACTION_UPDATE_COMPANY_CONTACTS, ['companyContact' => $companyContact]);
         return redirect()->route('companyContact.index')

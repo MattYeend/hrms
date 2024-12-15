@@ -35,7 +35,7 @@ class UserContactController extends Controller
      */
     public function store(StoreUserContactRequest $request)
     {
-        //
+        // 'is_live' => $request->input('is_live', true),
     }
 
     /**
@@ -59,7 +59,7 @@ class UserContactController extends Controller
      */
     public function update(UpdateUserContactRequest $request, UserContact $userContact)
     {
-        //
+        // 'is_live' => $request->input('is_live', true),
     }
 
     /**

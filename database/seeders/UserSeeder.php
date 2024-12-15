@@ -40,9 +40,9 @@ class UserSeeder extends Seeder
         ]);
 
         // Create region-specific users
-        User::factory()->count(10)->us()->create();
-        User::factory()->count(10)->spain()->create();
-        User::factory()->count(10)->italy()->create();
-        User::factory()->count(10)->france()->create();
+        User::factory()->count(5)->us()->create();
+        User::factory()->count(5)->spain()->create();
+        User::factory()->count(5)->italy()->create();
+        User::factory()->count(5)->france()->create();
     }
 }

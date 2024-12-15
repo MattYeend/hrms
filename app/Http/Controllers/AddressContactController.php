@@ -49,7 +49,7 @@ class AddressContactController extends Controller
     {
         $this->authorize('create', AddressContact::class);
 
-        $addressContact = AddressContact::create($request->validated());
+        $addressContact = AddressContact::create($request->validated() + ['is_live' => $request->input('is_live', true)]);
         Logger::log(Logger::ACTION_CREATE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
         return redirect()->route('addressContact.index')->with('success', 'Address Contact created successfully.');
     }
@@ -81,7 +81,7 @@ class AddressContactController extends Controller
         $this->authorize('update', $addressContact);
 
         Logger::log(Logger::ACTION_UPDATE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
-        $addressContact->update($request->validated());
+        $addressContact->update($request->validated() + ['is_live' => $request->input('is_live', true)]);
 
         return redirect()->route('addressContact.index')->with('success', 'Address Contact updated successfully.');
     }
