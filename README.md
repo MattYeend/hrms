@@ -51,16 +51,7 @@
 - A work around for TinyMCE 6.8.1 is to set `convert_unsafe_embeds` to true which can be found in `hrms\node_modules\tinymce\tinymce.js` on around line 7430 
 
 ## Language files
-When creating a new language file for pages (e.g. a new `create.blade.php` or `index.blade.php`), the following options need to be in
-- `'create' => 'Create a ...'`
-- `'edit' => 'Update'`
-- `'view' => 'View ...'`
-- `'delete' => 'Delete'`
-- `'not_provided' => 'Not Provided'`
-- `'yes' => 'Yes'`
-- `'no' => 'No'`
-- `'select_option' => 'Select an option'`
-- `'action' => 'Actions'`
+When creating a new language file for pages (e.g. a new `create.blade.php` or `index.blade.php`), copy the `_default.php` language file in the different folders and add to it.
 
 ## How everything is related
 Users
