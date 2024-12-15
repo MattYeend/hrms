@@ -21,4 +21,6 @@ return [
     'no' => 'No',
     'select_option' => 'Select an option',
     'actions' => 'Actions',
+    'is_live' => 'Live',
+    'is_test' => 'Test',
 ];

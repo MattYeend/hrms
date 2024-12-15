@@ -21,4 +21,6 @@ return [
     'created_by' => 'Created By',
     'updated_by' => 'Updated By',
     'deleted_by' => 'Deleted By',
+    'is_live' => 'Live',
+    'is_test' => 'Test',
 ];
