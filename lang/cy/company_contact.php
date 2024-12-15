@@ -15,4 +15,6 @@ return [
     'yes' => 'Ie',
     'no' => 'Na',
     'actions' => 'Camau Gweithredu',
+    'is_live' => 'Defnyddiwr Byw',
+    'is_test' => 'Defnyddiwr Prawf',
 ];

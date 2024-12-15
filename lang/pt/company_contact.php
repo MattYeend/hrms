@@ -15,4 +15,6 @@ return [
     'yes' => 'Sim',
     'no' => 'Não',
     'actions' => 'Ações',
+    'is_live' => 'Utente Live',
+    'is_test' => 'Utente di Test',
 ];
