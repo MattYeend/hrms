@@ -1,15 +1,15 @@
 <?php 
 
 return [
-    'create' => 'Crea un `<NAME>`',
-    'edit' => 'Aggiorna',
-    'view' => 'Visualizza `<NAME>`',
-    'delete' => 'Elimina',
-    'not_provided' => 'Non fornito',
-    'yes' => 'Sì',
-    'no' => 'No',
-    'select_option' => 'Seleziona un\'opzione',
-    'action' => 'Azioni',
-    'is_live' => 'In diretta',
-    'is_test' => 'Test',
+    'create' => 'Criar um `<NAME>`',
+    'edit' => 'Atualizar',
+    'view' => 'Ver `<NAME>`',
+    'delete' => 'Excluir',
+    'not_provided' => 'Não fornecido',
+    'yes' => 'Sim',
+    'no' => 'Não',
+    'select_option' => 'Selecionar uma opção',
+    'action' => 'Ações',
+    'is_live' => 'Ao vivo',
+    'is_test' => 'Teste',
 ];
