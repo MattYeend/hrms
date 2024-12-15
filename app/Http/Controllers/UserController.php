@@ -85,7 +85,8 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $validatedData = $request->validated() + [
-            'created_by' => Auth::user()->id
+            'created_by' => Auth::user()->id,
+            'is_live' => $request->input('is_live', true),
         ];
         
         $user = new User($validatedData);
@@ -174,7 +175,8 @@ class UserController extends Controller
         $this->authorize('update', $user);
 
         $validatedData = $request->validated() + [
-            'updated_by' => Auth::user()->id
+            'updated_by' => Auth::user()->id,
+            'is_live' => $request->input('is_live', true),
         ];
 
         // If password is provided, hash and update
