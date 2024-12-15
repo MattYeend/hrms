@@ -29,7 +29,7 @@
                 <tbody>
                     @foreach($users as $user)
                         <tr>
-                            <td>{{ $user->getFullNameLong() }}</td>
+                            <td>{{ $user->is_live ? $user->getFullNameLong() : __('users.is_test') . ' ' . $user->getFullNameLong() }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role->name ?? __(users.not_provided) }}</td>
                             <td>{{ $user->department->name ?? __(users.not_provided) }}</td>

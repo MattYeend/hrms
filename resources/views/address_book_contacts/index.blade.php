@@ -30,6 +30,7 @@
                 <tbody>
                     @foreach($addressContacts as $addressContact)
                         <tr>
+                            <td>{{ $addressContact->is_live ? $addressContact->name : __('address_book_contacts.is_test') . ' ' . $addressContact->name }}</td>
                             <td>{{ $addressContact->name }}</td>
                             <td>{{ $addressContact->email }}</td>
                             <td>{{ $addressContact->phone ?? __('address_book_contacts.not_provided') }}</td>

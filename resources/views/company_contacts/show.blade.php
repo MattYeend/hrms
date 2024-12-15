@@ -15,7 +15,7 @@
                     @endif
                     <div class="row">
                         <div class="col-md-6">
-                            <p>{{ __('company_contact.name') }}: {{ $companyContact->name }}</p>
+                            <p>{{ __('company_contact.name') }}: {{ $companyContact->is_live ? $companyContact->name : __('company_contact.is_test') . ' ' . $companyContact->name }}</p>
                             <p>{{ __('company_contact.email') }}: {{ $companyContact->email }}</p>
                         </div>
                         <div class="col-md-6">

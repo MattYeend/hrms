@@ -28,7 +28,7 @@
                 <tbody>
                     @foreach($contacts as $companyContact)
                         <tr>
-                            <td>{{ $companyContact->name }}</td>
+                            <td>{{ $companyContact->is_live ? $companyContact->name : __('company_contact.is_test') . ' ' . $companyContact->name }}</td>
                             <td>{{ $companyContact->email }}</td>
                             <td>{{ $companyContact->phone ?? __('company_contact.not_provided') }}</td>
                             <td>{{ $companyContact->company->name ?? __('company_contact.not_provided') }}</td>
