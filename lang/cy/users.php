@@ -27,7 +27,7 @@ return [
     'job' => 'Swydd',
     'holiday_entitlement' => 'Hawliau Gwyliau',
     'contact' => 'Cyswllt',
-    'actions' => 'Gweithredoedd',
+    'action' => 'Gweithredoedd',
     'delete' => 'Dileu',
     'password' => 'Cyfrinair',
     'confirm_password' => 'Cadarnhau Cyfrinair',

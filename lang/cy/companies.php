@@ -19,6 +19,8 @@ return [
     'select_option' => 'Dewiswch opsiwn',
     'yes' => 'Ie',
     'no' => 'Na',
-    'actions' => 'Camau Gweithredu',
+    'action' => 'Gweithredoedd',
+    'is_live' => 'Byw',
+    'is_test' => 'Profion',
 ];
 

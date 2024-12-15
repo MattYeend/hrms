@@ -21,4 +21,6 @@ return [
     'created_by' => 'Crëwyd Gan',
     'updated_by' => 'Diweddarwyd Gan',
     'deleted_by' => 'Dilewyd Gan',
+    'is_live' => 'Byw',
+    'is_test' => 'Profion',
 ];

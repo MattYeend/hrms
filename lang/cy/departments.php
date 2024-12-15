@@ -15,4 +15,6 @@ return [
     'no' => 'Na',
     'select_option' => 'Dewiswch opsiwn',
     'action' => 'Gweithredoedd',
+    'is_live' => 'Byw',
+    'is_test' => 'Profion',
 ];

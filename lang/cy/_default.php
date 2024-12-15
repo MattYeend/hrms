@@ -5,7 +5,7 @@ return [
     'edit' => 'Diweddaru',
     'view' => 'Gweld `<NAME>`',
     'delete' => 'Dileu',
-    'not_provided' => 'Dim wedi’i ddarparu',
+    'not_provided' => 'Dim wedi\'i ddarparu',
     'yes' => 'Ie',
     'no' => 'Na',
     'select_option' => 'Dewis opsiwn',
