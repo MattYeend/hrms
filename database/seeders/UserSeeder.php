@@ -30,6 +30,7 @@ class UserSeeder extends Seeder
             'dark_mode' => false,
             'start_date' => now(),
             'remote_based' => 1,
+            'is_live' => true,
             'department_id' => 1,
             'roles_id' => 1,
             'seniority_id' => 1,

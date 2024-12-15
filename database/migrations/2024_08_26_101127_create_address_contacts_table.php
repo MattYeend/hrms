@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('position');
             $table->integer('main_contact')->nullable();
             $table->integer('secondary_contact')->nullable();
+            $table->boolean('is_live')->default(true);
             $table->timestamps();
         });
     }

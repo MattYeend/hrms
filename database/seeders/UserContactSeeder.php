@@ -25,6 +25,7 @@ class UserContactSeeder extends Seeder
                 'city' => $faker->city,
                 'country' => $faker->country,
                 'post_code' => $faker->postcode,
+                'is_live' => false,
                 'relation_id' => $faker->numberBetween(1, 18)
             ]);
         }

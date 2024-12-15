@@ -21,6 +21,7 @@ class AddressContactSeeder extends Seeder
             'phone' => $faker->phoneNumber,
             'position' => 'Admin',
             'main_contact' => 1,
+            'is_live' => false,
         ]);
     }
 }

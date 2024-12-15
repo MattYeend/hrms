@@ -18,7 +18,8 @@ class CompanyContactSeeder extends Seeder
         DB::table('company_contacts')->insert([
             'name' => $faker->name,
             'email' => $faker->unique()->safeEmail,
-            'phone' => $faker->phoneNumber
+            'phone' => $faker->phoneNumber,
+            'is_live' => false,
         ]);
     }
 }

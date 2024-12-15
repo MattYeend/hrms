@@ -40,6 +40,7 @@ return new class extends Migration
             $table->integer('office_based')->nullable();
             $table->integer('remote_based')->nullable();
             $table->integer('hybrid_based')->nullable();
+            $table->boolean('is_live')->default(true);
             $table->rememberToken();
             $table->unsignedBigInteger('department_id')->nullable();
             $table->unsignedBigInteger('roles_id')->nullable();

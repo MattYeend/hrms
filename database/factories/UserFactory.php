@@ -37,6 +37,7 @@ class UserFactory extends Factory
             'dark_mode' => false,
             'start_date' => now(),
             'remote_based' => $this->faker->boolean,
+            'is_live' => false,
             'department_id' => $this->faker->numberBetween(1, 18),
             'roles_id' => $this->faker->numberBetween(1, 3),
             'seniority_id' => $this->faker->numberBetween(1, 4),

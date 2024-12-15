@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('county')->nullable();
             $table->string('country');
             $table->string('post_code');
+            $table->boolean('is_live')->default(true);
             $table->unsignedBigInteger('relation_id')->nullable();
             $table->timestamps();
         });
