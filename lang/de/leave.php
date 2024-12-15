@@ -20,4 +20,6 @@ return [
     'yes' => 'Ja',
     'no' => 'Nein',
     'select_option' => 'Option auswählen',
+    'is_live' => 'Live',
+    'is_test' => 'Test',
 ];

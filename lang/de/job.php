@@ -21,4 +21,6 @@ return [
     'created_by' => 'Erstellt von',
     'updated_by' => 'Aktualisiert von',
     'deleted_by' => 'Gelöscht von',
+    'is_live' => 'Live',
+    'is_test' => 'Test',
 ];
