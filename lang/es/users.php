@@ -55,6 +55,6 @@ return [
     'part_time' => 'Medio Tiempo',
     'select_option' => 'Seleccionar una opción',
     'not_provided' => 'No Proporcionado',
-    'is_live' => 'Usuario en Vivo',
-    'is_test' => 'Usuario de Prueba',
+    'is_live' => 'En vivo',
+    'is_test' => 'Prueba',
 ];

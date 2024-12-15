@@ -15,6 +15,6 @@ return [
     'no' => 'Nein',
     'select_option' => 'Option auswählen',
     'actions' => 'Aktionen',
-    'is_live' => 'Live-Benutzer',
-    'is_test' => 'Test-Benutzer',
+    'is_live' => 'Live',
+    'is_test' => 'Test',
 ];

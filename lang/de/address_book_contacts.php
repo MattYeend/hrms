@@ -18,6 +18,6 @@ return [
     'yes' => 'Ja',
     'no' => 'Nein',
     'actions' => 'Aktionen',
-    'is_live' => 'Live-Benutzer',
-    'is_test' => 'Test-Benutzer',
+    'is_live' => 'Live',
+    'is_test' => 'Test',
 ];
