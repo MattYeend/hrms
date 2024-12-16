@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Artisan;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,8 +26,15 @@ class AppServiceProvider extends ServiceProvider
 
         $gitTag = trim(shell_exec('git describe --tags --abbrev=0'));
         View::share('gitTag', $gitTag);
+
+        if (!app()->isLocal()) {
+            $this->preventDestructiveCommands();
+        }
     }
 
+    /**
+     * Registration of Policies.
+     */
     protected $policies = [
         Achievements::class => AchievementsPolicy::class,
         AddressBook::class => AddressBookPolicy::class,
@@ -71,4 +79,22 @@ class AppServiceProvider extends ServiceProvider
         UserContact::class => UserContactPolicy::class,
         User::class => UserPolicy::class,
     ];
+
+    /**
+     * Prevent certain Artisan commands in non-local environments.
+     */
+    protected function preventDestructiveCommands()
+    {
+        $destructiveCommands = [
+            'migrate:fresh',    // Drops all tables
+            'migrate:reset',    // Rolls back all migrations
+            'db:wipe',          // Drops all databases
+        ];
+
+        foreach($destructiveCommands as $command){
+            Artisan::command($command, function() use ($command){
+                $this->error("This '{$command}' command is disabled in this environment for safety");
+            });
+        }
+    }
 }
