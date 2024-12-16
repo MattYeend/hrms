@@ -88,6 +88,7 @@ class AppServiceProvider extends ServiceProvider
         $destructiveCommands = [
             'migrate:fresh',    // Drops all tables
             'migrate:reset',    // Rolls back all migrations
+            'migrate:rollback', // Rolls back a batch of migrations
             'db:wipe',          // Drops all databases
         ];
 
