@@ -161,4 +161,6 @@ Route::middleware(['auth'])->group(function(){
     // L&D routes
     Route::get('/assign-learnings/{id}', [LearningController::class, 'assignLearning'])->name('assignLearning');
     Route::get('/finish-learnings/{id}', [LearningController::class, 'finishLearning'])->name('finishLearning');
+
+    Route::get('/email-logs', [EmailLogsController::class, 'index'])->name('emailLogs');
 });

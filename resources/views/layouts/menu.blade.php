@@ -20,6 +20,14 @@
                 {{ __('dropdown.knowledge_base') }}
             </a>
         </li>
+        @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin())
+            <li class="menu-heading">Admin Tools</li>
+            <li>
+                <a class="nav-link" href="{{ route('emailLogs.index') }}">
+                    {{ __('dropdown.emailLogs') }}
+                </a>
+            </li>
+        @endif
         @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite())
             <li class="menu-heading">Admin Tools</li>
             <li>
