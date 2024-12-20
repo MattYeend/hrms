@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-    <h1>{{ __('emailLogs.emailLogs') }}</h1>
+    <h1>{{ __('email_logs.email_logs') }}</h1>
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>{{ __('emailLogs.recipient') }}</th>
-                <th>{{ __('emailLogs.subject') }}</th>
-                <th>{{ __('emailLogs.sent_at') }}</th>
+                <th>{{ __('email_logs.recipient') }}</th>
+                <th>{{ __('email_logs.subject') }}</th>
+                <th>{{ __('email_logs.sent_at') }}</th>
             </tr>
         </thead>
         <tbody>
