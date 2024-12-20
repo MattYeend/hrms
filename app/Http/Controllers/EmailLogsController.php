@@ -13,7 +13,9 @@ class EmailLogsController extends Controller
      */
     public function index()
     {
-        //
+        $this->authorize('viewAny', EmailLogs::class);
+        $emailLogs = EmailLogs::paginate(10);
+        return view('email_logs.index', compact('emailLogs'));
     }
 
     /**
