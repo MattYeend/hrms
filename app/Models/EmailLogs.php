@@ -9,4 +9,10 @@ class EmailLogs extends Model
 {
     /** @use HasFactory<\Database\Factories\EmailLogsFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'recipient_email',
+        'subject',
+        'sent_at'
+    ];
 }

@@ -56,6 +56,7 @@ class AppServiceProvider extends ServiceProvider
         Contract::class => ContractPolicy::class,
         Department::class => DepartmentPolicy::class,
         Difficulty::class => DifficultyPolicy::class,
+        EmailLogs::class => EmailLogsPolicy::class,
         Goals::class => GoalsPolicy::class,
         HolidayEntitlement::class => HolidayEntitlementPolicy::class,
         Interests::class => InterestsPolicy::class,
