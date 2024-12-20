@@ -6,6 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Mail\Events\MailSent;
+use Illuminate\Support\Facades\Event;
+use App\Listeners\LogSentEmail;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
         if (!app()->isLocal()) {
             $this->preventDestructiveCommands();
         }
+
+        Event::listen(MessageSent::class, LogSentEmail::class);
     }
 
     /**
