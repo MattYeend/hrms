@@ -19,6 +19,9 @@ class Blogs extends Model
         'company_level',
         'blog_type_id',
         'author',
+        'status',
+        'approval_status',
+        'approved_by', 
         'created_at',
         'updated_by',
         'updated_at',
@@ -70,5 +73,9 @@ class Blogs extends Model
 
     public function deletedBy(){
         return $this->belongsTo(User::class, 'deleted_by');
+    }
+
+    public function approvedBy(){
+        return $this->belongsTo(User::class, 'approved_by');
     }
 }
