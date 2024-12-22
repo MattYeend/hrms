@@ -17,7 +17,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="blog_type_id">{{ __('blogs.blogType') }} @if(!isset($blog))<span class="text-danger">*</span>@endif</label>
+                <label for="blog_type_id">{{ __('blogs.blog_type') }} @if(!isset($blog))<span class="text-danger">*</span>@endif</label>
                 <select name="blog_type_id" id="blog_type_id" class="form-control">
                     <option value="" disabled selected>{{ __('blogs.select_option') }}</option>
                     @foreach($blogTypes as $type)

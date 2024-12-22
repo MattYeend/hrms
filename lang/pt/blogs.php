@@ -1,0 +1,28 @@
+<?php 
+
+return [
+    'create' => 'Criar um Blog',
+    'edit' => 'Atualizar',
+    'view' => 'Ver Blog',
+    'delete' => 'Deletar',
+    'not_provided' => 'Não fornecido',
+    'yes' => 'Sim',
+    'no' => 'Não',
+    'select_option' => 'Selecionar uma opção',
+    'action' => 'Ações',
+    'is_live' => 'Ao vivo',
+    'is_test' => 'Teste',
+    'title' => 'Título',
+    'content' => 'Conteúdo',
+    'blog_type' => 'Tipo de Blog',
+    'all_blogs' => 'Todos os Blogs',
+    'read_more' => 'Leia mais',
+    'status' => 'Status',
+    'approval_status' => 'Status de Aprovação',
+    'author' => 'Autor',
+    'approve' => 'Aprovar',
+    'deny' => 'Negar',
+    'pending' => 'Pendente',
+    'draft' => 'Rascunho',
+    'published' => 'Publicado',
+];

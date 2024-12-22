@@ -14,7 +14,7 @@
                 </div>
             @endif
             <div class="card">
-                <div class="card-header">{{ __('blogs.update') }}: {{ $blog->title }}</div>
+                <div class="card-header">{{ __('blogs.edit') }}: {{ $blog->title }}</div>
                 <div class="card-body">
                     @include('blogs.partials.form')
                 </div>
