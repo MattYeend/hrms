@@ -18,6 +18,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CompanyContactController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\BlogsController;
 
 Route::get('/', function () {
     if (Auth::check()) {
