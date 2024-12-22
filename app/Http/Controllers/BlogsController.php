@@ -19,7 +19,20 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        //
+        $blogs = Blogs::with(['author', 'approvedBy'])->latest()->paginate(10);
+        return view('blogs.index', compact('blogs'));
+    }
+
+    /**
+     * Display a list view for published blogs.
+     */
+    public function listView()
+    {
+        $blogs = Blogs::where('status', 'published')
+                    ->where('approval_status', 'approved')
+                    ->latest()
+                    ->get();
+        return view('blogs.list', compact('blogs'));
     }
 
     /**
@@ -27,7 +40,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        //
+        return view('blogs.create');
     }
 
     /**
@@ -35,7 +48,14 @@ class BlogsController extends Controller
      */
     public function store(StoreBlogsRequest $request)
     {
-        //
+        $validated = $request->validated();
+        $validated['created_by'] = Auth::id();
+        $validated['status'] = 'draft';
+        $validated['approval_status'] = 'pending';
+
+        Blogs::create($validated);
+
+        return redirect()->route('blogs.index')->with('success', 'Blog created successfully.');
     }
 
     /**
@@ -43,7 +63,7 @@ class BlogsController extends Controller
      */
     public function show(Blogs $blogs)
     {
-        //
+        return view('blogs.show', compact('blogs'));
     }
 
     /**
@@ -51,7 +71,8 @@ class BlogsController extends Controller
      */
     public function edit(Blogs $blogs)
     {
-        //
+        $this->authorize('update', $blogs);
+        return view('blogs.edit', compact('blogs'));
     }
 
     /**
@@ -59,7 +80,40 @@ class BlogsController extends Controller
      */
     public function update(UpdateBlogsRequest $request, Blogs $blogs)
     {
-        //
+        $this->authorize('update', $blogs);
+        $blogs->update($request->validated());
+
+        return redirect()->route('blogs.index')->with('success', 'Blog updated successfully.');
+    }
+
+    /**
+     * Approve the specified blog.
+     */
+    public function approve(Blogs $blogs)
+    {
+        $this->authorize('approve', $blogs);
+
+        $blogs->update([
+            'approval_status' => 'approved',
+            'approved_by' => Auth::id()
+        ]);
+
+        return back()->with('success', 'Blog approved successfully.');
+    }
+
+    /**
+     * Deny the specified blog.
+     */
+    public function deny(Blogs $blogs)
+    {
+        $this->authorize('approve', $blogs);
+
+        $blogs->update([
+            'approval_status' => 'denied',
+            'approved_by' => Auth::id()
+        ]);
+
+        return back()->with('error', 'Blog denied.');
     }
 
     /**
@@ -67,6 +121,10 @@ class BlogsController extends Controller
      */
     public function destroy(Blogs $blogs)
     {
-        //
+        $this->authorize('delete', $blogs);
+
+        $blogs->delete();
+
+        return redirect()->route('blogs.index')->with('success', 'Blog deleted successfully.');
     }
 }
