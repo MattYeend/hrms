@@ -19,8 +19,8 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $blogs = Blogs::with(['author', 'approvedBy'])->latest()->paginate(10);
-        return view('blogs.index', compact('blogs'));
+        $blog = Blogs::with(['author', 'approvedBy'])->latest()->paginate(10);
+        return view('blogs.index', compact('blog'));
     }
 
     /**
@@ -28,11 +28,11 @@ class BlogsController extends Controller
      */
     public function listView()
     {
-        $blogs = Blogs::where('status', 'published')
+        $blog = Blogs::where('status', 'published')
                     ->where('approval_status', 'approved')
                     ->latest()
                     ->get();
-        return view('blogs.list', compact('blogs'));
+        return view('blogs.list', compact('blog'));
     }
 
     /**
@@ -61,27 +61,27 @@ class BlogsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Blogs $blogs)
+    public function show(Blogs $blog)
     {
-        return view('blogs.show', compact('blogs'));
+        return view('blogs.show', compact('blog'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Blogs $blogs)
+    public function edit(Blogs $blog)
     {
-        $this->authorize('update', $blogs);
-        return view('blogs.edit', compact('blogs'));
+        $this->authorize('update', $blog);
+        return view('blogs.edit', compact('blog'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBlogsRequest $request, Blogs $blogs)
+    public function update(UpdateBlogsRequest $request, Blogs $blog)
     {
-        $this->authorize('update', $blogs);
-        $blogs->update($request->validated());
+        $this->authorize('update', $blog);
+        $blog->update($request->validated());
 
         return redirect()->route('blogs.index')->with('success', 'Blog updated successfully.');
     }
@@ -89,11 +89,11 @@ class BlogsController extends Controller
     /**
      * Approve the specified blog.
      */
-    public function approve(Blogs $blogs)
+    public function approve(Blogs $blog)
     {
-        $this->authorize('approve', $blogs);
+        $this->authorize('approve', $blog);
 
-        $blogs->update([
+        $blog->update([
             'approval_status' => 'approved',
             'approved_by' => Auth::id()
         ]);
@@ -104,11 +104,11 @@ class BlogsController extends Controller
     /**
      * Deny the specified blog.
      */
-    public function deny(Blogs $blogs)
+    public function deny(Blogs $blog)
     {
-        $this->authorize('approve', $blogs);
+        $this->authorize('approve', $blog);
 
-        $blogs->update([
+        $blog->update([
             'approval_status' => 'denied',
             'approved_by' => Auth::id()
         ]);
@@ -119,11 +119,11 @@ class BlogsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blogs $blogs)
+    public function destroy(Blogs $blog)
     {
-        $this->authorize('delete', $blogs);
+        $this->authorize('delete', $blog);
 
-        $blogs->delete();
+        $blog->delete();
 
         return redirect()->route('blogs.index')->with('success', 'Blog deleted successfully.');
     }

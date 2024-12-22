@@ -162,5 +162,19 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/assign-learnings/{id}', [LearningController::class, 'assignLearning'])->name('assignLearning');
     Route::get('/finish-learnings/{id}', [LearningController::class, 'finishLearning'])->name('finishLearning');
 
+    // Email Logs
     Route::get('/email-logs', [EmailLogsController::class, 'index'])->name('emailLogs');
+
+    // Blog routes
+    Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs.index');
+    Route::get('/blogs/create', [BlogsController::class, 'create'])->name('blogs.create');
+    Route::post('/blogs', [BlogsController::class, 'store'])->name('blogs.store');
+    Route::get('/blogs/{blog}', [BlogsController::class, 'show'])->name('blogs.show');
+    Route::get('/blogs/{blog}/edit', [BlogsController::class, 'edit'])->name('blogs.edit');
+    Route::put('/blogs/{blog}', [BlogsController::class, 'update'])->name('blogs.update');
+    Route::delete('/blogs/{blog}', [BlogsController::class, 'delete'])->name('blogs.delete');
+    Route::post('/blogs/{blog}/approve', [BlogsController::class, 'approve'])->name('blogs.approve');
+    Route::post('/blogs/{blog}/deny', [BlogsController::class, 'deny'])->name('blogs.deny');
+    Route::get('/blogs-list', [BlogsController::class, 'listView'])->name('blogs.list');
+
 });
