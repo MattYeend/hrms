@@ -13,7 +13,7 @@ class BlogsPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class BlogsPolicy
      */
     public function view(User $user, Blogs $blogs): bool
     {
-        //
+        return $blogs->status === 'published' && $blogs->approval_status === 'approved';
     }
 
     /**
@@ -29,7 +29,7 @@ class BlogsPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class BlogsPolicy
      */
     public function update(User $user, Blogs $blogs): bool
     {
-        //
+        return $user->id === $blogs->created_by;
     }
 
     /**
@@ -45,7 +45,15 @@ class BlogsPolicy
      */
     public function delete(User $user, Blogs $blogs): bool
     {
-        //
+        return $user->role->name === 'Admin' || $user->role->name === 'Super Admin';
+    }
+
+    /**
+     * Determine whether the user can approve/deny the blog.
+     */
+    public function approve(User $user): bool
+    {
+        return $user->role->name === 'Admin' || $user->role->name === 'Super Admin';
     }
 
     /**
@@ -53,7 +61,7 @@ class BlogsPolicy
      */
     public function restore(User $user, Blogs $blogs): bool
     {
-        //
+        return $user->role->name === 'Admin' || $user->role->name === 'Super Admin';
     }
 
     /**
@@ -61,6 +69,6 @@ class BlogsPolicy
      */
     public function forceDelete(User $user, Blogs $blogs): bool
     {
-        //
+        $user->role->name === 'Super Admin';
     }
 }
