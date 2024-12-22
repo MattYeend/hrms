@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Enums\BlogStatus;
+use App\Enums\BlogApprovalStatus;
 
 class Blogs extends Model
 {
@@ -46,6 +48,11 @@ class Blogs extends Model
         $count = static::where('slug', 'LIKE', "%$slug%")->count();
         return $count ? "{$slug}-{$count}" : $slug;
     }
+
+    protected $casts = [
+        'status' => BlogStatus::class,
+        'approval_status' => BlogApprovalStatus::class,
+    ];
 
     public function blogType(){
         return $this->belongsTo(BlogTypes::class, 'blog_type_id');

@@ -2,8 +2,7 @@
 
 namespace App\Enums;
 
-enum RsvpStatus: string
-{
+enum RsvpStatus: string{
     case ATTEND = 'attend';
     case MAYBE = 'maybe';
     case DECLINE = 'decline';
