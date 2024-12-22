@@ -11,7 +11,7 @@ class StoreBlogsRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,16 @@ class StoreBlogsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|string|max:255',
+            'slug' => 'required|string|unique:blogs,slug|max:255',
+            'content' => 'required|string',
+            'system_level' => 'nullable|integer',
+            'company_level' => 'nullable|integer',
+            'blog_type_id' => 'required|exists:blog_types,id',
+            'author' => 'required|exists:users,id',
+            'status' => 'nullable|in:draft,published',
+            'approval_status' => 'nullable|in:pending,approved,denied',
+            'approved_by' => 'nullable|exists:users,id',
         ];
     }
 }

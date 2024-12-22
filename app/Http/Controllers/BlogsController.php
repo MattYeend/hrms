@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blogs;
 use App\Models\Logger;
+use App\Models\BlogTypes;
 use App\Http\Requests\StoreBlogsRequest;
 use App\Http\Requests\UpdateBlogsRequest;
 
@@ -19,8 +20,8 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $blog = Blogs::with(['author', 'approvedBy'])->latest()->paginate(10);
-        return view('blogs.index', compact('blog'));
+        $blogs = Blogs::with(['author', 'approvedBy'])->latest()->paginate(10);
+        return view('blogs.index', compact('blogs'));
     }
 
     /**
@@ -28,11 +29,11 @@ class BlogsController extends Controller
      */
     public function listView()
     {
-        $blog = Blogs::where('status', 'published')
+        $blogs = Blogs::where('status', 'published')
                     ->where('approval_status', 'approved')
                     ->latest()
                     ->get();
-        return view('blogs.list', compact('blog'));
+        return view('blogs.list', compact('blogs'));
     }
 
     /**
@@ -40,7 +41,8 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        return view('blogs.create');
+        $blogTypes = BlogType::all();
+        return view('blogs.create', compact('blogTypes'));
     }
 
     /**
@@ -72,7 +74,8 @@ class BlogsController extends Controller
     public function edit(Blogs $blog)
     {
         $this->authorize('update', $blog);
-        return view('blogs.edit', compact('blog'));
+        $blogTypes = BlogType::all();
+        return view('blogs.edit', compact('blog', 'blogTypes'));
     }
 
     /**
