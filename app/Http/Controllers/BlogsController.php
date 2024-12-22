@@ -55,7 +55,8 @@ class BlogsController extends Controller
         $validated['status'] = 'draft';
         $validated['approval_status'] = 'pending';
 
-        Blogs::create($validated);
+        $blogs = Blogs::create($validated);
+        Logger::log(Logger::ACTION_CREATE_BLOG, ['blogs' => $blogs]);
 
         return redirect()->route('blogs.index')->with('success', 'Blog created successfully.');
     }
@@ -65,6 +66,7 @@ class BlogsController extends Controller
      */
     public function show(Blogs $blog)
     {
+        Logger::log(Logger::ACTION_SHOW_BLOG, ['blog' => $blog]);
         return view('blogs.show', compact('blog'));
     }
 
@@ -85,7 +87,7 @@ class BlogsController extends Controller
     {
         $this->authorize('update', $blog);
         $blog->update($request->validated());
-
+        Logger::log(Logger::ACTION_UPDATE_BLOG, ['blog' => $blog]);
         return redirect()->route('blogs.index')->with('success', 'Blog updated successfully.');
     }
 
@@ -100,6 +102,8 @@ class BlogsController extends Controller
             'approval_status' => 'approved',
             'approved_by' => Auth::id()
         ]);
+
+        Logger::log(Logger::ACTION_APPROVE_BLOG, ['blog' => $blog]);
 
         return back()->with('success', 'Blog approved successfully.');
     }
@@ -116,6 +120,8 @@ class BlogsController extends Controller
             'approved_by' => Auth::id()
         ]);
 
+        Logger::log(Logger::ACTION_DENY_BLOG, ['blog' => $blog]);
+
         return back()->with('error', 'Blog denied.');
     }
 
@@ -125,7 +131,7 @@ class BlogsController extends Controller
     public function destroy(Blogs $blog)
     {
         $this->authorize('delete', $blog);
-
+        Logger::log(Logger::ACTION_DELETE_BLOG, ['blog' => $blog]);
         $blog->delete();
 
         return redirect()->route('blogs.index')->with('success', 'Blog deleted successfully.');
