@@ -6,7 +6,7 @@ return [
     'knowledge_base' => 'Base de Conocimientos',
     'reports' => 'Informes',
     'user' => 'Usuarios',
-    'rotas' => 'Rotaciones',
+    'rotas' => 'Turnos',
     'department' => 'Departamentos',
     'company' => 'Empresas',
     'company_contact' => 'Contacto de la Empresa',
@@ -15,4 +15,6 @@ return [
     'address_contact' => 'Contacto de Dirección de la Empresa',
     'contract' => 'Contratos de la Empresa',
     'jobs' => 'Trabajos',
+    'blogs' => 'Todos los Blogs',
+    'blog_list' => 'Blogs Publicados',
 ];

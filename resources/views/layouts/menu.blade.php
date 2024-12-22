@@ -16,6 +16,16 @@
             </a>
         </li>
         <li>
+            <a class="nav-link" href="{{ route('blogs.index') }}">
+                {{ __('dropdown.blogs') }}
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" href="{{ route('blogs.list') }}">
+                {{ __('dropdown.blog_list') }}
+            </a>
+        </li>
+        <li>
             <a class="nav-link" href="{{ route('knowledge') }}">
                 {{ __('dropdown.knowledge_base') }}
             </a>

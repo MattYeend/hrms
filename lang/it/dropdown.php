@@ -4,7 +4,7 @@ return [
     'calendar' => 'Calendario',
     'profile' => 'Profilo',
     'knowledge_base' => 'Base di Conoscenza',
-    'reports' => 'Rapporti',
+    'reports' => 'Report',
     'user' => 'Utenti',
     'rotas' => 'Turni',
     'department' => 'Dipartimenti',
@@ -15,4 +15,6 @@ return [
     'address_contact' => 'Contatto Indirizzo Aziendale',
     'contract' => 'Contratti Aziendali',
     'jobs' => 'Lavori',
+    'blogs' => 'Tutti i Blog',
+    'blog_list' => 'Blog Pubblicati',
 ];

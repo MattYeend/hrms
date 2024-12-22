@@ -15,4 +15,6 @@ return [
     'address_contact' => 'Company Address Contact',
     'contract' => 'Company Contracts',
     'jobs' => 'Jobs', 
+    'blogs' => 'All Blogs',
+    'blog_list' => 'Published Blogs',
 ];
