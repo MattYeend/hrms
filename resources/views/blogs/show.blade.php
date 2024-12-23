@@ -11,7 +11,7 @@
         <p>{{ $blog->content }}</p>
         <p><strong>{{ __('blogs.author') }}:</strong> {{ $blog->author->name }}</p>
         @if($blog->approval_status == 'approved')
-            <a href="{{ route('blogs.list') }}" class="btn btn-primary">Back to Blog List</a>
+            <a href="{{ route('blogs.list') }}" class="btn btn-primary">{{ __('blogs.back_to_list') }}</a>
         @endif
     </div>
 @endsection
