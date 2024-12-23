@@ -25,4 +25,5 @@ return [
     'pending' => 'Ausstehend',
     'draft' => 'Entwurf',
     'published' => 'Veröffentlicht',
+    'back_to_list' => 'Zurück zur Blogliste',
 ];

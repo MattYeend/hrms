@@ -41,7 +41,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        $blogTypes = BlogType::all();
+        $blogTypes = BlogTypes::all();
         return view('blogs.create', compact('blogTypes'));
     }
 
@@ -76,7 +76,7 @@ class BlogsController extends Controller
     public function edit(Blogs $blog)
     {
         $this->authorize('update', $blog);
-        $blogTypes = BlogType::all();
+        $blogTypes = BlogTypes::all();
         return view('blogs.edit', compact('blog', 'blogTypes'));
     }
 

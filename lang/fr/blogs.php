@@ -25,4 +25,5 @@ return [
     'pending' => 'En attente',
     'draft' => 'Brouillon',
     'published' => 'Publié',
+    'back_to_list' => 'Retour à la Liste des Blogs',
 ];

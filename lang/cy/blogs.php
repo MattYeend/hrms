@@ -25,4 +25,5 @@ return [
     'pending' => 'Ar y gweill',
     'draft' => 'Drafft',
     'published' => 'Cyhoeddwyd',
+    'back_to_list' => 'Yn ôl i Restr y Blog',
 ];

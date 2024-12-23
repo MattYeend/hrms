@@ -15,6 +15,7 @@
                 <th>{{ __('blogs.title') }}</th>
                 <th>{{ __('blogs.status') }}</th>
                 <th>{{ __('blogs.approval_status') }}</th>
+                <th>{{ __('blogs.blog_type') }}</th>
                 <th>{{ __('blogs.author') }}</th>
                 <th>{{ __('blogs.action') }}</th>
             </tr>
@@ -25,6 +26,7 @@
                     <td>{{ $blog->title }}</td>
                     <td>{{ $blog->status }}</td>
                     <td>{{ $blog->approval_status }}</td>
+                    <td>{{ $blog->blogType->name }}</td>
                     <td>{{ $blog->author->name }}</td>
                     <td>
                     <a href="{{ route('blogs.show', $blog->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('blogs.view') }}</a>

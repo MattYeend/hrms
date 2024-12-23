@@ -25,4 +25,5 @@ return [
     'pending' => 'Pending',
     'draft' => 'Draft',
     'published' => 'Published',
+    'back_to_list' => 'Back to Blog List',
 ];
