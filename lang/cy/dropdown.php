@@ -17,4 +17,5 @@ return [
     'jobs' => 'Swyddi',
     'blogs' => 'Pob Blog',
     'blog_list' => 'Blogiau Cyhoeddus',
+    'cache' => 'Rheoli Storfa Gudd',
 ];

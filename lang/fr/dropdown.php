@@ -17,4 +17,5 @@ return [
     'jobs' => 'Emplois',
     'blogs' => 'Tous les Blogs',
     'blog_list' => 'Blogs Publiés',
+    'cache' => 'Gestion du Cache',
 ];
