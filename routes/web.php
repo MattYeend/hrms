@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\HomeController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\CompanyContactController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\CacheController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -177,5 +179,11 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/blogs/{blog}/approve', [BlogsController::class, 'approve'])->name('blogs.approve');
     Route::post('/blogs/{blog}/deny', [BlogsController::class, 'deny'])->name('blogs.deny');
     Route::get('/blogs-list', [BlogsController::class, 'listView'])->name('blogs.list');
+
+    // Cache routes
+    Route::get('/clear', function(){
+        Artisan::call('optimize:clear');
+        return 'Cache is cleared';
+    });
 
 });
