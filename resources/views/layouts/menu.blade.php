@@ -90,6 +90,11 @@
                     {{ __('dropdown.address_contact') }}
                 </a>
             </li>
+            <li>
+                <a class="nav-link" href="{{ route('cache.index') }}">
+                    {{ __('dropdown.cache') }}
+                </a>
+            </li>
         @endif
     </ul>
 @endauth

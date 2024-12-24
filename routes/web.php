@@ -181,6 +181,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/blogs-list', [BlogsController::class, 'listView'])->name('blogs.list');
 
     // Cache routes
+    Route::get('/cache', [CacheController::class, 'index'])->name('cache.index');
     Route::get('/clear', function(){
         Artisan::call('optimize:clear');
         return 'Cache is cleared';

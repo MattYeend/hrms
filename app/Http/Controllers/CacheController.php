@@ -12,7 +12,7 @@ class CacheController extends Controller
         $this->middleware('auth');
     }
 
-    public function showClearCachePage()
+    public function index()
     {
         return view('cache.clear-cache');
     }
