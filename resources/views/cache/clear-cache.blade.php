@@ -20,6 +20,7 @@
                     @endif
                     <div class="row">
                         <div class="col-md-12">
+                            <p>{{ __('cache.message') }}</p>
                             <form action="{{ url('/clear') }}" method="GET">
                                 <button type="submit">{{ __('cache.clear') }}</button>
                             </form>
