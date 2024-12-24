@@ -182,9 +182,5 @@ Route::middleware(['auth'])->group(function(){
 
     // Cache routes
     Route::get('/cache', [CacheController::class, 'index'])->name('cache.index');
-    Route::get('/clear', function(){
-        Artisan::call('optimize:clear');
-        return 'Cache is cleared';
-    });
-
+    Route::get('/clear', [CacheController::class, 'clear'])->name('cache.clear');
 });

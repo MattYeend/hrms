@@ -311,6 +311,9 @@ class Logger extends Model
     const ACTION_FOUR_HUNDRED_ERRORS = 200;
     const ACTION_FIVE_HUNDRED_ERRORS = 201;
 
+    // Cache
+    const ACTION_CLEAR_CACHE = 202;
+
     // Temp constants to go below
     
     // Temp constants to go above
