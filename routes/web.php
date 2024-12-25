@@ -143,19 +143,19 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
     Route::get('/departments/create', [DepartmentController::class, 'create'])->name('departments.create');
     Route::post('/departments', [DepartmentController::class, 'store'])->name('departments.store');
-    Route::get('/departments/{department}', [DepartmentController::class, 'show'])->name('departments.show');
-    Route::get('/departments/{department}/edit', [DepartmentController::class, 'edit'])->name('departments.edit');
-    Route::put('/departments/{department}', [DepartmentController::class, 'update'])->name('departments.update');
-    Route::delete('/departments/{department}', [DepartmentController::class, 'delete'])->name('departments.delete');
+    Route::get('/departments/{slug}', [DepartmentController::class, 'show'])->name('departments.show');
+    Route::get('/departments/{slug}/edit', [DepartmentController::class, 'edit'])->name('departments.edit');
+    Route::put('/departments/{slug}', [DepartmentController::class, 'update'])->name('departments.update');
+    Route::delete('/departments/{slug}', [DepartmentController::class, 'delete'])->name('departments.delete');
 
     // Job routes
     Route::get('/jobs', [JobController::class, 'index'])->name('job.index');
     Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
     Route::post('/jobs', [JobController::class, 'store'])->name('job.store');
-    Route::get('/jobs/{job}', [JobController::class, 'show'])->name('job.show');
-    Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])->name('job.edit');
-    Route::put('/jobs/{job}', [JobController::class, 'update'])->name('job.update');
-    Route::delete('/jobs/{job}', [JobController::class, 'delete'])->name('job.delete');
+    Route::get('/jobs/{slug}', [JobController::class, 'show'])->name('job.show');
+    Route::get('/jobs/{slug}/edit', [JobController::class, 'edit'])->name('job.edit');
+    Route::put('/jobs/{slug}', [JobController::class, 'update'])->name('job.update');
+    Route::delete('/jobs/{slug}', [JobController::class, 'delete'])->name('job.delete');
 
     // Knowledge Base and Reports routes
     Route::view('/knowledge/index', 'knowledge/index')->name('knowledge');
@@ -172,12 +172,12 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs.index');
     Route::get('/blogs/create', [BlogsController::class, 'create'])->name('blogs.create');
     Route::post('/blogs', [BlogsController::class, 'store'])->name('blogs.store');
-    Route::get('/blogs/{blog}', [BlogsController::class, 'show'])->name('blogs.show');
-    Route::get('/blogs/{blog}/edit', [BlogsController::class, 'edit'])->name('blogs.edit');
-    Route::put('/blogs/{blog}', [BlogsController::class, 'update'])->name('blogs.update');
-    Route::delete('/blogs/{blog}', [BlogsController::class, 'delete'])->name('blogs.delete');
-    Route::post('/blogs/{blog}/approve', [BlogsController::class, 'approve'])->name('blogs.approve');
-    Route::post('/blogs/{blog}/deny', [BlogsController::class, 'deny'])->name('blogs.deny');
+    Route::get('/blogs/{slug}', [BlogsController::class, 'show'])->name('blogs.show');
+    Route::get('/blogs/{slug}/edit', [BlogsController::class, 'edit'])->name('blogs.edit');
+    Route::put('/blogs/{slug}', [BlogsController::class, 'update'])->name('blogs.update');
+    Route::delete('/blogs/{slug}', [BlogsController::class, 'delete'])->name('blogs.delete');
+    Route::post('/blogs/{slug}/approve', [BlogsController::class, 'approve'])->name('blogs.approve');
+    Route::post('/blogs/{slug}/deny', [BlogsController::class, 'deny'])->name('blogs.deny');
     Route::get('/blogs-list', [BlogsController::class, 'listView'])->name('blogs.list');
 
     // Cache routes
