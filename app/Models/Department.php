@@ -26,11 +26,13 @@ class Department extends Model
 
     protected static function boot(){
         parent::boot();
-        static::creating(function($department){
-            $department->slug = self::createUniqueSlug($department->name);
+
+        static::creating(function ($department) {
+            $department->slug = self::createUniqueSlug($blog->name);
         });
-        static::updating(function($department){
-            if($department->isDirty('name')){
+
+        static::updating(function ($job) {
+            if ($department->isDirty('name')) {
                 $department->slug = self::createUniqueSlug($department->name);
             }
         });
@@ -38,8 +40,13 @@ class Department extends Model
 
     private static function createUniqueSlug($name){
         $slug = Str::slug($name);
-        $count = static::where('slug', 'LIKE', "%$slug%")->count();
+        $count = static::where('slug', 'LIKE', "{$slug}%")->count();
         return $count ? "{$slug}-{$count}" : $slug;
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
     public function company(){

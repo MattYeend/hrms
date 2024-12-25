@@ -30,11 +30,13 @@ class Job extends Model
 
     protected static function boot(){
         parent::boot();
-        static::creating(function($job){
+
+        static::creating(function ($job) {
             $job->slug = self::createUniqueSlug($job->name);
         });
-        static::updating(function($job){
-            if($job->isDirty('name')){
+
+        static::updating(function ($job) {
+            if ($job->isDirty('name')) {
                 $job->slug = self::createUniqueSlug($job->name);
             }
         });
@@ -42,8 +44,12 @@ class Job extends Model
 
     private static function createUniqueSlug($name){
         $slug = Str::slug($name);
-        $count = static::where('slug', 'LIKE', "%$slug%")->count();
+        $count = static::where('slug', 'LIKE', "{$slug}%")->count();
         return $count ? "{$slug}-{$count}" : $slug;
+    }
+
+    public function getRouteKeyName(){
+        return 'slug';
     }
 
     public function salaryRange(){

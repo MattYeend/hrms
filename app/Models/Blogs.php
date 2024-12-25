@@ -33,19 +33,21 @@ class Blogs extends Model
 
     protected static function boot(){
         parent::boot();
-        static::creating(function($blog){
-            $blog->slug = self::createUniqueSlug($blog->name);
+
+        static::creating(function ($blog) {
+            $blog->slug = self::createUniqueSlug($blog->title);
         });
-        static::updating(function($blog){
-            if($blog->isDirty('title')){
-                $blog->slug = self::createUniqueSlug($blog->name);
+
+        static::updating(function ($job) {
+            if ($blog->isDirty('title')) {
+                $blog->slug = self::createUniqueSlug($blog->title);
             }
         });
     }
 
-    private static function createUniqueSlug($name){
-        $slug = Str::slug($name);
-        $count = static::where('slug', 'LIKE', "%$slug%")->count();
+    private static function createUniqueSlug($title){
+        $slug = Str::slug($title);
+        $count = static::where('slug', 'LIKE', "{$slug}%")->count();
         return $count ? "{$slug}-{$count}" : $slug;
     }
 
@@ -53,6 +55,11 @@ class Blogs extends Model
         'status' => BlogStatus::class,
         'approval_status' => BlogApprovalStatus::class,
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function blogType(){
         return $this->belongsTo(BlogTypes::class, 'blog_type_id');
