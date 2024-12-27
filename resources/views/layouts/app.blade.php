@@ -32,7 +32,7 @@
                         @include('layouts.menu')
                     </div>
                     <div class="col-md-10">
-                        <main class="py-4 mb-5">
+                        <main class="px-4 py-4 mb-5">
                             @yield('content')
                         </main>
                     </div>

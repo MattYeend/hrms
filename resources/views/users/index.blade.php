@@ -10,7 +10,7 @@
     <!-- User Table -->
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <span>Users</span>
+            <span>{{ __('users.users') }}</span>
             @can('create', App\Models\User::class)
                 <a href="{{ route('user.create') }}" class="btn btn-success">{{ __('users.create') }}</a>
             @endcan

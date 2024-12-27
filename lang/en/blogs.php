@@ -26,4 +26,6 @@ return [
     'draft' => 'Draft',
     'published' => 'Published',
     'back_to_list' => 'Back to Blog List',
+    'blogs' => 'Blogs',
+    'no_blogs' => 'No Blogs',
 ];
