@@ -50,4 +50,16 @@
         background-color: $footer-dark-super;
         border-radius: 5px;
     }
+
+    .menu-subheading {
+        margin: 1rem 0 0.5rem;
+        font-size: 0.6rem;
+        font-weight: bold;
+        color: $text-colour;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.5rem 1rem;
+        background-color: $footer-dark-super;
+        border-radius: 5px;
+    }
 }
