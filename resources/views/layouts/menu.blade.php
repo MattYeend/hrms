@@ -40,13 +40,13 @@
         @endif
         @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite())
             <li class="menu-heading">Management Tools</li>
-            <li class="menu-subheading">Departments</li>
+            <li class="menu-subheading">{{ __('dropdown.department') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('departments.index') }}">
                     {{ __('dropdown.department') }}
                 </a>
             </li>
-            <li class="menu-subheading">Reports</li>
+            <li class="menu-subheading">{{ __('dropdown.reports') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('reports') }}">
                     {{ __('dropdown.reports') }}
@@ -54,7 +54,7 @@
             </li>
         @endif
         @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite() || auth()->user()->hrStaff)
-            <li class="menu-subheading">Jobs</li>
+            <li class="menu-subheading">{{ __('dropdown.jobs') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('job.index') }}">
                     {{ __('dropdown.jobs') }}
@@ -63,7 +63,7 @@
         @endif
         @if(auth()->user()->isSuperAdmin())
             <li class="menu-heading">Super Admin Tools</li>
-            <li class="menu-subheading">Companies</li>
+            <li class="menu-subheading">{{ __('dropdown.company') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('company.index') }}">
                     {{ __('dropdown.company') }}
@@ -74,19 +74,19 @@
                     {{ __('dropdown.company_contact') }}
                 </a>
             </li>
-            <li class="menu-subheading">Licences</li>
+            <li class="menu-subheading">{{ __('dropdown.licence') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('licence.index') }}">
                     {{ __('dropdown.licence') }}
                 </a>
             </li>
-            <li class="menu-subheading">Contracts</li>
+            <li class="menu-subheading">{{ __('dropdown.contract') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('contract.index') }}">
                     {{ __('dropdown.contract') }}
                 </a>
             </li>
-            <li class="menu-subheading">Company Address Book</li>
+            <li class="menu-subheading">{{ __('dropdown.address_book') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('addressBook.index') }}">
                     {{ __('dropdown.address_book') }}
@@ -97,7 +97,7 @@
                     {{ __('dropdown.address_contact') }}
                 </a>
             </li>
-            <li class="menu-subheading">Cache Management</li>
+            <li class="menu-subheading">{{ __('dropdown.cache') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('cache.index') }}">
                     {{ __('dropdown.cache') }}
