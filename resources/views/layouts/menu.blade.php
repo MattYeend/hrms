@@ -34,7 +34,7 @@
             <li class="menu-heading">{{ __('dropdown.admin_tools') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('emailLogs.index') }}">
-                    {{ __('dropdown.emailLogs') }}
+                    {{ __('dropdown.email_logs') }}
                 </a>
             </li>
         @endif
