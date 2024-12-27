@@ -18,6 +18,7 @@ return [
     'blogs' => 'Todos los Blogs',
     'blog_list' => 'Blogs Publicados',
     'cache' => 'Gestión de Caché',
+    'email_logs' => 'Registros de Correo Electrónico',
     'super_admin_tools' => 'Herramientas de Superadministrador',
     'admin_tools' => 'Herramientas de Administrador',
     'management_tools' => 'Herramientas de Gestión',

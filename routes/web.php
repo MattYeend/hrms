@@ -166,7 +166,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/finish-learnings/{id}', [LearningController::class, 'finishLearning'])->name('finishLearning');
 
     // Email Logs
-    Route::get('/email-logs', [EmailLogsController::class, 'index'])->name('emailLogs');
+    Route::get('/email-logs', [EmailLogsController::class, 'index'])->name('emailLogs.index');
 
     // Blog routes
     Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs.index');

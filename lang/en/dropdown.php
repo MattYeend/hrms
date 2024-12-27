@@ -18,6 +18,7 @@ return [
     'blogs' => 'All Blogs',
     'blog_list' => 'Published Blogs',
     'cache' => 'Cache Management',
+    'email_logs' => 'Email Logs',
     'super_admin_tools' => 'Super Admin Tools',
     'admin_tools' => 'Admin Tools',
     'management_tools' => 'Management Tools',

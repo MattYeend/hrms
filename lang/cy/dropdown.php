@@ -18,6 +18,7 @@ return [
     'blogs' => 'Pob Blog',
     'blog_list' => 'Blogiau Cyhoeddwyd',
     'cache' => 'Rheoli Cache',
+    'email_logs' => 'Logiau E-bost',
     'super_admin_tools' => 'Offer Uwch-Weinyddwr',
     'admin_tools' => 'Offer Gweinyddwr',
     'management_tools' => 'Offer Rheoli',
