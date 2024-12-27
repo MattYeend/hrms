@@ -31,7 +31,7 @@
             </a>
         </li>
         @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin())
-            <li class="menu-heading">Admin Tools</li>
+            <li class="menu-heading">{{ __('dropdown.admin_tools') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('emailLogs.index') }}">
                     {{ __('dropdown.emailLogs') }}
@@ -39,7 +39,7 @@
             </li>
         @endif
         @if(auth()->user()->isSuperAdmin() || auth()->user()->isAdmin() || auth()->user()->cSuite())
-            <li class="menu-heading">Management Tools</li>
+            <li class="menu-heading">{{ __('dropdown.management_tools') }}</li>
             <li class="menu-subheading">{{ __('dropdown.department') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('departments.index') }}">
@@ -62,7 +62,7 @@
             </li>
         @endif
         @if(auth()->user()->isSuperAdmin())
-            <li class="menu-heading">Super Admin Tools</li>
+            <li class="menu-heading">{{ __('dropdown.super_admin_tools') }}</li>
             <li class="menu-subheading">{{ __('dropdown.company') }}</li>
             <li>
                 <a class="nav-link" href="{{ route('company.index') }}">
