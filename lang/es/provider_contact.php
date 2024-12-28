@@ -4,7 +4,7 @@ return [
     'create' => 'Crear un Contacto de Proveedor',
     'edit' => 'Actualizar',
     'view' => 'Ver Contacto de Proveedor',
-    'delete' => 'Eliminar', 
+    'delete' => 'Eliminar',
     'not_provided' => 'No Proporcionado',
     'yes' => 'Sí',
     'no' => 'No',
@@ -12,4 +12,5 @@ return [
     'action' => 'Acciones',
     'is_live' => 'En Vivo',
     'is_test' => 'Prueba',
+    'no_provider_contacts' => 'Sin Contactos de Proveedor',
 ];

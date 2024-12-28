@@ -1,18 +1,19 @@
 <?php 
 
 return [
-    'create' => 'Creu Log E-bost',
+    'create' => 'Creu Cofnod E-bost',
     'edit' => 'Diweddaru',
-    'view' => 'Gweld Log E-bost',
-    'delete' => 'Dileu', 
-    'not_provided' => 'Heb ei Ddarparu',
+    'view' => 'Gweld Cofnod E-bost',
+    'delete' => 'Dileu',
+    'not_provided' => 'Heb ei ddarparu',
     'yes' => 'Ie',
     'no' => 'Na',
     'select_option' => 'Dewiswch opsiwn',
-    'action' => 'Camau Gweithredu',
-    'is_live' => 'Byw',
-    'is_test' => 'Prawf',
-    'email_logs' => 'Logiau E-bost',
+    'action' => 'Gweithredoedd',
+    'is_live' => 'Fyw',
+    'is_test' => 'Arbrofol',
+    'email_logs' => 'Cofnodion E-bost',
     'recipient' => 'Derbynnydd',
-    'sent_at' => 'Anfonwyd Ar',
+    'sent_at' => 'Anfonwyd Am',
+    'no_emails' => 'Dim E-byst',
 ];

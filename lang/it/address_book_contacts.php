@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'address_contact' => 'Contatto Indirizzo Aziendale',
-    'create' => 'Crea un Contatto Indirizzo',
+    'address_contact' => 'Contatto dell\'Indirizzo dell\'Azienda',
+    'create' => 'Crea un Contatto dell\'Indirizzo',
     'edit' => 'Aggiorna',
-    'view' => 'Visualizza Contatto Indirizzo',
+    'view' => 'Visualizza Contatto dell\'Indirizzo',
     'delete' => 'Elimina',
     'name' => 'Nome',
-    'email' => 'E-mail',
-    'phone' => 'Telefono',
+    'email' => 'Email',
+    'phone' => 'Telefono', 
     'position' => 'Posizione',
     'main_contact' => 'Contatto Principale',
     'secondary_contact' => 'Contatto Secondario',
@@ -18,6 +18,7 @@ return [
     'yes' => 'Sì',
     'no' => 'No',
     'actions' => 'Azioni',
-    'is_live' => 'In diretta',
+    'is_live' => 'Attivo',
     'is_test' => 'Test',
+    'no_address_contacts' => 'Nessun Contatto Indirizzo',
 ];

@@ -11,10 +11,11 @@ return [
     'email' => 'Email',
     'phone' => 'Telefono',
     'not_provided' => 'Non Fornito',
-    'select_option' => 'Seleziona un\'opzione',
     'yes' => 'Sì',
     'no' => 'No',
+    'select_option' => 'Seleziona un\'opzione',
     'actions' => 'Azioni',
-    'is_live' => 'In diretta',
+    'is_live' => 'Attivo',
     'is_test' => 'Test',
+    'no_contacts' => 'Nessun Contatto',
 ];

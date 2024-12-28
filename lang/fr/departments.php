@@ -17,4 +17,5 @@ return [
     'action' => 'Actions',
     'is_live' => 'En direct',
     'is_test' => 'Test',
+    'no_departments' => 'Aucun Département',
 ];

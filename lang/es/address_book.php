@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'address_book' => 'Agenda de Direcciones de la Empresa',
-    'company' => 'Empresa',
+    'address_book' => 'Directorio de Direcciones de la Empresa',
+    'company' => 'Compañía',
     'create' => 'Crear una dirección',
     'edit' => 'Actualizar',
     'view' => 'Ver una dirección',
@@ -14,13 +14,15 @@ return [
     'county' => 'Condado',
     'country' => 'País',
     'post_code' => 'Código Postal',
-    'head_office' => 'Oficina Central',
-    'address_contact' => 'Contacto Principal de la Dirección',
+    'head_office' => 'Oficina Principal',
+    'address_contact' => 'Contacto Principal para la Dirección',
     'not_provided' => 'No Proporcionado',
     'select_option' => 'Seleccionar una opción',
     'yes' => 'Sí',
     'no' => 'No',
     'actions' => 'Acciones',
-    'is_live' => 'En vivo',
+    'is_live' => 'En Vivo',
     'is_test' => 'Prueba',
+    'no_address_books' => 'Sin Libros de Direcciones',
 ];
+

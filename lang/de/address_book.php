@@ -2,7 +2,7 @@
 
 return [
     'address_book' => 'Firmenadressbuch',
-    'company' => 'Firma',
+    'company' => 'Unternehmen',
     'create' => 'Adresse erstellen',
     'edit' => 'Aktualisieren',
     'view' => 'Adresse anzeigen',
@@ -14,13 +14,14 @@ return [
     'county' => 'Bezirk',
     'country' => 'Land',
     'post_code' => 'Postleitzahl',
-    'head_office' => 'Hauptsitz',
+    'head_office' => 'Hauptbüro',
     'address_contact' => 'Hauptkontakt für Adresse',
-    'not_provided' => 'Nicht angegeben',
-    'select_option' => 'Option auswählen',
+    'not_provided' => 'Nicht bereitgestellt',
+    'select_option' => 'Wählen Sie eine Option',
     'yes' => 'Ja',
     'no' => 'Nein',
     'actions' => 'Aktionen',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_address_books' => 'Keine Adressbücher',
 ];

@@ -1,20 +1,21 @@
 <?php 
 
 return [
-    'company_contact' => 'Cyswllt y Cwmni',
+    'company_contact' => 'Cyswllt Cwmni',
     'company' => 'Cwmni',
     'create' => 'Creu Cyswllt Cwmni',
     'edit' => 'Diweddaru',
-    'view' => 'Gweld Cyswllt y Cwmni',
+    'view' => 'Gweld Cyswllt Cwmni',
     'delete' => 'Dileu',
     'name' => 'Enw',
     'email' => 'E-bost',
     'phone' => 'Ffôn',
     'not_provided' => 'Heb ei ddarparu',
-    'select_option' => 'Dewiswch opsiwn',
     'yes' => 'Ie',
     'no' => 'Na',
-    'action' => 'Gweithredoedd',
-    'is_live' => 'Byw',
-    'is_test' => 'Prawf',
+    'select_option' => 'Dewiswch opsiwn',
+    'actions' => 'Gweithredoedd',
+    'is_live' => 'Fyw',
+    'is_test' => 'Arbrofol',
+    'no_contacts' => 'Dim Cysylltiadau',
 ];
