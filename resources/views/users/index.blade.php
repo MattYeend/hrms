@@ -27,35 +27,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if(count($users) > 0)
-                        @foreach($users as $user)
-                            <tr>
-                                <td>{{ $user->is_live ? $user->getFullNameLong() : __('users.is_test') . ' ' . $user->getFullNameLong() }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->role->name ?? __(users.not_provided) }}</td>
-                                <td>{{ $user->department->name ?? __(users.not_provided) }}</td>
-                                <td>
-                                    <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('users.view') }}</a>
-                                    @can('update', $user)
-                                        <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('users.edit') }}</a>
-                                    @endcan
-                                    @can('delete', $user)
-                                        @if (auth()->user()->id !== $user->id)
-                                            <form action="{{ route('user.delete', $user->id) }}" method="POST" style="display: inline-block;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('users.delete') }}</button>
-                                            </form>
-                                        @endif
-                                    @endcan
-                                </td>
-                            </tr>
-                        @endforeach
-                    @else
+                    @foreach($users as $user)
+                        <tr>
+                            <td>{{ $user->is_live ? $user->getFullNameLong() : __('users.is_test') . ' ' . $user->getFullNameLong() }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->role->name ?? __(users.not_provided) }}</td>
+                            <td>{{ $user->department->name ?? __(users.not_provided) }}</td>
+                            <td>
+                                <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('users.view') }}</a>
+                                @can('update', $user)
+                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('users.edit') }}</a>
+                                @endcan
+                                @can('delete', $user)
+                                    @if (auth()->user()->id !== $user->id)
+                                        <form action="{{ route('user.delete', $user->id) }}" method="POST" style="display: inline-block;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('users.delete') }}</button>
+                                        </form>
+                                    @endif
+                                @endcan
+                            </td>
+                        </tr>
+                    @empty
                         <tr>
                             <td colspan="5">{{ __('users.no_users') }}</td>
                         </tr>
-                    @endif
+                    @endforelse
                 </tbody>
             </table>
 

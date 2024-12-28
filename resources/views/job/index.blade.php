@@ -33,7 +33,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($jobs as $job)
+                                    @forelse($jobs as $job)
                                         <tr>
                                             <td>{{ $job->name }}</td>
                                             <td>{{ $job->code ?? __('job.not_provided') }}</td>
@@ -54,7 +54,11 @@
                                                 @endcan
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="6">{{ __('job.no_jobs') }}</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
 

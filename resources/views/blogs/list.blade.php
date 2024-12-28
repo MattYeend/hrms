@@ -14,22 +14,20 @@
                         </div>
                     @endif
                     <div class="row">
-                        @if(count($blogs) > 0)
-                            @foreach($blogs as $blog)
-                                <div class="card mt-3">
-                                    <div class="card-body">
-                                        <h3>{{ $blog->title }}</h3>
-                                        <h3>{{ $blog->blogType->name }}</h3>
-                                        <p>{{ Str::limit($blog->content, 150) }}</p>
-                                        <a href="{{ route('blogs.show', $blog->id) }}" class="btn btn-info">{{ __('blogs.read_more') }}</a>
-                                    </div>
+                        @forelse($blogs as $blog)
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <h3>{{ $blog->title }}</h3>
+                                    <h3>{{ $blog->blogType->name }}</h3>
+                                    <p>{{ Str::limit($blog->content, 150) }}</p>
+                                    <a href="{{ route('blogs.show', $blog->id) }}" class="btn btn-info">{{ __('blogs.read_more') }}</a>
                                 </div>
-                            @endforeach
-                        @else
+                            </div>
+                        @empty
                             <tr>
                                 <td colspan="6">{{ __('blogs.no_blogs') }}</td>
                             </tr>
-                        @endif
+                        @endforeach
                     </div>
                 </div>
             </div>

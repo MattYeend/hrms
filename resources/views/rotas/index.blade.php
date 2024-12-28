@@ -35,35 +35,33 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if(count($rotas) > 0)
-                                        @foreach($rotas as $rota)
-                                            <tr>
-                                                <td>{{ $rota->user->getFullNameLong() }}</td>
-                                                <td>{{ $rota->user->department->name }}</td>
-                                                <td>{{ \Carbon\Carbon::parse($rota->start_time)->format('d/m/y H:i') }}</td>
-                                                <td>{{ \Carbon\Carbon::parse($rota->end_time)->format('d/m/y H:i') }}</td>
-                                                <td>
-                                                    <a href="{{ route('rotas.show', $rota->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('users.view') }}</a>
-                                                    @can('update', $rota)
-                                                        <a href="{{ route('rotas.edit', $rota->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('users.edit') }}</a>
-                                                    @endcan
-                                                    @can('delete', $rota)
-                                                        @if (auth()->user()->id !== $rota->user_id)
-                                                            <form action="{{ route('rotas.delete', $rota->id) }}" method="POST" style="display: inline-block;">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('users.delete') }}</button>
-                                                            </form>
-                                                        @endif
-                                                    @endcan
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    @else
+                                    @forelse($rotas as $rota)
                                         <tr>
-                                            <td colspan="5">{{ __('rotas.no_rotas') }}</td>
+                                            <td>{{ $rota->user->getFullNameLong() }}</td>
+                                            <td>{{ $rota->user->department->name }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($rota->start_time)->format('d/m/y H:i') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($rota->end_time)->format('d/m/y H:i') }}</td>
+                                            <td>
+                                                <a href="{{ route('rotas.show', $rota->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('users.view') }}</a>
+                                                @can('update', $rota)
+                                                    <a href="{{ route('rotas.edit', $rota->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('users.edit') }}</a>
+                                                @endcan
+                                                @can('delete', $rota)
+                                                    @if (auth()->user()->id !== $rota->user_id)
+                                                        <form action="{{ route('rotas.delete', $rota->id) }}" method="POST" style="display: inline-block;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('users.delete') }}</button>
+                                                        </form>
+                                                    @endif
+                                                @endcan
+                                            </td>
                                         </tr>
-                                    @endif
+                                    @empty
+                                    <tr>
+                                        <td colspan="5">{{ __('rotas.no_rotas') }}</td>
+                                    </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
 
