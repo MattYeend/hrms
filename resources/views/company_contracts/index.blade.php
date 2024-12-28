@@ -25,7 +25,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($contracts as $contract)
+                    @forelse($contracts as $contract)
                         <tr>
                             <td>{{ $contract->name }}</td>
                             <td>{{ $contract->start->format('d/m/Y') }}</td>
@@ -47,7 +47,11 @@
                                 @endcan
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="5">{{ __('contracts.no_contracts') }}</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
 

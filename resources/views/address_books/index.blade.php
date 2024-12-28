@@ -31,7 +31,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($addressBooks as $address)
+                    @forelse($addressBooks as $address)
                         <tr>
                             <td>{{ $address->first_line }}</td>
                             <td>{{ $address->second_line ?? __('address_book.not_provided') }}</td>
@@ -58,7 +58,11 @@
                                 @endcan
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="10">{{ __('address_book.no_address_books') }}</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
 

@@ -26,7 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($contacts as $companyContact)
+                    @forelse($contacts as $companyContact)
                         <tr>
                             <td>{{ $companyContact->is_live ? $companyContact->name : __('company_contact.is_test') . ' ' . $companyContact->name }}</td>
                             <td>{{ $companyContact->email }}</td>
@@ -46,7 +46,11 @@
                                 @endcan
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="5">{{ __('company_contact.no_contacts') }}</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
 

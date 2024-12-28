@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($addressContacts as $addressContact)
+                    @forelse($addressContacts as $addressContact)
                         <tr>
                             <td>{{ $addressContact->is_live ? $addressContact->name : __('address_book_contacts.is_test') . ' ' . $addressContact->name }}</td>
                             <td>{{ $addressContact->name }}</td>
@@ -56,7 +56,11 @@
                                 @endcan
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="8">{{ __('address_book_contacts.no_address_contacts') }}</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
 

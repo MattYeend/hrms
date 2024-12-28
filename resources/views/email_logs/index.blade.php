@@ -12,13 +12,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($emailLogs as $log)
+            @forelse($emailLogs as $log)
                 <tr>
                     <td>{{ $log->recipient_email }}</td>
                     <td>{{ $log->subject }}</td>
                     <td>{{ $log->sent_at }}</td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="3">{{ __('email_logs.no_emails') }}</td>
+                </tr>
+            @endforelse
         </tbody>
     </table>
 </div>

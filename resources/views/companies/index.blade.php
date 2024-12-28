@@ -38,7 +38,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($companies as $company)
+                                    @forelse($companies as $company)
                                         <tr>
                                             <td>{{ $company->name }}</td>
                                             <td>{{ $company->companyContact->name ?? __('companies.not_provided') }}</td>
@@ -68,7 +68,11 @@
                                                 @endcan
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="9">{{ __('companies.no_companies') }}</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
 

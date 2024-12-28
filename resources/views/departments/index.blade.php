@@ -33,7 +33,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($departments as $department)
+                                    @forelse($departments as $department)
                                         <tr>
                                             <td>{{ $department->name }}</td>
                                             <td>{{ $department->company->name ?? __('departments.not_provided') }}</td>
@@ -54,7 +54,11 @@
                                                 @endcan
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="4">{{ __('departments.no_departments') }}</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
 
