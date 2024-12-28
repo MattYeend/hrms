@@ -57,4 +57,5 @@ return [
     'not_provided' => 'Not Provided',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_users' => 'No Users',
 ];
