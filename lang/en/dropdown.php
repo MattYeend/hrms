@@ -15,7 +15,7 @@ return [
     'address_contact' => 'Company Address Contacts',
     'contract' => 'Company Contracts',
     'jobs' => 'Jobs', 
-    'blogs' => 'All Blogs',
+    'blogs' => 'Blogs',
     'blog_list' => 'Published Blogs',
     'cache' => 'Cache Management',
     'email_logs' => 'Email Logs',
