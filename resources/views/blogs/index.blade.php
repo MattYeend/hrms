@@ -27,7 +27,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if(count($blogs) < 0)
+                    @if(count($blogs) > 0)
                         @foreach($blogs as $blog)
                             <tr>
                                 <td>{{ $blog->title }}</td>
