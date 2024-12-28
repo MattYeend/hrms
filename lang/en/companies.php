@@ -22,4 +22,5 @@ return [
     'actions' => 'Actions',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_companies' => 'No Companies',
 ];

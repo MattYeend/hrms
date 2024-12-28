@@ -15,4 +15,5 @@ return [
     'email_logs' => 'Email Logs',
     'recipient' => 'Recipient',
     'sent_at' => 'Sent At',
+    'no_emails' => 'No Emails',
 ];

@@ -23,4 +23,5 @@ return [
     'actions' => 'Actions',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_address_books' => 'No Address Books',
 ];

@@ -20,4 +20,5 @@ return [
     'actions' => 'Actions',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_address_contacts' => 'No Address Contacts',
 ];
