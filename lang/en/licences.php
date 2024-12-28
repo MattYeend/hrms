@@ -18,4 +18,5 @@ return [
     'actions' => 'Actions',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_licences' => 'No Licences',
 ];

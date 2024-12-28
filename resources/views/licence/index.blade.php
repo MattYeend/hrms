@@ -34,27 +34,33 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($licences as $licence)
+                                    @if(count($licences) > 0)
+                                        @foreach($licences as $licence)
+                                            <tr>
+                                                <td>{{ $licence->name }}</td>
+                                                <td>{{ $licence->price }}</td>
+                                                <td>{{ $licence->created_by ?? __('licences.not_provided') }}</td>
+                                                <td>{{ $licence->updated_by ?? __('licences.not_provided') }}</td>
+                                                <td>
+                                                    <a href="{{ route('licence.show', $licence->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('licences.view') }}</a>
+                                                    @can('update', $licence)
+                                                        <a href="{{ route('licence.edit', $licence->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('licences.edit') }}</a>
+                                                    @endcan
+                                                    @can('delete', $licence)
+                                                        <form action="{{ route('licence.delete', $licence->id) }}" method="POST" style="display: inline-block;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('licences.delete') }}</button>
+                                                        </form>
+                                                    @endcan
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @else
                                         <tr>
-                                            <td>{{ $licence->name }}</td>
-                                            <td>{{ $licence->price }}</td>
-                                            <td>{{ $licence->created_by ?? __('licences.not_provided') }}</td>
-                                            <td>{{ $licence->updated_by ?? __('licences.not_provided') }}</td>
-                                            <td>
-                                                <a href="{{ route('licence.show', $licence->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('licences.view') }}</a>
-                                                @can('update', $licence)
-                                                    <a href="{{ route('licence.edit', $licence->id) }}" class="btn btn-warning btn-sm d-block mb-2">{{ __('licences.edit') }}</a>
-                                                @endcan
-                                                @can('delete', $licence)
-                                                    <form action="{{ route('licence.delete', $licence->id) }}" method="POST" style="display: inline-block;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm d-block mb-2" onclick="return confirm('Are you sure?')">{{ __('licences.delete') }}</button>
-                                                    </form>
-                                                @endcan
-                                            </td>
+                                            <td colspan="5">{{ __('licences.no_licences') }}</td>
                                         </tr>
-                                    @endforeach
+                                    @endif
                                 </tbody>
                             </table>
 

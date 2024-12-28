@@ -6,7 +6,7 @@ return [
     'licence' => 'Lizenz',
     'create' => 'Eine Lizenz erstellen',
     'edit' => 'Aktualisieren',
-    'view' => 'Lizenz anzeigen',
+    'view' => 'Lizenz ansehen',
     'delete' => 'Löschen',
     'companies' => 'Unternehmen',
     'created_by' => 'Erstellt von',
@@ -18,4 +18,5 @@ return [
     'actions' => 'Aktionen',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_licences' => 'Keine Lizenzen',
 ];
