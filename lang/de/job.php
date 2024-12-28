@@ -1,7 +1,7 @@
 <?php 
 
 return [
-    'create' => 'Job erstellen',
+    'create' => 'Einen Job erstellen',
     'edit' => 'Aktualisieren',
     'view' => 'Ansehen',
     'delete' => 'Löschen',
@@ -23,4 +23,5 @@ return [
     'deleted_by' => 'Gelöscht von',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_jobs' => 'Keine Jobs',
 ];

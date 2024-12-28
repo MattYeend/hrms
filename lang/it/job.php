@@ -21,6 +21,7 @@ return [
     'created_by' => 'Creato Da',
     'updated_by' => 'Aggiornato Da',
     'deleted_by' => 'Eliminato Da',
-    'is_live' => 'In diretta',
+    'is_live' => 'Dal Vivo',
     'is_test' => 'Test',
+    'no_jobs' => 'Nessun Lavoro',
 ];

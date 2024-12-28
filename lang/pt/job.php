@@ -1,7 +1,7 @@
 <?php 
 
 return [
-    'create' => 'Criar um Emprego',
+    'create' => 'Criar um Trabalho',
     'edit' => 'Atualizar',
     'view' => 'Visualizar',
     'delete' => 'Excluir',
@@ -10,7 +10,7 @@ return [
     'no' => 'Não',
     'select_option' => 'Selecione uma opção',
     'action' => 'Ações',
-    'job' => 'Empregos',
+    'job' => 'Trabalhos',
     'salary_range' => 'Faixa Salarial',
     'users' => 'Usuários',
     'name' => 'Nome',
@@ -21,6 +21,7 @@ return [
     'created_by' => 'Criado Por',
     'updated_by' => 'Atualizado Por',
     'deleted_by' => 'Excluído Por',
-    'is_live' => 'Ao vivo',
+    'is_live' => 'Ao Vivo',
     'is_test' => 'Teste',
+    'no_jobs' => 'Nenhum Trabalho',
 ];

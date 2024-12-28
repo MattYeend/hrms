@@ -23,4 +23,5 @@ return [
     'deleted_by' => 'Deleted By',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_jobs' => 'No Jobs',
 ];

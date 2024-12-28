@@ -23,4 +23,5 @@ return [
     'deleted_by' => 'Supprimé Par',
     'is_live' => 'En direct',
     'is_test' => 'Test',
+    'no_jobs' => 'Aucun Emploi',
 ];
