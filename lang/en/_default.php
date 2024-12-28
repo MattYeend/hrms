@@ -12,4 +12,5 @@ return [
     'action' => 'Actions',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'no_<NAME>' => 'No `<NAME`>',
 ];

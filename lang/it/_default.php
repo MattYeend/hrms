@@ -10,6 +10,7 @@ return [
     'no' => 'No',
     'select_option' => 'Seleziona un\'opzione',
     'action' => 'Azioni',
-    'is_live' => 'In diretta',
+    'is_live' => 'Dal Vivo',
     'is_test' => 'Test',
+    'no_<NAME>' => 'Nessun `<NAME>`',
 ];
