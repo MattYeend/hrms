@@ -39,7 +39,7 @@ class Blogs extends Model
             $blog->slug = self::createUniqueSlug($blog->title);
         });
 
-        static::updating(function ($job) {
+        static::updating(function ($blog) {
             if ($blog->isDirty('title')) {
                 $blog->slug = self::createUniqueSlug($blog->title);
             }

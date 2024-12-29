@@ -14,12 +14,12 @@
                         </div>
                     @endif
                     <div class="row">
-                        <p><strong>{{ __('blogs.status') }}:</strong> {{ $blog->status }}</p>
-                        <p><strong>{{ __('blogs.approval_status') }}:</strong> {{ $blog->approval_status }}</p>
+                        <p><strong>{{ __('blogs.status') }}:</strong> {{ ucwords($blog->status->value) }}</p>
+                        <p><strong>{{ __('blogs.approval_status') }}:</strong> {{ ucwords($blog->approval_status->value) }}</p>
                         <p><strong>{{ __('blogs.blog_type') }}:</strong> {{ $blog->blogType->name }}</p>
                         <p><strong>{{ __('blogs.content') }}:</strong></p>
                         <p>{{ $blog->content }}</p>
-                        <p><strong>{{ __('blogs.author') }}:</strong> {{ $blog->author->name }}</p>
+                        <p><strong>{{ __('blogs.author') }}:</strong> {{ $blog->author_name }}</p>
                         @if($blog->approval_status == 'approved')
                             <a href="{{ route('blogs.list') }}" class="btn btn-primary">{{ __('blogs.back_to_list') }}</a>
                         @endif

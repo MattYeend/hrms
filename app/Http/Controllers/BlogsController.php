@@ -73,9 +73,16 @@ class BlogsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Blogs $blog)
+    public function show($id)
     {
-        Logger::log(Logger::ACTION_SHOW_BLOG, ['blog' => $blog]);
+        $blog = Blogs::find($id);
+        if(!$blog){
+            return response()->json(['message' => 'Blog not found'], 404);
+        }
+        $authors = User::whereIn('id', $blog->pluck('author'))->get()->keyBy('id');
+    
+        $blog->author_name = $authors[$blog->author]?->getName() ?? 'Unknown';
+        Logger::log(Logger::ACTION_SH0W_BLOG, ['blog' => $blog]);
         return view('blogs.show', compact('blog'));
     }
 
@@ -103,13 +110,16 @@ class BlogsController extends Controller
     /**
      * Approve the specified blog.
      */
-    public function approve(Blogs $blog)
+    public function approve($slug)
     {
+        $blog = Blogs::where('slug', $slug)->firstOrFail();
+
         $this->authorize('approve', $blog);
 
         $blog->update([
             'approval_status' => 'approved',
-            'approved_by' => Auth::id()
+            'approved_by' => Auth::id(),
+            'status' => 'published'
         ]);
 
         Logger::log(Logger::ACTION_APPROVE_BLOG, ['blog' => $blog]);
@@ -120,13 +130,15 @@ class BlogsController extends Controller
     /**
      * Deny the specified blog.
      */
-    public function deny(Blogs $blog)
+    public function deny($slug)
     {
+        $blog = Blogs::where('slug', $slug)->firstOrFail();
+
         $this->authorize('approve', $blog);
 
         $blog->update([
             'approval_status' => 'denied',
-            'approved_by' => Auth::id()
+            'approved_by' => Auth::id(),
         ]);
 
         Logger::log(Logger::ACTION_DENY_BLOG, ['blog' => $blog]);

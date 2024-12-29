@@ -30,8 +30,8 @@
                     @forelse($blogs as $blog)
                         <tr>
                             <td>{{ $blog->title }}</td>
-                            <td>{{ $blog->status }}</td>
-                            <td>{{ $blog->approval_status }}</td>
+                            <td>{{ ucwords($blog->status->value) }}</td>
+                            <td>{{ ucwords($blog->approval_status->value) }}</td>
                             <td>{{ $blog->blogType->name }}</td>
                             <td>{{ $blog->author_name }}</td>
                             <td>
@@ -40,21 +40,23 @@
                                     <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-warning btn-sm">{{ __('blogs.edit') }}</a>
                                 @endcan
                                 @can('delete', $blog)
-                                    <form action="{{ route('blogs.delete', $blog->id) }}" method="POST" style="display:inline;">
+                                    <form action="{{ route('blogs.delete', $blog->slug) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">{{ __('blogs.delete') }}</button>
                                     </form>
                                 @endcan
                                 @can('approve', $blog)
-                                    <form action="{{ route('blogs.approve', $blog->id) }}" method="POST" style="display:inline;">
-                                        @csrf
-                                        <button type="submit" class="btn btn-success btn-sm">{{ __('blogs.approve') }}</button>
-                                    </form>
-                                    <form action="{{ route('blogs.deny', $blog->id) }}" method="POST" style="display:inline;">
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger btn-sm">{{ __('blogs.deny') }}</button>
-                                    </form>
+                                    @if($blog->approval_status == 'pending' && $blog->status == 'draft')
+                                        <form action="{{ route('blogs.approve', $blog->slug) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            <button type="submit" class="btn btn-success btn-sm">{{ __('blogs.approve') }}</button>
+                                        </form>
+                                        <form action="{{ route('blogs.deny', $blog->slug) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger btn-sm">{{ __('blogs.deny') }}</button>
+                                        </form>
+                                    @endif
                                 @endcan
                             </td>
                         </tr>
