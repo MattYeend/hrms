@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Str;
 use App\Enums\BlogStatus;
 use App\Enums\BlogApprovalStatus;
 
@@ -16,7 +17,7 @@ class Blogs extends Model
     protected $fillable = [
         'title',
         'slug',
-        'text',
+        'content',
         'system_level',
         'company_level',
         'blog_type_id',
@@ -78,7 +79,7 @@ class Blogs extends Model
     }
 
     public function author(){
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(User::class, 'author');
     }
 
     public function updatedBy(){

@@ -33,14 +33,14 @@
                             <td>{{ $blog->status }}</td>
                             <td>{{ $blog->approval_status }}</td>
                             <td>{{ $blog->blogType->name }}</td>
-                            <td>{{ $blog->author->name }}</td>
+                            <td>{{ $blog->author_name }}</td>
                             <td>
                                 <a href="{{ route('blogs.show', $blog->id) }}" class="btn btn-primary btn-sm d-block mb-2">{{ __('blogs.view') }}</a>
                                 @can('update', $blog)
                                     <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-warning btn-sm">{{ __('blogs.edit') }}</a>
                                 @endcan
                                 @can('delete', $blog)
-                                    <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST" style="display:inline;">
+                                    <form action="{{ route('blogs.delete', $blog->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">{{ __('blogs.delete') }}</button>

@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Blogs;
 use App\Models\Logger;
 use App\Models\BlogTypes;
+use App\Models\User;
 use App\Http\Requests\StoreBlogsRequest;
 use App\Http\Requests\UpdateBlogsRequest;
+use Illuminate\Support\Facades\Auth;
 
 class BlogsController extends Controller
 {
@@ -20,7 +22,14 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $blogs = Blogs::with(['author', 'approvedBy'])->latest()->paginate(10);
+        $blogs = Blogs::latest()->paginate(10);
+
+        $authors = User::whereIn('id', $blogs->pluck('author'))->get()->keyBy('id');
+    
+        foreach ($blogs as $blog) {
+            $blog->author_name = $authors[$blog->author]?->getName() ?? 'Unknown';
+        }
+    
         return view('blogs.index', compact('blogs'));
     }
 
@@ -51,7 +60,7 @@ class BlogsController extends Controller
     public function store(StoreBlogsRequest $request)
     {
         $validated = $request->validated();
-        $validated['created_by'] = Auth::id();
+        $validated['author'] = Auth::id();
         $validated['status'] = 'draft';
         $validated['approval_status'] = 'pending';
 
@@ -128,10 +137,11 @@ class BlogsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blogs $blog)
+    public function destroy($slug)
     {
         $this->authorize('delete', $blog);
         Logger::log(Logger::ACTION_DELETE_BLOG, ['blog' => $blog]);
+        $blog = Blog::where('slug', $slug)->firstOrFail();
         $blog->delete();
 
         return redirect()->route('blogs.index')->with('success', 'Blog deleted successfully.');
