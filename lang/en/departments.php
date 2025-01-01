@@ -18,4 +18,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_departments' => 'No Departments',
+    'unauthorized_action' => 'Unauthorized Action',
+    'created_success' => 'Department created successfully',
+    'updated_success' => 'Department updated successfully',
+    'deleted_success' => 'Department deleted successfully',
 ];

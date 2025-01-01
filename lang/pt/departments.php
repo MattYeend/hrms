@@ -18,4 +18,8 @@ return [
     'is_live' => 'Ao Vivo',
     'is_test' => 'Teste',
     'no_departments' => 'Sem Departamentos',
+    'unauthorized_action'=> 'Ação não autorizada',
+    'created_success' => 'Departamento criado com sucesso',
+    'updated_success' => 'Departamento atualizado com sucesso',
+    'deleted_success' => 'Departamento excluído com sucesso',
 ];

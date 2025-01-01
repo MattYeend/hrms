@@ -18,4 +18,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_departments' => 'Keine Abteilungen',
+    'unauthorized_action'=> 'Unbefugte Aktion',
+    'created_success' => 'Abteilung erfolgreich erstellt',
+    'updated_success' => 'Abteilung erfolgreich aktualisiert',
+    'deleted_success' => 'Abteilung erfolgreich gelöscht',
 ];

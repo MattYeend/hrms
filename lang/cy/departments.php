@@ -18,4 +18,8 @@ return [
     'is_live' => 'Fyw',
     'is_test' => 'Arbrofol',
     'no_departments' => 'Dim Adrannau',
+    'unauthorized_action'=> 'Gweithred heb awdurdod',
+    'created_success' => 'Adran wedi ei greu yn llwyddiannus',
+    'updated_success' => 'Adran wedi ei ddiweddaru yn llwyddiannus',
+    'deleted_success' => 'Adran wedi ei ddileu yn llwyddiannus',
 ];

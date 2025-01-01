@@ -18,7 +18,7 @@ class DepartmentController extends Controller
         $this->middleware(function ($request, $next) {
             $user = auth()->user();
             if (!$user->isSuperAdmin() && !$user->isAdmin() && !$user->cSuite()) {
-                abort(403, 'Unauthorized action.');
+                abort(403, __('departments.unauthorized_action'));
             }
 
             return $next($request);
@@ -59,7 +59,7 @@ class DepartmentController extends Controller
         $data = $request->validated();
         $department = Department::create($data);
         Logger::log(Logger::ACTION_CREATE_DEPARTMENT, ['department' => $department]);
-        return redirect()->route('departments.index')->with('success', 'Department created successfully.');
+        return redirect()->route('departments.index')->with('success', __('departments.created_success'));
     }
 
     /**
@@ -96,7 +96,7 @@ class DepartmentController extends Controller
         $data = $request->validated();
         $department->update($data);
         Logger::log(Logger::ACTION_UPDATE_DEPARTMENT, ['department' => $department]);
-        return redirect()->route('departments.index')->with('success', 'Department updated successfully.');
+        return redirect()->route('departments.index')->with('success', __('departments.updated_success'));
     }
 
     /**
@@ -108,6 +108,6 @@ class DepartmentController extends Controller
         Logger::log(Logger::ACTION_DELETE_DEPARTMENT, ['department' => $department]);
         $department->delete();
 
-        return redirect()->route('departments.index')->with('success', 'Department deleted successfully.');
+        return redirect()->route('departments.index')->with('success', __('departments.deleted_success'));
     }
 }
