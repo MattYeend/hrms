@@ -24,4 +24,8 @@ return [
     'is_live' => 'Ao Vivo',
     'is_test' => 'Teste',
     'no_address_books' => 'Sem Catálogos de Endereços',
+    'unauthorized_action'=> 'Ação não autorizada',
+    'created_success'=> 'Livro de Endereços criado com sucesso',
+    'updated_success'=> 'Livro de Endereços atualizado com sucesso',
+    'deleted_success'=> 'Livro de Endereços excluído com sucesso',
 ];

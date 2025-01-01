@@ -24,4 +24,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_address_books' => 'Keine Adressbücher',
+    'unauthorized_action'=> 'Unbefugte Aktion',
+    'created_success'=> 'Adressbuch erfolgreich erstellt',
+    'updated_success'=> 'Adressbuch erfolgreich aktualisiert',
+    'deleted_success'=> 'Adressbuch erfolgreich gelöscht',
 ];

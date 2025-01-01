@@ -24,4 +24,8 @@ return [
     'is_live' => 'Attivo',
     'is_test' => 'Test',
     'no_address_books' => 'Nessun Libro degli Indirizzi',
+    'unauthorized_action'=> 'Azione non autorizzata',
+    'created_success'=> 'Rubrica creata con successo',
+    'updated_success'=> 'Rubrica aggiornata con successo',
+    'deleted_success'=> 'Rubrica eliminata con successo',
 ];

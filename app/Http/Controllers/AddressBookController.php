@@ -17,7 +17,7 @@ class AddressBookController extends Controller
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
             if (Auth::user()->role->name !== 'Super Admin') {
-                abort(403, 'Unauthorized action.');
+                abort(403, __('address_book.unauthorized_action'));
             }
             return $next($request);
         });
@@ -54,7 +54,7 @@ class AddressBookController extends Controller
 
         $addressBook = AddressBook::create($request->validated());
         Logger::log(Logger::ACTION_CREATE_ADDRESS_BOOK, ['addressBook' => $addressBook]);
-        return redirect()->route('addressBook.index')->with('success', 'Address Book created successfully.');
+        return redirect()->route('addressBook.index')->with('success', __('address_book.created_success'));
     }
 
     /**
@@ -87,7 +87,7 @@ class AddressBookController extends Controller
         Logger::log(Logger::ACTION_UPDATE_ADDRESS_BOOK, ['addressBook' => $addressBook]);
         $addressBook->update($request->validated());
 
-        return redirect()->route('addressBook.index')->with('success', 'Address Book updated successfully.');
+        return redirect()->route('addressBook.index')->with('success', __('address_book.updated_success'));
     }
 
     /**
@@ -99,6 +99,6 @@ class AddressBookController extends Controller
         Logger::log(Logger::ACTION_DELETE_ADDRESS_BOOK, ['addressBook' => $addressBook]);
         $addressBook->delete();
 
-        return redirect()->route('addressBook.index')->with('success', 'Address Book deleted successfully.');
+        return redirect()->route('addressBook.index')->with('success', __('address_book.deleted_success'));
     }
 }
