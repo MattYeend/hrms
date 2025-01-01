@@ -18,4 +18,8 @@ return [
     'is_live' => 'En direct',
     'is_test' => 'Test',
     'no_rotas' => 'Aucune Rota',
+    'created_success' => 'Itinéraire créé avec succès',
+    'updated_success' => 'Itinéraire mis à jour avec succès',
+    'deleted_success' => 'Itinéraire supprimé avec succès',
+    'not_found' => 'Itinéraire non trouvé',
 ];

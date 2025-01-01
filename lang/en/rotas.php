@@ -18,4 +18,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_rotas' => 'No Rotas',
+    'created_success' => 'Rota created successfully',
+    'updated_success' => 'Rota updated successfully',
+    'deleted_success' => 'Rota deleted successfully',
+    'not_found' => 'Rota not found',
 ];

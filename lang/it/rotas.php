@@ -18,4 +18,8 @@ return [
     'is_live' => 'Dal vivo',
     'is_test' => 'Test',
     'no_rotas' => 'Nessuna Rota',
+    'created_success' => 'Percorso creato con successo',
+    'updated_success' => 'Percorso aggiornato con successo',
+    'deleted_success' => 'Percorso eliminato con successo',
+    'not_found' => 'Percorso non trovato',
 ];

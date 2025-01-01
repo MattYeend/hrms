@@ -45,7 +45,7 @@ class RotasController extends Controller
     {
         $rota = Rotas::create($request->validated());
         Logger::log(Logger::ACTION_CREATE_ROTA, ['rota' => $rota], null, $rotas->user_id);
-        return redirect()->route('rotas.index')->with('success', 'Rota created successfully.');
+        return redirect()->route('rotas.index')->with('success', __('rota.created_success'));
     }
 
     /**
@@ -56,7 +56,7 @@ class RotasController extends Controller
         $rota = Rotas::find($id);
 
         if(!$rota){
-            return response()->json(['message' => 'Rota not found'], 404);
+            return response()->json(['message' => __('rota.not_found')], 404);
         }
 
         Logger::log(Logger::ACTION_SHOW_ROTA, ['rota' => $rota], null, $rotas->user_id);
@@ -82,7 +82,7 @@ class RotasController extends Controller
     {
         $rotas->update($request->validated());
         Logger::log(Logger::ACTION_UPDATE_ROTA, ['rota' => $rotas], null, $rotas->user_id);
-        return redirect()->route('rotas.index')->with('success', 'Rota updated successfully.');
+        return redirect()->route('rotas.index')->with('success', __('rotas.updated_success'));
     }
 
     /**
@@ -92,7 +92,7 @@ class RotasController extends Controller
     {
         Logger::log(Logger::ACTION_DELETE_ROTA, ['rota' => $rotas], null, $rotas->user_id);
         $rotas->delete();
-        return redirect()->route('rotas.index')->with('success', 'Rota deleted successfully.');
+        return redirect()->route('rotas.index')->with('success', __('rotas.deleted_success'));
     }
 
     public function getRotas()

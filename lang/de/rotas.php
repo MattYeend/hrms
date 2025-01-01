@@ -18,4 +18,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_rotas' => 'Keine Rotas',
+    'created_success' => 'Route erfolgreich erstellt',
+    'updated_success' => 'Route erfolgreich aktualisiert',
+    'deleted_success' => 'Route erfolgreich gelöscht',
+    'not_found' => 'Route nicht gefunden',
 ];

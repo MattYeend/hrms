@@ -18,4 +18,8 @@ return [
     'is_live' => 'Byw',
     'is_test' => 'Prawf',
     'no_rotas' => 'Dim Rotas',
+    'created_success' => 'Rota wedi ei greu yn llwyddiannus',
+    'updated_success' => 'Rota wedi ei ddiweddaru yn llwyddiannus',
+    'deleted_success' => 'Rota wedi ei ddileu yn llwyddiannus',
+    'not_found' => 'Rota heb ei chanfod',
 ];
