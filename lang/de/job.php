@@ -24,4 +24,7 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_jobs' => 'Keine Jobs',
+    'created_success' => 'Job erfolgreich erstellt',
+    'updated_success' => 'Job erfolgreich aktualisiert',
+    'deleted_success' => 'Job erfolgreich gelöscht',
 ];

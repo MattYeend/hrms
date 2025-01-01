@@ -24,4 +24,7 @@ return [
     'is_live' => 'Dal Vivo',
     'is_test' => 'Test',
     'no_jobs' => 'Nessun Lavoro',
+    'created_success' => 'Lavoro creato con successo',
+    'updated_success' => 'Lavoro aggiornato con successo',
+    'deleted_success' => 'Lavoro eliminato con successo',
 ];

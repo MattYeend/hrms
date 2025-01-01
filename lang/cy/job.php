@@ -24,4 +24,7 @@ return [
     'is_live' => 'Byw',
     'is_test' => 'Prawf',
     'no_jobs' => 'Dim Swyddi',
+    'created_success' => 'Swydd wedi ei greu yn llwyddiannus',
+    'updated_success' => 'Swydd wedi ei ddiweddaru yn llwyddiannus',
+    'deleted_success' => 'Swydd wedi ei ddileu yn llwyddiannus',
 ];

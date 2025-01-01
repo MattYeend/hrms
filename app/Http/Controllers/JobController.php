@@ -51,7 +51,7 @@ class JobController extends Controller
         $data = $request->validated();
         $job = Job::create($data);
         Logger::log(Logger::ACTION_CREATE_JOB, ['job' => $job]);
-        return redirect()->route('job.index')->with('success', 'Job created successfully.');
+        return redirect()->route('job.index')->with('success', __('job.deleted_success'));
     }
 
     /**
@@ -97,7 +97,7 @@ class JobController extends Controller
         $data = $request->validated();
         $job->update($data);
         Logger::log(Logger::ACTION_UPDATE_JOB, ['job' => $job]);
-        return redirect()->route('job.index')->with('success', 'Job updated successfully.');
+        return redirect()->route('job.index')->with('success', __('job.updated_success'));
     }
 
     /**
@@ -109,6 +109,6 @@ class JobController extends Controller
         Logger::log(Logger::ACTION_DELETE_JOB, ['job' => $job]);
         $job->delete();
 
-        return redirect()->route('job.index')->with('success', 'Job deleted successfully.');
+        return redirect()->route('job.index')->with('success', __('job.deleted_success'));
     }
 }
