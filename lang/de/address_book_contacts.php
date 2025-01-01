@@ -21,4 +21,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_address_contacts' => 'Keine Adresskontakte',
+    'unauthorized_action'=> 'Unbefugte Aktion',
+    'created_success' => 'Adressbuchkontakt erfolgreich erstellt',
+    'updated_success' => 'Adressbuchkontakt erfolgreich aktualisiert',
+    'deleted_success' => 'Adressbuchkontakt erfolgreich gelöscht',
 ];

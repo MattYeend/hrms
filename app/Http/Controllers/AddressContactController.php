@@ -15,7 +15,7 @@ class AddressContactController extends Controller
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
             if (Auth::user()->role->name !== 'Super Admin') {
-                abort(403, 'Unauthorized action.');
+                abort(403, __('address_book_contacts.unauthorized_action'));
             }
             return $next($request);
         });
@@ -51,7 +51,7 @@ class AddressContactController extends Controller
 
         $addressContact = AddressContact::create($request->validated() + ['is_live' => $request->input('is_live', true)]);
         Logger::log(Logger::ACTION_CREATE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
-        return redirect()->route('addressContact.index')->with('success', 'Address Contact created successfully.');
+        return redirect()->route('addressContact.index')->with('success', __('address_book_contacts.created_success'));
     }
 
     /**
@@ -83,7 +83,7 @@ class AddressContactController extends Controller
         Logger::log(Logger::ACTION_UPDATE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
         $addressContact->update($request->validated() + ['is_live' => $request->input('is_live', true)]);
 
-        return redirect()->route('addressContact.index')->with('success', 'Address Contact updated successfully.');
+        return redirect()->route('addressContact.index')->with('success', __('address_book_contacts.updated_success'));
     }
 
     /**
@@ -95,6 +95,6 @@ class AddressContactController extends Controller
         Logger::log(Logger::ACTION_DELETE_ADDRESS_BOOK_CONTACT, ['addressContact' => $addressContact]);
         $addressContact->delete();
 
-        return redirect()->route('addressContact.index')->with('success', 'Address Contact deleted successfully.');
+        return redirect()->route('addressContact.index')->with('success', __('address_book_contacts.deleted_success'));
     }
 }

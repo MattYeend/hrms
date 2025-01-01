@@ -21,4 +21,8 @@ return [
     'is_live' => 'En direct',
     'is_test' => 'Test',
     'no_address_contacts' => 'Aucun Contact d\'Adresse',
+    'unauthorized_action'=> 'Action non autorisée',
+    'created_success' => 'Contact du carnet d\'adresses créé avec succès',
+    'updated_success' => 'Contact du carnet d\'adresses mis à jour avec succès',
+    'deleted_success' => 'Contact du carnet d\'adresses supprimé avec succès',
 ];

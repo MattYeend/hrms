@@ -21,4 +21,8 @@ return [
     'is_live' => 'En Vivo',
     'is_test' => 'Prueba',
     'no_address_contacts' => 'Sin Contactos de Dirección',
+    'unauthorized_action'=> 'Acción no autorizada',
+    'created_success' => 'Contacto de la libreta de direcciones creado con éxito',
+    'updated_success' => 'Contacto de la libreta de direcciones actualizado con éxito',
+    'deleted_success' => 'Contacto de la libreta de direcciones eliminado con éxito',
 ];

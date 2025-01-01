@@ -21,4 +21,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_address_contacts' => 'No Address Contacts',
+    'unauthorized_action' => 'Unauthorized Action',
+    'created_success' => 'Address Book Contact created successfully',
+    'updated_success' => 'Address Book Contact updated successfully',
+    'deleted_success' => 'Address Book Contact deleted successfully',
 ];

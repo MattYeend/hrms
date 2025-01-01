@@ -21,4 +21,8 @@ return [
     'is_live' => 'Ao Vivo',
     'is_test' => 'Teste',
     'no_address_contacts' => 'Sem Contatos de Endereço',
+    'unauthorized_action'=> 'Ação não autorizada',
+    'created_success' => 'Contato da agenda criado com sucesso',
+    'updated_success' => 'Contato da agenda atualizado com sucesso',
+    'deleted_success' => 'Contato da agenda excluído com sucesso',
 ];

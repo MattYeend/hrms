@@ -21,4 +21,8 @@ return [
     'is_live' => 'Attivo',
     'is_test' => 'Test',
     'no_address_contacts' => 'Nessun Contatto Indirizzo',
+    'unauthorized_action'=> 'Azione non autorizzata',
+    'created_success' => 'Contatto della rubrica creato con successo',
+    'updated_success' => 'Contatto della rubrica aggiornato con successo',
+    'deleted_success' => 'Contatto della rubrica eliminato con successo',
 ];

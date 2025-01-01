@@ -21,4 +21,8 @@ return [
     'is_live' => 'Fyw',
     'is_test' => 'Arbrofol',
     'no_address_contacts' => 'Dim Cyswllt Cyfeiriad',
+    'unauthorized_action'=> 'Gweithred heb awdurdod',
+    'created_success' => 'Cyswllt Llyfr Cyfeiriadau wedi\'i greu\'n llwyddiannus',
+    'updated_success' => 'Cyswllt Llyfr Cyfeiriadau wedi\'i ddiweddaru\'n llwyddiannus',
+    'deleted_success' => 'Cyswllt Llyfr Cyfeiriadau wedi\'i ddileu\'n llwyddiannus',
 ];
