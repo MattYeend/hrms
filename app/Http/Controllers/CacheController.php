@@ -25,6 +25,6 @@ class CacheController extends Controller
         $id = $user->id;
         Logger::log(Logger::ACTION_CLEAR_CACHE, ['user' => $user], null, $id);
         Artisan::call('optimize:clear');
-        return 'Cache is cleared';
+        return __('cache.cache_cleared');
     }
 }
