@@ -16,7 +16,7 @@ class CompanyContactController extends Controller
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
             if (Auth::user()->role->name !== 'Super Admin') {
-                abort(403, 'Unauthorized action.');
+                abort(403, __('company_contact.unauthorized_action'));
             }
             return $next($request);
         });
@@ -57,7 +57,7 @@ class CompanyContactController extends Controller
         $contact = CompanyContact::create($validated);
         Logger::log(Logger::ACTION_CREATE_COMPANY_CONTACTS, ['companyContact' => $contact]);
         return redirect()->route('companyContact.index')
-            ->with('success', 'Company contact created successfully.');
+            ->with('success', __('company_contact.created_success'));
     }
 
     /**
@@ -95,7 +95,7 @@ class CompanyContactController extends Controller
         $companyContact->update($validated);
         Logger::log(Logger::ACTION_UPDATE_COMPANY_CONTACTS, ['companyContact' => $companyContact]);
         return redirect()->route('companyContact.index')
-            ->with('success', 'Company contact updated successfully.');
+            ->with('success', __('company_contact.updated_success'));
     }
 
     /**
@@ -108,6 +108,6 @@ class CompanyContactController extends Controller
         $companyContact->delete();
 
         return redirect()->route('company_contacts.index')
-            ->with('success', 'Company contact deleted successfully.');
+            ->with('success', __('company_contact.deleted_success'));
     }
 }

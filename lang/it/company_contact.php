@@ -18,4 +18,8 @@ return [
     'is_live' => 'Attivo',
     'is_test' => 'Test',
     'no_contacts' => 'Nessun Contatto',
+    'unauthorized_action'=> 'Azione non autorizzata',
+    'created_success' => 'Contatto Aziendale creato con successo',
+    'updated_success' => 'Contatto Aziendale aggiornato con successo',
+    'deleted_success' => 'Contatto Aziendale eliminato con successo',
 ];

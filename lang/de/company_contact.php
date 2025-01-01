@@ -18,4 +18,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_contacts' => 'Keine Kontakte',
+    'unauthorized_action'=> 'Unbefugte Aktion',
+    'created_success' => 'Firmenkontakt erfolgreich erstellt',
+    'updated_success' => 'Firmenkontakt erfolgreich aktualisiert',
+    'deleted_success' => 'Firmenkontakt erfolgreich gelöscht',
 ];

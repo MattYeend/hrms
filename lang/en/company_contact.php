@@ -18,4 +18,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_contacts' => 'No Contacts',
+    'unauthorized_action' => 'Unauthorized Action',
+    'created_success' => 'Company Contact created successfully',
+    'updated_success' => 'Company Contact updated successfully',
+    'deleted_success' => 'Company Contact deleted successfully',
 ];

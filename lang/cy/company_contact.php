@@ -18,4 +18,8 @@ return [
     'is_live' => 'Fyw',
     'is_test' => 'Arbrofol',
     'no_contacts' => 'Dim Cysylltiadau',
+    'unauthorized_action'=> 'Gweithred heb awdurdod',
+    'created_success' => 'Cyswllt Cwmni wedi ei greu yn llwyddiannus',
+    'updated_success' => 'Cyswllt Cwmni wedi ei ddiweddaru yn llwyddiannus',
+    'deleted_success' => 'Cyswllt Cwmni wedi ei ddileu yn llwyddiannus',
 ];
