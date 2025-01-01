@@ -23,4 +23,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_companies' => 'No Companies',
+    'unauthorized_action' => 'Unauthorized Action',
+    'created_success' => 'Company created successfully',
+    'updated_success' => 'Company updated successfully',
+    'deleted_success' => 'Company deleted successfully',
 ];

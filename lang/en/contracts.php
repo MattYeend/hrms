@@ -19,4 +19,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_contracts' => 'No Contracts',
+    'unauthorized_action' => 'Unauthorized Action',
+    'created_success' => 'Contract created successfully',
+    'updated_success' => 'Contract updated successfully',
+    'deleted_success' => 'Contract deleted successfully',
 ];

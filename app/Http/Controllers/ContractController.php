@@ -16,7 +16,7 @@ class ContractController extends Controller
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
             if (Auth::user()->role->name !== 'Super Admin') {
-                abort(403, 'Unauthorized action.');
+                abort(403, __('contacts.unauthorized_action'));
             }
             return $next($request);
         });
@@ -55,7 +55,7 @@ class ContractController extends Controller
         $data = $request->validated();
         $contract = Contract::create($data);
         Logger::log(Logger::ACTION_CREATE_CONTRACT, ['contract' => $contract]);
-        return redirect()->route('contract.index')->with('success', 'Contract created successfully.');
+        return redirect()->route('contract.index')->with('success', __('contacts.created_success'));
     }
 
     /**
@@ -91,7 +91,7 @@ class ContractController extends Controller
         $data = $request->validated();
         $contract->update($data);
         Logger::log(Logger::ACTION_UPDATE_CONTRACT, ['contract' => $contract]);
-        return redirect()->route('contract.index')->with('success', 'Contract updated successfully.');
+        return redirect()->route('contract.index')->with('success', __('contacts.updated_success'));
     }
 
     /**
@@ -103,6 +103,6 @@ class ContractController extends Controller
         Logger::log(Logger::ACTION_DELETE_CONTRACT, ['contract' => $contract]);
         $contract->delete();
 
-        return redirect()->route('contract.index')->with('success', 'Contract deleted successfully.');
+        return redirect()->route('contract.index')->with('success', __('contacts.deleted_success'));
     }
 }

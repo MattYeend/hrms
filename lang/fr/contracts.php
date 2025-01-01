@@ -19,4 +19,8 @@ return [
     'is_live' => 'En direct',
     'is_test' => 'Test',
     'no_contracts' => 'Aucun Contrat',
+    'unauthorized_action'=> 'Action non autorisée',
+    'created_success' => 'Contrat créé avec succès',
+    'updated_success' => 'Contrat mis à jour avec succès',
+    'deleted_success' => 'Contrat supprimé avec succès',
 ];

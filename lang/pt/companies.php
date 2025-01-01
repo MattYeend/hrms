@@ -23,4 +23,8 @@ return [
     'is_live' => 'Ao Vivo',
     'is_test' => 'Teste',
     'no_companies' => 'Sem Empresas',
+    'unauthorized_action'=> 'Ação não autorizada',
+    'created_success' => 'Empresa criada com sucesso',
+    'updated_success' => 'Empresa atualizada com sucesso',
+    'deleted_success' => 'Empresa excluída com sucesso',
 ];

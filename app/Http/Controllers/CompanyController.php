@@ -19,7 +19,7 @@ class CompanyController extends Controller
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
             if (Auth::user()->role->name !== 'Super Admin') {
-                abort(403, 'Unauthorized action.');
+                abort(403, __('companies.unauthorized_action'));
             }
             return $next($request);
         });
@@ -61,7 +61,7 @@ class CompanyController extends Controller
         $data = $request->validated();
         $company = Company::create($data);
         Logger::log(Logger::ACTION_CREATE_COMPANY, ['company' => $company]);
-        return redirect()->route('company.index')->with('success', 'Company created successfully.');
+        return redirect()->route('company.index')->with('success', __('companies.created_success'));
     }
 
     /**
@@ -100,7 +100,7 @@ class CompanyController extends Controller
         $data = $request->validated();
         $company->update($data);
         Logger::log(Logger::ACTION_UPDATE_COMPANY, ['company' => $company]);
-        return redirect()->route('company.index')->with('success', 'Company updated successfully.');
+        return redirect()->route('company.index')->with('success', __('companies.updated_success'));
     }
 
     /**
@@ -112,6 +112,6 @@ class CompanyController extends Controller
         Logger::log(Logger::ACTION_DELETE_COMPANY, ['company' => $company]);
         $company->delete();
 
-        return redirect()->route('company.index')->with('success', 'Company deleted successfully.');
+        return redirect()->route('company.index')->with('success', __('companies.deleted_success'));
     }
 }

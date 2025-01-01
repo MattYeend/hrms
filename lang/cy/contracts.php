@@ -19,4 +19,8 @@ return [
     'is_live' => 'Fyw',
     'is_test' => 'Arbrofol',
     'no_contracts' => 'Dim Cytundebau',
+    'unauthorized_action'=> 'Gweithred heb awdurdod',
+    'created_success' => 'Contract wedi ei greu yn llwyddiannus',
+    'updated_success' => 'Contract wedi ei ddiweddaru yn llwyddiannus',
+    'deleted_success' => 'Contract wedi ei ddileu yn llwyddiannus',
 ];
