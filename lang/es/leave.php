@@ -23,4 +23,7 @@ return [
     'actions' => 'Acción',
     'is_live' => 'En vivo',
     'is_test' => 'Prueba',
+    'created_success' => 'Urlaub erfolgreich erstellt',
+    'updated_success' => 'Urlaub erfolgreich aktualisiert',
+    'deleted_success' => 'Urlaub erfolgreich gelöscht',
 ];

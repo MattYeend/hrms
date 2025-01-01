@@ -22,4 +22,7 @@ return [
     'select_option' => 'Option auswählen',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'created_success' => 'Urlaub erfolgreich erstellt',
+    'updated_success' => 'Urlaub erfolgreich aktualisiert',
+    'deleted_success' => 'Urlaub erfolgreich gelöscht',
 ];

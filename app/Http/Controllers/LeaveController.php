@@ -66,7 +66,7 @@ class LeaveController extends Controller
         $this->notifyDeptLead($leave);
         Logger::log(Logger::ACTION_CREATE_HOLIDAY, ['leave' => $leave]);
         Logger::log(Logger::ACTION_HOLIDAY_CREATE_EMAIL_SENT, ['leave' => $leave]);
-        return redirect()->route('calendar')->with('success', 'Leave created successfully');
+        return redirect()->route('calendar')->with('success', __('leave.created_success'));
     }
 
     /**
@@ -100,7 +100,7 @@ class LeaveController extends Controller
         $this->notifyDeptLead($leave);
         Logger::log(Logger::ACTION_UPDATE_HOLIDAY, ['leave' => $leave]);
         Logger::log(Logger::ACTION_HOLIDAY_UPDATE_EMAIL_SENT, ['leave' => $leave]);
-        return redirect()->route('calendar')->with('success', 'Leave updated successfully');
+        return redirect()->route('calendar')->with('success', __('leave.updated_success'));
     }
 
     /**
@@ -108,7 +108,12 @@ class LeaveController extends Controller
      */
     public function destroy(Leave $leave)
     {
+        $this->authorize('delete', $leave);
         Logger::log(Logger::ACTION_DELETE_HOLIDAY, ['leave' => $leave]);
+        $leave = Leave::where('id', $leave)->firstOrFail();
+        $leave->delete();
+
+        return redirect()->route('calender')->with('success', __('leave.deleted_success'));
     }
 
     public function getHolidays()
@@ -130,7 +135,7 @@ class LeaveController extends Controller
         Logger::log(Logger::ACTION_HOLIDAY_APPROVE, ['leave' => $leave]);
         Logger::log(Logger::ACTION_HOLIDAY_APPROVE_EMAIL_SENT, ['leave' => $leave]);
 
-        return redirect()->route('calendar')->with('success', 'Leave approved successfully.');
+        return redirect()->route('calendar')->with('success', __('leave.approved'));
     }
 
     public function deny(Request $request, $leaveId)
@@ -145,7 +150,7 @@ class LeaveController extends Controller
         Logger::log(Logger::ACTION_HOLIDAY_DENY, ['leave' => $leave]);
         Logger::log(Logger::ACTION_HOLIDAY_DENY_EMAIL_SENT, ['leave' => $leave]);
 
-        return redirect()->route('calendar')->with('success', 'Leave denied successfully.');
+        return redirect()->route('calendar')->with('success', __('leave.denied'));
     }
 
     public function getLeaves()

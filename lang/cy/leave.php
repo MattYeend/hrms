@@ -23,4 +23,7 @@ return [
     'action' => 'Gweithredoedd',
     'is_live' => 'Byw',
     'is_test' => 'Profion',
+    'created_success' => 'Absenoldeb wedi ei greu yn llwyddiannus',
+    'updated_success' => 'Absenoldeb wedi ei ddiweddaru yn llwyddiannus',
+    'deleted_success' => 'Absenoldeb wedi ei ddileu yn llwyddiannus',
 ];

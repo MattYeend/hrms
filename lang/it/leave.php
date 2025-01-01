@@ -23,4 +23,7 @@ return [
     'actions' => 'Azioni',
     'is_live' => 'In diretta',
     'is_test' => 'Test',
+    'created_success' => 'Permesso creato con successo',
+    'updated_success' => 'Permesso aggiornato con successo',
+    'deleted_success' => 'Permesso eliminato con successo',
 ];

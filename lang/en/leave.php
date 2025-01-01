@@ -23,4 +23,7 @@ return [
     'actions' => 'Actions',
     'is_live' => 'Live',
     'is_test' => 'Test',
+    'created_success' => 'Leave created successfully',
+    'updated_success' => 'Leave updated successfully',
+    'deleted_success' => 'Leave deleted successfully',
 ];

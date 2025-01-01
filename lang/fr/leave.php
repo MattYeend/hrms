@@ -23,4 +23,7 @@ return [
     'actions' => 'Actions',
     'is_live' => 'En direct',
     'is_test' => 'Test',
+    'created_success' => 'Congé créé avec succès',
+    'updated_success' => 'Congé mis à jour avec succès',
+    'deleted_success' => 'Congé supprimé avec succès',
 ];

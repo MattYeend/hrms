@@ -23,4 +23,7 @@ return [
     'actions' => 'Ações',
     'is_live' => 'Ao vivo',
     'is_test' => 'Teste',
+    'created_success' => 'Licença criada com sucesso',
+    'updated_success' => 'Licença atualizada com sucesso',
+    'deleted_success' => 'Licença excluída com sucesso',
 ];
