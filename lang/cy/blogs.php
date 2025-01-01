@@ -28,4 +28,9 @@ return [
     'back_to_list' => 'Yn ôl i Restr Blogiau',
     'blogs' => 'Blogiau',
     'no_blogs' => 'Dim Blogiau',
+    'created_success' => 'Blog wedi ei greu yn llwyddiannus',
+    'updated_success' => 'Blog wedi ei ddiweddaru yn llwyddiannus',
+    'deleted_success' => 'Blog wedi ei ddileu yn llwyddiannus',
+    'approved' => 'Blog wedi ei gymeradwyo',
+    'denied' => 'Blog wedi ei wrthod',
 ];

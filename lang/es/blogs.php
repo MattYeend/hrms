@@ -28,4 +28,9 @@ return [
     'back_to_list' => 'Volver a la Lista de Blogs',
     'blogs' => 'Blogs',
     'no_blogs' => 'No Hay Blogs',
+    'created_success' => 'Blog creado con éxito',
+    'updated_success' => 'Blog actualizado con éxito',
+    'deleted_success' => 'Blog eliminado con éxito',
+    'approved' => 'Blog aprobado',
+    'denied' => 'Blog denegado',
 ];

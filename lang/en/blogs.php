@@ -28,4 +28,9 @@ return [
     'back_to_list' => 'Back to Blog List',
     'blogs' => 'Blogs',
     'no_blogs' => 'No Blogs',
+    'created_success' => 'Blog created successfully',
+    'updated_success' => 'Blog updated successfully',
+    'deleted_success' => 'Blog deleted successfully',
+    'approved' => 'Blog approved',
+    'denied' => 'Blog denied',
 ];

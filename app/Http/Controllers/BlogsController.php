@@ -67,7 +67,7 @@ class BlogsController extends Controller
         $blogs = Blogs::create($validated);
         Logger::log(Logger::ACTION_CREATE_BLOG, ['blogs' => $blogs]);
 
-        return redirect()->route('blogs.index')->with('success', 'Blog created successfully.');
+        return redirect()->route('blogs.index')->with('success', __('blogs.created_success'));
     }
 
     /**
@@ -104,7 +104,7 @@ class BlogsController extends Controller
         $this->authorize('update', $blog);
         $blog->update($request->validated());
         Logger::log(Logger::ACTION_UPDATE_BLOG, ['blog' => $blog]);
-        return redirect()->route('blogs.index')->with('success', 'Blog updated successfully.');
+        return redirect()->route('blogs.index')->with('success', __('blogs.updated_success'));
     }
 
     /**
@@ -124,7 +124,7 @@ class BlogsController extends Controller
 
         Logger::log(Logger::ACTION_APPROVE_BLOG, ['blog' => $blog]);
 
-        return back()->with('success', 'Blog approved successfully.');
+        return back()->with('success', __('blogs.approved'));
     }
 
     /**
@@ -143,7 +143,7 @@ class BlogsController extends Controller
 
         Logger::log(Logger::ACTION_DENY_BLOG, ['blog' => $blog]);
 
-        return back()->with('error', 'Blog denied.');
+        return back()->with('error', __('blogs.denied'));
     }
 
     /**
@@ -156,6 +156,6 @@ class BlogsController extends Controller
         $blog = Blog::where('slug', $slug)->firstOrFail();
         $blog->delete();
 
-        return redirect()->route('blogs.index')->with('success', 'Blog deleted successfully.');
+        return redirect()->route('blogs.index')->with('success', __('blogs.deleted_success'));
     }
 }
