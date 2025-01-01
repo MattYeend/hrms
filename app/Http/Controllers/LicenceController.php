@@ -15,7 +15,7 @@ class LicenceController extends Controller
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
             if (Auth::user()->role->name !== 'Super Admin') {
-                abort(403, 'Unauthorized action.');
+                abort(403, __('licences.unauthorized_action'));
             }
             return $next($request);
         });
@@ -52,7 +52,7 @@ class LicenceController extends Controller
         $data = $request->validated();
         $licence = Licence::create($data);
         Logger::log(Logger::ACTION_CREATE_LICENCE, ['licence' => $licence]);
-        return redirect()->route('licence.index')->with('success', 'Licence created successfully.');
+        return redirect()->route('licence.index')->with('success', __('licences.created_success'));
     }
 
     /**
@@ -87,7 +87,7 @@ class LicenceController extends Controller
         $data = $request->validated();
         $licence->update($data);
         Logger::log(Logger::ACTION_UPDATE_LICENCE, ['licence' => $licence]);
-        return redirect()->route('licence.index')->with('success', 'Licence updated successfully.');
+        return redirect()->route('licence.index')->with('success', __('licences.updated_success'));
     }
 
     /**
@@ -99,6 +99,6 @@ class LicenceController extends Controller
         Logger::log(Logger::ACTION_DELETE_LICENCE, ['licence' => $licence]);
         $licence->delete();
 
-        return redirect()->route('licence.index')->with('success', 'Licence deleted successfully.');
+        return redirect()->route('licence.index')->with('success', __('licences.deleted_success'));
     }
 }

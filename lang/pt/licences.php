@@ -19,4 +19,8 @@ return [
     'is_live' => 'Ao vivo',
     'is_test' => 'Teste',
     'no_licences' => 'Nenhuma Licença',
+    'unauthorized_action'=> 'Ação não autorizada',
+    'created_success' => 'Licença criada com sucesso',
+    'updated_success' => 'Licença atualizada com sucesso',
+    'deleted_success' => 'Licença excluída com sucesso',
 ];

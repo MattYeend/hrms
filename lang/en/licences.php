@@ -19,4 +19,8 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_licences' => 'No Licences',
+    'unauthorized_action' => 'Unauthorized Action',
+    'created_success' => 'Licence created successfully',
+    'updated_success' => 'Licence updated successfully',
+    'deleted_success' => 'Licence deleted successfully',
 ];

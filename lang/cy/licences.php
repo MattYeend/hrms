@@ -18,4 +18,8 @@ return [
     'action' => 'Gweithredoedd',
     'is_live' => 'Byw',
     'is_test' => 'Profion',
+    'unauthorized_action'=> 'Gweithred heb awdurdod',
+    'created_success' => 'Trwydded wedi ei greu yn llwyddiannus',
+    'updated_success' => 'Trwydded wedi ei ddiweddaru yn llwyddiannus',
+    'deleted_success' => 'Trwydded wedi ei ddileu yn llwyddiannus',
 ];
