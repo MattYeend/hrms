@@ -58,4 +58,12 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_users' => 'No Users',
+    'created_success' => 'User created successfully',
+    'updated_success' => 'User updated successfully',
+    'deleted_success' => 'User deleted successfully',
+    'not_found' => 'User not found',
+    'dark_mode' => 'Dark mode preferences saved',
+    'picture_upload_success' => 'Profile picture uploaded successfully',
+    'cv_upload_success' => 'CV uploaded successfully',
+    'cover_letter_upload_success' => 'Cover letter uploaded successfully',
 ];

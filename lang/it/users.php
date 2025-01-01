@@ -58,4 +58,12 @@ return [
     'is_live' => 'Attivo',
     'is_test' => 'Test',
     'no_users' => 'Nessun Utente',
+    'created_success' => 'Utente creato con successo',
+    'updated_success' => 'Utente aggiornato con successo',
+    'deleted_success' => 'Utente eliminato con successo',
+    'not_found' => 'Utente non trovato',
+    'dark_mode' => 'Preferenze della modalità scura salvate',
+    'picture_upload_success' => 'Foto del profilo caricata con successo',
+    'cv_upload_success' => 'CV caricato con successo',
+    'cover_letter_upload_success' => 'Lettera di presentazione caricata con successo',
 ];

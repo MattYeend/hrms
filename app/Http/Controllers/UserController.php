@@ -119,7 +119,7 @@ class UserController extends Controller
         Mail::to($user->email)->send(new WelcomeNewUserMail($user, $request->password));
         Logger::log(Logger::ACTION_WELCOME_EMAIL_SENT, ['user' => $user], null, $id);
 
-        return redirect()->route('user.index')->with('success', 'User created successfully!');
+        return redirect()->route('user.index')->with('success', __('users.created_success'));
     }
 
     /**
@@ -129,7 +129,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if(!$user){
-            return response()->json(['message' => 'User not found'], 404);
+            return response()->json(['message' => __('users.not_found')], 404);
         }
 
         $currencySymbols = [
@@ -212,7 +212,7 @@ class UserController extends Controller
         $user->save();
         $id = $user->id;
         Logger::log(Logger::ACTION_UPDATE_USER, ['user' => $user], null, $id);
-        return redirect()->route('user.index')->with('success', $user->name . ' updated successfully!');
+        return redirect()->route('user.index')->with('success', __('users.updated_success'));
     }
 
     /**
@@ -224,7 +224,7 @@ class UserController extends Controller
         $user->delete();
         $id = $user->id;
         Logger::log(Logger::ACTION_DELETE_USER, ['user' => $user], null, $id);
-        return redirect()->route('users.index')->with('success', 'Users deleted successfully');
+        return redirect()->route('users.index')->with('success', __('users.deleted_success'));
     }
 
     public function getDarkModePreference()
@@ -246,7 +246,7 @@ class UserController extends Controller
         
         Logger::log(Logger::ACTION_DARK_MODE_TOGGLE, ['dark_mode' => $dark_mode]);
     
-        return response()->json(['message' => 'Dark mode preference saved!']);
+        return response()->json(['message' => __('users.dark_mode')]);
     }
 
     public function uploadProfilePicture(Request $request, User $user)
@@ -270,7 +270,7 @@ class UserController extends Controller
             }
         }
 
-        return redirect()->back()->with('success', 'Profile Picture uploaded successfully');
+        return redirect()->back()->with('success', __('users.picture_upload_success'));
     }
 
     public function uploadCv(Request $request, User $user)
@@ -294,7 +294,7 @@ class UserController extends Controller
             }
         }
 
-        return redirect()->back()->with('success', 'CV uploaded successfully');
+        return redirect()->back()->with('success', __('users.cv_upload_success'));
     }
 
     public function uploadCoverLetter(Request $request, User $user)
@@ -318,6 +318,6 @@ class UserController extends Controller
             }
         }
 
-        return redirect()->back()->with('success', 'Cover Letter uploaded successfully');
+        return redirect()->back()->with('success', __('users.cover_letter_upload_success'));
     }
 }

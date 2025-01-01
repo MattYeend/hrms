@@ -58,4 +58,12 @@ return [
     'is_live' => 'Live',
     'is_test' => 'Test',
     'no_users' => 'Keine Benutzer',
+    'created_success' => 'Benutzer erfolgreich erstellt',
+    'updated_success' => 'Benutzer erfolgreich aktualisiert',
+    'deleted_success' => 'Benutzer erfolgreich gelöscht',
+    'not_found' => 'Benutzer nicht gefunden',
+    'dark_mode' => 'Dunkelmodus-Einstellungen gespeichert',
+    'picture_upload_success' => 'Profilbild erfolgreich hochgeladen',
+    'cv_upload_success' => 'Lebenslauf erfolgreich hochgeladen',
+    'cover_letter_upload_success' => 'Anschreiben erfolgreich hochgeladen',
 ];

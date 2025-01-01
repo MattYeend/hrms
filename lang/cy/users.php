@@ -58,4 +58,12 @@ return [
     'is_live' => 'Byw',
     'is_test' => 'Prawf',
     'no_users' => 'Dim Defnyddwyr',
+    'created_success' => 'Defnyddiwr wedi ei greu yn llwyddiannus',
+    'updated_success' => 'Defnyddiwr wedi ei ddiweddaru yn llwyddiannus',
+    'deleted_success' => 'Defnyddiwr wedi ei ddileu yn llwyddiannus',
+    'not_found' => 'Defnyddiwr heb ei chanfod',
+    'dark_mode' => 'Dewisiadau modd tywyll wedi eu cadw',
+    'picture_upload_success' => 'Llun proffil wedi ei lanlwytho yn llwyddiannus',
+    'cv_upload_success' => 'CV wedi ei lanlwytho yn llwyddiannus',
+    'cover_letter_upload_success' => 'Llythyr eglurhad wedi ei lanlwytho yn llwyddiannus',
 ];
