@@ -51,7 +51,7 @@ class JobController extends Controller
         $data = $request->validated();
         $job = Job::create($data);
         Logger::log(Logger::ACTION_CREATE_JOB, ['job' => $job]);
-        return redirect()->route('job.index')->with('success', __('job.deleted_success'));
+        return redirect()->route('job.index')->with('success', __('job.created_success'));
     }
 
     /**
