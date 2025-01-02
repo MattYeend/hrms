@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Notes;
 use App\Models\NoteType;
+use App\Models\User;
 use App\Models\Logger;
 use App\Http\Requests\StoreNotesRequest;
 use App\Http\Requests\UpdateNotesRequest;
@@ -45,6 +46,7 @@ class NotesController extends Controller
     public function store(StoreNotesRequest $request)
     {
         Notes::create($request->validated() + ['created_by' => auth()->id()]);
+        $note->users()->attach(auth()->id());
         Logger::log(Logger::ACTION_CREATE_NOTE, ['notes' => $notes]);
         return redirect()->route('notes.index')->with('success', 'Note created successfully.');
     }
