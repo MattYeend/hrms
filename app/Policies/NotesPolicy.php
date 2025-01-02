@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\notes;
+use App\Models\Notes;
 use Illuminate\Auth\Access\Response;
 
 class NotesPolicy
@@ -19,7 +19,7 @@ class NotesPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, notes $notes): bool
+    public function view(User $user, Notes $notes): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class NotesPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, notes $notes): bool
+    public function update(User $user, Notes $notes): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class NotesPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, notes $notes): bool
+    public function delete(User $user, Notes $notes): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class NotesPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, notes $notes): bool
+    public function restore(User $user, Notes $notes): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class NotesPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, notes $notes): bool
+    public function forceDelete(User $user, Notes $notes): bool
     {
         //
     }
