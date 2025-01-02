@@ -13,7 +13,7 @@ class NotesPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->isSuperAdmin() || $user->isAdmin() || $user->hrStaff();
     }
 
     /**
@@ -21,7 +21,7 @@ class NotesPolicy
      */
     public function view(User $user, Notes $notes): bool
     {
-        //
+        return $user->isSuperAdmin() || $user->isAdmin() || $user->hrStaff() || $user->id === $note->created_by;
     }
 
     /**
@@ -29,7 +29,7 @@ class NotesPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->isSuperAdmin() || $user->isAdmin() || $user->hrStaff();
     }
 
     /**
@@ -37,7 +37,7 @@ class NotesPolicy
      */
     public function update(User $user, Notes $notes): bool
     {
-        //
+        return $user->isSuperAdmin() || $user->isAdmin() || $user->id === $note->created_by;
     }
 
     /**
@@ -45,7 +45,7 @@ class NotesPolicy
      */
     public function delete(User $user, Notes $notes): bool
     {
-        //
+        return $user->isSuperAdmin() || $user->isAdmin();
     }
 
     /**
@@ -53,7 +53,7 @@ class NotesPolicy
      */
     public function restore(User $user, Notes $notes): bool
     {
-        //
+        return false;
     }
 
     /**
@@ -61,6 +61,6 @@ class NotesPolicy
      */
     public function forceDelete(User $user, Notes $notes): bool
     {
-        //
+        return false;
     }
 }

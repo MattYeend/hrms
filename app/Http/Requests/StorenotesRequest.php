@@ -11,7 +11,7 @@ class StoreNotesRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreNotesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'note_type_id' => 'required|exists:note_types,id',
         ];
     }
 }
