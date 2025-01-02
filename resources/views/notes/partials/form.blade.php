@@ -15,7 +15,9 @@
                 <label for="description">{{ __('notes.description') }} @if(!isset($notes))<span class="text-danger">*</span>@endif</label>
                 <textarea name="description" id="description" class="form-control" rows="5" required>{{ old('description', $notes->description ?? '') }}</textarea>
             </div>
+        </div>
 
+        <div class="col-md-6">
             <div class="mb-3">
                 <label for="note_type_id">{{ __('notes.note_type') }}</label>
                 <select name="note_type_id" id="note_type_id" class="form-control">
@@ -27,16 +29,15 @@
                     @endforeach
                 </select>
             </div>
-        </div>
 
-        <div class="col-md-6">
             <div class="mb-3">
-                <label for="users">{{ __('notes.assign_users') }}</label>
-                <select name="users[]" id="users" class="form-control" multiple>
+                <label for="user">{{ __('notes.assign_user') }}</label>
+                <select name="user" id="user" class="form-control">
+                    <option value="" disabled selected>{{ __('notes.select_option') }}</option>
                     @foreach($users as $user)
                         <option value="{{ $user->id }}" 
-                                {{ isset($selectedUsers) && in_array($user->id, $selectedUsers) ? 'selected' : '' }}>
-                            {{ $user->name }}
+                                {{ isset($selectedUser) && $selectedUser == $user->id ? 'selected' : '' }}>
+                            {{ $user->getName() }}
                         </option>
                     @endforeach
                 </select>
