@@ -21,6 +21,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CacheController;
+use App\Http\Controllers\NotesController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -183,4 +184,13 @@ Route::middleware(['auth'])->group(function(){
     // Cache routes
     Route::get('/cache', [CacheController::class, 'index'])->name('cache.index');
     Route::get('/clear', [CacheController::class, 'clear'])->name('cache.clear');
+
+    // Notes routes
+    Route::get('/notes', [NotesController::class, 'index'])->name('notes.index');
+    Route::get('/notes/create', [NotesController::class, 'create'])->name('notes.create');
+    Route::post('/notes', [NotesController::class, 'store'])->name('notes.store');
+    Route::get('/notes/{notes}', [NotesController::class, 'show'])->name('notes.show');
+    Route::get('/notes/{notes}/edit', [NotesController::class, 'edit'])->name('notes.edit');
+    Route::put('/notes/{notes}', [NotesController::class, 'update'])->name('notes.update');
+    Route::delete('/notes/{notes}', [NotesController::class, 'delete'])->name('notes.delete');
 });
