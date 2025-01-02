@@ -37,7 +37,9 @@ class NotesController extends Controller
     public function create()
     {
         $noteTypes = NoteType::all();
-        return view('notes.create', compact('noteTypes'));
+        $users = User::all();
+        $selectedUsers = $note->users->pluck('id')->toArray();
+        return view('notes.create', compact('noteTypes', 'users', 'selectedUsers'));
     }
 
     /**
@@ -68,7 +70,9 @@ class NotesController extends Controller
     {
         $this->authorize('update', $notes);
         $noteTypes = NoteType::all();
-        return view('notes.edit', compact('note', 'noteTypes'));
+        $users = User::all();
+        $selectedUsers = $note->users->pluck('id')->toArray();
+        return view('notes.edit', compact('note', 'noteTypes', 'users', 'selectedUsers'));
     }
 
     /**
