@@ -50,7 +50,7 @@ class NotesController extends Controller
         Notes::create($request->validated() + ['created_by' => auth()->id()]);
         $note->users()->attach(auth()->id());
         Logger::log(Logger::ACTION_CREATE_NOTE, ['notes' => $notes]);
-        return redirect()->route('notes.index')->with('success', 'Note created successfully.');
+        return redirect()->route('notes.index')->with('success', __('notes.created_success'));
     }
 
     /**
@@ -83,7 +83,7 @@ class NotesController extends Controller
         $this->authorize('update', $notes);
         $note->update($request->validated());
         Logger::log(Logger::ACTION_UPDATE_NOTE, ['note' => $notes]);
-        return redirect()->route('notes.index')->with('success', 'Note updated successfully.');
+        return redirect()->route('notes.index')->with('success', __('notes.updated_success'));
     }
 
     /**
@@ -94,6 +94,6 @@ class NotesController extends Controller
         $this->authorize('delete', $note);
         Logger::log(Logger::ACTION_DELETE_NOTE, ['note' => $notes]);
         $note->delete();
-        return redirect()->route('notes.index')->with('success', 'Note deleted successfully.');
+        return redirect()->route('notes.index')->with('success', __('notes.deleted_success'));
     }
 }
